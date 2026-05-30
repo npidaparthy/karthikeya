@@ -1,0 +1,20 @@
+{
+  "section_title": "Credits & Gratitude",
+  "intro": "Karthikeya's remarkable journey has been shaped by the grace and guidance of great scholars, revered organisations and a loving community. With deep gratitude:",
+  "list": [
+    { "name": "Mysore Datta Peetham",            "role": "Gold Medal — Bhagavad Gītā Pārāyaṇa" },
+    { "name": "Central Sanskrit University",      "role": "Sanskrit Olympiad — organiser & recognition" },
+    { "name": "Samavedam Shanmukha Sharma",       "role": "Śivapadam composer · Inspiration · Memento" },
+    { "name": "Vaddiparti Padmakar",              "role": "Pranava Peetham · Poetry mentor · Competitions" },
+    { "name": "Madugula Naga Phani Sharma",       "role": "Scholar · Blessing · Encouragement" },
+    { "name": "Paṇḍit Rishikesh Bhattar",         "role": "Ṣaṣṭipūrti Mahōtsavam · Helensburgh Temple" },
+    { "name": "Taṭavarti Kalyāṇ",                "role": "Avadānam — Aprastuta Prasaṅga honour" },
+    { "name": "Chaganti Koteswara Rao",           "role": "Rāmāyaṇa & Mahābhārata pravachanams" },
+    { "name": "Vyoma Linguistics Labs",           "role": "Stories Behind Temples · Sanskrit learning" },
+    { "name": "Sydney Jana Ranjani",              "role": "Cultural competitions & recognition" },
+    { "name": "Sydney Murugan Temple",            "role": "Pārāyaṇa venue & spiritual community" },
+    { "name": "Sydney Ayyappa Temple",            "role": "Soundaryalaharī pārāyaṇa · Navarātri" },
+    { "name": "Helensburgh Temple",               "role": "Bhagavad Gītā pārāyaṇa venue" },
+    { "name": "Pranava Peetham",                  "role": "Mānava Kathā · Gajendra Mokṣam · Poetry" }
+  ]
+}

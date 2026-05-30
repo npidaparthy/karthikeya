@@ -1,0 +1,9 @@
+{
+  "title": "Settings",
+  "theme": "Theme",
+  "theme_light": "☀ Light",
+  "theme_dark": "☽ Dark",
+  "font_size": "Font Size",
+  "accent": "Accent Colour",
+  "language": "Language"
+}

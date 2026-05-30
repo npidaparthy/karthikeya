@@ -1,0 +1,49 @@
+{
+  "section_title": "Pārāyaṇa",
+  "intro": "Karthikeya regularly performs these sacred pārāyaṇas. Each Sanskrit verse is displayed in three scripts — select your preferred script using the tabs below.",
+  "tab_te": "Telugu",
+  "tab_dev": "Devanāgarī",
+  "tab_iast": "IAST",
+  "stotras": [
+    {
+      "id": "bg",
+      "title": "Bhagavad Gītā · 700 Verses",
+      "te": "యదా యదా హి ధర్మస్య గ్లానిర్భవతి భారత ।\nఅభ్యుత్థానమధర్మస్య తదాత్మానం సృజామ్యహమ్ ॥",
+      "dev": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥",
+      "iast": "yadā yadā hi dharmasya glānir bhavati bhārata |\nabhyutthānam adharmasya tadātmānaṁ sṛjāmy aham ||",
+      "attribution": "Bhagavad Gītā 4.7 — \"Whenever righteousness declines, I manifest myself.\" Memorised all 700 verses; Gold Medal, Mysore Datta Peetham."
+    },
+    {
+      "id": "vs",
+      "title": "Viṣṇu Sahasranāma",
+      "te": "విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః ।\nభూతకృద్భూతభృద్భావో భూతాత్మా భూతభావనః ॥",
+      "dev": "विश्वं विष्णुर्वषट्कारो भूतभव्यभवत्प्रभुः ।\nभूतकृद्भूतभृद्भावो भूतात्मा भूतभावनः ॥",
+      "iast": "viśvaṁ viṣṇur vaṣaṭkāro bhūtabhavyabhavatprabhuḥ |\nbhūtakṛd bhūtabhṛd bhāvo bhūtātmā bhūtabhāvanaḥ ||",
+      "attribution": "Opening śloka — performed regularly at Sydney Murugan Temple."
+    },
+    {
+      "id": "ls",
+      "title": "Lalitā Sahasranāma",
+      "te": "శ్రీమాతా శ్రీమహారాజ్ఞీ శ్రీమత్సింహాసనేశ్వరీ ।\nచిదగ్నికుండసంభూతా దేవకార్యసముద్యతా ॥",
+      "dev": "श्रीमाता श्रीमहाराज्ञी श्रीमत्सिंहासनेश्वरी ।\nचिदग्निकुण्डसम्भूता देवकार्यसमुद्यता ॥",
+      "iast": "śrīmātā śrīmahārājñī śrīmatsinhāsaneśvarī |\ncidagnikuṇḍasambhūtā devakāryasamudyatā ||",
+      "attribution": "Opening nāmas — performed regularly at Sydney Murugan Temple."
+    },
+    {
+      "id": "sl",
+      "title": "Soundaryalaharī · 100 Verses",
+      "te": "శివః శక్త్యా యుక్తో యది భవతి శక్తః ప్రభవితుం\nన చేదేవం దేవో న ఖలు కుశలః స్పందితుమపి ।",
+      "dev": "शिवः शक्त्या युक्तो यदि भवति शक्तः प्रभवितुं\nन चेदेवं देवो न खलु कुशलः स्पन्दितुमपि ।",
+      "iast": "śivaḥ śaktyā yukto yadi bhavati śaktaḥ prabhavituṁ\nna cedevaṁ devo na khalu kuśalaḥ spanditum api |",
+      "attribution": "Opening verse of Soundaryalaharī by Ādi Śaṅkarācārya — all 100 verses memorised and performed at Navarātri, Sydney Ayyappa Temple."
+    },
+    {
+      "id": "sg",
+      "title": "Saṅkaṭanāśana Ganeśa Stotram",
+      "te": "ప్రణమ్య శిరసా దేవం గౌరీపుత్రం వినాయకమ్ ।\nభక్తావాసం స్మరేన్నిత్యమాయుఃకామార్థసిద్ధయే ॥",
+      "dev": "प्रणम्य शिरसा देवं गौरीपुत्रं विनायकम् ।\nभक्तावासं स्मरेन्नित्यमायुःकामार्थसिद्धये ॥",
+      "iast": "praṇamya śirasā devaṁ gaurīputraṁ vināyakam |\nbhaktāvāsaṁ smaren nityam āyuḥkāmārthasiddhaye ||",
+      "attribution": "Handwritten copy offered personally to Vaddiparti Padmakar, Samavedam Shanmukha Sharma and Madugula Naga Phani Sharma."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "section_title": "Profile & Achievements",
+  "journey_title": "The Sanskrit Journey",
+  "journey": "Karthikeya's love for Sanskrit was kindled at home from a very young age. Long before formal schooling, he was immersed in the sounds and rhythms of Sanskrit verses, listening to his family recite stotras and prayers. This early immersion laid the foundation for what would become an extraordinary academic and spiritual journey.\n\nHis formal Sanskrit examinations through the Saṃskṛta Bhāratī programme trace a remarkable arc of excellence — each year he has not merely passed but mastered each level with distinction:\n\n• Āyanam (2022) — 100%\n• Sāriṇī (2023) — 98%\n• Saralā (2024) — 94%\n• Sugamā (2025) — 98%\n• Sarasā (2026) — 96%\n\nAcross five consecutive years, he has maintained an average of 97.2% — a testament to consistent dedication and genuine love for the language of the Vedas. He also explored the rich 'Stories Behind Temples' video series by Vyoma Linguistics Labs, deepening his understanding of the cultural and mythological heritage woven into India's sacred geography.",
+  "achievements": [
+    {
+      "icon": "🥇",
+      "title": "Gold Medal — Bhagavad Gītā",
+      "desc": "Awarded the prestigious Gold Medal by Mysore Datta Peetham for memorising and flawlessly reciting all 700 verses of the Śrīmad Bhagavad Gītā — a monumental feat of memory, devotion and discipline.",
+      "year": "Mysore Datta Peetham",
+      "tag": "gold"
+    },
+    {
+      "icon": "📖",
+      "title": "Bhagavad Gītā — Helensburgh Temple",
+      "desc": "Chanted the complete Śrīmad Bhagavad Gītā (all 18 chapters, 700 verses) at Helensburgh Temple on the auspicious occasion of Paṇḍit Rishikesh Bhattar's Ṣaṣṭipūrti Mahōtsavam — a rare honour and a deeply moving devotional offering.",
+      "year": "Helensburgh Temple · Ṣaṣṭipūrti Mahōtsavam",
+      "tag": "gold"
+    },
+    {
+      "icon": "🏆",
+      "title": "Sanskrit Olympiad — 1st in Australia",
+      "desc": "Secured 1st place in Australia in the Central Sanskrit University's National Sanskrit Olympiad for two consecutive years. In the previous year he achieved All India Rank 266 — competing against thousands of students across India.",
+      "year": "Central Sanskrit University · 2 consecutive years",
+      "tag": "olympiad"
+    },
+    {
+      "icon": "📊",
+      "title": "Sanskrit Examinations — 5 Years of Excellence",
+      "desc": "Āyanam 2022 (100%) · Sāriṇī 2023 (98%) · Saralā 2024 (94%) · Sugamā 2025 (98%) · Sarasā 2026 (96%). Five years of consecutive excellence with a 97.2% average — each level progressively more advanced.",
+      "year": "Saṃskṛta Bhāratī Programme · 2022–2026",
+      "tag": "olympiad"
+    },
+    {
+      "icon": "🕉",
+      "title": "Soundaryalaharī Pārāyaṇa",
+      "desc": "Memorised all 100 verses of Ādi Śaṅkarācārya's Soundaryalaharī — one of the most celebrated Sanskrit hymns on the Divine Mother — and performed the complete pārāyaṇa at Sydney Ayyappa Temple during Navarātri.",
+      "year": "Sydney Ayyappa Temple · Navarātri",
+      "tag": "parayana"
+    },
+    {
+      "icon": "📜",
+      "title": "Viṣṇu & Lalitā Sahasranāma",
+      "desc": "Regularly performs the complete Viṣṇu Sahasranāma and Lalitā Sahasranāma pārāyaṇa at Sydney Murugan Temple, contributing to the devotional life of Sydney's Hindu community.",
+      "year": "Sydney Murugan Temple · Regular",
+      "tag": "parayana"
+    },
+    {
+      "icon": "🎤",
+      "title": "Śivapadams — Samavedam Shanmukha Sharma",
+      "desc": "Recited 10 Śivapadam poems composed by the renowned scholar Samavedam Shanmukha Sharma in his presence during his Sydney visit. The great scholar was moved and presented Karthikeya with a special memento in appreciation.",
+      "year": "Sydney · April · Samavedam Shanmukha Sharma's visit",
+      "tag": "scholar"
+    },
+    {
+      "icon": "✍",
+      "title": "Saṅkaṭanāśana Ganeśa Stotram — Offered to Scholars",
+      "desc": "Personally transcribed and offered a handwritten copy of the Saṅkaṭanāśana Ganeśa Stotram to three eminent scholars: Vaddiparti Padmakar, Samavedam Shanmukha Sharma and Madugula Naga Phani Sharma.",
+      "year": "Personal offering to three great scholars",
+      "tag": "scholar"
+    },
+    {
+      "icon": "🎭",
+      "title": "Avadānam — Aprastuta Prasaṅga",
+      "desc": "Participated as the Aprastuta Prasaṅga Pṛcchakudu (off-topic questioner) in the prestigious avadānam performed by the celebrated poet-scholar Taṭavarti Kalyāṇ — a role requiring sharp wit and spontaneous creativity.",
+      "year": "Taṭavarti Kalyāṇ Avadānam · Sydney",
+      "tag": "scholar"
+    },
+    {
+      "icon": "🏅",
+      "title": "Mānava Kathā & Gajendra Mokṣam — Winner",
+      "desc": "Won prizes in the Mānava Kathā and Gajendra Mokṣam competitions organised by Pranava Peetham under the guidance of Vaddiparti Padmakar.",
+      "year": "Pranava Peetham · Vaddiparti Padmakar",
+      "tag": "competition"
+    },
+    {
+      "icon": "🎊",
+      "title": "Cultural Competitions — Multiple Prizes",
+      "desc": "Won multiple prizes in Rāmāyaṇa and Daśāvatāra storytelling competitions organised by Sydney Jana Ranjani, and in poetry competitions organised by Pranava Peetham.",
+      "year": "Sydney Jana Ranjani · Pranava Peetham",
+      "tag": "competition"
+    },
+    {
+      "icon": "🗣",
+      "title": "'Para Bhāṣa Lekundā Telugu Lo' — Winner",
+      "desc": "At the extraordinary age of 3–4 years, won the 'Para Bhāṣa Lekundā Telugu Lo' competition — speaking pure Telugu entirely free of borrowed foreign words. A remarkable early indication of his linguistic gifts.",
+      "year": "Age ~3–4 years · Telugu language competition",
+      "tag": "competition"
+    },
+    {
+      "icon": "📺",
+      "title": "Bhāratam Laghu Prasaṅgālu",
+      "desc": "Delivered a published series of short discourses on the Mahābhārata on YouTube, demonstrating a depth of understanding of the great Itihāsa far beyond his years. He has listened to the complete Bhārata and Rāmāyaṇa pravachanams of Chaganti Koteswara Rao.",
+      "year": "YouTube Series · samskruti.info.1",
+      "tag": "discourse"
+    }
+  ],
+  "exam_table_title": "Sanskrit Examination Record",
+  "exam_table": [
+    { "year": "2022", "exam": "Āyanam",  "score": "100%", "grade": "🌟" },
+    { "year": "2023", "exam": "Sāriṇī",  "score": "98%",  "grade": "🌟" },
+    { "year": "2024", "exam": "Saralā",   "score": "94%",  "grade": "⭐" },
+    { "year": "2025", "exam": "Sugamā",   "score": "98%",  "grade": "🌟" },
+    { "year": "2026", "exam": "Sarasā",   "score": "96%",  "grade": "🌟" }
+  ],
+  "photo_placeholder": "Certificate & Achievement Photos",
+  "photo_placeholder_sub": "Certificates and event photographs will be displayed here"
+}
