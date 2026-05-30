@@ -1,0 +1,330 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "profile": "Profile",
+    "credits": "Credits",
+    "events": "Events",
+    "parayana": "Pārāyaṇa",
+    "support": "Sponsor",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "youtube": "YouTube"
+  },
+  "logo": {
+    "name": "Samskruti",
+    "tagline": "సంస్కృతి • संस्कृति"
+  },
+  "hero": {
+    "greeting": "Śrī Gaṇeśāya Namaḥ • శ్రీ గణేశాయ నమః",
+    "name": "Karthikeya Pidaparthy",
+    "age_location": "Age 10 · Sydney, Australia",
+    "description": "A young scholar of Sanskrit, Telugu & English — memoriser of 700 verses of the Bhagavad Gītā, laureate of the Sanskrit Olympiad, and devoted pārāyaṇa seeker in the grand tradition of Sanātana Dharma.",
+    "btn_achievements": "View Achievements",
+    "btn_youtube": "▶ YouTube Channel",
+    "badge_gold": "🏅 Gold Medal — Mysore Datta Peetham",
+    "badge_olympiad": "🥇 Sanskrit Olympiad — 1st in Australia",
+    "badge_gita": "📖 Bhagavad Gītā 700 verses",
+    "badge_saundarya": "🕉 Soundaryalaharī",
+    "badge_sivapadam": "🎤 Śivapadams"
+  },
+  "about": {
+    "section_title": "About Karthikeya",
+    "para1": "Born into a family that cherishes the Vedic tradition, Karthikeya has shown an extraordinary gift for scripture, language, and devotion since his early childhood. At just 10 years of age, he stands as a shining testament to the living power of Sanātana Dharma.",
+    "para2": "Residing in Sydney, Australia, he balances academic excellence with deep spiritual practice — performing regular pārāyaṇa at local temples, competing in Sanskrit Olympiads, and reciting works from the great masters of Telugu and Sanskrit literature.",
+    "quote_sa": "विद्या ददाति विनयम् ।",
+    "quote_iast": "vidyā dadāti vinayam",
+    "quote_te": "విద్య వినయమిస్తుంది.",
+    "quote_en": "Knowledge bestows humility.",
+    "card_lang_title": "Languages",
+    "card_lang_body": "Fluent in Telugu, English, and deeply proficient in Sanskrit. Reads Devanāgarī, Telugu, and Roman IAST scripts with ease.",
+    "card_scripture_title": "Scriptural Knowledge",
+    "card_scripture_body": "Has listened to complete Rāmāyaṇa and Mahābhārata pravachanams by Chaganti Koteswara Rao. Familiar with stories from the Bhāgavata, Upaniṣads, and Itihāsas.",
+    "card_community_title": "Community Service",
+    "card_community_body": "Performs Viṣṇu Sahasranāma and Lalitā Sahasranāma pārāyaṇa at Sydney Murugan Temple and participates in cultural programmes across Sydney's Indian community."
+  },
+  "profile": {
+    "section_title": "Profile & Achievements",
+    "achievements": [
+      {
+        "icon": "🥇",
+        "title": "Gold Medal — Bhagavad Gītā",
+        "desc": "Awarded the Gold Medal by the prestigious Mysore Datta Peetham for memorising and reciting all 700 verses of the Bhagavad Gītā.",
+        "year": "Mysore Datta Peetham"
+      },
+      {
+        "icon": "📖",
+        "title": "Bhagavad Gītā — Helensburgh Temple",
+        "desc": "Chanted the complete Śrīmad Bhagavad Gītā at Helensburgh Temple on the occasion of Paṇḍit Rishikesh Bhattar's Ṣaṣṭipūrti Mahōtsavam — a rare and sacred offering.",
+        "year": "Helensburgh Temple · Ṣaṣṭipūrti Mahōtsavam"
+      },
+      {
+        "icon": "🏆",
+        "title": "Sanskrit Olympiad — 1st in Australia",
+        "desc": "Secured 1st place in Australia and All India Rank 266 in the previous year in the Sanskrit Olympiad conducted by Central Sanskrit University, New Delhi — for two consecutive years.",
+        "year": "Central Sanskrit University, India · 2 consecutive years"
+      },
+      {
+        "icon": "🕉",
+        "title": "Soundaryalaharī Pārāyaṇa",
+        "desc": "Memorised all 100 verses of Śaṅkarācārya's Soundaryalaharī and performed pārāyaṇa at Sydney Ayyappa Temple during Navarātri.",
+        "year": "Sydney Ayyappa Temple · Navarātri"
+      },
+      {
+        "icon": "🎤",
+        "title": "Śivapadam Recitation",
+        "desc": "Recited 10 Śivapadam poems composed by Samavedam Shanmukha Sharma in his presence and received a special memento from the great scholar when he visited Sydney.",
+        "year": "Sydney · Samavedam Shanmukha Sharma's visit (April)"
+      },
+      {
+        "icon": "✍",
+        "title": "Saṅkaṭanāśana Ganeśa Stotram",
+        "desc": "Personally offered a handwritten copy of the Saṅkaṭanāśana Ganeśa Stotram to Vaddiparti Padmakar, Samavedam Shanmukha Sharma, and Madugula Naga Phani Sharma.",
+        "year": "Personal offering to great scholars"
+      },
+      {
+        "icon": "📜",
+        "title": "Viṣṇu & Lalitā Sahasranāma",
+        "desc": "Performs regular Viṣṇu Sahasranāma and Lalitā Sahasranāma pārāyaṇa at Sydney Murugan Temple, contributing to the spiritual life of the community.",
+        "year": "Sydney Murugan Temple · Regular"
+      },
+      {
+        "icon": "🎭",
+        "title": "'Para Bhāṣa Lekundā Telugu Lo' — Winner",
+        "desc": "Won first place in the competition 'Para Bhāṣa Lekundā Telugu Lo' at around age 3–4, demonstrating exceptional Telugu language ability at an incredibly young age.",
+        "year": "Age ~3–4 years"
+      },
+      {
+        "icon": "🏅",
+        "title": "Mānava Kathā & Gajendra Mokṣam Competitions",
+        "desc": "Won prizes in Mānava Kathā and Gajendra Mokṣam competitions organised by Pranava Peetham (Vaddiparti Padmakar).",
+        "year": "Pranava Peetham"
+      },
+      {
+        "icon": "🎭",
+        "title": "Cultural Competition Prizes",
+        "desc": "Won multiple prizes in Rāmāyaṇa and Daśāvatāra competitions organised by Sydney Jana Ranjani, and poetry competitions by Pranava Peetham.",
+        "year": "Sydney Jana Ranjani · Pranava Peetham"
+      },
+      {
+        "icon": "🎤",
+        "title": "Avadānam — Aprastuta Prasaṅga",
+        "desc": "Participated as the Aprastuta Prasaṅga Pṛcchakudu (questioner) in the avadānam performed by the renowned Taṭavarti Kalyāṇ.",
+        "year": "Taṭavarti Kalyāṇ Avadānam · Sydney"
+      },
+      {
+        "icon": "📺",
+        "title": "Bhāratam Laghu Prasaṅgālu",
+        "desc": "Delivered a series of short discourses on the Mahābhārata published on YouTube, demonstrating depth of understanding of the great Itihāsa.",
+        "year": "YouTube Series"
+      }
+    ]
+  },
+  "credits": {
+    "section_title": "Credits & Gratitude",
+    "intro": "Karthikeya's journey has been shaped by the grace of great scholars, teachers, and organisations. Heartfelt thanks to:",
+    "list": [
+      { "name": "Mysore Datta Peetham", "role": "Gold Medal — Bhagavad Gītā Pārāyaṇa" },
+      { "name": "Central Sanskrit University, India", "role": "Sanskrit Olympiad organiser" },
+      { "name": "Samavedam Shanmukha Sharma", "role": "Inspiration · Śivapadam composer · Memento" },
+      { "name": "Vaddiparti Padmakar", "role": "Pranava Peetham · Poetry & scholarship mentor" },
+      { "name": "Madugula Naga Phani Sharma", "role": "Scholar · Encouragement" },
+      { "name": "Paṇḍit Rishikesh Bhattar", "role": "Ṣaṣṭipūrti Mahōtsavam · Helensburgh Temple" },
+      { "name": "Taṭavarti Kalyāṇ", "role": "Avadānam — Aprastuta Prasaṅga" },
+      { "name": "Sydney Jana Ranjani", "role": "Cultural competitions & recognition" },
+      { "name": "Sydney Murugan Temple", "role": "Pārāyaṇa venue & spiritual community" },
+      { "name": "Sydney Ayyappa Temple", "role": "Soundaryalaharī pārāyaṇa · Navarātri" },
+      { "name": "Helensburgh Temple", "role": "Bhagavad Gītā pārāyaṇa venue" },
+      { "name": "Chaganti Koteswara Rao", "role": "Pravachanams — Rāmāyaṇa & Mahābhārata" },
+      { "name": "Pranava Peetham", "role": "Mānava Kathā · Gajendra Mokṣam · Poetry competitions" }
+    ]
+  },
+  "events": {
+    "section_title": "Events & Milestones",
+    "list": [
+      {
+        "date": "Sydney · April",
+        "title": "Śivapadam Recitation — Samavedam Shanmukha Sharma",
+        "desc": "Recited 10 Śivapadam poems composed by the great scholar in his presence during his Sydney visit. Received a special memento."
+      },
+      {
+        "date": "Sydney · Navarātri",
+        "title": "Soundaryalaharī Pārāyaṇa — Ayyappa Temple",
+        "desc": "Performed complete pārāyaṇa of Soundaryalaharī (100 verses) at Sydney Ayyappa Temple during the nine sacred nights of Navarātri."
+      },
+      {
+        "date": "Helensburgh Temple",
+        "title": "Bhagavad Gītā — Ṣaṣṭipūrti Mahōtsavam",
+        "desc": "Chanted the complete Śrīmad Bhagavad Gītā on the occasion of Paṇḍit Rishikesh Bhattar's Ṣaṣṭipūrti (60th Birthday) Mahōtsavam — a profound devotional offering."
+      },
+      {
+        "date": "Central Sanskrit University · This Year",
+        "title": "Sanskrit Olympiad — 1st Place in Australia",
+        "desc": "Achieved 1st place in Australia in the National Sanskrit Olympiad. Previously secured All India Rank 266 — two consecutive years of excellence."
+      },
+      {
+        "date": "Mysore Datta Peetham",
+        "title": "Gold Medal — Bhagavad Gītā 700 Verses",
+        "desc": "Awarded the Gold Medal for memorising and reciting all 700 verses of the Śrīmad Bhagavad Gītā."
+      },
+      {
+        "date": "Sydney · Avadānam",
+        "title": "Taṭavarti Kalyāṇ Avadānam — Aprastuta Prasaṅga",
+        "desc": "Participated as the Aprastuta Prasaṅga Pṛcchakudu (off-topic questioner) in the prestigious avadānam performed by Taṭavarti Kalyāṇ."
+      },
+      {
+        "date": "Sydney · Regular",
+        "title": "Viṣṇu & Lalitā Sahasranāma — Murugan Temple",
+        "desc": "Regularly performs Viṣṇu Sahasranāma and Lalitā Sahasranāma pārāyaṇa at Sydney Murugan Temple as a devotional offering."
+      },
+      {
+        "date": "Pranava Peetham",
+        "title": "Mānava Kathā & Gajendra Mokṣam — Winner",
+        "desc": "Won prizes in Mānava Kathā and Gajendra Mokṣam competitions organised by Pranava Peetham under the guidance of Vaddiparti Padmakar."
+      },
+      {
+        "date": "Age ~3–4 years",
+        "title": "'Para Bhāṣa Lekundā Telugu Lo' — Winner",
+        "desc": "Won the 'Para Bhāṣa Lekundā Telugu Lo' competition at the remarkable age of 3–4 years, an early indicator of his extraordinary linguistic gift."
+      }
+    ]
+  },
+  "parayana": {
+    "section_title": "Pārāyaṇa",
+    "intro": "Karthikeya regularly performs these sacred pārāyaṇas. Each Sanskrit verse appears in three scripts — select your preferred script using the tabs.",
+    "tab_te": "Telugu",
+    "tab_dev": "Devanāgarī",
+    "tab_iast": "IAST",
+    "stotras": [
+      {
+        "id": "bg",
+        "title": "Bhagavad Gītā · 700 Verses",
+        "te": "యదా యదా హి ధర్మస్య గ్లానిర్భవతి భారత ।\nఅభ్యుత్థానమధర్మస్య తదాత్మానం సృజామ్యహమ్ ॥",
+        "dev": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥",
+        "iast": "yadā yadā hi dharmasya glānir bhavati bhārata |\nabhyutthānam adharmasya tadātmānaṁ sṛjāmy aham ||",
+        "attribution": "Bhagavad Gītā 4.7 — \"Whenever there is decline of righteousness, I manifest myself.\""
+      },
+      {
+        "id": "vs",
+        "title": "Viṣṇu Sahasranāma",
+        "te": "విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః ।\nభూతకృద్భూతభృద్భావో భూతాత్మా భూతభావనః ॥",
+        "dev": "विश्वं विष्णुर्वषट्कारो भूतभव्यभवत्प्रभुः ।\nभूतकृद्भूतभृद्भावो भूतात्मा भूतभावनः ॥",
+        "iast": "viśvaṁ viṣṇur vaṣaṭkāro bhūtabhavyabhavatprabhuḥ |\nbhūtakṛd bhūtabhṛd bhāvo bhūtātmā bhūtabhāvanaḥ ||",
+        "attribution": "Opening śloka — performed at Sydney Murugan Temple"
+      },
+      {
+        "id": "ls",
+        "title": "Lalitā Sahasranāma",
+        "te": "శ్రీమాతా శ్రీమహారాజ్ఞీ శ్రీమత్సింహాసనేశ్వరీ ।\nచిదగ్నికుండసంభూతా దేవకార్యసముద్యతా ॥",
+        "dev": "श्रीमाता श्रीमहाराज्ञी श्रीमत्सिंहासनेश्वरी ।\nचिदग्निकुण्डसम्भूता देवकार्यसमुद्यता ॥",
+        "iast": "śrīmātā śrīmahārājñī śrīmatsinhāsaneśvarī |\ncidagnikuṇḍasambhūtā devakāryasamudyatā ||",
+        "attribution": "Opening nāmas — performed at Sydney Murugan Temple"
+      },
+      {
+        "id": "sl",
+        "title": "Soundaryalaharī · 100 Verses",
+        "te": "శివః శక్త్యా యుక్తో యది భవతి శక్తః ప్రభవితుం\nన చేదేవం దేవో న ఖలు కుశలః స్పందితుమపి ।",
+        "dev": "शिवः शक्त्या युक्तो यदि भवति शक्तः प्रभवितुं\nन चेदेवं देवो न खलु कुशलः स्पन्दितुमपि ।",
+        "iast": "śivaḥ śaktyā yukto yadi bhavati śaktaḥ prabhavituṁ\nna cedevaṁ devo na khalu kuśalaḥ spanditum api |",
+        "attribution": "Opening verse by Ādi Śaṅkarācārya — Navarātri, Ayyappa Temple"
+      },
+      {
+        "id": "sg",
+        "title": "Saṅkaṭanāśana Ganeśa Stotram",
+        "te": "ప్రణమ్య శిరసా దేవం గౌరీపుత్రం వినాయకమ్ ।\nభక్తావాసం స్మరేన్నిత్యమాయుఃకామార్థసిద్ధయే ॥",
+        "dev": "प्रणम्य शिरसा देवं गौरीपुत्रं विनायकम् ।\nभक्तावासं स्मरेन्नित्यमायुःकामार्थसिद्धये ॥",
+        "iast": "praṇamya śirasā devaṁ gaurīputraṁ vināyakam |\nbhaktāvāsaṁ smaren nityam āyuḥkāmārthasiddhaye ||",
+        "attribution": "Offered in person to Vaddiparti Padmakar, Samavedam Shanmukha Sharma & Madugula Naga Phani Sharma"
+      }
+    ]
+  },
+  "support": {
+    "section_title": "Support & Sponsor",
+    "intro": "Encouraging Karthikeya's spiritual and academic journey is a noble act of dharma. Your support helps him participate in competitions, attend events, and create more content.",
+    "cards": [
+      {
+        "icon": "🙏",
+        "title": "Blessings & Encouragement",
+        "desc": "Send your blessings, words of encouragement, or share his achievements with your community. Every message inspires him forward."
+      },
+      {
+        "icon": "📚",
+        "title": "Sponsor Education",
+        "desc": "Support Sanskrit exam registrations, study materials, books, and participation in competitions across Australia and India."
+      },
+      {
+        "icon": "🎬",
+        "title": "Subscribe & Share",
+        "desc": "Subscribe to his YouTube channel @samskruti.info.1 and share his videos to spread the beauty of Sanskrit and Sanātana Dharma."
+      },
+      {
+        "icon": "🤝",
+        "title": "Invite to Events",
+        "desc": "Invite Karthikeya to perform pārāyaṇa, give a talk, or participate in competitions and festivals at your temple or organisation."
+      }
+    ]
+  },
+  "testimonials": {
+    "section_title": "Testimonials",
+    "list": [
+      {
+        "text": "Karthikeya's recitation of Śivapadams was remarkable. The clarity of pronunciation and the depth of feeling in one so young is truly a blessing. May he continue to illuminate the tradition.",
+        "by": "Samavedam Shanmukha Sharma",
+        "role": "Renowned Telugu Scholar & Poet · Sydney Visit"
+      },
+      {
+        "text": "It is heartening to see the next generation embracing Sanskrit with such commitment. His performance in the Olympiad reflects both natural talent and disciplined practice.",
+        "by": "Central Sanskrit University",
+        "role": "Sanskrit Olympiad — Australia Rank 1"
+      },
+      {
+        "text": "During Navarātri, Karthikeya's pārāyaṇa of Soundaryalaharī filled the temple with a sacred vibration. Such dedication from a 10-year-old is truly divine grace.",
+        "by": "Sydney Ayyappa Temple",
+        "role": "Navarātri Pārāyaṇa"
+      }
+    ]
+  },
+  "youtube": {
+    "section_title": "YouTube Channel",
+    "channel_name": "Samskruti · @samskruti.info.1",
+    "channel_sub": "Sanskrit · Telugu · Devotional · Pārāyaṇa · Discourses",
+    "channel_url": "https://www.youtube.com/@samskruti.info.1",
+    "bharatam_title": "Bhāratam Laghu Prasaṅgālu",
+    "bharatam_desc": "Short discourses on the Mahābhārata — watch the full playlist",
+    "bharatam_url": "https://www.youtube.com/watch?v=xB1CT8539J0&list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ",
+    "videos": [
+      { "title": "Bhagavad Gītā Pārāyaṇa", "meta": "700 Verses · Karthikeya Pidaparthy" },
+      { "title": "Sanskrit Recitations", "meta": "Stotras · Sahasranāmas · Hymns" },
+      { "title": "Bhāratam Laghu Prasaṅgālu", "meta": "Mahābhārata Discourses · Series" }
+    ]
+  },
+  "contact": {
+    "section_title": "Contact",
+    "intro": "To invite Karthikeya for events, pārāyaṇa, or competitions, or to send your blessings and enquiries, please write to us.",
+    "location_city": "Sydney, New South Wales",
+    "location_country": "Australia",
+    "youtube_label": "YouTube",
+    "form_name": "Your Name",
+    "form_email": "Your Email",
+    "form_subject": "Subject",
+    "form_message": "Your message, blessings, or enquiry…",
+    "form_submit": "Send Message ✉",
+    "form_thanks": "🙏 Thank you! We will respond soon.",
+    "quote_sa": "सर्वे भवन्तु सुखिनः ।",
+    "quote_en": "May all be happy."
+  },
+  "footer": {
+    "sa": "ॐ तत्सत् । श्रीकृष्णार्पणमस्तु ।",
+    "iast": "Oṃ tat sat · Śrī Kṛṣṇārpaṇam astu",
+    "copy": "© 2025 Karthikeya Pidaparthy · Sydney, Australia"
+  },
+  "settings": {
+    "title": "Settings",
+    "theme": "Theme",
+    "theme_light": "☀ Light",
+    "theme_dark": "☽ Dark",
+    "font_size": "Font Size",
+    "accent": "Accent Colour",
+    "language": "Language"
+  }
+}
