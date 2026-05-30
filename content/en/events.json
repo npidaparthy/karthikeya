@@ -1,0 +1,60 @@
+{
+  "section_title": "Events & Milestones",
+  "events_placeholder": "Event photographs will appear here",
+  "list": [
+    {
+      "date": "Sydney · April",
+      "title": "Śivapadam Recitation — Samavedam Shanmukha Sharma",
+      "desc": "Recited 10 Śivapadam poems composed by the renowned scholar in his presence during his Sydney visit. Received a special memento in recognition.",
+      "has_photo": true
+    },
+    {
+      "date": "Sydney · Navarātri",
+      "title": "Soundaryalaharī Pārāyaṇa — Ayyappa Temple",
+      "desc": "Performed the complete pārāyaṇa of Soundaryalaharī (100 verses) at Sydney Ayyappa Temple across the nine sacred nights of Navarātri.",
+      "has_photo": true
+    },
+    {
+      "date": "Helensburgh Temple",
+      "title": "Bhagavad Gītā — Ṣaṣṭipūrti Mahōtsavam",
+      "desc": "Chanted the complete Śrīmad Bhagavad Gītā on the occasion of Paṇḍit Rishikesh Bhattar's Ṣaṣṭipūrti (60th Birthday) Mahōtsavam — all 700 verses as a devotional offering.",
+      "has_photo": true
+    },
+    {
+      "date": "Central Sanskrit University · This Year",
+      "title": "Sanskrit Olympiad — 1st Place in Australia",
+      "desc": "Achieved 1st place in Australia in the National Sanskrit Olympiad. Previously secured All India Rank 266 — two consecutive years of national-level recognition.",
+      "has_photo": true
+    },
+    {
+      "date": "Mysore Datta Peetham",
+      "title": "Gold Medal — Bhagavad Gītā 700 Verses",
+      "desc": "Awarded the Gold Medal for memorising and reciting all 700 verses of the Śrīmad Bhagavad Gītā by the revered Mysore Datta Peetham.",
+      "has_photo": true
+    },
+    {
+      "date": "Sydney · Avadānam",
+      "title": "Taṭavarti Kalyāṇ Avadānam",
+      "desc": "Participated as the Aprastuta Prasaṅga Pṛcchakudu (off-topic questioner) in the celebrated scholar's prestigious avadānam performance.",
+      "has_photo": true
+    },
+    {
+      "date": "Pranava Peetham",
+      "title": "Mānava Kathā & Gajendra Mokṣam — Winner",
+      "desc": "Won prizes in both Mānava Kathā and Gajendra Mokṣam competitions under the guidance of Vaddiparti Padmakar.",
+      "has_photo": false
+    },
+    {
+      "date": "Sydney Jana Ranjani",
+      "title": "Rāmāyaṇa & Daśāvatāra — Prizes",
+      "desc": "Multiple prizes in Rāmāyaṇa and Daśāvatāra storytelling competitions, and poetry competitions by Pranava Peetham.",
+      "has_photo": false
+    },
+    {
+      "date": "Age ~3–4 years",
+      "title": "'Para Bhāṣa Lekundā Telugu Lo' — Winner",
+      "desc": "Won this Telugu language purity competition at the remarkable age of 3–4 — the earliest sign of his extraordinary linguistic gift.",
+      "has_photo": false
+    }
+  ]
+}

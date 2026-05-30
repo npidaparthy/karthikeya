@@ -1,299 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Karthikeya Pidaparthy — Samskruti</title>
-  <meta name="description" content="Karthikeya Pidaparthy — Sanskrit scholar, Bhagavad Gita memoriser, Sanskrit Olympiad winner, Sydney Australia."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet"/>
-  <style>
-    :root{
-      --bg:#fdf8f0;--surf:#fff9ef;--gold:#c8860a;--gold-l:#f0c84a;--gold-d:#8b5e06;
-      --mar:#7a1a2e;--mar-l:#c4405a;--tx:#2c1a0e;--txm:#6b4c30;--txs:#a07850;
-      --bd:rgba(200,134,10,.25);--bds:rgba(200,134,10,.5);
-      --sh:0 4px 24px rgba(122,26,46,.08);--shl:0 12px 48px rgba(122,26,46,.15);
-      --nh:70px;--fs:16px;--r:12px;--tr:.28s cubic-bezier(.4,0,.2,1);
-    }
-    [data-theme=dark]{
-      --bg:#1a0f07;--surf:#231408;--gold:#f0c84a;--gold-l:#fde68a;--gold-d:#c8860a;
-      --mar:#e06080;--mar-l:#f4a0b8;--tx:#fdf0d8;--txm:#d4a870;--txs:#a07850;
-      --bd:rgba(240,200,74,.2);--bds:rgba(240,200,74,.4);
-      --sh:0 4px 24px rgba(0,0,0,.4);--shl:0 12px 48px rgba(0,0,0,.6);
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;font-size:var(--fs)}
-    body{font-family:'EB Garamond',Georgia,serif;background:var(--bg);color:var(--tx);line-height:1.7;transition:background var(--tr),color var(--tr)}
-    .te{font-family:'Noto Sans Telugu',sans-serif}
-    .dev{font-family:'Noto Sans Devanagari',sans-serif}
-    .cin{font-family:'Cinzel',serif}
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Karthikeya Pidaparthy — Samskruti</title>
+<meta name="description" content="Karthikeya Pidaparthy — Sanskrit scholar, Bhagavad Gita memoriser (Gold Medal), Sanskrit Olympiad winner, Sydney Australia."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+Telugu:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════ TOKENS */
+:root{
+  --bg:#faf5eb; --surf:#fff8ee; --surf2:#fffbf3;
+  --gold:#b8730a; --gold-l:#e8a830; --gold-d:#7a4d06; --gold-xl:#faebc8;
+  --mar:#6b1528; --mar-l:#a83050;
+  --tx:#1e0f06; --txm:#4a2c14; --txs:#8a6040; --txf:#c8a878;
+  --bd:rgba(184,115,10,.2); --bds:rgba(184,115,10,.45);
+  --sh:0 2px 16px rgba(122,77,6,.1); --shl:0 8px 40px rgba(122,77,6,.18);
+  --nh:68px; --fs:17px; --fste:18px; --r:14px; --tr:.25s cubic-bezier(.4,0,.2,1);
+}
+[data-theme=dark]{
+  --bg:#160c04; --surf:#1f1108; --surf2:#261508;
+  --gold:#e8a830; --gold-l:#fcd060; --gold-d:#b8730a; --gold-xl:#3a2408;
+  --mar:#d05070; --mar-l:#f090a8;
+  --tx:#fdf2dc; --txm:#d4a060; --txs:#9a7040; --txf:#5a3818;
+  --bd:rgba(232,168,48,.18); --bds:rgba(232,168,48,.4);
+  --sh:0 2px 16px rgba(0,0,0,.4); --shl:0 8px 40px rgba(0,0,0,.6);
+}
+/* ═══════════════════════════════════════════ RESET */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:var(--fs)}
+body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--bg);color:var(--tx);line-height:1.75;transition:background var(--tr),color var(--tr)}
+.te{font-family:'Noto Sans Telugu',sans-serif;font-size:var(--fste);line-height:1.85}
+.dev{font-family:'Noto Sans Devanagari',sans-serif;font-size:var(--fste);line-height:1.85}
+.cin{font-family:'Cinzel',serif}
+.cind{font-family:'Cinzel Decorative',serif}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
 
-    /* ── NAV ── */
-    #nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nh);
-      background:var(--surf);border-bottom:1px solid var(--bd);box-shadow:var(--sh);
-      display:flex;align-items:center;padding:0 1.25rem;gap:.5rem;transition:background var(--tr)}
-    .logo-btn{display:flex;align-items:center;gap:.65rem;border:none;background:none;
-      cursor:pointer;padding:0;text-decoration:none;flex-shrink:0}
-    .logo-img{width:42px;height:42px;border-radius:50%}
-    .logo-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left}
-    .logo-nm{font-family:'Cinzel',serif;font-size:14.5px;font-weight:600;color:var(--gold);letter-spacing:.04em}
-    .logo-tg{font-size:10.5px;color:var(--txs);font-style:italic;letter-spacing:.05em}
-    .nav-links{display:flex;list-style:none;margin-left:auto;align-items:center}
-    .nav-links a{display:block;padding:.3rem .6rem;font-family:'Cinzel',serif;font-size:11px;
-      color:var(--txm);text-decoration:none;letter-spacing:.04em;white-space:nowrap;
-      border-bottom:2px solid transparent;transition:color var(--tr),border-color var(--tr)}
-    .nav-links a:hover,.nav-links a.act{color:var(--gold);border-bottom-color:var(--gold)}
-    .nav-r{display:flex;align-items:center;gap:.35rem;margin-left:.6rem;flex-shrink:0}
-    .ib{background:none;border:1px solid var(--bd);border-radius:7px;width:32px;height:32px;
-      cursor:pointer;display:flex;align-items:center;justify-content:center;
-      color:var(--txm);font-size:14px;transition:all var(--tr)}
-    .ib:hover{border-color:var(--gold);color:var(--gold)}
-    #langToggle{background:none;border:1px solid var(--bd);border-radius:7px;
-      padding:.22rem .55rem;cursor:pointer;font-family:'Cinzel',serif;font-size:11px;
-      color:var(--txm);transition:all var(--tr);white-space:nowrap}
-    #langToggle:hover{border-color:var(--gold);color:var(--gold)}
-    .ham{display:none}
+/* ═══════════════════════════════════════════ NAV */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nh);
+  background:rgba(var(--surf-rgb,250,245,235),.97);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--bd);box-shadow:var(--sh);
+  display:flex;align-items:center;padding:0 1.25rem;gap:.5rem;
+  transition:background var(--tr);
+}
+[data-theme=dark] #nav{background:rgba(31,17,8,.97)}
+.logo-btn{display:flex;align-items:center;gap:.65rem;border:none;background:none;cursor:pointer;flex-shrink:0}
+.logo-img{width:44px;height:44px;border-radius:50%;object-fit:contain}
+.logo-txt{display:flex;flex-direction:column;line-height:1.2;text-align:left}
+.logo-nm{font-family:'Cinzel Decorative',serif;font-size:13.5px;font-weight:700;color:var(--gold);letter-spacing:.04em}
+.logo-tg{font-size:10px;color:var(--txs);letter-spacing:.06em}
+.nav-links{display:flex;list-style:none;margin-left:auto;align-items:center;gap:.05rem}
+.nav-links a{display:block;padding:.3rem .55rem;font-family:'Cinzel',serif;font-size:10.5px;
+  color:var(--txm);letter-spacing:.05em;white-space:nowrap;
+  border-bottom:2px solid transparent;transition:color var(--tr),border-color var(--tr)}
+.nav-links a:hover,.nav-links a.act{color:var(--gold);border-bottom-color:var(--gold)}
+.nav-r{display:flex;align-items:center;gap:.35rem;margin-left:.6rem;flex-shrink:0}
+.ib{background:none;border:1px solid var(--bd);border-radius:8px;width:32px;height:32px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:var(--txm);font-size:14px;transition:all var(--tr);flex-shrink:0}
+.ib:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-xl)}
+/* 3-lang selector pill */
+.lang-pill{
+  display:flex;align-items:center;border:1px solid var(--bd);border-radius:20px;
+  overflow:hidden;flex-shrink:0;
+}
+.lang-opt{
+  padding:.25rem .6rem;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.06em;
+  cursor:pointer;color:var(--txm);background:none;border:none;transition:all var(--tr);
+  white-space:nowrap;
+}
+.lang-opt:not(:last-child){border-right:1px solid var(--bd)}
+.lang-opt:hover{color:var(--gold);background:var(--gold-xl)}
+.lang-opt.act{background:var(--gold);color:#fff;font-weight:600}
+.ham{display:none}
 
-    /* ── SETTINGS ── */
-    .so{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.45)}
-    .so.on{display:block}
-    .sp{position:fixed;top:var(--nh);right:0;bottom:0;width:290px;background:var(--surf);
-      border-left:1px solid var(--bds);padding:1.6rem 1.4rem;overflow-y:auto;z-index:2001;
-      transform:translateX(100%);transition:transform var(--tr)}
-    .sp.on{transform:translateX(0)}
-    .sp h3{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);
-      margin-bottom:1.4rem;letter-spacing:.05em}
-    .sg{margin-bottom:1.4rem}
-    .sg label{display:block;font-size:11.5px;color:var(--txm);margin-bottom:.4rem;font-style:italic}
-    .sg input[type=range]{width:100%;accent-color:var(--gold)}
-    .swatches{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.35rem}
-    .sw{width:24px;height:24px;border-radius:50%;cursor:pointer;
-      border:2px solid transparent;transition:transform .2s}
-    .sw:hover,.sw.on{transform:scale(1.25);border-color:var(--tx)}
-    .tr-row{display:flex;gap:.35rem;margin-top:.35rem}
-    .to{flex:1;padding:.3rem;border:1px solid var(--bd);border-radius:7px;cursor:pointer;
-      font-size:11px;text-align:center;color:var(--txm);background:none;
-      font-family:'Cinzel',serif;transition:all var(--tr)}
-    .to.on,.to:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,134,10,.07)}
-    .lb-row{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.35rem}
-    .lb{padding:.22rem .55rem;border:1px solid var(--bd);border-radius:7px;cursor:pointer;
-      font-size:11.5px;color:var(--txm);background:none;font-family:'Cinzel',serif;
-      transition:all var(--tr)}
-    .lb.on,.lb:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,134,10,.07)}
+/* ═══════════════════════════════════════════ SETTINGS */
+.so{display:none;position:fixed;inset:0;z-index:1800;background:rgba(0,0,0,.5)}
+.so.on{display:block}
+.sp{position:fixed;top:var(--nh);right:0;bottom:0;width:280px;background:var(--surf2);
+  border-left:2px solid var(--bds);padding:1.5rem 1.25rem;overflow-y:auto;z-index:1900;
+  transform:translateX(100%);transition:transform var(--tr);box-shadow:-4px 0 24px rgba(0,0,0,.15)}
+.sp.on{transform:translateX(0)}
+.sp h3{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);margin-bottom:1.25rem;letter-spacing:.06em}
+.sg{margin-bottom:1.35rem}
+.sg>label{display:block;font-size:11.5px;color:var(--txm);margin-bottom:.4rem;font-style:italic;letter-spacing:.04em}
+.sg input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer}
+.swatches{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.35rem}
+.sw{width:24px;height:24px;border-radius:50%;cursor:pointer;border:2.5px solid transparent;transition:transform .2s,border-color .2s}
+.sw:hover,.sw.on{transform:scale(1.25);border-color:var(--tx)}
+.tr-row{display:flex;gap:.35rem;margin-top:.35rem}
+.to{flex:1;padding:.32rem .5rem;border:1px solid var(--bd);border-radius:8px;cursor:pointer;
+  font-size:11px;text-align:center;color:var(--txm);background:none;
+  font-family:'Cinzel',serif;transition:all var(--tr)}
+.to.on,.to:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-xl)}
+/* settings lang panel mirrors nav pill */
+.slang-row{display:flex;flex-direction:column;gap:.4rem;margin-top:.35rem}
+.slb{
+  padding:.35rem .75rem;border:1px solid var(--bd);border-radius:8px;cursor:pointer;
+  font-size:12px;color:var(--txm);background:none;font-family:'Cinzel',serif;
+  transition:all var(--tr);text-align:left;display:flex;align-items:center;gap:.5rem
+}
+.slb:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-xl)}
+.slb.on{border-color:var(--gold);background:var(--gold);color:#fff;font-weight:600}
+.slb .slb-flag{font-size:16px;width:22px;text-align:center}
 
-    /* ── MAIN ── */
-    main{padding-top:var(--nh)}
-    .sec{padding:4.5rem 0}
-    .alt{background:var(--surf)}
-    .ct{max-width:1100px;margin:0 auto;padding:0 2rem}
-    .st{font-family:'Cinzel',serif;font-size:clamp(20px,2.8vw,28px);
-      color:var(--gold-d);margin-bottom:.35rem;letter-spacing:.03em}
-    [data-theme=dark] .st{color:var(--gold)}
-    .dv{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);
-      margin:.5rem 0 2rem;border-radius:2px}
+/* ═══════════════════════════════════════════ LAYOUT */
+main{padding-top:var(--nh)}
+.sec{padding:5rem 0}
+.alt{background:var(--surf)}
+.ct{max-width:1120px;margin:0 auto;padding:0 2rem}
+.st{font-family:'Cinzel',serif;font-size:clamp(21px,2.6vw,30px);
+  color:var(--gold-d);margin-bottom:.3rem;letter-spacing:.03em}
+[data-theme=dark] .st{color:var(--gold)}
+.dv{
+  width:60px;height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-l),transparent);
+  margin:.5rem 0 2rem;border-radius:2px;
+}
 
-    /* ── HERO ── */
-    #home{min-height:100vh;display:flex;align-items:center;background:var(--surf);
-      position:relative;overflow:hidden}
-    .hpat{position:absolute;inset:0;opacity:.04;
-      background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z' fill='%23c8860a'/%3E%3C/svg%3E")}
-    .hi{display:flex;align-items:center;gap:3.5rem;position:relative;padding:2rem 0}
-    .hphoto{flex-shrink:0;width:260px;height:260px;border-radius:50%;
-      border:4px solid var(--gold);box-shadow:0 0 0 8px rgba(200,134,10,.1),var(--shl);
-      overflow:hidden;display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(135deg,var(--gold-l) 0%,var(--mar) 100%)}
-    .hphoto svg{width:100%;height:100%}
-    .hgreet{font-size:11.5px;letter-spacing:.13em;color:var(--mar);text-transform:uppercase;
-      margin-bottom:.55rem;font-family:'Cinzel',serif}
-    [data-theme=dark] .hgreet{color:var(--mar-l)}
-    .hname{font-family:'Cinzel',serif;font-size:clamp(28px,4.5vw,50px);font-weight:700;
-      color:var(--gold-d);line-height:1.1;margin-bottom:.35rem}
-    [data-theme=dark] .hname{color:var(--gold-l)}
-    .hsub{font-size:1.08rem;color:var(--mar);font-style:italic;margin-bottom:1.1rem}
-    [data-theme=dark] .hsub{color:var(--mar-l)}
-    .hdesc{max-width:510px;color:var(--txm);font-size:1rem;margin-bottom:1.5rem;line-height:1.75}
-    .hbadges{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.5rem}
-    .badge{padding:.26rem .8rem;border-radius:100px;border:1px solid var(--bds);
-      font-size:11px;color:var(--gold-d);background:rgba(200,134,10,.07);
-      font-family:'Cinzel',serif;letter-spacing:.03em}
-    [data-theme=dark] .badge{color:var(--gold-l)}
-    .hcta{display:flex;gap:.8rem;flex-wrap:wrap}
-    .bp{padding:.65rem 1.75rem;border-radius:var(--r);background:var(--gold);color:#fff;
-      font-family:'Cinzel',serif;font-size:12px;letter-spacing:.07em;text-decoration:none;
-      border:none;cursor:pointer;transition:all var(--tr)}
-    .bp:hover{background:var(--gold-d);transform:translateY(-2px);box-shadow:var(--sh)}
-    .bo{padding:.65rem 1.75rem;border-radius:var(--r);border:1px solid var(--bds);
-      color:var(--gold);font-family:'Cinzel',serif;font-size:12px;letter-spacing:.07em;
-      text-decoration:none;background:none;cursor:pointer;transition:all var(--tr)}
-    .bo:hover{background:rgba(200,134,10,.08);transform:translateY(-2px)}
-    .scroll-hint{position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);
-      font-size:11px;color:var(--txs);display:flex;flex-direction:column;align-items:center;
-      gap:.3rem;animation:bob 2s infinite}
-    @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+/* ═══════════════════════════════════════════ HERO */
+#home{min-height:100vh;display:flex;align-items:center;
+  background:var(--surf);position:relative;overflow:hidden}
+.hpat{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 60% at 10% 90%, rgba(184,115,10,.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 90% 10%, rgba(107,21,40,.06) 0%, transparent 70%);
+}
+.hborder{
+  position:absolute;inset:0;pointer-events:none;
+  border:40px solid transparent;
+  background:
+    linear-gradient(var(--surf),var(--surf)) padding-box,
+    repeating-linear-gradient(45deg, rgba(184,115,10,.12) 0px, rgba(184,115,10,.12) 2px,
+      transparent 2px, transparent 8px) border-box;
+}
+.hi{display:flex;align-items:center;gap:4rem;position:relative;padding:3rem 0 2rem}
+.hphoto{
+  flex-shrink:0;width:270px;height:270px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-xl),var(--surf));
+  border:3px solid var(--gold-l);
+  box-shadow:0 0 0 6px var(--gold-xl),0 0 0 9px var(--bd),var(--shl);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  position:relative;
+}
+/* photo frame ornament */
+.hphoto::before{
+  content:'';position:absolute;inset:-3px;border-radius:50%;
+  border:1px solid var(--bd);pointer-events:none;z-index:2;
+}
+.hphoto svg,.hphoto img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.hgreet{font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.18em;
+  color:var(--mar);text-transform:uppercase;margin-bottom:.65rem}
+[data-theme=dark] .hgreet{color:var(--mar-l)}
+.hname{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,48px);
+  font-weight:700;color:var(--gold-d);line-height:1.1;margin-bottom:.35rem}
+[data-theme=dark] .hname{color:var(--gold-l)}
+.hloc{font-size:1.05rem;color:var(--mar);font-style:italic;margin-bottom:1.1rem}
+[data-theme=dark] .hloc{color:var(--mar-l)}
+.hdesc{max-width:520px;color:var(--txm);font-size:1.05rem;margin-bottom:1.6rem;line-height:1.8}
+.hbadges{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.6rem}
+.badge{
+  padding:.28rem .85rem;border-radius:100px;
+  border:1px solid var(--bds);font-size:11.5px;
+  color:var(--gold-d);background:var(--gold-xl);
+  font-family:'Cinzel',serif;letter-spacing:.03em;
+}
+[data-theme=dark] .badge{color:var(--gold-l);background:var(--gold-xl)}
+.hcta{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
+.bp{padding:.7rem 1.85rem;border-radius:var(--r);background:var(--gold);color:#fff;
+  font-family:'Cinzel',serif;font-size:12.5px;letter-spacing:.07em;border:none;cursor:pointer;
+  transition:all var(--tr);box-shadow:0 2px 10px rgba(184,115,10,.35)}
+.bp:hover{background:var(--gold-d);transform:translateY(-2px);box-shadow:0 4px 18px rgba(184,115,10,.4)}
+.bo{padding:.7rem 1.85rem;border-radius:var(--r);border:1.5px solid var(--bds);
+  color:var(--gold);font-family:'Cinzel',serif;font-size:12.5px;letter-spacing:.07em;
+  background:none;cursor:pointer;transition:all var(--tr)}
+.bo:hover{background:var(--gold-xl);transform:translateY(-2px)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  font-size:11px;color:var(--txf);display:flex;flex-direction:column;align-items:center;
+  gap:.3rem;animation:bob 2.2s ease-in-out infinite;letter-spacing:.1em}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
 
-    /* ── ABOUT ── */
-    .agrid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
-    .qb{border-left:3px solid var(--gold);padding-left:1rem;margin:1.25rem 0}
-    .qb .qs{font-size:1rem;color:var(--gold-d);margin-bottom:.2rem}
-    [data-theme=dark] .qb .qs{color:var(--gold)}
-    .qb .qi{font-size:12px;color:var(--txs);margin-bottom:.15rem}
-    .qb .qt{font-family:'Noto Sans Telugu',sans-serif;font-size:.83rem;color:var(--txm)}
-    .qb .qe{font-style:italic;font-size:.83rem;color:var(--txs)}
-    .ac{background:var(--surf);border:1px solid var(--bd);border-radius:var(--r);
-      padding:1.25rem;margin-bottom:.8rem;transition:box-shadow var(--tr)}
-    .ac:hover{box-shadow:var(--sh)}
-    .ac h4{font-family:'Cinzel',serif;color:var(--gold-d);font-size:12.5px;
-      margin-bottom:.5rem;letter-spacing:.04em}
-    [data-theme=dark] .ac h4{color:var(--gold)}
-    .ac p{font-size:.86rem;color:var(--txm);line-height:1.8}
+/* ═══════════════════════════════════════════ ABOUT */
+.agrid{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:start}
+.qb{
+  border-left:3px solid var(--gold);padding-left:1.1rem;margin:1.5rem 0;
+  background:linear-gradient(90deg,var(--gold-xl) 0%,transparent 100%);
+  padding:.75rem 1.1rem;border-radius:0 var(--r) var(--r) 0;
+}
+.qb .qs{font-size:1.08rem;color:var(--gold-d);margin-bottom:.15rem;font-family:'Noto Sans Devanagari',sans-serif;font-weight:500}
+[data-theme=dark] .qb .qs{color:var(--gold)}
+.qb .qi{font-size:12px;color:var(--txf);margin-bottom:.15rem;font-style:italic;letter-spacing:.04em}
+.qb .qte{font-family:'Noto Sans Telugu',sans-serif;font-size:.9rem;color:var(--txm);margin-bottom:.1rem}
+.qb .qen{font-style:italic;font-size:.9rem;color:var(--txs)}
+.ac{
+  border:1px solid var(--bd);border-radius:var(--r);padding:1.35rem 1.5rem;margin-bottom:.9rem;
+  background:var(--surf2);transition:box-shadow var(--tr),transform var(--tr);
+}
+.ac:hover{box-shadow:var(--sh);transform:translateX(4px)}
+.ac h4{font-family:'Cinzel',serif;color:var(--gold-d);font-size:13px;margin-bottom:.55rem;letter-spacing:.05em}
+[data-theme=dark] .ac h4{color:var(--gold)}
+.ac p{font-size:.92rem;color:var(--txm);line-height:1.8}
 
-    /* ── PROFILE ── */
-    .agr{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem}
-    .acard{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);
-      padding:1.4rem 1.5rem;transition:all var(--tr);position:relative;overflow:hidden}
-    .acard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
-      background:linear-gradient(90deg,var(--gold),var(--mar))}
-    .acard:hover{transform:translateY(-4px);box-shadow:var(--shl)}
-    .ai{font-size:26px;margin-bottom:.55rem}
-    .at{font-family:'Cinzel',serif;font-size:13.5px;color:var(--gold-d);margin-bottom:.3rem}
-    [data-theme=dark] .at{color:var(--gold)}
-    .ad{font-size:12.5px;color:var(--txm);line-height:1.7}
-    .ay{margin-top:.55rem;font-size:10.5px;color:var(--txs);font-style:italic}
+/* ═══════════════════════════════════════════ PROFILE */
+/* journey block */
+.journey-block{
+  background:var(--surf2);border:1px solid var(--bd);border-radius:var(--r);
+  padding:2rem 2.25rem;margin-bottom:2.5rem;position:relative;overflow:hidden;
+}
+.journey-block::before{
+  content:'';position:absolute;top:0;left:0;width:4px;height:100%;
+  background:linear-gradient(to bottom,var(--gold),var(--mar),var(--gold));
+}
+.journey-block h3{font-family:'Cinzel',serif;color:var(--gold-d);font-size:17px;
+  margin-bottom:1.1rem;letter-spacing:.04em}
+[data-theme=dark] .journey-block h3{color:var(--gold)}
+.journey-text{font-size:.97rem;color:var(--txm);line-height:1.9;white-space:pre-line}
 
-    /* ── CREDITS ── */
-    .cgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem}
-    .ci{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:.85rem 1rem}
-    .cn{font-family:'Cinzel',serif;font-size:13px;color:var(--gold-d)}
-    [data-theme=dark] .cn{color:var(--gold)}
-    .cr{font-size:11.5px;color:var(--txs);font-style:italic;margin-top:.15rem}
+/* exam table */
+.exam-wrap{margin:1.75rem 0}
+.exam-wrap h4{font-family:'Cinzel',serif;color:var(--gold-d);font-size:14px;
+  margin-bottom:.85rem;letter-spacing:.04em}
+[data-theme=dark] .exam-wrap h4{color:var(--gold)}
+.exam-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.exam-table th{
+  background:var(--gold);color:#fff;font-family:'Cinzel',serif;font-size:11px;
+  padding:.5rem .9rem;letter-spacing:.06em;text-align:left;
+}
+.exam-table td{padding:.5rem .9rem;border-bottom:1px solid var(--bd);color:var(--txm)}
+.exam-table tr:last-child td{border-bottom:none}
+.exam-table tr:hover td{background:var(--gold-xl)}
+.exam-score{font-family:'Cinzel',serif;font-weight:600;color:var(--gold-d)}
+[data-theme=dark] .exam-score{color:var(--gold)}
 
-    /* ── EVENTS ── */
-    .tl{position:relative;padding-left:1.85rem}
-    .tl::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;
-      background:linear-gradient(to bottom,var(--gold),transparent)}
-    .tli{position:relative;margin-bottom:2rem}
-    .tld{position:absolute;left:-1.85rem;top:.28rem;width:13px;height:13px;
-      border-radius:50%;background:var(--gold);border:2px solid var(--surf);
-      box-shadow:0 0 0 3px rgba(200,134,10,.2)}
-    .tldate{font-size:11px;color:var(--txs);font-style:italic;margin-bottom:.2rem}
-    .tltit{font-family:'Cinzel',serif;font-size:14px;color:var(--gold-d);margin-bottom:.3rem}
-    [data-theme=dark] .tltit{color:var(--gold)}
-    .tldesc{font-size:13px;color:var(--txm);line-height:1.7}
+/* achievement cards */
+.agr{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.35rem}
+.acard{
+  background:var(--surf2);border:1px solid var(--bd);border-radius:var(--r);
+  padding:1.5rem 1.6rem;transition:all var(--tr);position:relative;overflow:hidden;
+}
+.acard::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--mar),transparent);
+}
+.acard:hover{transform:translateY(-4px);box-shadow:var(--shl);border-color:var(--bds)}
+.acard.tag-gold::after{background:linear-gradient(90deg,#ffd700,#b8730a,transparent)}
+.acard.tag-olympiad::after{background:linear-gradient(90deg,#6b8cba,#2d5fa0,transparent)}
+.acard.tag-parayana::after{background:linear-gradient(90deg,var(--mar),#9b2060,transparent)}
+.acard.tag-scholar::after{background:linear-gradient(90deg,#3d7a4a,#1e5e30,transparent)}
+.acard.tag-competition::after{background:linear-gradient(90deg,#c45e10,#8b3000,transparent)}
+.acard.tag-discourse::after{background:linear-gradient(90deg,#5a4a9b,#3a2080,transparent)}
+.ai{font-size:28px;margin-bottom:.6rem}
+.at{font-family:'Cinzel',serif;font-size:14px;color:var(--gold-d);margin-bottom:.4rem;line-height:1.4}
+[data-theme=dark] .at{color:var(--gold)}
+.ad{font-size:.88rem;color:var(--txm);line-height:1.75}
+.ay{margin-top:.7rem;font-size:11px;color:var(--txf);font-style:italic;
+  padding-top:.6rem;border-top:1px solid var(--bd)}
 
-    /* ── PARAYANA ── */
-    .pgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.2rem}
-    .pc{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);
-      padding:1.5rem;transition:box-shadow var(--tr)}
-    .pc:hover{box-shadow:var(--sh)}
-    .pc h3{font-family:'Cinzel',serif;color:var(--gold-d);font-size:14.5px;margin-bottom:.6rem}
-    [data-theme=dark] .pc h3{color:var(--gold)}
-    .stabs{display:flex;gap:.3rem;margin-bottom:.6rem}
-    .stab{padding:.18rem .5rem;border-radius:6px;font-size:10.5px;border:1px solid var(--bd);
-      cursor:pointer;color:var(--txs);background:none;transition:all var(--tr)}
-    .stab.on,.stab:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,134,10,.07)}
-    .sv{font-size:14px;color:var(--mar);line-height:2;white-space:pre-line}
-    [data-theme=dark] .sv{color:var(--mar-l)}
-    .sv.iast{font-style:italic;font-size:12.5px;color:var(--txm)}
-    .sattr{font-size:11.5px;color:var(--txs);font-style:italic;margin-top:.55rem;line-height:1.5}
+/* photo placeholders */
+.photo-placeholder-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.1rem;
+  margin-top:2.5rem;
+}
+.photo-ph{
+  aspect-ratio:4/3;border:2px dashed var(--bds);border-radius:var(--r);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.5rem;color:var(--txf);background:var(--gold-xl);
+  transition:all var(--tr);cursor:pointer;
+}
+.photo-ph:hover{border-color:var(--gold);background:var(--surf2);color:var(--gold)}
+.photo-ph-icon{font-size:32px;opacity:.6}
+.photo-ph-label{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.05em;text-align:center;padding:0 .5rem}
 
-    /* ── SUPPORT ── */
-    .spgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.2rem}
-    .spc{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);
-      padding:1.6rem;text-align:center;transition:all var(--tr)}
-    .spc:hover{box-shadow:var(--sh);transform:translateY(-3px)}
-    .spi{font-size:30px;margin-bottom:.8rem}
-    .spc h3{font-family:'Cinzel',serif;color:var(--gold-d);font-size:14.5px;margin-bottom:.6rem}
-    [data-theme=dark] .spc h3{color:var(--gold)}
-    .spc p{font-size:12.5px;color:var(--txm);line-height:1.75}
+/* ═══════════════════════════════════════════ CREDITS */
+.cgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.85rem}
+.ci{
+  background:var(--surf2);border:1px solid var(--bd);border-radius:var(--r);
+  padding:.9rem 1.1rem;transition:all var(--tr);
+}
+.ci:hover{border-color:var(--bds);transform:translateY(-2px)}
+.cn{font-family:'Cinzel',serif;font-size:13px;color:var(--gold-d);margin-bottom:.2rem}
+[data-theme=dark] .cn{color:var(--gold)}
+.cr2{font-size:12px;color:var(--txs);font-style:italic;line-height:1.5}
 
-    /* ── TESTIMONIALS ── */
-    .tegr{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.2rem}
-    .tec{background:var(--surf);border:1px solid var(--bd);border-radius:var(--r);
-      padding:1.5rem;transition:box-shadow var(--tr)}
-    .tec:hover{box-shadow:var(--sh)}
-    .qm{font-family:'Cinzel',serif;font-size:52px;color:var(--gold);
-      opacity:.18;line-height:.75;margin-bottom:.35rem}
-    .tetx{font-style:italic;color:var(--txm);font-size:.95rem;line-height:1.8;margin-bottom:.8rem}
-    .teby{font-family:'Cinzel',serif;font-size:12px;color:var(--gold-d)}
-    [data-theme=dark] .teby{color:var(--gold)}
-    .tero{font-size:11px;color:var(--txs);font-style:italic}
+/* ═══════════════════════════════════════════ EVENTS */
+.tl{position:relative;padding-left:2rem}
+.tl::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,var(--gold),var(--mar-l),transparent)}
+.tli{position:relative;margin-bottom:2.25rem}
+.tld{
+  position:absolute;left:-2rem;top:.3rem;width:14px;height:14px;border-radius:50%;
+  background:var(--gold);border:2.5px solid var(--surf);
+  box-shadow:0 0 0 3px var(--gold-xl);
+}
+.tldate{font-size:11px;color:var(--txf);font-style:italic;margin-bottom:.2rem;letter-spacing:.04em}
+.tltit{font-family:'Cinzel',serif;font-size:14.5px;color:var(--gold-d);margin-bottom:.35rem}
+[data-theme=dark] .tltit{color:var(--gold)}
+.tldesc{font-size:.92rem;color:var(--txm);line-height:1.75}
+.tl-photo{
+  margin-top:.85rem;aspect-ratio:16/6;border-radius:10px;
+  border:2px dashed var(--bds);display:flex;align-items:center;justify-content:center;
+  gap:.5rem;color:var(--txf);background:var(--gold-xl);font-size:.8rem;
+  font-family:'Cinzel',serif;letter-spacing:.05em;
+}
 
-    /* ── YOUTUBE ── */
-    .yt-ch{display:flex;align-items:center;gap:.7rem;background:var(--bg);
-      border:1px solid var(--bd);border-radius:var(--r);padding:1rem 1.3rem;
-      text-decoration:none;color:var(--tx);transition:all var(--tr);margin-bottom:1.25rem}
-    .yt-ch:hover{border-color:var(--gold);box-shadow:var(--sh)}
-    .yt-chn{font-family:'Cinzel',serif;font-size:13.5px;color:var(--gold-d)}
-    [data-theme=dark] .yt-chn{color:var(--gold)}
-    .yt-chs{font-size:11px;color:var(--txs)}
-    .yt-bh{display:flex;align-items:center;gap:.9rem;background:var(--surf);
-      border:2px solid var(--bds);border-radius:var(--r);padding:1.1rem 1.4rem;
-      text-decoration:none;color:var(--tx);transition:all var(--tr);margin-bottom:1.6rem}
-    .yt-bh:hover{border-color:var(--gold);box-shadow:var(--shl)}
-    .yt-bhi{font-size:32px}
-    .yt-bht{font-family:'Cinzel',serif;font-size:15px;color:var(--gold-d);margin-bottom:.2rem}
-    [data-theme=dark] .yt-bht{color:var(--gold)}
-    .yt-bhd{font-size:12.5px;color:var(--txm)}
-    .yt-gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem}
-    .yt-c{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);
-      overflow:hidden;cursor:pointer;transition:all var(--tr)}
-    .yt-c:hover{transform:translateY(-4px);box-shadow:var(--shl)}
-    .yt-th{width:100%;aspect-ratio:16/9;
-      background:linear-gradient(135deg,var(--mar) 0%,var(--gold-d) 100%);
-      display:flex;align-items:center;justify-content:center;
-      font-size:38px;color:rgba(255,255,255,.85)}
-    .yt-inf{padding:.85rem 1rem}
-    .yt-vt{font-family:'Cinzel',serif;font-size:13px;color:var(--tx);margin-bottom:.25rem}
-    .yt-vm{font-size:11.5px;color:var(--txs)}
+/* ═══════════════════════════════════════════ PARAYANA */
+.pgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.35rem}
+.pc{
+  background:var(--surf2);border:1px solid var(--bd);border-radius:var(--r);
+  padding:1.6rem;transition:box-shadow var(--tr);
+}
+.pc:hover{box-shadow:var(--sh)}
+.pc h3{font-family:'Cinzel',serif;color:var(--gold-d);font-size:15px;margin-bottom:.7rem}
+[data-theme=dark] .pc h3{color:var(--gold)}
+.stabs{display:flex;gap:.3rem;margin-bottom:.7rem}
+.stab{
+  padding:.22rem .6rem;border-radius:20px;font-size:11px;border:1px solid var(--bd);
+  cursor:pointer;color:var(--txs);background:none;transition:all var(--tr);
+  font-family:'Cinzel',serif;letter-spacing:.04em;
+}
+.stab.on{background:var(--gold);color:#fff;border-color:var(--gold);font-weight:600}
+.stab:not(.on):hover{border-color:var(--gold);color:var(--gold);background:var(--gold-xl)}
+.sv{color:var(--mar);line-height:2.1;white-space:pre-line;font-size:1rem}
+.sv.te-sc{font-family:'Noto Sans Telugu',sans-serif;font-size:1.05rem}
+.sv.dev-sc{font-family:'Noto Sans Devanagari',sans-serif;font-size:1.05rem}
+.sv.iast-sc{font-style:italic;font-size:.92rem;color:var(--txm);letter-spacing:.02em}
+[data-theme=dark] .sv{color:var(--mar-l)}
+[data-theme=dark] .sv.iast-sc{color:var(--txm)}
+.sattr{
+  font-size:.82rem;color:var(--txs);font-style:italic;margin-top:.7rem;line-height:1.55;
+  padding-top:.6rem;border-top:1px solid var(--bd);
+}
 
-    /* ── CONTACT ── */
-    .cogr{display:grid;grid-template-columns:1fr 1fr;gap:2.75rem}
-    .cof{display:flex;flex-direction:column;gap:.8rem}
-    .cof input,.cof textarea{width:100%;padding:.65rem .9rem;background:var(--surf);
-      border:1px solid var(--bd);border-radius:var(--r);color:var(--tx);
-      font-family:'EB Garamond',serif;font-size:var(--fs);outline:none;
-      transition:border-color var(--tr)}
-    .cof input:focus,.cof textarea:focus{border-color:var(--gold)}
-    .cof textarea{min-height:115px;resize:vertical}
-    .coii{display:flex;gap:.6rem;align-items:flex-start;margin-bottom:.8rem}
-    .coic{color:var(--gold);font-size:16px;margin-top:2px}
+/* ═══════════════════════════════════════════ SUPPORT */
+.spgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.35rem}
+.spc{
+  background:var(--surf2);border:1px solid var(--bd);border-radius:var(--r);
+  padding:1.75rem;text-align:center;transition:all var(--tr);
+}
+.spc:hover{box-shadow:var(--sh);transform:translateY(-3px);border-color:var(--bds)}
+.spi{font-size:34px;margin-bottom:.85rem}
+.spc h3{font-family:'Cinzel',serif;color:var(--gold-d);font-size:15px;margin-bottom:.65rem;letter-spacing:.04em}
+[data-theme=dark] .spc h3{color:var(--gold)}
+.spc p{font-size:.9rem;color:var(--txm);line-height:1.8}
 
-    /* ── FOOTER ── */
-    footer{background:var(--surf);border-top:1px solid var(--bd);
-      text-align:center;padding:1.6rem 1rem;font-size:12.5px;color:var(--txs)}
-    .fsa{font-size:15px;color:var(--gold-d);margin-bottom:.35rem;font-family:'Noto Sans Devanagari',sans-serif}
-    [data-theme=dark] .fsa{color:var(--gold)}
+/* ═══════════════════════════════════════════ TESTIMONIALS */
+.tegr{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.35rem}
+.tec{
+  background:var(--surf2);border:1px solid var(--bd);border-radius:var(--r);
+  padding:1.75rem;transition:box-shadow var(--tr);position:relative;
+}
+.tec:hover{box-shadow:var(--sh)}
+.tec::before{
+  content:'"';font-family:'Cinzel Decorative',serif;font-size:72px;color:var(--gold);
+  opacity:.14;line-height:.75;display:block;margin-bottom:.35rem;
+}
+.tetx{font-style:italic;color:var(--txm);font-size:1rem;line-height:1.85;margin-bottom:.9rem}
+.teby{font-family:'Cinzel',serif;font-size:12.5px;color:var(--gold-d);margin-bottom:.2rem}
+[data-theme=dark] .teby{color:var(--gold)}
+.tero{font-size:11.5px;color:var(--txs);font-style:italic}
 
-    /* ── MOBILE MENU ── */
-    .mob{display:none;position:fixed;inset:0;top:var(--nh);z-index:999;
-      background:var(--surf);flex-direction:column;padding:1.5rem;gap:.35rem;overflow-y:auto}
-    .mob.on{display:flex}
-    .mob a{font-family:'Cinzel',serif;font-size:16px;color:var(--tx);text-decoration:none;
-      padding:.6rem 0;border-bottom:1px solid var(--bd);letter-spacing:.05em}
-    .mob a:hover{color:var(--gold)}
+/* ═══════════════════════════════════════════ YOUTUBE */
+.yt-ch{
+  display:flex;align-items:center;gap:.85rem;background:var(--surf2);
+  border:1.5px solid var(--bds);border-radius:var(--r);padding:1.1rem 1.4rem;
+  text-decoration:none;color:var(--tx);transition:all var(--tr);margin-bottom:1.25rem;
+}
+.yt-ch:hover{border-color:var(--gold);box-shadow:var(--sh);transform:translateY(-2px)}
+.yt-chn{font-family:'Cinzel',serif;font-size:14px;color:var(--gold-d);margin-bottom:.15rem}
+[data-theme=dark] .yt-chn{color:var(--gold)}
+.yt-chs{font-size:11.5px;color:var(--txs)}
+.yt-bh{
+  display:flex;align-items:center;gap:1rem;
+  background:linear-gradient(135deg,var(--gold-xl),var(--surf2));
+  border:2px solid var(--bds);border-radius:var(--r);padding:1.25rem 1.6rem;
+  text-decoration:none;color:var(--tx);transition:all var(--tr);margin-bottom:1.85rem;
+}
+.yt-bh:hover{border-color:var(--gold);box-shadow:var(--shl);transform:translateY(-3px)}
+.yt-bhi{font-size:36px;flex-shrink:0}
+.yt-bht{font-family:'Cinzel',serif;font-size:16px;color:var(--gold-d);margin-bottom:.2rem}
+[data-theme=dark] .yt-bht{color:var(--gold)}
+.yt-bhd{font-size:.9rem;color:var(--txm)}
+.yt-gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.35rem}
+.yt-c{background:var(--surf2);border:1px solid var(--bd);border-radius:var(--r);
+  overflow:hidden;cursor:pointer;transition:all var(--tr)}
+.yt-c:hover{transform:translateY(-4px);box-shadow:var(--shl)}
+.yt-th{
+  width:100%;aspect-ratio:16/9;
+  background:linear-gradient(135deg,var(--mar) 0%,var(--gold-d) 100%);
+  display:flex;align-items:center;justify-content:center;font-size:42px;color:rgba(255,255,255,.85);
+}
+.yt-inf{padding:.9rem 1.1rem}
+.yt-vt{font-family:'Cinzel',serif;font-size:13px;color:var(--tx);margin-bottom:.3rem}
+.yt-vm{font-size:11.5px;color:var(--txs)}
 
-    /* ── FADE UP ── */
-    .fu{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
-    .fu.vis{opacity:1;transform:none}
-    .fu:nth-child(2){transition-delay:.07s}
-    .fu:nth-child(3){transition-delay:.14s}
-    .fu:nth-child(4){transition-delay:.21s}
-    .fu:nth-child(5){transition-delay:.28s}
-    .fu:nth-child(6){transition-delay:.35s}
+/* ═══════════════════════════════════════════ CONTACT */
+.cogr{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem}
+.cof{display:flex;flex-direction:column;gap:.85rem}
+.cof input,.cof textarea{
+  width:100%;padding:.7rem 1rem;background:var(--surf2);border:1.5px solid var(--bd);
+  border-radius:var(--r);color:var(--tx);font-family:'Cormorant Garamond',serif;
+  font-size:var(--fs);outline:none;transition:border-color var(--tr);
+}
+.cof input:focus,.cof textarea:focus{border-color:var(--gold);background:var(--surf)}
+.cof textarea{min-height:120px;resize:vertical}
+.coii{display:flex;gap:.65rem;align-items:flex-start;margin-bottom:.9rem}
+.coic{color:var(--gold);font-size:17px;margin-top:3px;flex-shrink:0}
 
-    /* ── RESPONSIVE ── */
-    @media(max-width:900px){
-      .nav-links{display:none}.ham{display:flex}
-      .hi{flex-direction:column;text-align:center;gap:1.75rem;padding:1.5rem 0}
-      .hphoto{width:190px;height:190px}
-      .hbadges,.hcta{justify-content:center}
-      .agrid,.cogr{grid-template-columns:1fr}
-    }
-    @media(max-width:580px){
-      .ct{padding:0 1rem}.sec{padding:3rem 0}
-    }
-  </style>
+/* ═══════════════════════════════════════════ FOOTER */
+footer{
+  background:var(--surf);border-top:1px solid var(--bd);
+  text-align:center;padding:2rem 1rem;
+}
+.fsa{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px;color:var(--gold-d);margin-bottom:.4rem;font-weight:500}
+[data-theme=dark] .fsa{color:var(--gold)}
+.fia{font-size:13px;font-style:italic;color:var(--txs);margin-bottom:.5rem;letter-spacing:.04em}
+.fcp{font-size:12.5px;color:var(--txf)}
+
+/* ═══════════════════════════════════════════ MOBILE MENU */
+.mob{display:none;position:fixed;inset:0;top:var(--nh);z-index:850;
+  background:var(--surf2);flex-direction:column;padding:1.5rem;gap:.3rem;overflow-y:auto}
+.mob.on{display:flex}
+.mob a{font-family:'Cinzel',serif;font-size:17px;color:var(--tx);padding:.65rem 0;
+  border-bottom:1px solid var(--bd);letter-spacing:.06em}
+.mob a:hover{color:var(--gold)}
+
+/* ═══════════════════════════════════════════ FADE UP */
+.fu{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.fu.vis{opacity:1;transform:none}
+.fu:nth-child(2){transition-delay:.07s}
+.fu:nth-child(3){transition-delay:.14s}
+.fu:nth-child(4){transition-delay:.21s}
+.fu:nth-child(5){transition-delay:.28s}
+.fu:nth-child(6){transition-delay:.35s}
+
+/* ═══════════════════════════════════════════ RESPONSIVE */
+@media(max-width:920px){
+  .nav-links,.lang-pill{display:none}
+  .ham{display:flex}
+  .hi{flex-direction:column;text-align:center;gap:2rem;padding:2rem 0}
+  .hphoto{width:200px;height:200px}
+  .hbadges,.hcta{justify-content:center}
+  .agrid,.cogr{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  :root{--fs:16px;--fste:17px}
+  .ct{padding:0 1rem}.sec{padding:3.5rem 0}
+}
+</style>
 </head>
 <body>
 
@@ -305,30 +463,30 @@
     <label id="s-thlbl">Theme</label>
     <div class="tr-row">
       <button class="to on" id="tL" onclick="setTheme('light')">☀ Light</button>
-      <button class="to" id="tD" onclick="setTheme('dark')">☽ Dark</button>
+      <button class="to"    id="tD" onclick="setTheme('dark')">☽ Dark</button>
     </div>
   </div>
   <div class="sg">
-    <label>Font Size — <span id="fsv">16</span>px</label>
-    <input type="range" min="13" max="22" value="16" id="fsr" oninput="setFS(this.value)"/>
+    <label>Font Size — <span id="fsv">17</span>px</label>
+    <input type="range" min="14" max="22" value="17" id="fsr" oninput="setFS(this.value)"/>
   </div>
   <div class="sg">
     <label id="s-aclbl">Accent Colour</label>
     <div class="swatches">
-      <div class="sw on"  style="background:#c8860a" onclick="setAcc('#c8860a','#8b5e06','#f0c84a',this)"></div>
-      <div class="sw"     style="background:#b07020" onclick="setAcc('#b07020','#7a4e15','#e0a020',this)"></div>
-      <div class="sw"     style="background:#7a1a2e" onclick="setAcc('#7a1a2e','#55111e','#c4405a',this)"></div>
-      <div class="sw"     style="background:#1a5e3a" onclick="setAcc('#1a5e3a','#0f3e28','#3aaa6a',this)"></div>
-      <div class="sw"     style="background:#1e3a6e" onclick="setAcc('#1e3a6e','#132850','#4a7ec8',this)"></div>
-      <div class="sw"     style="background:#5a2d7a" onclick="setAcc('#5a2d7a','#3e1e5a','#a06acc',this)"></div>
+      <div class="sw on"  style="background:#b8730a" onclick="setAcc('#b8730a','#7a4d06','#e8a830','#faebc8',this)" title="Gold"></div>
+      <div class="sw"     style="background:#8b5e06" onclick="setAcc('#8b5e06','#5a3c03','#c8860a','#f5dfa8',this)" title="Amber"></div>
+      <div class="sw"     style="background:#6b1528" onclick="setAcc('#6b1528','#45101a','#a83050','#f5d0dc',this)" title="Maroon"></div>
+      <div class="sw"     style="background:#1d5c38" onclick="setAcc('#1d5c38','#103c25','#3aaa6a','#d0f0e0',this)" title="Forest"></div>
+      <div class="sw"     style="background:#1e3a6e" onclick="setAcc('#1e3a6e','#122447','#4a7ec8','#d0def8',this)" title="Navy"></div>
+      <div class="sw"     style="background:#5a2d7a" onclick="setAcc('#5a2d7a','#3e1e5a','#a06acc','#ead0f8',this)" title="Violet"></div>
     </div>
   </div>
   <div class="sg">
     <label id="s-lglbl">Language</label>
-    <div class="lb-row" id="lbRow">
-      <button class="lb on" onclick="switchLang('en',this)">EN · English</button>
-      <button class="lb"    onclick="switchLang('te',this)">తె · Telugu</button>
-      <button class="lb"    onclick="switchLang('sa',this)">सं · Sanskrit</button>
+    <div class="slang-row" id="sLangRow">
+      <button class="slb on" onclick="switchLang('en',this)"><span class="slb-flag">🇦🇺</span>EN · English</button>
+      <button class="slb"    onclick="switchLang('te',this)"><span class="slb-flag">🇮🇳</span>తె · Telugu</button>
+      <button class="slb"    onclick="switchLang('sa',this)"><span class="slb-flag">🕉</span>सं · Sanskrit</button>
     </div>
   </div>
 </div>
@@ -336,7 +494,8 @@
 <!-- NAV -->
 <nav id="nav">
   <button class="logo-btn" onclick="goSec('home')">
-    <img class="logo-img" src="assets/logo.svg" alt="Samskruti Logo" onerror="this.style.display='none'"/>
+    <img class="logo-img" src="assets/logo.svg" alt="Samskruti Logo"
+         onerror="this.style.display='none'"/>
     <div class="logo-txt">
       <span class="logo-nm" id="logo-nm">Samskruti</span>
       <span class="logo-tg" id="logo-tg">సంస్కృతి • संस्कृति</span>
@@ -354,9 +513,14 @@
     <li><a href="#youtube"      data-n="youtube">YouTube</a></li>
   </ul>
   <div class="nav-r">
-    <button id="langToggle" onclick="cycleLang()" title="Switch language">EN</button>
-    <button class="ib" onclick="toggleS()" title="Settings">⚙</button>
-    <button class="ib ham" onclick="toggleMob()">☰</button>
+    <!-- 3-language pill -->
+    <div class="lang-pill" id="langPill">
+      <button class="lang-opt on" data-lang="en" onclick="switchLang('en',this)">EN</button>
+      <button class="lang-opt"    data-lang="te" onclick="switchLang('te',this)">తె</button>
+      <button class="lang-opt"    data-lang="sa" onclick="switchLang('sa',this)">सं</button>
+    </div>
+    <button class="ib" onclick="toggleS()" title="Settings" aria-label="Settings">⚙</button>
+    <button class="ib ham" onclick="toggleMob()" aria-label="Menu">☰</button>
   </div>
 </nav>
 
@@ -376,45 +540,69 @@
 <main>
 <!-- ══ HOME ══ -->
 <section id="home" class="sec">
-  <div class="hpat"></div>
-  <div class="ct">
-    <div class="hi">
-      <div class="hphoto">
-        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="hg" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#f0c84a" stop-opacity=".3"/>
-              <stop offset="100%" stop-color="#7a1a2e" stop-opacity=".8"/>
-            </radialGradient>
-          </defs>
-          <rect width="260" height="260" fill="url(#hg)"/>
-          <ellipse cx="130" cy="84" rx="36" ry="40" fill="rgba(200,134,10,.85)"/>
-          <path d="M95 124 Q95 88 130 84 Q165 88 165 124 L165 210 Q130 224 95 210Z" fill="rgba(200,134,10,.85)"/>
-          <path d="M103 148 L117 138 L120 172Z" fill="rgba(240,200,74,.9)"/>
-          <path d="M157 148 L143 138 L140 172Z" fill="rgba(240,200,74,.9)"/>
-          <ellipse cx="130" cy="76" rx="3.5" ry="6.5" fill="#c8390a" opacity=".9"/>
-          <text x="130" y="248" text-anchor="middle" font-size="20" fill="rgba(200,134,10,.5)" font-family="serif">ॐ</text>
-          <circle cx="36" cy="36" r="2" fill="#f0c84a" opacity=".6"/>
-          <circle cx="224" cy="36" r="2" fill="#f0c84a" opacity=".6"/>
-          <circle cx="36" cy="210" r="1.5" fill="#f0c84a" opacity=".4"/>
-          <circle cx="224" cy="210" r="1.5" fill="#f0c84a" opacity=".4"/>
-          <circle cx="130" cy="16" r="2.5" fill="#f0c84a" opacity=".7"/>
-        </svg>
-      </div>
-      <div>
-        <p class="hgreet" id="h-gr"></p>
-        <h1 class="hname" id="h-nm"></h1>
-        <p class="hsub"   id="h-ag"></p>
-        <p class="hdesc"  id="h-ds"></p>
-        <div class="hbadges" id="h-bg"></div>
-        <div class="hcta">
-          <a class="bp" id="h-b1" href="#profile" onclick="goSec('profile');return false;"></a>
-          <a class="bo" id="h-b2" href="https://www.youtube.com/@samskruti.info.1" target="_blank" rel="noopener"></a>
-        </div>
+  <div class="hpat"></div><div class="hborder"></div>
+  <div class="ct"><div class="hi">
+    <div class="hphoto">
+      <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="hg" cx="50%" cy="45%" r="55%">
+            <stop offset="0%" stop-color="#faebc8" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#6b1528" stop-opacity=".7"/>
+          </radialGradient>
+          <radialGradient id="hg2" cx="50%" cy="30%" r="40%">
+            <stop offset="0%" stop-color="#faebc8"/>
+            <stop offset="100%" stop-color="#b8730a" stop-opacity=".6"/>
+          </radialGradient>
+        </defs>
+        <rect width="260" height="260" fill="url(#hg)"/>
+        <!-- lotus petals background -->
+        <g opacity=".12" transform="translate(130,130)">
+          <ellipse rx="12" ry="40" fill="#b8730a" transform="rotate(0)  translate(0,-55)"/>
+          <ellipse rx="12" ry="40" fill="#b8730a" transform="rotate(45) translate(0,-55)"/>
+          <ellipse rx="12" ry="40" fill="#b8730a" transform="rotate(90) translate(0,-55)"/>
+          <ellipse rx="12" ry="40" fill="#b8730a" transform="rotate(135) translate(0,-55)"/>
+          <ellipse rx="12" ry="40" fill="#b8730a" transform="rotate(180) translate(0,-55)"/>
+          <ellipse rx="12" ry="40" fill="#b8730a" transform="rotate(225) translate(0,-55)"/>
+          <ellipse rx="12" ry="40" fill="#b8730a" transform="rotate(270) translate(0,-55)"/>
+          <ellipse rx="12" ry="40" fill="#b8730a" transform="rotate(315) translate(0,-55)"/>
+        </g>
+        <!-- figure -->
+        <ellipse cx="130" cy="82" rx="36" ry="40" fill="rgba(184,115,10,.88)"/>
+        <path d="M94 120 Q94 84 130 80 Q166 84 166 120 L168 212 Q130 228 92 212Z" fill="rgba(184,115,10,.88)"/>
+        <!-- dhoti highlight -->
+        <path d="M94 160 Q112 172 130 170 Q148 172 166 160 L168 212 Q130 228 92 212Z" fill="rgba(200,140,30,.35)"/>
+        <!-- hands anjali -->
+        <path d="M102 148 L118 137 L121 174Z" fill="rgba(230,180,80,.9)"/>
+        <path d="M158 148 L142 137 L139 174Z" fill="rgba(230,180,80,.9)"/>
+        <!-- face detail -->
+        <ellipse cx="130" cy="75" rx="3.5" ry="6" fill="#c8390a" opacity=".9"/>
+        <!-- nimbus / halo -->
+        <circle cx="130" cy="82" r="48" fill="none" stroke="rgba(232,168,48,.3)" stroke-width="2" stroke-dasharray="4 4"/>
+        <!-- Om -->
+        <text x="130" y="250" text-anchor="middle" font-size="20" fill="rgba(184,115,10,.55)" font-family="serif">ॐ</text>
+        <!-- stars -->
+        <circle cx="30" cy="30"   r="2.5" fill="#e8a830" opacity=".7"/>
+        <circle cx="230" cy="30"  r="2.5" fill="#e8a830" opacity=".7"/>
+        <circle cx="30" cy="215"  r="2"   fill="#e8a830" opacity=".5"/>
+        <circle cx="230" cy="215" r="2"   fill="#e8a830" opacity=".5"/>
+        <circle cx="130" cy="14"  r="3"   fill="#e8a830" opacity=".75"/>
+        <circle cx="14" cy="130"  r="2"   fill="#e8a830" opacity=".4"/>
+        <circle cx="246" cy="130" r="2"   fill="#e8a830" opacity=".4"/>
+      </svg>
+    </div>
+    <div>
+      <p class="hgreet" id="h-gr"></p>
+      <h1 class="hname" id="h-nm"></h1>
+      <p class="hloc"   id="h-ag"></p>
+      <p class="hdesc"  id="h-ds"></p>
+      <div class="hbadges" id="h-bg"></div>
+      <div class="hcta">
+        <button class="bp" id="h-b1" onclick="goSec('profile')"></button>
+        <a class="bo" id="h-b2" href="https://www.youtube.com/@samskruti.info.1" target="_blank" rel="noopener"></a>
       </div>
     </div>
-  </div>
-  <div class="scroll-hint"><span>↓</span></div>
+  </div></div>
+  <div class="scroll-hint" id="sh-lbl">↓</div>
 </section>
 
 <!-- ══ ABOUT ══ -->
@@ -423,13 +611,13 @@
     <h2 class="st cin" id="a-ti"></h2><div class="dv"></div>
     <div class="agrid">
       <div>
-        <p id="a-p1" style="font-size:1.03rem;color:var(--txm);margin-bottom:1rem"></p>
-        <p id="a-p2" style="font-size:.95rem;color:var(--txm);margin-bottom:1.2rem"></p>
+        <p id="a-p1" style="font-size:1.05rem;color:var(--txm);margin-bottom:1.1rem;line-height:1.85"></p>
+        <p id="a-p2" style="font-size:.97rem;color:var(--txm);margin-bottom:1.35rem;line-height:1.85"></p>
         <div class="qb">
-          <p class="qs dev" id="a-qs"></p>
-          <p class="qi"     id="a-qi"></p>
-          <p class="qt"     id="a-qt"></p>
-          <p class="qe"     id="a-qe"></p>
+          <p class="qs" id="a-qs"></p>
+          <p class="qi" id="a-qi"></p>
+          <p class="qte" id="a-qt"></p>
+          <p class="qen" id="a-qe"></p>
         </div>
       </div>
       <div>
@@ -445,7 +633,13 @@
 <section id="profile" class="sec">
   <div class="ct">
     <h2 class="st cin" id="p-ti"></h2><div class="dv"></div>
+    <div class="journey-block fu">
+      <h3 id="p-jt"></h3>
+      <p class="journey-text" id="p-jb"></p>
+    </div>
+    <div class="exam-wrap fu" id="examWrap"></div>
     <div class="agr" id="achGr"></div>
+    <div class="photo-placeholder-grid" id="certGrid"></div>
   </div>
 </section>
 
@@ -453,7 +647,7 @@
 <section id="credits" class="sec alt">
   <div class="ct">
     <h2 class="st cin" id="cr-ti"></h2><div class="dv"></div>
-    <p id="cr-in" style="color:var(--txm);margin-bottom:1.6rem;font-style:italic;font-size:1rem"></p>
+    <p id="cr-in" style="color:var(--txm);margin-bottom:1.75rem;font-style:italic;font-size:1.02rem"></p>
     <div class="cgr" id="crGr"></div>
   </div>
 </section>
@@ -470,7 +664,7 @@
 <section id="parayana" class="sec alt">
   <div class="ct">
     <h2 class="st cin" id="pr-ti"></h2><div class="dv"></div>
-    <p id="pr-in" style="color:var(--txm);margin-bottom:1.6rem;font-size:1rem;font-style:italic"></p>
+    <p id="pr-in" style="color:var(--txm);margin-bottom:1.75rem;font-size:1rem;font-style:italic"></p>
     <div class="pgr" id="prGr"></div>
   </div>
 </section>
@@ -479,7 +673,7 @@
 <section id="support" class="sec">
   <div class="ct">
     <h2 class="st cin" id="sp-ti"></h2><div class="dv"></div>
-    <p id="sp-in" style="color:var(--txm);margin-bottom:1.6rem;font-size:1rem"></p>
+    <p id="sp-in" style="color:var(--txm);margin-bottom:1.75rem;font-size:1rem"></p>
     <div class="spgr" id="spGr"></div>
   </div>
 </section>
@@ -506,35 +700,29 @@
     <h2 class="st cin" id="co-ti"></h2><div class="dv"></div>
     <div class="cogr">
       <div>
-        <p id="co-in" style="color:var(--txm);margin-bottom:1.1rem"></p>
-        <div class="coii">
-          <span class="coic">📍</span>
-          <div>
-            <div style="font-weight:500;color:var(--tx)" id="co-cy"></div>
-            <div style="font-size:12px;color:var(--txs)" id="co-cn"></div>
-          </div>
+        <p id="co-in" style="color:var(--txm);margin-bottom:1.2rem;font-size:1rem"></p>
+        <div class="coii"><span class="coic">📍</span>
+          <div><div style="font-weight:600;color:var(--tx);font-family:'Cinzel',serif;font-size:13px" id="co-cy"></div>
+          <div style="font-size:12px;color:var(--txs)" id="co-cn"></div></div>
         </div>
-        <div class="coii">
-          <span class="coic">▶</span>
-          <div>
-            <div style="font-weight:500;color:var(--tx)" id="co-yl"></div>
-            <a href="https://www.youtube.com/@samskruti.info.1" target="_blank"
-               rel="noopener" style="font-size:12px;color:var(--gold)">@samskruti.info.1</a>
-          </div>
+        <div class="coii"><span class="coic">▶</span>
+          <div><div style="font-weight:600;color:var(--tx);font-family:'Cinzel',serif;font-size:13px" id="co-yl"></div>
+          <a href="https://www.youtube.com/@samskruti.info.1" target="_blank" rel="noopener"
+             style="font-size:12.5px;color:var(--gold)">@samskruti.info.1</a></div>
         </div>
-        <div class="qb" style="margin-top:1.1rem">
-          <p class="qs dev" id="co-qs"></p>
-          <p class="qe"     id="co-qe"></p>
+        <div class="qb" style="margin-top:1.25rem">
+          <p class="qs" id="co-qs"></p>
+          <p class="qen" id="co-qe"></p>
         </div>
       </div>
       <div>
         <form class="cof" onsubmit="subForm(event)">
           <input  type="text"  id="fn" required/>
           <input  type="email" id="fe" required/>
-          <input  type="text"  id="fs"/>
+          <input  type="text"  id="fs2"/>
           <textarea            id="fm"></textarea>
           <button type="submit" class="bp" id="fbt" style="align-self:flex-start"></button>
-          <p id="ftk" style="font-size:12px;color:var(--gold);display:none;font-style:italic"></p>
+          <p id="ftk" style="font-size:13px;color:var(--gold);display:none;font-style:italic;margin-top:.35rem"></p>
         </form>
       </div>
     </div>
@@ -544,338 +732,339 @@
 
 <footer>
   <p class="fsa" id="ft-sa"></p>
-  <p style="font-size:12px;font-style:italic;color:var(--txs);margin:.3rem 0" id="ft-ia"></p>
-  <p id="ft-cp"></p>
+  <p class="fia" id="ft-ia"></p>
+  <p class="fcp" id="ft-cp"></p>
 </footer>
 
 <script>
-// ═══════════════════════════════════════════════════════════════
-// ALL TRANSLATIONS EMBEDDED — no fetch needed, works everywhere
-// ═══════════════════════════════════════════════════════════════
-const ALL = {"en": {"nav": {"home": "Home", "about": "About", "profile": "Profile", "credits": "Credits", "events": "Events", "parayana": "Pārāyaṇa", "support": "Sponsor", "testimonials": "Testimonials", "contact": "Contact", "youtube": "YouTube"}, "logo": {"name": "Samskruti", "tagline": "సంస్కృతి • संस्कृति"}, "hero": {"greeting": "Śrī Gaṇeśāya Namaḥ • శ్రీ గణేశాయ నమః", "name": "Karthikeya Pidaparthy", "age_location": "Age 10 · Sydney, Australia", "description": "A young scholar of Sanskrit, Telugu & English — memoriser of 700 verses of the Bhagavad Gītā, laureate of the Sanskrit Olympiad, and devoted pārāyaṇa seeker in the grand tradition of Sanātana Dharma.", "btn_achievements": "View Achievements", "btn_youtube": "▶ YouTube Channel", "badge_gold": "🏅 Gold Medal — Mysore Datta Peetham", "badge_olympiad": "🥇 Sanskrit Olympiad — 1st in Australia", "badge_gita": "📖 Bhagavad Gītā 700 verses", "badge_saundarya": "🕉 Soundaryalaharī", "badge_sivapadam": "🎤 Śivapadams"}, "about": {"section_title": "About Karthikeya", "para1": "Born into a family that cherishes the Vedic tradition, Karthikeya has shown an extraordinary gift for scripture, language, and devotion since his early childhood. At just 10 years of age, he stands as a shining testament to the living power of Sanātana Dharma.", "para2": "Residing in Sydney, Australia, he balances academic excellence with deep spiritual practice — performing regular pārāyaṇa at local temples, competing in Sanskrit Olympiads, and reciting works from the great masters of Telugu and Sanskrit literature.", "quote_sa": "विद्या ददाति विनयम् ।", "quote_iast": "vidyā dadāti vinayam", "quote_te": "విద్య వినయమిస్తుంది.", "quote_en": "Knowledge bestows humility.", "card_lang_title": "Languages", "card_lang_body": "Fluent in Telugu, English, and deeply proficient in Sanskrit. Reads Devanāgarī, Telugu, and Roman IAST scripts with ease.", "card_scripture_title": "Scriptural Knowledge", "card_scripture_body": "Has listened to complete Rāmāyaṇa and Mahābhārata pravachanams by Chaganti Koteswara Rao. Familiar with stories from the Bhāgavata, Upaniṣads, and Itihāsas.", "card_community_title": "Community Service", "card_community_body": "Performs Viṣṇu Sahasranāma and Lalitā Sahasranāma pārāyaṇa at Sydney Murugan Temple and participates in cultural programmes across Sydney's Indian community."}, "profile": {"section_title": "Profile & Achievements", "achievements": [{"icon": "🥇", "title": "Gold Medal — Bhagavad Gītā", "desc": "Awarded the Gold Medal by the prestigious Mysore Datta Peetham for memorising and reciting all 700 verses of the Bhagavad Gītā.", "year": "Mysore Datta Peetham"}, {"icon": "📖", "title": "Bhagavad Gītā — Helensburgh Temple", "desc": "Chanted the complete Śrīmad Bhagavad Gītā at Helensburgh Temple on the occasion of Paṇḍit Rishikesh Bhattar's Ṣaṣṭipūrti Mahōtsavam — a rare and sacred offering.", "year": "Helensburgh Temple · Ṣaṣṭipūrti Mahōtsavam"}, {"icon": "🏆", "title": "Sanskrit Olympiad — 1st in Australia", "desc": "Secured 1st place in Australia and All India Rank 266 in the previous year in the Sanskrit Olympiad conducted by Central Sanskrit University, New Delhi — for two consecutive years.", "year": "Central Sanskrit University, India · 2 consecutive years"}, {"icon": "🕉", "title": "Soundaryalaharī Pārāyaṇa", "desc": "Memorised all 100 verses of Śaṅkarācārya's Soundaryalaharī and performed pārāyaṇa at Sydney Ayyappa Temple during Navarātri.", "year": "Sydney Ayyappa Temple · Navarātri"}, {"icon": "🎤", "title": "Śivapadam Recitation", "desc": "Recited 10 Śivapadam poems composed by Samavedam Shanmukha Sharma in his presence and received a special memento from the great scholar when he visited Sydney.", "year": "Sydney · Samavedam Shanmukha Sharma's visit (April)"}, {"icon": "✍", "title": "Saṅkaṭanāśana Ganeśa Stotram", "desc": "Personally offered a handwritten copy of the Saṅkaṭanāśana Ganeśa Stotram to Vaddiparti Padmakar, Samavedam Shanmukha Sharma, and Madugula Naga Phani Sharma.", "year": "Personal offering to great scholars"}, {"icon": "📜", "title": "Viṣṇu & Lalitā Sahasranāma", "desc": "Performs regular Viṣṇu Sahasranāma and Lalitā Sahasranāma pārāyaṇa at Sydney Murugan Temple, contributing to the spiritual life of the community.", "year": "Sydney Murugan Temple · Regular"}, {"icon": "🎭", "title": "'Para Bhāṣa Lekundā Telugu Lo' — Winner", "desc": "Won first place in the competition 'Para Bhāṣa Lekundā Telugu Lo' at around age 3–4, demonstrating exceptional Telugu language ability at an incredibly young age.", "year": "Age ~3–4 years"}, {"icon": "🏅", "title": "Mānava Kathā & Gajendra Mokṣam Competitions", "desc": "Won prizes in Mānava Kathā and Gajendra Mokṣam competitions organised by Pranava Peetham (Vaddiparti Padmakar).", "year": "Pranava Peetham"}, {"icon": "🎭", "title": "Cultural Competition Prizes", "desc": "Won multiple prizes in Rāmāyaṇa and Daśāvatāra competitions organised by Sydney Jana Ranjani, and poetry competitions by Pranava Peetham.", "year": "Sydney Jana Ranjani · Pranava Peetham"}, {"icon": "🎤", "title": "Avadānam — Aprastuta Prasaṅga", "desc": "Participated as the Aprastuta Prasaṅga Pṛcchakudu (questioner) in the avadānam performed by the renowned Taṭavarti Kalyāṇ.", "year": "Taṭavarti Kalyāṇ Avadānam · Sydney"}, {"icon": "📺", "title": "Bhāratam Laghu Prasaṅgālu", "desc": "Delivered a series of short discourses on the Mahābhārata published on YouTube, demonstrating depth of understanding of the great Itihāsa.", "year": "YouTube Series"}]}, "credits": {"section_title": "Credits & Gratitude", "intro": "Karthikeya's journey has been shaped by the grace of great scholars, teachers, and organisations. Heartfelt thanks to:", "list": [{"name": "Mysore Datta Peetham", "role": "Gold Medal — Bhagavad Gītā Pārāyaṇa"}, {"name": "Central Sanskrit University, India", "role": "Sanskrit Olympiad organiser"}, {"name": "Samavedam Shanmukha Sharma", "role": "Inspiration · Śivapadam composer · Memento"}, {"name": "Vaddiparti Padmakar", "role": "Pranava Peetham · Poetry & scholarship mentor"}, {"name": "Madugula Naga Phani Sharma", "role": "Scholar · Encouragement"}, {"name": "Paṇḍit Rishikesh Bhattar", "role": "Ṣaṣṭipūrti Mahōtsavam · Helensburgh Temple"}, {"name": "Taṭavarti Kalyāṇ", "role": "Avadānam — Aprastuta Prasaṅga"}, {"name": "Sydney Jana Ranjani", "role": "Cultural competitions & recognition"}, {"name": "Sydney Murugan Temple", "role": "Pārāyaṇa venue & spiritual community"}, {"name": "Sydney Ayyappa Temple", "role": "Soundaryalaharī pārāyaṇa · Navarātri"}, {"name": "Helensburgh Temple", "role": "Bhagavad Gītā pārāyaṇa venue"}, {"name": "Chaganti Koteswara Rao", "role": "Pravachanams — Rāmāyaṇa & Mahābhārata"}, {"name": "Pranava Peetham", "role": "Mānava Kathā · Gajendra Mokṣam · Poetry competitions"}]}, "events": {"section_title": "Events & Milestones", "list": [{"date": "Sydney · April", "title": "Śivapadam Recitation — Samavedam Shanmukha Sharma", "desc": "Recited 10 Śivapadam poems composed by the great scholar in his presence during his Sydney visit. Received a special memento."}, {"date": "Sydney · Navarātri", "title": "Soundaryalaharī Pārāyaṇa — Ayyappa Temple", "desc": "Performed complete pārāyaṇa of Soundaryalaharī (100 verses) at Sydney Ayyappa Temple during the nine sacred nights of Navarātri."}, {"date": "Helensburgh Temple", "title": "Bhagavad Gītā — Ṣaṣṭipūrti Mahōtsavam", "desc": "Chanted the complete Śrīmad Bhagavad Gītā on the occasion of Paṇḍit Rishikesh Bhattar's Ṣaṣṭipūrti (60th Birthday) Mahōtsavam — a profound devotional offering."}, {"date": "Central Sanskrit University · This Year", "title": "Sanskrit Olympiad — 1st Place in Australia", "desc": "Achieved 1st place in Australia in the National Sanskrit Olympiad. Previously secured All India Rank 266 — two consecutive years of excellence."}, {"date": "Mysore Datta Peetham", "title": "Gold Medal — Bhagavad Gītā 700 Verses", "desc": "Awarded the Gold Medal for memorising and reciting all 700 verses of the Śrīmad Bhagavad Gītā."}, {"date": "Sydney · Avadānam", "title": "Taṭavarti Kalyāṇ Avadānam — Aprastuta Prasaṅga", "desc": "Participated as the Aprastuta Prasaṅga Pṛcchakudu (off-topic questioner) in the prestigious avadānam performed by Taṭavarti Kalyāṇ."}, {"date": "Sydney · Regular", "title": "Viṣṇu & Lalitā Sahasranāma — Murugan Temple", "desc": "Regularly performs Viṣṇu Sahasranāma and Lalitā Sahasranāma pārāyaṇa at Sydney Murugan Temple as a devotional offering."}, {"date": "Pranava Peetham", "title": "Mānava Kathā & Gajendra Mokṣam — Winner", "desc": "Won prizes in Mānava Kathā and Gajendra Mokṣam competitions organised by Pranava Peetham under the guidance of Vaddiparti Padmakar."}, {"date": "Age ~3–4 years", "title": "'Para Bhāṣa Lekundā Telugu Lo' — Winner", "desc": "Won the 'Para Bhāṣa Lekundā Telugu Lo' competition at the remarkable age of 3–4 years, an early indicator of his extraordinary linguistic gift."}]}, "parayana": {"section_title": "Pārāyaṇa", "intro": "Karthikeya regularly performs these sacred pārāyaṇas. Each Sanskrit verse appears in three scripts — select your preferred script using the tabs.", "tab_te": "Telugu", "tab_dev": "Devanāgarī", "tab_iast": "IAST", "stotras": [{"id": "bg", "title": "Bhagavad Gītā · 700 Verses", "te": "యదా యదా హి ధర్మస్య గ్లానిర్భవతి భారత ।\nఅభ్యుత్థానమధర్మస్య తదాత్మానం సృజామ్యహమ్ ॥", "dev": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥", "iast": "yadā yadā hi dharmasya glānir bhavati bhārata |\nabhyutthānam adharmasya tadātmānaṁ sṛjāmy aham ||", "attribution": "Bhagavad Gītā 4.7 — \"Whenever there is decline of righteousness, I manifest myself.\""}, {"id": "vs", "title": "Viṣṇu Sahasranāma", "te": "విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః ।\nభూతకృద్భూతభృద్భావో భూతాత్మా భూతభావనః ॥", "dev": "विश्वं विष्णुर्वषट्कारो भूतभव्यभवत्प्रभुः ।\nभूतकृद्भूतभृद्भावो भूतात्मा भूतभावनः ॥", "iast": "viśvaṁ viṣṇur vaṣaṭkāro bhūtabhavyabhavatprabhuḥ |\nbhūtakṛd bhūtabhṛd bhāvo bhūtātmā bhūtabhāvanaḥ ||", "attribution": "Opening śloka — performed at Sydney Murugan Temple"}, {"id": "ls", "title": "Lalitā Sahasranāma", "te": "శ్రీమాతా శ్రీమహారాజ్ఞీ శ్రీమత్సింహాసనేశ్వరీ ।\nచిదగ్నికుండసంభూతా దేవకార్యసముద్యతా ॥", "dev": "श्रीमाता श्रीमहाराज्ञी श्रीमत्सिंहासनेश्वरी ।\nचिदग्निकुण्डसम्भूता देवकार्यसमुद्यता ॥", "iast": "śrīmātā śrīmahārājñī śrīmatsinhāsaneśvarī |\ncidagnikuṇḍasambhūtā devakāryasamudyatā ||", "attribution": "Opening nāmas — performed at Sydney Murugan Temple"}, {"id": "sl", "title": "Soundaryalaharī · 100 Verses", "te": "శివః శక్త్యా యుక్తో యది భవతి శక్తః ప్రభవితుం\nన చేదేవం దేవో న ఖలు కుశలః స్పందితుమపి ।", "dev": "शिवः शक्त्या युक्तो यदि भवति शक्तः प्रभवितुं\nन चेदेवं देवो न खलु कुशलः स्पन्दितुमपि ।", "iast": "śivaḥ śaktyā yukto yadi bhavati śaktaḥ prabhavituṁ\nna cedevaṁ devo na khalu kuśalaḥ spanditum api |", "attribution": "Opening verse by Ādi Śaṅkarācārya — Navarātri, Ayyappa Temple"}, {"id": "sg", "title": "Saṅkaṭanāśana Ganeśa Stotram", "te": "ప్రణమ్య శిరసా దేవం గౌరీపుత్రం వినాయకమ్ ।\nభక్తావాసం స్మరేన్నిత్యమాయుఃకామార్థసిద్ధయే ॥", "dev": "प्रणम्य शिरसा देवं गौरीपुत्रं विनायकम् ।\nभक्तावासं स्मरेन्नित्यमायुःकामार्थसिद्धये ॥", "iast": "praṇamya śirasā devaṁ gaurīputraṁ vināyakam |\nbhaktāvāsaṁ smaren nityam āyuḥkāmārthasiddhaye ||", "attribution": "Offered in person to Vaddiparti Padmakar, Samavedam Shanmukha Sharma & Madugula Naga Phani Sharma"}]}, "support": {"section_title": "Support & Sponsor", "intro": "Encouraging Karthikeya's spiritual and academic journey is a noble act of dharma. Your support helps him participate in competitions, attend events, and create more content.", "cards": [{"icon": "🙏", "title": "Blessings & Encouragement", "desc": "Send your blessings, words of encouragement, or share his achievements with your community. Every message inspires him forward."}, {"icon": "📚", "title": "Sponsor Education", "desc": "Support Sanskrit exam registrations, study materials, books, and participation in competitions across Australia and India."}, {"icon": "🎬", "title": "Subscribe & Share", "desc": "Subscribe to his YouTube channel @samskruti.info.1 and share his videos to spread the beauty of Sanskrit and Sanātana Dharma."}, {"icon": "🤝", "title": "Invite to Events", "desc": "Invite Karthikeya to perform pārāyaṇa, give a talk, or participate in competitions and festivals at your temple or organisation."}]}, "testimonials": {"section_title": "Testimonials", "list": [{"text": "Karthikeya's recitation of Śivapadams was remarkable. The clarity of pronunciation and the depth of feeling in one so young is truly a blessing. May he continue to illuminate the tradition.", "by": "Samavedam Shanmukha Sharma", "role": "Renowned Telugu Scholar & Poet · Sydney Visit"}, {"text": "It is heartening to see the next generation embracing Sanskrit with such commitment. His performance in the Olympiad reflects both natural talent and disciplined practice.", "by": "Central Sanskrit University", "role": "Sanskrit Olympiad — Australia Rank 1"}, {"text": "During Navarātri, Karthikeya's pārāyaṇa of Soundaryalaharī filled the temple with a sacred vibration. Such dedication from a 10-year-old is truly divine grace.", "by": "Sydney Ayyappa Temple", "role": "Navarātri Pārāyaṇa"}]}, "youtube": {"section_title": "YouTube Channel", "channel_name": "Samskruti · @samskruti.info.1", "channel_sub": "Sanskrit · Telugu · Devotional · Pārāyaṇa · Discourses", "channel_url": "https://www.youtube.com/@samskruti.info.1", "bharatam_title": "Bhāratam Laghu Prasaṅgālu", "bharatam_desc": "Short discourses on the Mahābhārata — watch the full playlist", "bharatam_url": "https://www.youtube.com/watch?v=xB1CT8539J0&list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ", "videos": [{"title": "Bhagavad Gītā Pārāyaṇa", "meta": "700 Verses · Karthikeya Pidaparthy"}, {"title": "Sanskrit Recitations", "meta": "Stotras · Sahasranāmas · Hymns"}, {"title": "Bhāratam Laghu Prasaṅgālu", "meta": "Mahābhārata Discourses · Series"}]}, "contact": {"section_title": "Contact", "intro": "To invite Karthikeya for events, pārāyaṇa, or competitions, or to send your blessings and enquiries, please write to us.", "location_city": "Sydney, New South Wales", "location_country": "Australia", "youtube_label": "YouTube", "form_name": "Your Name", "form_email": "Your Email", "form_subject": "Subject", "form_message": "Your message, blessings, or enquiry…", "form_submit": "Send Message ✉", "form_thanks": "🙏 Thank you! We will respond soon.", "quote_sa": "सर्वे भवन्तु सुखिनः ।", "quote_en": "May all be happy."}, "footer": {"sa": "ॐ तत्सत् । श्रीकृष्णार्पणमस्तु ।", "iast": "Oṃ tat sat · Śrī Kṛṣṇārpaṇam astu", "copy": "© 2025 Karthikeya Pidaparthy · Sydney, Australia"}, "settings": {"title": "Settings", "theme": "Theme", "theme_light": "☀ Light", "theme_dark": "☽ Dark", "font_size": "Font Size", "accent": "Accent Colour", "language": "Language"}}, "te": {"nav": {"home": "హోమ్", "about": "పరిచయం", "profile": "ప్రొఫైల్", "credits": "కృతజ్ఞతలు", "events": "కార్యక్రమాలు", "parayana": "పారాయణ", "support": "సహకారం", "testimonials": "అభిప్రాయాలు", "contact": "సంప్రదించండి", "youtube": "యూట్యూబ్"}, "logo": {"name": "సంస్కృతి", "tagline": "Samskruti • संस्कृति"}, "hero": {"greeting": "శ్రీ గణేశాయ నమః", "name": "కార్తికేయ పీడపర్తి", "age_location": "వయసు 10 · సిడ్నీ, ఆస్ట్రేలియా", "description": "సంస్కృతం, తెలుగు & ఇంగ్లీషులో అసమాన పాండిత్యం కలిగిన యువ విద్వాంసుడు — భగవద్గీత 700 శ్లోకాలు కంఠస్థం చేసి బంగారు పతకం అందుకున్నాడు. సంస్కృత ఒలింపియాడ్‌లో ఆస్ట్రేలియాలో ప్రథమ స్థానం.", "btn_achievements": "విజయాలు చూడండి", "btn_youtube": "▶ యూట్యూబ్ చానెల్", "badge_gold": "🏅 స్వర్ణపతకం — మైసూర్ దత్త పీఠం", "badge_olympiad": "🥇 సంస్కృత ఒలింపియాడ్ — ఆస్ట్రేలియా ప్రథమ", "badge_gita": "📖 భగవద్గీత 700 శ్లోకాలు", "badge_saundarya": "🕉 సౌందర్యలహరి", "badge_sivapadam": "🎤 శివపదాలు"}, "about": {"section_title": "కార్తికేయ గురించి", "para1": "వేద సంప్రదాయాన్ని పోషించే కుటుంబంలో పుట్టి, బాల్యం నుండే శాస్త్ర జ్ఞానంలో, భాషలో, భక్తిలో అసాధారణ ప్రతిభను చూపించాడు కార్తికేయ. పదేళ్ళ వయసులో సనాతన ధర్మానికి ప్రకాశవంతమైన నిదర్శనంగా నిలిచాడు.", "para2": "సిడ్నీలో నివసిస్తూ, స్థానిక దేవాలయాలలో నిత్య పారాయణ చేస్తూ, సంస్కృత పోటీలలో పాల్గొంటూ, విద్యా-ఆధ్యాత్మిక రెండింటిలోనూ రాణిస్తున్నాడు.", "quote_sa": "विद्या ददाति विनयम् ।", "quote_iast": "vidyā dadāti vinayam", "quote_te": "విద్య వినయమిస్తుంది.", "quote_en": "జ్ఞానం వినయాన్ని ప్రసాదిస్తుంది.", "card_lang_title": "భాషలు", "card_lang_body": "తెలుగు, ఇంగ్లీషులో ప్రవాహంగా మాట్లాడతాడు; సంస్కృతంలో అపారమైన పాండిత్యం ఉంది. దేవనాగరి, తెలుగు, IAST లిపులు చదువగలడు.", "card_scripture_title": "శాస్త్రజ్ఞానం", "card_scripture_body": "చాగంటి గారి రామాయణ, మహాభారత ప్రవచనాలు పూర్తిగా విన్నాడు. భాగవత, ఉపనిషత్తులు, ఇతిహాసాల కథలు తెలుసు.", "card_community_title": "సమాజ సేవ", "card_community_body": "సిడ్నీ మురుగన్ ఆలయంలో విష్ణు సహస్రనామ, లలితా సహస్రనామ పారాయణ నిర్వహిస్తాడు. సిడ్నీ తెలుగు సమాజ కార్యక్రమాలలో పాల్గొంటాడు."}, "profile": {"section_title": "విజయాలు & ప్రొఫైల్", "achievements": [{"icon": "🥇", "title": "స్వర్ణపతకం — భగవద్గీత", "desc": "మైసూర్ దత్త పీఠం నుండి భగవద్గీత 700 శ్లోకాలు కంఠస్థం చేసి పఠించినందుకు స్వర్ణపతకం అందుకున్నాడు.", "year": "మైసూర్ దత్త పీఠం"}, {"icon": "📖", "title": "భగవద్గీత — హెలెన్స్‌బర్గ్ ఆలయం", "desc": "పండిట్ రిషికేష్ భట్టర్ గారి షష్టిపూర్తి మహోత్సవం సందర్భంగా హెలెన్స్‌బర్గ్ ఆలయంలో సమగ్ర శ్రీమద్భగవద్గీత పఠించాడు — అపూర్వమైన భక్తి నివేదన.", "year": "హెలెన్స్‌బర్గ్ ఆలయం · షష్టిపూర్తి మహోత్సవం"}, {"icon": "🏆", "title": "సంస్కృత ఒలింపియాడ్ — ఆస్ట్రేలియా ప్రథమ", "desc": "కేంద్ర సంస్కృత విశ్వవిద్యాలయం నిర్వహించిన సంస్కృత ఒలింపియాడ్‌లో ఆస్ట్రేలియాలో ప్రథమ స్థానం; గత సంవత్సరం అఖిల భారత స్థానం 266 — వరుసగా రెండు సంవత్సరాలు.", "year": "కేంద్ర సంస్కృత విశ్వవిద్యాలయం · వరుసగా 2 సంవత్సరాలు"}, {"icon": "🕉", "title": "సౌందర్యలహరి పారాయణ", "desc": "శంకరాచార్యుల సౌందర్యలహరి 100 శ్లోకాలు కంఠస్థం చేసి నవరాత్రి సందర్భంగా సిడ్నీ అయ్యప్ప ఆలయంలో పారాయణ చేశాడు.", "year": "సిడ్నీ అయ్యప్ప ఆలయం · నవరాత్రి"}, {"icon": "🎤", "title": "శివపదాలు — సమవేదం శంఖముఖ శర్మ", "desc": "సమవేదం శంఖముఖ శర్మ గారు సిడ్నీ సందర్శించిన సందర్భంలో వారి సమక్షంలో 10 శివపదాలు పఠించాడు. వారు ప్రత్యేక స్మారక చిహ్నం అందించారు.", "year": "సిడ్నీ · సమవేదం శంఖముఖ శర్మ సందర్శన (ఏప్రిల్)"}, {"icon": "✍", "title": "సంకటనాశన గణేశ స్తోత్రం", "desc": "సంకటనాశన గణేశ స్తోత్రం స్వహస్తాలతో లిఖించి వద్దిపర్తి పద్మకర్, సమవేదం శంఖముఖ శర్మ, మడుగుల నాగఫణి శర్మలకు అర్పించాడు.", "year": "మహా పండితులకు వ్యక్తిగత అర్పణ"}, {"icon": "📜", "title": "విష్ణు & లలితా సహస్రనామ", "desc": "సిడ్నీ మురుగన్ ఆలయంలో విష్ణు సహస్రనామ, లలితా సహస్రనామ పారాయణ నిత్యం నిర్వహిస్తాడు.", "year": "సిడ్నీ మురుగన్ ఆలయం · నిత్యం"}, {"icon": "🎭", "title": "'పర భాష లేకుండా తెలుగులో' — విజేత", "desc": "సుమారు 3-4 సంవత్సరాల వయసులో 'పర భాష లేకుండా తెలుగులో' పోటీలో విజేతగా నిలిచాడు — అద్భుతమైన భాషాప్రతిభకు తొలి నిదర్శనం.", "year": "వయసు ~3–4 సంవత్సరాలు"}, {"icon": "🏅", "title": "మానవ కథ & గజేంద్ర మోక్షం — విజేత", "desc": "ప్రణవ పీఠం (వద్దిపర్తి పద్మకర్) నిర్వహించిన మానవ కథ, గజేంద్ర మోక్షం పోటీలలో బహుమతులు అందుకున్నాడు.", "year": "ప్రణవ పీఠం"}, {"icon": "🎭", "title": "సాంస్కృతిక పోటీలలో బహుమతులు", "desc": "సిడ్నీ జన రంజని నిర్వహించిన రామాయణ, దశావతార పోటీలలో మరియు ప్రణవ పీఠం కవిత్వ పోటీలలో అనేక బహుమతులు గెలుచుకున్నాడు.", "year": "సిడ్నీ జన రంజని · ప్రణవ పీఠం"}, {"icon": "🎤", "title": "అవధానం — అప్రస్తుత ప్రసంగ పృచ్ఛకుడు", "desc": "తటవర్తి కళ్యాణ్ గారి అవధానంలో అప్రస్తుత ప్రసంగ పృచ్ఛకునిగా పాల్గొని ప్రశంసలు అందుకున్నాడు.", "year": "తటవర్తి కళ్యాణ్ అవధానం · సిడ్నీ"}, {"icon": "📺", "title": "భారతం లఘు ప్రసంగాలు", "desc": "మహాభారతంపై లఘు ప్రసంగాల శ్రేణి యూట్యూబ్‌లో ప్రచురించాడు — ఇతిహాసంపై అగాధమైన అవగాహనకు నిదర్శనం.", "year": "యూట్యూబ్ సీరీస్"}]}, "credits": {"section_title": "కృతజ్ఞతలు", "intro": "కార్తికేయ ప్రయాణంలో మహా పండితులు, గురువులు, సంస్థల అనుగ్రహం తోడ్పడింది. వారందరికీ హృదయపూర్వక ధన్యవాదాలు:", "list": [{"name": "మైసూర్ దత్త పీఠం", "role": "స్వర్ణపతకం — భగవద్గీత పారాయణ"}, {"name": "కేంద్ర సంస్కృత విశ్వవిద్యాలయం", "role": "సంస్కృత ఒలింపియాడ్ నిర్వాహకులు"}, {"name": "సమవేదం శంఖముఖ శర్మ", "role": "ప్రేరణ · శివపదాల రచయిత · స్మారక చిహ్నం"}, {"name": "వద్దిపర్తి పద్మకర్", "role": "ప్రణవ పీఠం · కవిత్వ గురువు · మార్గదర్శి"}, {"name": "మడుగుల నాగఫణి శర్మ", "role": "పండితుడు · ప్రోత్సాహం"}, {"name": "పండిట్ రిషికేష్ భట్టర్", "role": "షష్టిపూర్తి మహోత్సవం · హెలెన్స్‌బర్గ్ ఆలయం"}, {"name": "తటవర్తి కళ్యాణ్", "role": "అవధానం — అప్రస్తుత ప్రసంగ పృచ్ఛకుడు"}, {"name": "సిడ్నీ జన రంజని", "role": "సాంస్కృతిక పోటీలు & గుర్తింపు"}, {"name": "సిడ్నీ మురుగన్ ఆలయం", "role": "పారాయణ వేదిక & ఆధ్యాత్మిక సమాజం"}, {"name": "సిడ్నీ అయ్యప్ప ఆలయం", "role": "సౌందర్యలహరి పారాయణ · నవరాత్రి"}, {"name": "హెలెన్స్‌బర్గ్ ఆలయం", "role": "భగవద్గీత పారాయణ వేదిక"}, {"name": "చాగంటి కోటేశ్వర రావు", "role": "రామాయణ & మహాభారత ప్రవచనాలు"}, {"name": "ప్రణవ పీఠం", "role": "మానవ కథ · గజేంద్ర మోక్షం · కవిత్వ పోటీలు"}]}, "events": {"section_title": "కార్యక్రమాలు & మైలురాళ్ళు", "list": [{"date": "సిడ్నీ · ఏప్రిల్", "title": "శివపదాలు — సమవేదం శంఖముఖ శర్మ సమక్షంలో", "desc": "మహాపండితుడు సమవేదం శంఖముఖ శర్మ గారి సిడ్నీ సందర్శన సందర్భంలో వారి సమక్షంలో 10 శివపదాలు పఠించాడు. ప్రత్యేక స్మారక చిహ్నం అందుకున్నాడు."}, {"date": "సిడ్నీ · నవరాత్రి", "title": "సౌందర్యలహరి పారాయణ — అయ్యప్ప ఆలయం", "desc": "నవరాత్రి సందర్భంగా సిడ్నీ అయ్యప్ప ఆలయంలో సౌందర్యలహరి (100 శ్లోకాలు) పూర్తి పారాయణ నిర్వహించాడు."}, {"date": "హెలెన్స్‌బర్గ్ ఆలయం", "title": "భగవద్గీత — షష్టిపూర్తి మహోత్సవం", "desc": "పండిట్ రిషికేష్ భట్టర్ గారి షష్టిపూర్తి మహోత్సవం సందర్భంగా సమగ్ర శ్రీమద్భగవద్గీత పఠించాడు — అపూర్వమైన భక్తి నివేదన."}, {"date": "కేంద్ర సంస్కృత విశ్వవిద్యాలయం", "title": "సంస్కృత ఒలింపియాడ్ — ఆస్ట్రేలియా ప్రథమ", "desc": "జాతీయ సంస్కృత ఒలింపియాడ్‌లో ఆస్ట్రేలియాలో ప్రథమ స్థానం. గత సంవత్సరం అఖిల భారత స్థానం 266 — వరుసగా రెండు సంవత్సరాలు."}, {"date": "మైసూర్ దత్త పీఠం", "title": "స్వర్ణపతకం — భగవద్గీత 700 శ్లోకాలు", "desc": "శ్రీమద్భగవద్గీత 700 శ్లోకాలు కంఠస్థం చేసి పఠించినందుకు స్వర్ణపతకం అందుకున్నాడు."}, {"date": "సిడ్నీ · అవధానం", "title": "తటవర్తి కళ్యాణ్ అవధానం — అప్రస్తుత ప్రసంగం", "desc": "తటవర్తి కళ్యాణ్ గారి ప్రతిష్ఠాత్మక అవధానంలో అప్రస్తుత ప్రసంగ పృచ్ఛకునిగా పాల్గొన్నాడు."}, {"date": "ప్రణవ పీఠం", "title": "మానవ కథ & గజేంద్ర మోక్షం — విజేత", "desc": "వద్దిపర్తి పద్మకర్ నిర్వహించిన మానవ కథ, గజేంద్ర మోక్షం పోటీలలో బహుమతులు గెలుచుకున్నాడు."}, {"date": "వయసు ~3–4 సంవత్సరాలు", "title": "'పర భాష లేకుండా తెలుగులో' — విజేత", "desc": "మూడు నాలుగేళ్ళ వయసులో 'పర భాష లేకుండా తెలుగులో' పోటీలో విజేతగా నిలిచాడు — అసాధారణ భాషాప్రతిభ."}]}, "parayana": {"section_title": "పారాయణ", "intro": "కార్తికేయ ఈ పవిత్ర పారాయణలు నిత్యం నిర్వహిస్తాడు. ప్రతి శ్లోకం మూడు లిపులలో చూపబడింది — మీకు నచ్చిన లిపి ఎంచుకోండి.", "tab_te": "తెలుగు", "tab_dev": "దేవనాగరి", "tab_iast": "IAST", "stotras": [{"id": "bg", "title": "భగవద్గీత · 700 శ్లోకాలు", "te": "యదా యదా హి ధర్మస్య గ్లానిర్భవతి భారత ।\nఅభ్యుత్థానమధర్మస్య తదాత్మానం సృజామ్యహమ్ ॥", "dev": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥", "iast": "yadā yadā hi dharmasya glānir bhavati bhārata |\nabhyutthānam adharmasya tadātmānaṁ sṛjāmy aham ||", "attribution": "భగవద్గీత 4.7 — \"ధర్మం క్షీణించినప్పుడల్లా నేను అవతరిస్తాను.\""}, {"id": "vs", "title": "విష్ణు సహస్రనామం", "te": "విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః ।\nభూతకృద్భూతభృద్భావో భూతాత్మా భూతభావనః ॥", "dev": "विश्वं विष्णुर्वषट्कारो भूतभव्यभवत्प्रभुः ।\nभूतकृद्भूतभृद्भावो भूतात्मा भूतभावनः ॥", "iast": "viśvaṁ viṣṇur vaṣaṭkāro bhūtabhavyabhavatprabhuḥ |\nbhūtakṛd bhūtabhṛd bhāvo bhūtātmā bhūtabhāvanaḥ ||", "attribution": "మొదటి శ్లోకం — సిడ్నీ మురుగన్ ఆలయంలో పారాయణ"}, {"id": "ls", "title": "లలితా సహస్రనామం", "te": "శ్రీమాతా శ్రీమహారాజ్ఞీ శ్రీమత్సింహాసనేశ్వరీ ।\nచిదగ్నికుండసంభూతా దేవకార్యసముద్యతా ॥", "dev": "श्रीमाता श्रीमहाराज्ञी श्रीमत्सिंहासनेश्वरी ।\nचिदग्निकुण्डसम्भूता देवकार्यसमुद्यता ॥", "iast": "śrīmātā śrīmahārājñī śrīmatsinhāsaneśvarī |\ncidagnikuṇḍasambhūtā devakāryasamudyatā ||", "attribution": "మొదటి నామాలు — సిడ్నీ మురుగన్ ఆలయంలో పారాయణ"}, {"id": "sl", "title": "సౌందర్యలహరి · 100 శ్లోకాలు", "te": "శివః శక్త్యా యుక్తో యది భవతి శక్తః ప్రభవితుం\nన చేదేవం దేవో న ఖలు కుశలః స్పందితుమపి ।", "dev": "शिवः शक्त्या युक्तो यदि भवति शक्तः प्रभवितुं\nन चेदेवं देवो न खलु कुशलः स्पन्दितुमपि ।", "iast": "śivaḥ śaktyā yukto yadi bhavati śaktaḥ prabhavituṁ\nna cedevaṁ devo na khalu kuśalaḥ spanditum api |", "attribution": "ఆదిశంకరాచార్యుల మొదటి శ్లోకం — నవరాత్రి, అయ్యప్ప ఆలయం"}, {"id": "sg", "title": "సంకటనాశన గణేశ స్తోత్రం", "te": "ప్రణమ్య శిరసా దేవం గౌరీపుత్రం వినాయకమ్ ।\nభక్తావాసం స్మరేన్నిత్యమాయుఃకామార్థసిద్ధయే ॥", "dev": "प्रणम्य शिरसा देवं गौरीपुत्रं विनायकम् ।\nभक्तावासं स्मरेन्नित्यमायुःकामार्थसिद्धये ॥", "iast": "praṇamya śirasā devaṁ gaurīputraṁ vināyakam |\nbhaktāvāsaṁ smaren nityam āyuḥkāmārthasiddhaye ||", "attribution": "వద్దిపర్తి పద్మకర్, సమవేదం శంఖముఖ శర్మ & మడుగుల నాగఫణి శర్మలకు వ్యక్తిగతంగా అర్పించాడు"}]}, "support": {"section_title": "సహకారం & స్పాన్సర్‌షిప్", "intro": "కార్తికేయ ఆధ్యాత్మిక, విద్యా ప్రయాణాన్ని ప్రోత్సహించడం ధర్మకార్యం. మీ సహకారం పోటీలలో పాల్గొనడానికి, కార్యక్రమాలకు హాజరవడానికి, మరిన్ని కంటెంట్ సృష్టించడానికి తోడ్పడుతుంది.", "cards": [{"icon": "🙏", "title": "ఆశీర్వాదాలు & ప్రోత్సాహం", "desc": "మీ ఆశీర్వాదాలు, ప్రోత్సాహ వచనాలు పంపండి లేదా అతని విజయాలను మీ సమాజంలో పంచుకోండి. ప్రతి సందేశం అతనికి స్ఫూర్తినిస్తుంది."}, {"icon": "📚", "title": "విద్యకు సహకారం", "desc": "సంస్కృత పరీక్షా నమోదు, అధ్యయన సామగ్రి, పుస్తకాలు, ఆస్ట్రేలియా-భారతదేశ పోటీలలో పాల్గొనడానికి సహకరించండి."}, {"icon": "🎬", "title": "సబ్‌స్క్రైబ్ & షేర్", "desc": "@samskruti.info.1 యూట్యూబ్ చానెల్ సబ్‌స్క్రైబ్ చేసి అతని వీడియోలు షేర్ చేయండి — సంస్కృత, సనాతన ధర్మ సౌందర్యం వ్యాప్తి చేయండి."}, {"icon": "🤝", "title": "కార్యక్రమాలకు ఆహ్వానించండి", "desc": "మీ ఆలయం లేదా సంస్థలో పారాయణ, ప్రసంగం, పోటీలకు కార్తికేయను ఆహ్వానించండి."}]}, "testimonials": {"section_title": "అభిప్రాయాలు", "list": [{"text": "కార్తికేయ శివపదాల పఠనం అద్భుతంగా ఉంది. ఇంత చిన్న వయసులో ఉచ్చారణ స్పష్టత, భావగాంభీర్యం నిజంగా దైవానుగ్రహం. ఈ సంప్రదాయాన్ని ప్రకాశవంతం చేస్తూ ముందుకు సాగాలని ఆశీర్వదిస్తున్నాను.", "by": "సమవేదం శంఖముఖ శర్మ", "role": "ప్రఖ్యాత తెలుగు పండితుడు & కవి · సిడ్నీ సందర్శన"}, {"text": "తర్వాత తరం ఇంత నిబద్ధతతో సంస్కృతాన్ని స్వీకరించడం హర్షదాయకం. ఒలింపియాడ్‌లో అతని ప్రదర్శన సహజ ప్రతిభ, క్రమశిక్షణాభ్యాసం రెండింటినీ ప్రతిబింబిస్తుంది.", "by": "కేంద్ర సంస్కృత విశ్వవిద్యాలయం", "role": "సంస్కృత ఒలింపియాడ్ — ఆస్ట్రేలియా ప్రథమ స్థానం"}, {"text": "నవరాత్రిలో కార్తికేయ సౌందర్యలహరి పారాయణ ఆలయాన్ని పవిత్రంగా చేసింది. 10 సంవత్సరాల బాలుడిలో ఇంతటి నిష్ఠ నిజంగా దైవకృప.", "by": "సిడ్నీ అయ్యప్ప ఆలయం", "role": "నవరాత్రి పారాయణ"}]}, "youtube": {"section_title": "యూట్యూబ్ చానెల్", "channel_name": "సంస్కృతి · @samskruti.info.1", "channel_sub": "సంస్కృతం · తెలుగు · భక్తి · పారాయణ · ప్రసంగాలు", "channel_url": "https://www.youtube.com/@samskruti.info.1", "bharatam_title": "భారతం లఘు ప్రసంగాలు", "bharatam_desc": "మహాభారతంపై లఘు ప్రసంగాల శ్రేణి — పూర్తి ప్లేలిస్ట్ చూడండి", "bharatam_url": "https://www.youtube.com/watch?v=xB1CT8539J0&list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ", "videos": [{"title": "భగవద్గీత పారాయణ", "meta": "700 శ్లోకాలు · కార్తికేయ పీడపర్తి"}, {"title": "సంస్కృత స్తోత్రాలు", "meta": "స్తోత్రాలు · సహస్రనామాలు · హిమ్నులు"}, {"title": "భారతం లఘు ప్రసంగాలు", "meta": "మహాభారత ప్రసంగాలు · శ్రేణి"}]}, "contact": {"section_title": "సంప్రదించండి", "intro": "కార్తికేయను కార్యక్రమాలు, పారాయణ, పోటీలకు ఆహ్వానించడానికి లేదా ఆశీర్వాదాలు, విచారణలు పంపడానికి దయచేసి మాకు రాయండి.", "location_city": "సిడ్నీ, న్యూ సౌత్ వేల్స్", "location_country": "ఆస్ట్రేలియా", "youtube_label": "యూట్యూబ్", "form_name": "మీ పేరు", "form_email": "మీ ఈమెయిల్", "form_subject": "విషయం", "form_message": "మీ సందేశం, ఆశీర్వాదాలు లేదా విచారణ…", "form_submit": "సందేశం పంపండి ✉", "form_thanks": "🙏 ధన్యవాదాలు! మేము త్వరలో స్పందిస్తాము.", "quote_sa": "सर्वे भवन्तु सुखिनः ।", "quote_en": "అందరూ సుఖంగా ఉండాలని కోరుకుందాం."}, "footer": {"sa": "ॐ तत्सत् । श्रीकृष्णार्पणमस्तु ।", "iast": "ఓం తత్సత్ · శ్రీ కృష్ణార్పణమస్తు", "copy": "© 2025 కార్తికేయ పీడపర్తి · సిడ్నీ, ఆస్ట్రేలియా"}, "settings": {"title": "సెట్టింగ్స్", "theme": "థీమ్", "theme_light": "☀ వెలుతురు", "theme_dark": "☽ చీకటి", "font_size": "అక్షరాల పరిమాణం", "accent": "యాక్సెంట్ రంగు", "language": "భాష"}}, "sa": {"nav": {"home": "गृहम्", "about": "परिचयः", "profile": "प्रोफाइल्", "credits": "कृतज्ञता", "events": "कार्यक्रमाः", "parayana": "पारायणम्", "support": "सहायता", "testimonials": "अभिप्रायाः", "contact": "सम्पर्कः", "youtube": "यूट्यूब्"}, "logo": {"name": "संस्कृतिः", "tagline": "సంస్కృతి • Samskruti"}, "hero": {"greeting": "श्रीगणेशाय नमः", "name": "कार्तिकेयः पीडपर्ति", "age_location": "वयः दश वर्षाणि · सिडनी, ऑस्ट्रेलिया", "description": "संस्कृत-तेलुगु-आङ्ग्लभाषाकुशलः युवविद्वान् — भगवद्गीतायाः सप्तशतश्लोकान् कण्ठस्थीकृत्य स्वर्णपदकं प्राप्तवान् । संस्कृतओलिम्पियाड्-स्पर्धायाम् ऑस्ट्रेलियादेशे प्रथमस्थानं प्राप्तवान् ।", "btn_achievements": "उपलब्धयः पश्यतु", "btn_youtube": "▶ यूट्यूब्-वाहिनी", "badge_gold": "🏅 स्वर्णपदकम् — मैसूर-दत्तपीठम्", "badge_olympiad": "🥇 संस्कृतओलिम्पियाड् — ऑस्ट्रेलिया-प्रथमः", "badge_gita": "📖 भगवद्गीता सप्तशतश्लोकाः", "badge_saundarya": "🕉 सौन्दर्यलहरी", "badge_sivapadam": "🎤 शिवपदानि"}, "about": {"section_title": "कार्तिकेयविषये", "para1": "वैदिकसम्प्रदायं पोषयन्त्यां कुटुम्बे जातः कार्तिकेयः बाल्यादेव शास्त्रज्ञाने, भाषायाम्, भक्तौ च असाधारणं प्रतिभां प्रदर्शयति । दशवर्षीयः अयं बालः सनातनधर्मस्य जीवन्तं प्रमाणम् अस्ति ।", "para2": "सिडनीनगरे निवसन् सः स्थानिकमन्दिरेषु नित्यपारायणं करोति, संस्कृतप्रतियोगितासु भागं गृह्णाति च — विद्यायाम् आध्यात्मिकजीवने च समानरूपेण रञ्जते ।", "quote_sa": "विद्या ददाति विनयम् ।", "quote_iast": "vidyā dadāti vinayam", "quote_te": "విద్య వినయమిస్తుంది.", "quote_en": "विद्या विनयं ददाति ।", "card_lang_title": "भाषाः", "card_lang_body": "तेलुगु-आङ्ग्लभाषयोः प्रवाहेण वदति; संस्कृते च अपारं पाण्डित्यम् अस्ति । देवनागरी-तेलुगु-IAST-लिपीः पठति ।", "card_scripture_title": "शास्त्रज्ञानम्", "card_scripture_body": "चागन्ति-महोदयस्य रामायण-महाभारत-प्रवचनानि सम्पूर्णानि श्रुतवान् । भागवत-उपनिषत्-इतिहासकथाः जानाति ।", "card_community_title": "समाजसेवा", "card_community_body": "सिडनी-मुरुगन्-मन्दिरे विष्णुसहस्रनाम-ललितासहस्रनाम-पारायणं नित्यं करोति । सिडनी-तेलुगुसमाजस्य कार्यक्रमेषु भागं गृह्णाति ।"}, "profile": {"section_title": "उपलब्धयः प्रोफाइलश्च", "achievements": [{"icon": "🥇", "title": "स्वर्णपदकम् — भगवद्गीता", "desc": "भगवद्गीतायाः सप्तशतश्लोकान् कण्ठस्थीकृत्य पठित्वा मैसूर-दत्तपीठात् स्वर्णपदकं प्राप्तवान् ।", "year": "मैसूर-दत्तपीठम्"}, {"icon": "📖", "title": "भगवद्गीता — हेलेन्स्बर्ग्-मन्दिरम्", "desc": "पण्डित-ऋषिकेश-भट्टर-महोदयस्य षष्टिपूर्ति-महोत्सव-अवसरे हेलेन्स्बर्ग्-मन्दिरे सम्पूर्णां श्रीमद्भगवद्गीतां पठितवान् — अपूर्वं भक्तिनिवेदनम् ।", "year": "हेलेन्स्बर्ग्-मन्दिरम् · षष्टिपूर्ति-महोत्सवः"}, {"icon": "🏆", "title": "संस्कृतओलिम्पियाड् — ऑस्ट्रेलिया-प्रथमः", "desc": "केन्द्र-संस्कृत-विश्वविद्यालयेन आयोजिते संस्कृतओलिम्पियाड्-स्पर्धायाम् ऑस्ट्रेलियादेशे प्रथमस्थानं प्राप्तवान् । पूर्वे वर्षे अखिलभारतीयस्थानं २६६ — क्रमेण द्वे वर्षे ।", "year": "केन्द्र-संस्कृत-विश्वविद्यालयः · क्रमेण २ वर्षाणि"}, {"icon": "🕉", "title": "सौन्दर्यलहरी-पारायणम्", "desc": "शङ्कराचार्यविरचितायाः सौन्दर्यलहर्याः शतश्लोकान् कण्ठस्थीकृत्य नवरात्रि-पर्वणि सिडनी-अय्यप्प-मन्दिरे पारायणं कृतवान् ।", "year": "सिडनी-अय्यप्प-मन्दिरम् · नवरात्रिः"}, {"icon": "🎤", "title": "शिवपदानि — समवेदं-शङ्खमुखशर्मणः समक्षम्", "desc": "समवेदं-शङ्खमुखशर्मणः सिडनी-सन्दर्शन-अवसरे तत्समक्षं दश शिवपदानि पठितवान् । महाविद्वान् विशेषं स्मारकचिह्नं प्रदत्तवान् ।", "year": "सिडनी · समवेदं-शङ्खमुखशर्मणः सन्दर्शनम् (अप्रैल्)"}, {"icon": "✍", "title": "सङ्कटनाशन-गणेशस्तोत्रम्", "desc": "सङ्कटनाशन-गणेशस्तोत्रं स्वहस्तेन लिखित्वा वद्दिपर्ति-पद्मकर-समवेदं-शङ्खमुखशर्म-मडुगुल-नागफणिशर्मभ्यः अर्पितवान् ।", "year": "महापण्डितेभ्यः व्यक्तिगत-अर्पणम्"}, {"icon": "📜", "title": "विष्णुसहस्रनाम-ललितासहस्रनामपारायणम्", "desc": "सिडनी-मुरुगन्-मन्दिरे विष्णुसहस्रनाम-ललितासहस्रनाम-पारायणं नित्यं करोति ।", "year": "सिडनी-मुरुगन्-मन्दिरम् · नित्यम्"}, {"icon": "🎭", "title": "'परभाषालेकुण्डा तेलुगुलो' — विजेता", "desc": "त्रि-चतुर्वर्षीयः सन् 'परभाषालेकुण्डा तेलुगुलो' प्रतियोगितायां विजयं प्राप्तवान् — असाधारण-भाषाप्रतिभायाः प्रथमं प्रमाणम् ।", "year": "वयः ~३–४ वर्षाणि"}, {"icon": "🏅", "title": "मानवकथा-गजेन्द्रमोक्षम् — विजेता", "desc": "प्रणवपीठेन (वद्दिपर्ति-पद्मकर-महोदयेन) आयोजितयोः मानवकथा-गजेन्द्रमोक्षम्-प्रतियोगितयोः पुरस्काराः प्राप्ताः ।", "year": "प्रणवपीठम्"}, {"icon": "🎭", "title": "सांस्कृतिक-प्रतियोगितासु पुरस्काराः", "desc": "सिडनी-जनरञ्जनी-संस्थया आयोजितासु रामायण-दशावतार-प्रतियोगितासु तथा प्रणवपीठस्य काव्यप्रतियोगितासु अनेके पुरस्काराः प्राप्ताः ।", "year": "सिडनी-जनरञ्जनी · प्रणवपीठम्"}, {"icon": "🎤", "title": "अवधानम् — अप्रस्तुतप्रसङ्गपृच्छकः", "desc": "तटवर्ति-कल्याण-महोदयस्य अवधाने अप्रस्तुतप्रसङ्गपृच्छकरूपेण भागं गृहीत्वा प्रशंसां प्राप्तवान् ।", "year": "तटवर्ति-कल्याण-अवधानम् · सिडनी"}, {"icon": "📺", "title": "भारतं-लघुप्रसङ्गाः", "desc": "महाभारतविषये लघुप्रसङ्गानां श्रेणी यूट्यूब्-माध्यमेन प्रकाशिता — इतिहासे गाढं ज्ञानं प्रदर्शितम् ।", "year": "यूट्यूब्-श्रेणी"}]}, "credits": {"section_title": "कृतज्ञता", "intro": "कार्तिकेयस्य यात्रायां महापण्डितानाम्, आचार्याणाम्, संस्थानां च अनुग्रहः सहायकः अभवत् । तेभ्यः सर्वेभ्यः हार्दिक-धन्यवादाः ।", "list": [{"name": "मैसूर-दत्तपीठम्", "role": "स्वर्णपदकम् — भगवद्गीता-पारायणम्"}, {"name": "केन्द्र-संस्कृत-विश्वविद्यालयः", "role": "संस्कृतओलिम्पियाड्-आयोजकः"}, {"name": "समवेदं शङ्खमुखशर्मा", "role": "प्रेरणा · शिवपद-रचयिता · स्मारकचिह्नम्"}, {"name": "वद्दिपर्ति पद्मकरः", "role": "प्रणवपीठम् · काव्यगुरुः · मार्गदर्शकः"}, {"name": "मडुगुल नागफणिशर्मा", "role": "पण्डितः · प्रोत्साहनम्"}, {"name": "पण्डित ऋषिकेश भट्टर", "role": "षष्टिपूर्ति-महोत्सवः · हेलेन्स्बर्ग्-मन्दिरम्"}, {"name": "तटवर्ति कल्याणः", "role": "अवधानम् — अप्रस्तुतप्रसङ्गपृच्छकः"}, {"name": "सिडनी-जनरञ्जनी", "role": "सांस्कृतिक-प्रतियोगिताः-पुरस्काराः"}, {"name": "सिडनी-मुरुगन्-मन्दिरम्", "role": "पारायण-स्थानम् · आध्यात्मिकसमाजः"}, {"name": "सिडनी-अय्यप्प-मन्दिरम्", "role": "सौन्दर्यलहरी-पारायणम् · नवरात्रिः"}, {"name": "हेलेन्स्बर्ग्-मन्दिरम्", "role": "भगवद्गीता-पारायण-स्थानम्"}, {"name": "चागन्ति कोटेश्वररावः", "role": "रामायण-महाभारत-प्रवचनानि"}, {"name": "प्रणवपीठम्", "role": "मानवकथा · गजेन्द्रमोक्षम् · काव्यप्रतियोगिताः"}]}, "events": {"section_title": "कार्यक्रमाः मैलस्तम्भाश्च", "list": [{"date": "सिडनी · अप्रैल्", "title": "शिवपदानि — समवेदं-शङ्खमुखशर्मणः समक्षम्", "desc": "महापण्डितस्य समवेदं-शङ्खमुखशर्मणः सिडनी-सन्दर्शन-अवसरे तत्समक्षं दश शिवपदानि पठितवान् । विशेषं स्मारकचिह्नं प्राप्तवान् ।"}, {"date": "सिडनी · नवरात्रिः", "title": "सौन्दर्यलहरी-पारायणम् — अय्यप्प-मन्दिरम्", "desc": "नवरात्रि-पर्वणि सिडनी-अय्यप्प-मन्दिरे सौन्दर्यलहर्याः शतश्लोकानां सम्पूर्णं पारायणं कृतवान् ।"}, {"date": "हेलेन्स्बर्ग्-मन्दिरम्", "title": "भगवद्गीता — षष्टिपूर्ति-महोत्सवः", "desc": "पण्डित-ऋषिकेश-भट्टर-महोदयस्य षष्टिपूर्ति-महोत्सव-अवसरे सम्पूर्णां श्रीमद्भगवद्गीतां पठितवान् ।"}, {"date": "केन्द्र-संस्कृत-विश्वविद्यालयः", "title": "संस्कृतओलिम्पियाड् — ऑस्ट्रेलिया-प्रथमः", "desc": "राष्ट्रीय-संस्कृत-ओलिम्पियाड्-स्पर्धायाम् ऑस्ट्रेलियादेशे प्रथमस्थानं प्राप्तवान् । पूर्वे वर्षे अखिलभारतीयस्थानं २६६ ।"}, {"date": "मैसूर-दत्तपीठम्", "title": "स्वर्णपदकम् — भगवद्गीता सप्तशतश्लोकाः", "desc": "श्रीमद्भगवद्गीतायाः सप्तशतश्लोकान् कण्ठस्थीकृत्य पठित्वा स्वर्णपदकं प्राप्तवान् ।"}, {"date": "सिडनी · अवधानम्", "title": "तटवर्ति-कल्याण-अवधानम् — अप्रस्तुतप्रसङ्गः", "desc": "तटवर्ति-कल्याण-महोदयस्य प्रतिष्ठित-अवधाने अप्रस्तुतप्रसङ्गपृच्छकरूपेण भागं गृहीतवान् ।"}, {"date": "प्रणवपीठम्", "title": "मानवकथा-गजेन्द्रमोक्षम् — विजेता", "desc": "वद्दिपर्ति-पद्मकर-महोदयेन आयोजितयोः मानवकथा-गजेन्द्रमोक्षम्-प्रतियोगितयोः पुरस्काराः प्राप्ताः ।"}, {"date": "वयः ~३–४ वर्षाणि", "title": "'परभाषालेकुण्डा तेलुगुलो' — विजेता", "desc": "त्रि-चतुर्वर्षीयः सन् एतस्यां प्रतियोगितायां विजयं प्राप्तवान् — असाधारण-भाषाप्रतिभायाः प्रथमं प्रमाणम् ।"}]}, "parayana": {"section_title": "पारायणम्", "intro": "कार्तिकेयः एतानि पवित्राणि पारायणानि नित्यं करोति । प्रत्येकः श्लोकः तिसृषु लिपिषु दर्शितः — इष्टलिपिं चिनुत ।", "tab_te": "తెలుగు", "tab_dev": "देवनागरी", "tab_iast": "IAST", "stotras": [{"id": "bg", "title": "भगवद्गीता · सप्तशतश्लोकाः", "te": "యదా యదా హి ధర్మస్య గ్లానిర్భవతి భారత ।\nఅభ్యుత్థానమధర్మస్య తదాత్మానం సృజామ్యహమ్ ॥", "dev": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥", "iast": "yadā yadā hi dharmasya glānir bhavati bhārata |\nabhyutthānam adharmasya tadātmānaṁ sṛjāmy aham ||", "attribution": "भगवद्गीता ४.७ — \"यदा धर्मस्य ह्रासः भवति, तदा अहं अवतरामि ।\""}, {"id": "vs", "title": "विष्णुसहस्रनाम", "te": "విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః ।\nభూతకృద్భూతభృద్భావో భూతాత్మా భూతభావనః ॥", "dev": "विश्वं विष्णुर्वषट्कारो भूतभव्यभवत्प्रभुः ।\nभूतकृद्भूतभृद्भावो भूतात्मा भूतभावनः ॥", "iast": "viśvaṁ viṣṇur vaṣaṭkāro bhūtabhavyabhavatprabhuḥ |\nbhūtakṛd bhūtabhṛd bhāvo bhūtātmā bhūtabhāvanaḥ ||", "attribution": "प्रथमश्लोकः — सिडनी-मुरुगन्-मन्दिरे पारायणम्"}, {"id": "ls", "title": "ललितासहस्रनाम", "te": "శ్రీమాతా శ్రీమహారాజ్ఞీ శ్రీమత్సింహాసనేశ్వరీ ।\nచిదగ్నికుండసంభూతా దేవకార్యసముద్యతా ॥", "dev": "श्रीमाता श्रीमहाराज्ञी श्रीमत्सिंहासनेश्वरी ।\nचिदग्निकुण्डसम्भूता देवकार्यसमुद्यता ॥", "iast": "śrīmātā śrīmahārājñī śrīmatsinhāsaneśvarī |\ncidagnikuṇḍasambhūtā devakāryasamudyatā ||", "attribution": "प्रथमनामानि — सिडनी-मुरुगन्-मन्दिरे पारायणम्"}, {"id": "sl", "title": "सौन्दर्यलहरी · शतश्लोकाः", "te": "శివః శక్త్యా యుక్తో యది భవతి శక్తః ప్రభవితుం\nన చేదేవం దేవో న ఖలు కుశలః స్పందితుమపి ।", "dev": "शिवः शक्त्या युक्तो यदि भवति शक्तः प्रभवितुं\nन चेदेवं देवो न खलु कुशलः स्पन्दितुमपि ।", "iast": "śivaḥ śaktyā yukto yadi bhavati śaktaḥ prabhavituṁ\nna cedevaṁ devo na khalu kuśalaḥ spanditum api |", "attribution": "आदिशङ्कराचार्यविरचितः प्रथमश्लोकः — नवरात्रि, अय्यप्प-मन्दिरम्"}, {"id": "sg", "title": "सङ्कटनाशन-गणेशस्तोत्रम्", "te": "ప్రణమ్య శిరసా దేవం గౌరీపుత్రం వినాయకమ్ ।\nభక్తావాసం స్మరేన్నిత్యమాయుఃకామార్థసిద్ధయే ॥", "dev": "प्रणम्य शिरसा देवं गौरीपुत्रं विनायकम् ।\nभक्तावासं स्मरेन्नित्यमायुःकामार्थसिद्धये ॥", "iast": "praṇamya śirasā devaṁ gaurīputraṁ vināyakam |\nbhaktāvāsaṁ smaren nityam āyuḥkāmārthasiddhaye ||", "attribution": "वद्दिपर्ति-पद्मकर-समवेदं-शङ्खमुखशर्म-मडुगुल-नागफणिशर्मभ्यः अर्पितम्"}]}, "support": {"section_title": "सहायता स्पान्सर्शिप्च", "intro": "कार्तिकेयस्य आध्यात्मिक-विद्यायात्रां प्रोत्साहयितुं धर्मकार्यम् एतत् । भवतां सहायता प्रतियोगितासु भागग्रहणे, कार्यक्रमेषु उपस्थाने, अधिकसामग्री-निर्माणे च उपकारकम् ।", "cards": [{"icon": "🙏", "title": "आशीर्वादः प्रोत्साहनञ्च", "desc": "आशीर्वादान् प्रोत्साहनवचनानि वा प्रेषयन्तु, तस्य उपलब्धीः स्वसमाजे प्रसारयन्तु च । प्रत्येकं सन्देशः तस्मै स्फूर्तिं ददाति ।"}, {"icon": "📚", "title": "विद्याया सहायता", "desc": "संस्कृत-परीक्षा-नामाङ्कनम्, अध्ययनसामग्री, पुस्तकानि, ऑस्ट्रेलिया-भारत-प्रतियोगितासु भागग्रहणं च समर्थयन्तु ।"}, {"icon": "🎬", "title": "सदस्यता प्रसारश्च", "desc": "@samskruti.info.1 यूट्यूब्-वाहिन्यां सदस्यतां गृह्णन्तु, तस्य वीडियोः प्रसारयन्तु च — संस्कृत-सनातनधर्म-सौन्दर्यं प्रसारयन्तु ।"}, {"icon": "🤝", "title": "कार्यक्रमेषु आमन्त्रयन्तु", "desc": "स्वमन्दिरे संस्थायां वा पारायणाय, प्रसङ्गाय, प्रतियोगितायै वा कार्तिकेयम् आमन्त्रयन्तु ।"}]}, "testimonials": {"section_title": "अभिप्रायाः", "list": [{"text": "कार्तिकेयस्य शिवपद-पठनं अद्भुतम् आसीत् । इतने अल्पवयसि उच्चारणस्पष्टता भावगाम्भीर्यञ्च वास्तवेन दैवानुग्रहः एव । एषः सम्प्रदायं प्रकाशयन् अग्रे गच्छतु इति आशीर्वदामि ।", "by": "समवेदं शङ्खमुखशर्मा", "role": "प्रख्यात-तेलुगु-पण्डितः कविश्च · सिडनी-सन्दर्शनम्"}, {"text": "अग्रिमपीढी इत्थं निष्ठया संस्कृतम् आदत्ते इति हर्षदायकम् । ओलिम्पियाड्-स्पर्धायाम् तस्य प्रदर्शनं सहजप्रतिभाम् अनुशासितम् अभ्यासञ्च प्रतिबिम्बयति ।", "by": "केन्द्र-संस्कृत-विश्वविद्यालयः", "role": "संस्कृतओलिम्पियाड् — ऑस्ट्रेलिया-प्रथमः"}, {"text": "नवरात्रौ कार्तिकेयस्य सौन्दर्यलहरी-पारायणेन मन्दिरं पवित्रमभवत् । दशवर्षीये बालके एतादृशी निष्ठा वास्तवेन दैवकृपा एव ।", "by": "सिडनी-अय्यप्प-मन्दिरम्", "role": "नवरात्रि-पारायणम्"}]}, "youtube": {"section_title": "यूट्यूब्-वाहिनी", "channel_name": "संस्कृतिः · @samskruti.info.1", "channel_sub": "संस्कृतम् · तेलुगु · भक्तिः · पारायणम् · प्रसङ्गाः", "channel_url": "https://www.youtube.com/@samskruti.info.1", "bharatam_title": "भारतं-लघुप्रसङ्गाः", "bharatam_desc": "महाभारतविषये लघुप्रसङ्गानां श्रेणी — सम्पूर्णा प्लेलिस्ट् पश्यतु", "bharatam_url": "https://www.youtube.com/watch?v=xB1CT8539J0&list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ", "videos": [{"title": "भगवद्गीता-पारायणम्", "meta": "सप्तशतश्लोकाः · कार्तिकेयः पीडपर्ति"}, {"title": "संस्कृत-स्तोत्राणि", "meta": "स्तोत्राणि · सहस्रनामानि · स्तुतयः"}, {"title": "भारतं-लघुप्रसङ्गाः", "meta": "महाभारत-प्रसङ्गाः · श्रेणी"}]}, "contact": {"section_title": "सम्पर्कः", "intro": "कार्तिकेयम् कार्यक्रमेषु, पारायणाय, प्रतियोगितासु वा आमन्त्रयितुम्, आशीर्वादान् विचारांश्च प्रेषयितुम् अस्मान् लिखन्तु ।", "location_city": "सिडनी, न्यू-साउथ-वेल्स्", "location_country": "ऑस्ट्रेलिया", "youtube_label": "यूट्यूब्", "form_name": "भवतः नाम", "form_email": "भवतः ईमेल्", "form_subject": "विषयः", "form_message": "भवतः सन्देशः, आशीर्वादः विचारो वा…", "form_submit": "सन्देशं प्रेषयतु ✉", "form_thanks": "🙏 धन्यवादाः ! वयं शीघ्रं प्रतिवदिष्यामः ।", "quote_sa": "सर्वे भवन्तु सुखिनः ।", "quote_en": "सर्वे सुखिनः भवन्तु ।"}, "footer": {"sa": "ॐ तत्सत् । श्रीकृष्णार्पणमस्तु ।", "iast": "Oṃ tat sat · Śrī Kṛṣṇārpaṇam astu", "copy": "© २०२५ कार्तिकेयः पीडपर्ति · सिडनी, ऑस्ट्रेलिया"}, "settings": {"title": "व्यवस्थापनम्", "theme": "दृश्यम्", "theme_light": "☀ प्रकाशः", "theme_dark": "☽ तमः", "font_size": "अक्षरमापम्", "accent": "वर्णः", "language": "भाषा"}}};
+// ═══════════════════ EMBEDDED TRANSLATIONS ═══════════════════
+const ALL = {"en": {"nav": {"home": "Home", "about": "About", "profile": "Profile", "credits": "Credits", "events": "Events", "parayana": "Pārāyaṇa", "support": "Sponsor", "testimonials": "Testimonials", "contact": "Contact", "youtube": "YouTube", "logo_name": "Samskruti", "logo_tag": "సంస్కృతి • संस्कृति"}, "hero": {"greeting": "Śrī Gaṇeśāya Namaḥ", "name": "Karthikeya Pidaparthy", "age_location": "Age 10 · Sydney, Australia", "description": "A young scholar of Sanskrit, Telugu and English — who memorised all 700 verses of the Bhagavad Gītā and received the Gold Medal from Mysore Datta Peetham; laureate of the Sanskrit Olympiad (1st in Australia); devoted pārāyaṇa seeker in the grand tradition of Sanātana Dharma.", "btn_achievements": "View Achievements", "btn_youtube": "▶ YouTube Channel", "badges": ["🏅 Gold Medal — Mysore Datta Peetham", "🥇 Sanskrit Olympiad — 1st in Australia", "📖 Bhagavad Gītā · 700 Verses", "🕉 Soundaryalaharī · 100 Verses", "🎤 Śivapadams by Samavedam"]}, "about": {"section_title": "About Karthikeya", "para1": "Born in Sydney, Australia into a family deeply rooted in the Vedic tradition, Karthikeya Pidaparthy has been immersed in the world of Sanskrit, scripture and classical Telugu literature from his earliest years. Far from the land of his ancestors yet firmly anchored in their wisdom, he embodies the living continuity of Sanātana Dharma.", "para2": "At the remarkable age of 10, he balances the demands of a modern Australian schooling with daily devotional practice, regular temple pārāyaṇa, and serious academic engagement with Sanskrit — a feat that has drawn the admiration of revered scholars from across India and the diaspora.", "quote_sa": "विद्या ददाति विनयम् ।", "quote_iast": "vidyā dadāti vinayam", "quote_te": "విద్య వినయమిస్తుంది.", "quote_en": "Knowledge bestows humility.", "cards": [{"title": "Languages", "body": "Fluent in Telugu, English and profoundly versed in Sanskrit. He reads and writes in Devanāgarī, Telugu and Roman IAST scripts. His Telugu is so pure that at age 3–4 he won the 'Para Bhāṣa Lekundā Telugu Lo' competition — spoken Telugu free of foreign words."}, {"title": "Scriptural Depth", "body": "Has listened to the complete Rāmāyaṇa and Mahābhārata pravachanams of Chaganti Koteswara Rao in their entirety. Familiar with stories from the Bhāgavata, Upaniṣads and all major Itihāsas. He has also explored the 'Stories Behind Temples' series by Vyoma Linguistics Labs."}, {"title": "Community & Devotion", "body": "Regularly performs Viṣṇu Sahasranāma and Lalitā Sahasranāma pārāyaṇa at Sydney Murugan Temple. Performed Soundaryalaharī at Navarātri in Sydney Ayyappa Temple. Chanted the complete Bhagavad Gītā at Helensburgh Temple."}]}, "profile": {"section_title": "Profile & Achievements", "journey_title": "The Sanskrit Journey", "journey": "Karthikeya's love for Sanskrit was kindled at home from a very young age. Long before formal schooling, he was immersed in the sounds and rhythms of Sanskrit verses, listening to his family recite stotras and prayers. This early immersion laid the foundation for what would become an extraordinary academic and spiritual journey.\n\nHis formal Sanskrit examinations through the Saṃskṛta Bhāratī programme trace a remarkable arc of excellence — each year he has not merely passed but mastered each level with distinction:\n\n• Āyanam (2022) — 100%\n• Sāriṇī (2023) — 98%\n• Saralā (2024) — 94%\n• Sugamā (2025) — 98%\n• Sarasā (2026) — 96%\n\nAcross five consecutive years, he has maintained an average of 97.2% — a testament to consistent dedication and genuine love for the language of the Vedas. He also explored the rich 'Stories Behind Temples' video series by Vyoma Linguistics Labs, deepening his understanding of the cultural and mythological heritage woven into India's sacred geography.", "achievements": [{"icon": "🥇", "title": "Gold Medal — Bhagavad Gītā", "desc": "Awarded the prestigious Gold Medal by Mysore Datta Peetham for memorising and flawlessly reciting all 700 verses of the Śrīmad Bhagavad Gītā — a monumental feat of memory, devotion and discipline.", "year": "Mysore Datta Peetham", "tag": "gold"}, {"icon": "📖", "title": "Bhagavad Gītā — Helensburgh Temple", "desc": "Chanted the complete Śrīmad Bhagavad Gītā (all 18 chapters, 700 verses) at Helensburgh Temple on the auspicious occasion of Paṇḍit Rishikesh Bhattar's Ṣaṣṭipūrti Mahōtsavam — a rare honour and a deeply moving devotional offering.", "year": "Helensburgh Temple · Ṣaṣṭipūrti Mahōtsavam", "tag": "gold"}, {"icon": "🏆", "title": "Sanskrit Olympiad — 1st in Australia", "desc": "Secured 1st place in Australia in the Central Sanskrit University's National Sanskrit Olympiad for two consecutive years. In the previous year he achieved All India Rank 266 — competing against thousands of students across India.", "year": "Central Sanskrit University · 2 consecutive years", "tag": "olympiad"}, {"icon": "📊", "title": "Sanskrit Examinations — 5 Years of Excellence", "desc": "Āyanam 2022 (100%) · Sāriṇī 2023 (98%) · Saralā 2024 (94%) · Sugamā 2025 (98%) · Sarasā 2026 (96%). Five years of consecutive excellence with a 97.2% average — each level progressively more advanced.", "year": "Saṃskṛta Bhāratī Programme · 2022–2026", "tag": "olympiad"}, {"icon": "🕉", "title": "Soundaryalaharī Pārāyaṇa", "desc": "Memorised all 100 verses of Ādi Śaṅkarācārya's Soundaryalaharī — one of the most celebrated Sanskrit hymns on the Divine Mother — and performed the complete pārāyaṇa at Sydney Ayyappa Temple during Navarātri.", "year": "Sydney Ayyappa Temple · Navarātri", "tag": "parayana"}, {"icon": "📜", "title": "Viṣṇu & Lalitā Sahasranāma", "desc": "Regularly performs the complete Viṣṇu Sahasranāma and Lalitā Sahasranāma pārāyaṇa at Sydney Murugan Temple, contributing to the devotional life of Sydney's Hindu community.", "year": "Sydney Murugan Temple · Regular", "tag": "parayana"}, {"icon": "🎤", "title": "Śivapadams — Samavedam Shanmukha Sharma", "desc": "Recited 10 Śivapadam poems composed by the renowned scholar Samavedam Shanmukha Sharma in his presence during his Sydney visit. The great scholar was moved and presented Karthikeya with a special memento in appreciation.", "year": "Sydney · April · Samavedam Shanmukha Sharma's visit", "tag": "scholar"}, {"icon": "✍", "title": "Saṅkaṭanāśana Ganeśa Stotram — Offered to Scholars", "desc": "Personally transcribed and offered a handwritten copy of the Saṅkaṭanāśana Ganeśa Stotram to three eminent scholars: Vaddiparti Padmakar, Samavedam Shanmukha Sharma and Madugula Naga Phani Sharma.", "year": "Personal offering to three great scholars", "tag": "scholar"}, {"icon": "🎭", "title": "Avadānam — Aprastuta Prasaṅga", "desc": "Participated as the Aprastuta Prasaṅga Pṛcchakudu (off-topic questioner) in the prestigious avadānam performed by the celebrated poet-scholar Taṭavarti Kalyāṇ — a role requiring sharp wit and spontaneous creativity.", "year": "Taṭavarti Kalyāṇ Avadānam · Sydney", "tag": "scholar"}, {"icon": "🏅", "title": "Mānava Kathā & Gajendra Mokṣam — Winner", "desc": "Won prizes in the Mānava Kathā and Gajendra Mokṣam competitions organised by Pranava Peetham under the guidance of Vaddiparti Padmakar.", "year": "Pranava Peetham · Vaddiparti Padmakar", "tag": "competition"}, {"icon": "🎊", "title": "Cultural Competitions — Multiple Prizes", "desc": "Won multiple prizes in Rāmāyaṇa and Daśāvatāra storytelling competitions organised by Sydney Jana Ranjani, and in poetry competitions organised by Pranava Peetham.", "year": "Sydney Jana Ranjani · Pranava Peetham", "tag": "competition"}, {"icon": "🗣", "title": "'Para Bhāṣa Lekundā Telugu Lo' — Winner", "desc": "At the extraordinary age of 3–4 years, won the 'Para Bhāṣa Lekundā Telugu Lo' competition — speaking pure Telugu entirely free of borrowed foreign words. A remarkable early indication of his linguistic gifts.", "year": "Age ~3–4 years · Telugu language competition", "tag": "competition"}, {"icon": "📺", "title": "Bhāratam Laghu Prasaṅgālu", "desc": "Delivered a published series of short discourses on the Mahābhārata on YouTube, demonstrating a depth of understanding of the great Itihāsa far beyond his years. He has listened to the complete Bhārata and Rāmāyaṇa pravachanams of Chaganti Koteswara Rao.", "year": "YouTube Series · samskruti.info.1", "tag": "discourse"}], "exam_table_title": "Sanskrit Examination Record", "exam_table": [{"year": "2022", "exam": "Āyanam", "score": "100%", "grade": "🌟"}, {"year": "2023", "exam": "Sāriṇī", "score": "98%", "grade": "🌟"}, {"year": "2024", "exam": "Saralā", "score": "94%", "grade": "⭐"}, {"year": "2025", "exam": "Sugamā", "score": "98%", "grade": "🌟"}, {"year": "2026", "exam": "Sarasā", "score": "96%", "grade": "🌟"}], "photo_placeholder": "Certificate & Achievement Photos", "photo_placeholder_sub": "Certificates and event photographs will be displayed here"}, "credits": {"section_title": "Credits & Gratitude", "intro": "Karthikeya's remarkable journey has been shaped by the grace and guidance of great scholars, revered organisations and a loving community. With deep gratitude:", "list": [{"name": "Mysore Datta Peetham", "role": "Gold Medal — Bhagavad Gītā Pārāyaṇa"}, {"name": "Central Sanskrit University", "role": "Sanskrit Olympiad — organiser & recognition"}, {"name": "Samavedam Shanmukha Sharma", "role": "Śivapadam composer · Inspiration · Memento"}, {"name": "Vaddiparti Padmakar", "role": "Pranava Peetham · Poetry mentor · Competitions"}, {"name": "Madugula Naga Phani Sharma", "role": "Scholar · Blessing · Encouragement"}, {"name": "Paṇḍit Rishikesh Bhattar", "role": "Ṣaṣṭipūrti Mahōtsavam · Helensburgh Temple"}, {"name": "Taṭavarti Kalyāṇ", "role": "Avadānam — Aprastuta Prasaṅga honour"}, {"name": "Chaganti Koteswara Rao", "role": "Rāmāyaṇa & Mahābhārata pravachanams"}, {"name": "Vyoma Linguistics Labs", "role": "Stories Behind Temples · Sanskrit learning"}, {"name": "Sydney Jana Ranjani", "role": "Cultural competitions & recognition"}, {"name": "Sydney Murugan Temple", "role": "Pārāyaṇa venue & spiritual community"}, {"name": "Sydney Ayyappa Temple", "role": "Soundaryalaharī pārāyaṇa · Navarātri"}, {"name": "Helensburgh Temple", "role": "Bhagavad Gītā pārāyaṇa venue"}, {"name": "Pranava Peetham", "role": "Mānava Kathā · Gajendra Mokṣam · Poetry"}]}, "events": {"section_title": "Events & Milestones", "events_placeholder": "Event photographs will appear here", "list": [{"date": "Sydney · April", "title": "Śivapadam Recitation — Samavedam Shanmukha Sharma", "desc": "Recited 10 Śivapadam poems composed by the renowned scholar in his presence during his Sydney visit. Received a special memento in recognition.", "has_photo": true}, {"date": "Sydney · Navarātri", "title": "Soundaryalaharī Pārāyaṇa — Ayyappa Temple", "desc": "Performed the complete pārāyaṇa of Soundaryalaharī (100 verses) at Sydney Ayyappa Temple across the nine sacred nights of Navarātri.", "has_photo": true}, {"date": "Helensburgh Temple", "title": "Bhagavad Gītā — Ṣaṣṭipūrti Mahōtsavam", "desc": "Chanted the complete Śrīmad Bhagavad Gītā on the occasion of Paṇḍit Rishikesh Bhattar's Ṣaṣṭipūrti (60th Birthday) Mahōtsavam — all 700 verses as a devotional offering.", "has_photo": true}, {"date": "Central Sanskrit University · This Year", "title": "Sanskrit Olympiad — 1st Place in Australia", "desc": "Achieved 1st place in Australia in the National Sanskrit Olympiad. Previously secured All India Rank 266 — two consecutive years of national-level recognition.", "has_photo": true}, {"date": "Mysore Datta Peetham", "title": "Gold Medal — Bhagavad Gītā 700 Verses", "desc": "Awarded the Gold Medal for memorising and reciting all 700 verses of the Śrīmad Bhagavad Gītā by the revered Mysore Datta Peetham.", "has_photo": true}, {"date": "Sydney · Avadānam", "title": "Taṭavarti Kalyāṇ Avadānam", "desc": "Participated as the Aprastuta Prasaṅga Pṛcchakudu (off-topic questioner) in the celebrated scholar's prestigious avadānam performance.", "has_photo": true}, {"date": "Pranava Peetham", "title": "Mānava Kathā & Gajendra Mokṣam — Winner", "desc": "Won prizes in both Mānava Kathā and Gajendra Mokṣam competitions under the guidance of Vaddiparti Padmakar.", "has_photo": false}, {"date": "Sydney Jana Ranjani", "title": "Rāmāyaṇa & Daśāvatāra — Prizes", "desc": "Multiple prizes in Rāmāyaṇa and Daśāvatāra storytelling competitions, and poetry competitions by Pranava Peetham.", "has_photo": false}, {"date": "Age ~3–4 years", "title": "'Para Bhāṣa Lekundā Telugu Lo' — Winner", "desc": "Won this Telugu language purity competition at the remarkable age of 3–4 — the earliest sign of his extraordinary linguistic gift.", "has_photo": false}]}, "parayana": {"section_title": "Pārāyaṇa", "intro": "Karthikeya regularly performs these sacred pārāyaṇas. Each Sanskrit verse is displayed in three scripts — select your preferred script using the tabs below.", "tab_te": "Telugu", "tab_dev": "Devanāgarī", "tab_iast": "IAST", "stotras": [{"id": "bg", "title": "Bhagavad Gītā · 700 Verses", "te": "యదా యదా హి ధర్మస్య గ్లానిర్భవతి భారత ।\nఅభ్యుత్థానమధర్మస్య తదాత్మానం సృజామ్యహమ్ ॥", "dev": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥", "iast": "yadā yadā hi dharmasya glānir bhavati bhārata |\nabhyutthānam adharmasya tadātmānaṁ sṛjāmy aham ||", "attribution": "Bhagavad Gītā 4.7 — \"Whenever righteousness declines, I manifest myself.\" Memorised all 700 verses; Gold Medal, Mysore Datta Peetham."}, {"id": "vs", "title": "Viṣṇu Sahasranāma", "te": "విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః ।\nభూతకృద్భూతభృద్భావో భూతాత్మా భూతభావనః ॥", "dev": "विश्वं विष्णुर्वषट्कारो भूतभव्यभवत्प्रभुः ।\nभूतकृद्भूतभृद्भावो भूतात्मा भूतभावनः ॥", "iast": "viśvaṁ viṣṇur vaṣaṭkāro bhūtabhavyabhavatprabhuḥ |\nbhūtakṛd bhūtabhṛd bhāvo bhūtātmā bhūtabhāvanaḥ ||", "attribution": "Opening śloka — performed regularly at Sydney Murugan Temple."}, {"id": "ls", "title": "Lalitā Sahasranāma", "te": "శ్రీమాతా శ్రీమహారాజ్ఞీ శ్రీమత్సింహాసనేశ్వరీ ।\nచిదగ్నికుండసంభూతా దేవకార్యసముద్యతా ॥", "dev": "श्रीमाता श्रीमहाराज्ञी श्रीमत्सिंहासनेश्वरी ।\nचिदग्निकुण्डसम्भूता देवकार्यसमुद्यता ॥", "iast": "śrīmātā śrīmahārājñī śrīmatsinhāsaneśvarī |\ncidagnikuṇḍasambhūtā devakāryasamudyatā ||", "attribution": "Opening nāmas — performed regularly at Sydney Murugan Temple."}, {"id": "sl", "title": "Soundaryalaharī · 100 Verses", "te": "శివః శక్త్యా యుక్తో యది భవతి శక్తః ప్రభవితుం\nన చేదేవం దేవో న ఖలు కుశలః స్పందితుమపి ।", "dev": "शिवः शक्त्या युक्तो यदि भवति शक्तः प्रभवितुं\nन चेदेवं देवो न खलु कुशलः स्पन्दितुमपि ।", "iast": "śivaḥ śaktyā yukto yadi bhavati śaktaḥ prabhavituṁ\nna cedevaṁ devo na khalu kuśalaḥ spanditum api |", "attribution": "Opening verse of Soundaryalaharī by Ādi Śaṅkarācārya — all 100 verses memorised and performed at Navarātri, Sydney Ayyappa Temple."}, {"id": "sg", "title": "Saṅkaṭanāśana Ganeśa Stotram", "te": "ప్రణమ్య శిరసా దేవం గౌరీపుత్రం వినాయకమ్ ।\nభక్తావాసం స్మరేన్నిత్యమాయుఃకామార్థసిద్ధయే ॥", "dev": "प्रणम्य शिरसा देवं गौरीपुत्रं विनायकम् ।\nभक्तावासं स्मरेन्नित्यमायुःकामार्थसिद्धये ॥", "iast": "praṇamya śirasā devaṁ gaurīputraṁ vināyakam |\nbhaktāvāsaṁ smaren nityam āyuḥkāmārthasiddhaye ||", "attribution": "Handwritten copy offered personally to Vaddiparti Padmakar, Samavedam Shanmukha Sharma and Madugula Naga Phani Sharma."}]}, "support": {"section_title": "Support & Sponsor", "intro": "Encouraging Karthikeya's spiritual and academic journey is a noble act of dharma. Your support enables him to participate in competitions, travel to events and produce more devotional and educational content.", "cards": [{"icon": "🙏", "title": "Blessings & Encouragement", "desc": "Send your blessings, words of encouragement, or share his achievements within your community. Every message of support inspires him to continue forward."}, {"icon": "📚", "title": "Sponsor His Education", "desc": "Support Sanskrit exam registrations, study materials, books, and his participation in competitions across Australia and India."}, {"icon": "🎬", "title": "Subscribe & Share", "desc": "Subscribe to his YouTube channel @samskruti.info.1 and share his videos to help spread the beauty of Sanskrit and the living tradition of Sanātana Dharma."}, {"icon": "🤝", "title": "Invite to Your Event", "desc": "Invite Karthikeya to perform pārāyaṇa, deliver a discourse, or participate in competitions and festivals at your temple, school or cultural organisation."}]}, "testimonials": {"section_title": "Testimonials", "list": [{"text": "Karthikeya's recitation of the Śivapadams was truly remarkable. The clarity of pronunciation, the depth of feeling, and the devotion in one so young is a rare and precious gift. May he continue to illuminate the tradition.", "by": "Samavedam Shanmukha Sharma", "role": "Renowned Telugu Scholar & Poet · Sydney Visit"}, {"text": "It is heartening to see the next generation embrace Sanskrit with such commitment and joy. His performance in the Olympiad reflects both extraordinary natural talent and deeply disciplined practice.", "by": "Central Sanskrit University", "role": "Sanskrit Olympiad — 1st Place in Australia"}, {"text": "During Navarātri, Karthikeya's pārāyaṇa of Soundaryalaharī filled our temple with a truly sacred vibration. Such devotion and memorisation from a 10-year-old is nothing short of divine grace.", "by": "Sydney Ayyappa Temple", "role": "Navarātri Soundaryalaharī Pārāyaṇa"}]}, "youtube": {"section_title": "YouTube Channel", "channel_name": "Samskruti · @samskruti.info.1", "channel_sub": "Sanskrit · Telugu · Devotional · Pārāyaṇa · Discourses", "channel_url": "https://www.youtube.com/@samskruti.info.1", "bharatam_title": "Bhāratam Laghu Prasaṅgālu", "bharatam_desc": "A YouTube series of short discourses on the Mahābhārata — watch the full playlist", "bharatam_url": "https://www.youtube.com/watch?v=xB1CT8539J0&list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ", "videos": [{"title": "Bhagavad Gītā Pārāyaṇa", "meta": "700 Verses · Karthikeya Pidaparthy"}, {"title": "Sanskrit Recitations", "meta": "Stotras · Sahasranāmas · Devotional Hymns"}, {"title": "Bhāratam Laghu Prasaṅgālu", "meta": "Mahābhārata Discourses · Full Series"}]}, "contact": {"section_title": "Contact", "intro": "To invite Karthikeya for events, pārāyaṇa, competitions or discourses — or simply to send your blessings and enquiries — please write to us.", "location_city": "Sydney, New South Wales", "location_country": "Australia", "youtube_label": "YouTube Channel", "form_name": "Your Name", "form_email": "Your Email", "form_subject": "Subject", "form_message": "Your message, blessings or enquiry…", "form_submit": "Send Message ✉", "form_thanks": "🙏 Thank you! We will respond soon.", "quote_sa": "सर्वे भवन्तु सुखिनः ।", "quote_en": "May all be happy."}, "footer": {"sa": "ॐ तत्सत् । श्रीकृष्णार्पणमस्तु ।", "iast": "Oṃ tat sat · Śrī Kṛṣṇārpaṇam astu", "copy": "© 2025 Karthikeya Pidaparthy · Sydney, Australia"}, "settings": {"title": "Settings", "theme": "Theme", "theme_light": "☀ Light", "theme_dark": "☽ Dark", "font_size": "Font Size", "accent": "Accent Colour", "language": "Language"}}, "te": {"nav": {"home": "హోమ్", "about": "పరిచయం", "profile": "ప్రొఫైల్", "credits": "కృతజ్ఞతలు", "events": "కార్యక్రమాలు", "parayana": "పారాయణ", "support": "సహకారం", "testimonials": "అభిప్రాయాలు", "contact": "సంప్రదించండి", "youtube": "యూట్యూబ్", "logo_name": "సంస్కృతి", "logo_tag": "Samskruti • संस्कृति"}, "hero": {"greeting": "శ్రీ గణేశాయ నమః", "name": "కార్తికేయ పీడపర్తి", "age_location": "వయసు 10 · సిడ్నీ, ఆస్ట్రేలియా", "description": "సంస్కృతం, తెలుగు మరియు ఇంగ్లీషులో అసమాన పాండిత్యం కలిగిన యువ విద్వాంసుడు — భగవద్గీత 700 శ్లోకాలు కంఠస్థం చేసి మైసూర్ దత్త పీఠం నుండి స్వర్ణపతకం అందుకున్నాడు; సంస్కృత ఒలింపియాడ్‌లో ఆస్ట్రేలియా ప్రథముడు; సనాతన ధర్మ మహాసంప్రదాయంలో నిష్ఠావంతమైన పారాయణ సాధకుడు.", "btn_achievements": "విజయాలు చూడండి", "btn_youtube": "▶ యూట్యూబ్ చానెల్", "badges": ["🏅 స్వర్ణపతకం — మైసూర్ దత్త పీఠం", "🥇 సంస్కృత ఒలింపియాడ్ — ఆస్ట్రేలియా ప్రథమ", "📖 భగవద్గీత · 700 శ్లోకాలు", "🕉 సౌందర్యలహరి · 100 శ్లోకాలు", "🎤 సమవేదం రచించిన శివపదాలు"]}, "about": {"section_title": "కార్తికేయ గురించి", "para1": "సిడ్నీ, ఆస్ట్రేలియాలో వేద సంప్రదాయాన్ని లాలించే కుటుంబంలో జన్మించిన కార్తికేయ పీడపర్తి, చిన్నప్పటి నుండే సంస్కృతం, శాస్త్రం మరియు శాస్త్రీయ తెలుగు సాహిత్య ప్రపంచంలో నిమగ్నమయ్యాడు. పితరుల భూమికి దూరంగా ఉన్నా వారి జ్ఞానంలో దృఢంగా నిలబడి, సనాతన ధర్మ జీవన్ నిరంతరతకు మూర్తీభవించాడు.", "para2": "10 సంవత్సరాల అద్భుతమైన వయసులో, ఆధునిక ఆస్ట్రేలియా పాఠశాల విద్యతోపాటు నిత్య భక్తి సాధన, నిత్య ఆలయ పారాయణ మరియు సంస్కృతంలో తీవ్ర విద్యా ప్రమేయం సమతుల్యంగా నిర్వహిస్తున్నాడు — భారతదేశం నలుమూలల విద్వాంసుల మన్ననలు అందుకుంటున్నాడు.", "quote_sa": "विद्या ददाति विनयम् ।", "quote_iast": "vidyā dadāti vinayam", "quote_te": "విద్య వినయమిస్తుంది.", "quote_en": "జ్ఞానం వినయాన్ని ప్రసాదిస్తుంది.", "cards": [{"title": "భాషలు", "body": "తెలుగు, ఇంగ్లీషులో ప్రవాహంగా మాట్లాడతాడు; సంస్కృతంలో అపారమైన పాండిత్యం ఉంది. దేవనాగరి, తెలుగు మరియు Roman IAST లిపులు చదువుతాడు. 3-4 ఏళ్ళకే 'పర భాష లేకుండా తెలుగులో' పోటీ గెలుచుకున్నాడు."}, {"title": "శాస్త్రజ్ఞానం", "body": "చాగంటి కోటేశ్వర రావు గారి పూర్తి రామాయణ మరియు మహాభారత ప్రవచనాలు మొత్తం విన్నాడు. భాగవత, ఉపనిషత్తులు, ఇతిహాసాల కథలు తెలుసు. వ్యోమ లింగ్విస్టిక్స్ లాబ్స్ 'ఆలయాల వెనుక కథలు' శ్రేణిని కూడా అభ్యసించాడు."}, {"title": "సమాజ సేవ & భక్తి", "body": "సిడ్నీ మురుగన్ ఆలయంలో విష్ణు సహస్రనామ, లలితా సహస్రనామ పారాయణ నిత్యం నిర్వహిస్తాడు. నవరాత్రిలో సిడ్నీ అయ్యప్ప ఆలయంలో సౌందర్యలహరి పారాయణ చేశాడు. హెలెన్స్‌బర్గ్ ఆలయంలో సమగ్ర భగవద్గీత పఠించాడు."}]}, "profile": {"section_title": "విజయాలు & ప్రొఫైల్", "journey_title": "సంస్కృత యాత్ర", "journey": "కార్తికేయ సంస్కృతంపై ప్రేమ చాలా చిన్న వయసులోనే ఇంట్లో మొదలైంది. అతను పాఠశాలకు వెళ్ళే ముందే, సంస్కృత శ్లోకాల శబ్దాలు మరియు లయలతో నిండిపోయాడు — కుటుంబసభ్యులు స్తోత్రాలు మరియు ప్రార్థనలు పఠించడం వినేవాడు. ఈ ప్రారంభ నిమజ్జనం అసాధారణమైన ఆధ్యాత్మిక మరియు విద్యా ప్రయాణానికి పునాది వేసింది.\n\nసంస్కృత భారతీ పరీక్షా కార్యక్రమం ద్వారా అతని అధికారిక సంస్కృత పరీక్షలు అద్భుతమైన శ్రేష్ఠతను సాధించాయి:\n\n• ఆయనమ్ (2022) — 100%\n• సారిణీ (2023) — 98%\n• సరళా (2024) — 94%\n• సుగమా (2025) — 98%\n• సరసా (2026) — 96%\n\nవరుసగా ఐదు సంవత్సరాల పాటు 97.2% సగటుతో విజయం సాధించాడు — వేదాల భాషపై నిజమైన ప్రేమకు నిదర్శనం. వ్యోమ లింగ్విస్టిక్స్ లాబ్స్ వారి 'ఆలయాల వెనుక కథలు' వీడియో శ్రేణిని చూసి భారతదేశ పవిత్ర భూగోళంతో ముడిపడిన సాంస్కృతిక మరియు పౌరాణిక వారసత్వాన్ని లోతుగా అర్థం చేసుకున్నాడు.", "achievements": [{"icon": "🥇", "title": "స్వర్ణపతకం — భగవద్గీత", "desc": "శ్రీమద్భగవద్గీత 700 శ్లోకాలు కంఠస్థం చేసి అప్రమేయంగా పఠించినందుకు మైసూర్ దత్త పీఠం నుండి ప్రతిష్ఠాత్మక స్వర్ణపతకం అందుకున్నాడు — జ్ఞాపకశక్తి, భక్తి మరియు శిక్షణకు మహాసాధన.", "year": "మైసూర్ దత్త పీఠం", "tag": "gold"}, {"icon": "📖", "title": "భగవద్గీత — హెలెన్స్‌బర్గ్ ఆలయం", "desc": "పండిట్ రిషికేష్ భట్టర్ గారి షష్టిపూర్తి మహోత్సవం శుభ సందర్భంగా హెలెన్స్‌బర్గ్ ఆలయంలో సమగ్ర శ్రీమద్భగవద్గీత (18 అధ్యాయాలు, 700 శ్లోకాలు) పఠించాడు — అపూర్వమైన గౌరవం మరియు హృదయస్పర్శి భక్తి నివేదన.", "year": "హెలెన్స్‌బర్గ్ ఆలయం · షష్టిపూర్తి మహోత్సవం", "tag": "gold"}, {"icon": "🏆", "title": "సంస్కృత ఒలింపియాడ్ — ఆస్ట్రేలియా ప్రథమ", "desc": "కేంద్ర సంస్కృత విశ్వవిద్యాలయం జాతీయ సంస్కృత ఒలింపియాడ్‌లో వరుసగా రెండు సంవత్సరాలు ఆస్ట్రేలియాలో ప్రథమ స్థానం. గత సంవత్సరం భారతదేశంలో వేలాది విద్యార్థులతో పోటీపడి అఖిల భారత స్థానం 266.", "year": "కేంద్ర సంస్కృత విశ్వవిద్యాలయం · వరుసగా 2 సంవత్సరాలు", "tag": "olympiad"}, {"icon": "📊", "title": "సంస్కృత పరీక్షలు — 5 సంవత్సరాల శ్రేష్ఠత", "desc": "ఆయనమ్ 2022 (100%) · సారిణీ 2023 (98%) · సరళా 2024 (94%) · సుగమా 2025 (98%) · సరసా 2026 (96%). వరుసగా ఐదు సంవత్సరాలు 97.2% సగటుతో — ప్రతి స్థాయి మరింత అభివృద్ధి చెందిన కోర్సు.", "year": "సంస్కృత భారతీ కార్యక్రమం · 2022–2026", "tag": "olympiad"}, {"icon": "🕉", "title": "సౌందర్యలహరి పారాయణ", "desc": "ఆదిశంకరాచార్యుల సౌందర్యలహరి 100 శ్లోకాలు కంఠస్థం చేసి — దైవమాతపై అత్యంత ప్రశస్తమైన సంస్కృత స్తోత్రాలలో ఒకటి — నవరాత్రి సందర్భంగా సిడ్నీ అయ్యప్ప ఆలయంలో పూర్తి పారాయణ చేశాడు.", "year": "సిడ్నీ అయ్యప్ప ఆలయం · నవరాత్రి", "tag": "parayana"}, {"icon": "📜", "title": "విష్ణు & లలితా సహస్రనామ", "desc": "సిడ్నీ మురుగన్ ఆలయంలో విష్ణు సహస్రనామ మరియు లలితా సహస్రనామ పారాయణ నిత్యం నిర్వహిస్తాడు — సిడ్నీ హిందూ సమాజ ఆధ్యాత్మిక జీవనానికి సేవ.", "year": "సిడ్నీ మురుగన్ ఆలయం · నిత్యం", "tag": "parayana"}, {"icon": "🎤", "title": "శివపదాలు — సమవేదం శంఖముఖ శర్మ", "desc": "ప్రఖ్యాత పండితుడు సమవేదం శంఖముఖ శర్మ గారి సిడ్నీ సందర్శన సందర్భంలో వారి సమక్షంలో వారు రచించిన 10 శివపదాలు పఠించాడు. మహాపండితుడు హృదయపూర్వకంగా స్వాగతించి ప్రత్యేక స్మారక చిహ్నం అందించారు.", "year": "సిడ్నీ · ఏప్రిల్ · సమవేదం శంఖముఖ శర్మ సందర్శన", "tag": "scholar"}, {"icon": "✍", "title": "సంకటనాశన గణేశ స్తోత్రం — పండితులకు అర్పణ", "desc": "సంకటనాశన గణేశ స్తోత్రం స్వహస్తాలతో లిఖించి ముగ్గురు విద్వాంసులకు — వద్దిపర్తి పద్మకర్, సమవేదం శంఖముఖ శర్మ మరియు మడుగుల నాగఫణి శర్మలకు — వ్యక్తిగతంగా అర్పించాడు.", "year": "ముగ్గురు మహాపండితులకు వ్యక్తిగత అర్పణ", "tag": "scholar"}, {"icon": "🎭", "title": "అవధానం — అప్రస్తుత ప్రసంగ పృచ్ఛకుడు", "desc": "ప్రఖ్యాత కవి-పండితుడు తటవర్తి కళ్యాణ్ గారి ప్రతిష్ఠాత్మక అవధానంలో అప్రస్తుత ప్రసంగ పృచ్ఛకునిగా పాల్గొన్నాడు — తక్షణ తెలివి మరియు సృజనాత్మకత అవసరమైన పాత్ర.", "year": "తటవర్తి కళ్యాణ్ అవధానం · సిడ్నీ", "tag": "scholar"}, {"icon": "🏅", "title": "మానవ కథ & గజేంద్ర మోక్షం — విజేత", "desc": "వద్దిపర్తి పద్మకర్ మార్గదర్శనంలో ప్రణవ పీఠం నిర్వహించిన మానవ కథ మరియు గజేంద్ర మోక్షం రెండు పోటీలలో బహుమతులు గెలుచుకున్నాడు.", "year": "ప్రణవ పీఠం · వద్దిపర్తి పద్మకర్", "tag": "competition"}, {"icon": "🎊", "title": "సాంస్కృతిక పోటీలు — అనేక బహుమతులు", "desc": "సిడ్నీ జన రంజని నిర్వహించిన రామాయణ మరియు దశావతార కథా పోటీలలో, ప్రణవ పీఠం కవిత్వ పోటీలలో అనేక బహుమతులు గెలుచుకున్నాడు.", "year": "సిడ్నీ జన రంజని · ప్రణవ పీఠం", "tag": "competition"}, {"icon": "🗣", "title": "'పర భాష లేకుండా తెలుగులో' — విజేత", "desc": "3-4 సంవత్సరాల అద్భుతమైన వయసులో 'పర భాష లేకుండా తెలుగులో' పోటీలో విజేతగా నిలిచాడు — విదేశీ పదాలు లేకుండా స్వచ్ఛమైన తెలుగులో మాట్లాడడం. అతని అసాధారణ భాషా ప్రతిభకు తొలి నిదర్శనం.", "year": "వయసు ~3–4 సంవత్సరాలు · తెలుగు భాషా పోటీ", "tag": "competition"}, {"icon": "📺", "title": "భారతం లఘు ప్రసంగాలు", "desc": "మహాభారతంపై యూట్యూబ్‌లో లఘు ప్రసంగాల శ్రేణి ప్రచురించాడు — మహేతిహాసంపై అతని వయసుకు మించిన అర్థం లోతును ప్రదర్శిస్తుంది. చాగంటి కోటేశ్వర రావు గారి పూర్తి భారత మరియు రామాయణ ప్రవచనాలు విన్నాడు.", "year": "యూట్యూబ్ శ్రేణి · samskruti.info.1", "tag": "discourse"}], "exam_table_title": "సంస్కృత పరీక్షా రికార్డు", "exam_table": [{"year": "2022", "exam": "ఆయనమ్", "score": "100%", "grade": "🌟"}, {"year": "2023", "exam": "సారిణీ", "score": "98%", "grade": "🌟"}, {"year": "2024", "exam": "సరళా", "score": "94%", "grade": "⭐"}, {"year": "2025", "exam": "సుగమా", "score": "98%", "grade": "🌟"}, {"year": "2026", "exam": "సరసా", "score": "96%", "grade": "🌟"}], "photo_placeholder": "సర్టిఫికేట్లు & విజయ ఫోటోలు", "photo_placeholder_sub": "సర్టిఫికేట్లు మరియు కార్యక్రమ ఫోటోలు ఇక్కడ చూపబడతాయి"}, "credits": {"section_title": "కృతజ్ఞతలు", "intro": "కార్తికేయ అసాధారణ ప్రయాణంలో మహాపండితుల అనుగ్రహం, గురువుల మార్గదర్శనం మరియు ప్రేమాస్పదమైన సమాజం తోడ్పడింది. అందరికీ హృదయపూర్వక కృతజ్ఞతలు:", "list": [{"name": "మైసూర్ దత్త పీఠం", "role": "స్వర్ణపతకం — భగవద్గీత పారాయణ"}, {"name": "కేంద్ర సంస్కృత విశ్వవిద్యాలయం", "role": "సంస్కృత ఒలింపియాడ్ — నిర్వాహకులు & గుర్తింపు"}, {"name": "సమవేదం శంఖముఖ శర్మ", "role": "శివపద రచయిత · ప్రేరణ · స్మారక చిహ్నం"}, {"name": "వద్దిపర్తి పద్మకర్", "role": "ప్రణవ పీఠం · కవిత్వ గురువు · పోటీలు"}, {"name": "మడుగుల నాగఫణి శర్మ", "role": "పండితుడు · ఆశీర్వాదం · ప్రోత్సాహం"}, {"name": "పండిట్ రిషికేష్ భట్టర్", "role": "షష్టిపూర్తి మహోత్సవం · హెలెన్స్‌బర్గ్ ఆలయం"}, {"name": "తటవర్తి కళ్యాణ్", "role": "అవధానం — అప్రస్తుత ప్రసంగ గౌరవం"}, {"name": "చాగంటి కోటేశ్వర రావు", "role": "రామాయణ & మహాభారత ప్రవచనాలు"}, {"name": "వ్యోమ లింగ్విస్టిక్స్ లాబ్స్", "role": "ఆలయాల వెనుక కథలు · సంస్కృత అభ్యాసం"}, {"name": "సిడ్నీ జన రంజని", "role": "సాంస్కృతిక పోటీలు & గుర్తింపు"}, {"name": "సిడ్నీ మురుగన్ ఆలయం", "role": "పారాయణ వేదిక & ఆధ్యాత్మిక సమాజం"}, {"name": "సిడ్నీ అయ్యప్ప ఆలయం", "role": "సౌందర్యలహరి పారాయణ · నవరాత్రి"}, {"name": "హెలెన్స్‌బర్గ్ ఆలయం", "role": "భగవద్గీత పారాయణ వేదిక"}, {"name": "ప్రణవ పీఠం", "role": "మానవ కథ · గజేంద్ర మోక్షం · కవిత్వ పోటీలు"}]}, "events": {"section_title": "కార్యక్రమాలు & మైలురాళ్ళు", "events_placeholder": "కార్యక్రమ ఫోటోలు ఇక్కడ చూపబడతాయి", "list": [{"date": "సిడ్నీ · ఏప్రిల్", "title": "శివపదాలు — సమవేదం శంఖముఖ శర్మ సమక్షంలో", "desc": "మహాపండితుడు సమవేదం శంఖముఖ శర్మ గారి సిడ్నీ సందర్శన సందర్భంలో వారి సమక్షంలో 10 శివపదాలు పఠించాడు. ప్రత్యేక స్మారక చిహ్నం అందుకున్నాడు.", "has_photo": true}, {"date": "సిడ్నీ · నవరాత్రి", "title": "సౌందర్యలహరి పారాయణ — అయ్యప్ప ఆలయం", "desc": "నవరాత్రి సందర్భంగా సిడ్నీ అయ్యప్ప ఆలయంలో సౌందర్యలహరి (100 శ్లోకాలు) పూర్తి పారాయణ నిర్వహించాడు.", "has_photo": true}, {"date": "హెలెన్స్‌బర్గ్ ఆలయం", "title": "భగవద్గీత — షష్టిపూర్తి మహోత్సవం", "desc": "పండిట్ రిషికేష్ భట్టర్ గారి షష్టిపూర్తి మహోత్సవం సందర్భంగా సమగ్ర శ్రీమద్భగవద్గీత — 18 అధ్యాయాలు, 700 శ్లోకాలు — పఠించాడు.", "has_photo": true}, {"date": "కేంద్ర సంస్కృత విశ్వవిద్యాలయం", "title": "సంస్కృత ఒలింపియాడ్ — ఆస్ట్రేలియా ప్రథమ", "desc": "జాతీయ సంస్కృత ఒలింపియాడ్‌లో ఆస్ట్రేలియాలో ప్రథమ స్థానం. గత సంవత్సరం అఖిల భారత స్థానం 266 — వరుసగా రెండు సంవత్సరాలు.", "has_photo": true}, {"date": "మైసూర్ దత్త పీఠం", "title": "స్వర్ణపతకం — భగవద్గీత 700 శ్లోకాలు", "desc": "శ్రీమద్భగవద్గీత 700 శ్లోకాలు కంఠస్థం చేసి పఠించినందుకు స్వర్ణపతకం అందుకున్నాడు.", "has_photo": true}, {"date": "సిడ్నీ · అవధానం", "title": "తటవర్తి కళ్యాణ్ అవధానం — అప్రస్తుత ప్రసంగం", "desc": "తటవర్తి కళ్యాణ్ గారి ప్రతిష్ఠాత్మక అవధానంలో అప్రస్తుత ప్రసంగ పృచ్ఛకునిగా పాల్గొన్నాడు.", "has_photo": true}, {"date": "ప్రణవ పీఠం", "title": "మానవ కథ & గజేంద్ర మోక్షం — విజేత", "desc": "వద్దిపర్తి పద్మకర్ నిర్వహించిన మానవ కథ, గజేంద్ర మోక్షం పోటీలలో బహుమతులు గెలుచుకున్నాడు.", "has_photo": false}, {"date": "వయసు ~3–4 సంవత్సరాలు", "title": "'పర భాష లేకుండా తెలుగులో' — విజేత", "desc": "మూడు నాలుగేళ్ళ వయసులో 'పర భాష లేకుండా తెలుగులో' పోటీలో విజేతగా నిలిచాడు — అసాధారణ భాషాప్రతిభ.", "has_photo": false}]}, "parayana": {"section_title": "పారాయణ", "intro": "కార్తికేయ ఈ పవిత్ర పారాయణలు నిత్యం నిర్వహిస్తాడు. ప్రతి సంస్కృత శ్లోకం మూడు లిపులలో చూపబడింది — మీకు నచ్చిన లిపి ఎంచుకోండి.", "tab_te": "తెలుగు", "tab_dev": "దేవనాగరి", "tab_iast": "IAST", "stotras": [{"id": "bg", "title": "భగవద్గీత · 700 శ్లోకాలు", "te": "యదా యదా హి ధర్మస్య గ్లానిర్భవతి భారత ।\nఅభ్యుత్థానమధర్మస్య తదాత్మానం సృజామ్యహమ్ ॥", "dev": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥", "iast": "yadā yadā hi dharmasya glānir bhavati bhārata |\nabhyutthānam adharmasya tadātmānaṁ sṛjāmy aham ||", "attribution": "భగవద్గీత 4.7 — \"ధర్మం క్షీణించినప్పుడల్లా నేను అవతరిస్తాను.\" 700 శ్లోకాలు కంఠస్థం; మైసూర్ దత్త పీఠం స్వర్ణపతకం."}, {"id": "vs", "title": "విష్ణు సహస్రనామం", "te": "విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః ।\nభూతకృద్భూతభృద్భావో భూతాత్మా భూతభావనః ॥", "dev": "विश्वं विष्णुर्वषट्कारो भूतभव्यभवत्प्रभुः ।\nभूतकृद्भूतभृद्भावो भूतात्मा भूतभावनः ॥", "iast": "viśvaṁ viṣṇur vaṣaṭkāro bhūtabhavyabhavatprabhuḥ |\nbhūtakṛd bhūtabhṛd bhāvo bhūtātmā bhūtabhāvanaḥ ||", "attribution": "మొదటి శ్లోకం — సిడ్నీ మురుగన్ ఆలయంలో నిత్య పారాయణ."}, {"id": "ls", "title": "లలితా సహస్రనామం", "te": "శ్రీమాతా శ్రీమహారాజ్ఞీ శ్రీమత్సింహాసనేశ్వరీ ।\nచిదగ్నికుండసంభూతా దేవకార్యసముద్యతా ॥", "dev": "श्रीमाता श्रीमहाराज्ञी श्रीमत्सिंहासनेश्वरी ।\nचिदग्निकुण्डसम्भूता देवकार्यसमुद्यता ॥", "iast": "śrīmātā śrīmahārājñī śrīmatsinhāsaneśvarī |\ncidagnikuṇḍasambhūtā devakāryasamudyatā ||", "attribution": "మొదటి నామాలు — సిడ్నీ మురుగన్ ఆలయంలో నిత్య పారాయణ."}, {"id": "sl", "title": "సౌందర్యలహరి · 100 శ్లోకాలు", "te": "శివః శక్త్యా యుక్తో యది భవతి శక్తః ప్రభవితుం\nన చేదేవం దేవో న ఖలు కుశలః స్పందితుమపి ।", "dev": "शिवः शक्त्या युक्तो यदि भवति शक्तः प्रभवितुं\nन चेदेवं देवो न खलु कुशलः स्पन्दितुमपि ।", "iast": "śivaḥ śaktyā yukto yadi bhavati śaktaḥ prabhavituṁ\nna cedevaṁ devo na khalu kuśalaḥ spanditum api |", "attribution": "ఆదిశంకరాచార్యుల మొదటి శ్లోకం — నవరాత్రి, సిడ్నీ అయ్యప్ప ఆలయం."}, {"id": "sg", "title": "సంకటనాశన గణేశ స్తోత్రం", "te": "ప్రణమ్య శిరసా దేవం గౌరీపుత్రం వినాయకమ్ ।\nభక్తావాసం స్మరేన్నిత్యమాయుఃకామార్థసిద్ధయే ॥", "dev": "प्रणम्य शिरसा देवं गौरीपुत्रं विनायकम् ।\nभक्तावासं स्मरेन्नित्यमायुःकामार्थसिद्धये ॥", "iast": "praṇamya śirasā devaṁ gaurīputraṁ vināyakam |\nbhaktāvāsaṁ smaren nityam āyuḥkāmārthasiddhaye ||", "attribution": "వద్దిపర్తి పద్మకర్, సమవేదం శంఖముఖ శర్మ & మడుగుల నాగఫణి శర్మలకు వ్యక్తిగతంగా స్వహస్తాలతో లిఖించి అర్పించాడు."}]}, "support": {"section_title": "సహకారం & స్పాన్సర్‌షిప్", "intro": "కార్తికేయ ఆధ్యాత్మిక మరియు విద్యా ప్రయాణాన్ని ప్రోత్సహించడం ధర్మకార్యం. మీ సహకారం పోటీలలో పాల్గొనడానికి, కార్యక్రమాలకు హాజరవడానికి మరియు మరిన్ని భక్తి-విద్యా కంటెంట్ సృష్టించడానికి తోడ్పడుతుంది.", "cards": [{"icon": "🙏", "title": "ఆశీర్వాదాలు & ప్రోత్సాహం", "desc": "మీ ఆశీర్వాదాలు, ప్రోత్సాహ వచనాలు పంపండి లేదా అతని విజయాలను మీ సమాజంలో పంచుకోండి. ప్రతి సందేశం అతనికి స్ఫూర్తినిస్తుంది."}, {"icon": "📚", "title": "విద్యకు సహకారం", "desc": "సంస్కృత పరీక్షా నమోదు, అధ్యయన సామగ్రి, పుస్తకాలు మరియు ఆస్ట్రేలియా-భారతదేశ పోటీలలో పాల్గొనడానికి సహకరించండి."}, {"icon": "🎬", "title": "సబ్‌స్క్రైబ్ & షేర్", "desc": "@samskruti.info.1 యూట్యూబ్ చానెల్ సబ్‌స్క్రైబ్ చేసి అతని వీడియోలు షేర్ చేయండి — సంస్కృత మరియు సనాతన ధర్మ సౌందర్యం వ్యాప్తి చేయండి."}, {"icon": "🤝", "title": "కార్యక్రమాలకు ఆహ్వానించండి", "desc": "మీ ఆలయం లేదా సంస్థలో పారాయణ, ప్రసంగం, పోటీలకు కార్తికేయను ఆహ్వానించండి."}]}, "testimonials": {"section_title": "అభిప్రాయాలు", "list": [{"text": "కార్తికేయ శివపదాల పఠనం నిజంగా అద్భుతంగా ఉంది. ఇంత చిన్న వయసులో ఉచ్చారణ స్పష్టత, భావగాంభీర్యం మరియు భక్తి అరుదైన దైవానుగ్రహం. ఈ సంప్రదాయాన్ని ప్రకాశవంతం చేస్తూ ముందుకు సాగాలని ఆశీర్వదిస్తున్నాను.", "by": "సమవేదం శంఖముఖ శర్మ", "role": "ప్రఖ్యాత తెలుగు పండితుడు & కవి · సిడ్నీ సందర్శన"}, {"text": "తర్వాత తరం ఇంత నిబద్ధత మరియు ఆనందంతో సంస్కృతాన్ని స్వీకరించడం హర్షదాయకం. ఒలింపియాడ్‌లో అతని ప్రదర్శన అసాధారణ సహజ ప్రతిభ మరియు లోతైన క్రమశిక్షణాభ్యాసం రెండింటినీ ప్రతిబింబిస్తుంది.", "by": "కేంద్ర సంస్కృత విశ్వవిద్యాలయం", "role": "సంస్కృత ఒలింపియాడ్ — ఆస్ట్రేలియా ప్రథమ స్థానం"}, {"text": "నవరాత్రిలో కార్తికేయ సౌందర్యలహరి పారాయణ మా ఆలయాన్ని నిజంగా పవిత్రమైన వాతావరణంతో నింపింది. 10 సంవత్సరాల బాలుడిలో ఇంతటి భక్తి మరియు కంఠస్థం నిజంగా దైవకృప.", "by": "సిడ్నీ అయ్యప్ప ఆలయం", "role": "నవరాత్రి సౌందర్యలహరి పారాయణ"}]}, "youtube": {"section_title": "యూట్యూబ్ చానెల్", "channel_name": "సంస్కృతి · @samskruti.info.1", "channel_sub": "సంస్కృతం · తెలుగు · భక్తి · పారాయణ · ప్రసంగాలు", "channel_url": "https://www.youtube.com/@samskruti.info.1", "bharatam_title": "భారతం లఘు ప్రసంగాలు", "bharatam_desc": "మహాభారతంపై లఘు ప్రసంగాల యూట్యూబ్ శ్రేణి — పూర్తి ప్లేలిస్ట్ చూడండి", "bharatam_url": "https://www.youtube.com/watch?v=xB1CT8539J0&list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ", "videos": [{"title": "భగవద్గీత పారాయణ", "meta": "700 శ్లోకాలు · కార్తికేయ పీడపర్తి"}, {"title": "సంస్కృత స్తోత్రాలు", "meta": "స్తోత్రాలు · సహస్రనామాలు · భక్తి గీతాలు"}, {"title": "భారతం లఘు ప్రసంగాలు", "meta": "మహాభారత ప్రసంగాలు · పూర్తి శ్రేణి"}]}, "contact": {"section_title": "సంప్రదించండి", "intro": "కార్తికేయను కార్యక్రమాలు, పారాయణ, పోటీలు లేదా ప్రసంగాలకు ఆహ్వానించడానికి — లేదా మీ ఆశీర్వాదాలు మరియు విచారణలు పంపడానికి — దయచేసి మాకు రాయండి.", "location_city": "సిడ్నీ, న్యూ సౌత్ వేల్స్", "location_country": "ఆస్ట్రేలియా", "youtube_label": "యూట్యూబ్ చానెల్", "form_name": "మీ పేరు", "form_email": "మీ ఈమెయిల్", "form_subject": "విషయం", "form_message": "మీ సందేశం, ఆశీర్వాదాలు లేదా విచారణ…", "form_submit": "సందేశం పంపండి ✉", "form_thanks": "🙏 ధన్యవాదాలు! మేము త్వరలో స్పందిస్తాము.", "quote_sa": "सर्वे भवन्तु सुखिनः ।", "quote_en": "అందరూ సుఖంగా ఉండాలని కోరుకుందాం."}, "footer": {"sa": "ॐ तत्सत् । श्रीकृष्णार्पणमस्तु ।", "iast": "ఓం తత్సత్ · శ్రీ కృష్ణార్పణమస్తు", "copy": "© 2025 కార్తికేయ పీడపర్తి · సిడ్నీ, ఆస్ట్రేలియా"}, "settings": {"title": "సెట్టింగ్స్", "theme": "థీమ్", "theme_light": "☀ వెలుతురు", "theme_dark": "☽ చీకటి", "font_size": "అక్షరాల పరిమాణం", "accent": "యాక్సెంట్ రంగు", "language": "భాష"}}, "sa": {"nav": {"home": "गृहम्", "about": "परिचयः", "profile": "प्रोफाइल्", "credits": "कृतज्ञता", "events": "कार्यक्रमाः", "parayana": "पारायणम्", "support": "सहायता", "testimonials": "अभिप्रायाः", "contact": "सम्पर्कः", "youtube": "यूट्यूब्", "logo_name": "संस्कृतिः", "logo_tag": "సంస్కృతి • Samskruti"}, "hero": {"greeting": "श्रीगणेशाय नमः", "name": "कार्तिकेयः पीडपर्ति", "age_location": "वयः दश वर्षाणि · सिडनी, ऑस्ट्रेलिया", "description": "संस्कृत-तेलुगु-आङ्ग्लभाषाकुशलः युवविद्वान् — भगवद्गीतायाः सप्तशतश्लोकान् कण्ठस्थीकृत्य मैसूरु-दत्तपीठात् स्वर्णपदकं प्राप्तवान्; संस्कृत-ओलिम्पियाड्-स्पर्धायाम् ऑस्ट्रेलियादेशे प्रथमस्थानं प्राप्तवान्; सनातनधर्म-महासम्प्रदाये निष्ठावन्तः पारायणसाधकः।", "btn_achievements": "उपलब्धयः पश्यतु", "btn_youtube": "▶ यूट्यूब्-वाहिनी", "badges": ["🏅 स्वर्णपदकम् — मैसूरु-दत्तपीठम्", "🥇 संस्कृत-ओलिम्पियाड् — ऑस्ट्रेलिया-प्रथमः", "📖 भगवद्गीता · सप्तशतश्लोकाः", "🕉 सौन्दर्यलहरी · शतश्लोकाः", "🎤 समवेदं-रचितानि शिवपदानि"]}, "about": {"section_title": "कार्तिकेयविषये", "para1": "सिडनी-नगरे ऑस्ट्रेलियादेशे वैदिकसम्प्रदायं पोषयन्त्यां कुटुम्बे जातः कार्तिकेयः पीडपर्तिः बाल्यादेव संस्कृत-शास्त्र-शास्त्रीय-तेलुगु-साहित्यप्रपञ्चे निमग्नः अस्ति। पितृभूमितः दूरे स्थितोऽपि तेषां प्राज्ञस्य ज्ञाने दृढतया स्थित्वा सनातनधर्मस्य जीवन्तं निरन्तरत्वं मूर्तिभूतम् अस्ति।", "para2": "दशवर्षीयः अयं बालः आधुनिक-ऑस्ट्रेलियन-पाठशालाविद्यायाः सह नित्यभक्तिसाधनं, नित्यमन्दिर-पारायणं, संस्कृते च गम्भीरं विद्याप्रमेयं समतुलितरूपेण निर्वहति — भारतस्य नानादिग्भ्यः विद्वद्भिः प्रशंसितः।", "quote_sa": "विद्या ददाति विनयम् ।", "quote_iast": "vidyā dadāti vinayam", "quote_te": "విద్య వినయమిస్తుంది.", "quote_en": "विद्या विनयं ददाति।", "cards": [{"title": "भाषाः", "body": "तेलुगु-आङ्ग्लभाषयोः प्रवाहेण वदति; संस्कृते च अपारं पाण्डित्यम् अस्ति। देवनागरी-तेलुगु-IAST-लिपीः पठति। त्रि-चतुर्वर्षीयः सन् 'परभाषालेकुण्डा तेलुगुलो' प्रतियोगितायां विजयं प्राप्तवान्।"}, {"title": "शास्त्रज्ञानम्", "body": "चागन्ति-महोदयस्य रामायण-महाभारत-प्रवचनानि सम्पूर्णानि श्रुतवान्। भागवत-उपनिषत्-इतिहासकथाः जानाति। व्योम-लिंग्विस्टिक्स्-लाब्स्-संस्थायाः 'ऑलयाल वेनुक कथलु' श्रेणीम् अध्यगीत।"}, {"title": "समाजसेवा भक्तिश्च", "body": "सिडनी-मुरुगन्-मन्दिरे विष्णुसहस्रनाम-ललितासहस्रनाम-पारायणं नित्यं करोति। नवरात्रौ सिडनी-अय्यप्प-मन्दिरे सौन्दर्यलहरी-पारायणं कृतवान्। हेलेन्स्बर्ग्-मन्दिरे सम्पूर्णभगवद्गीतां पठितवान्।"}]}, "profile": {"section_title": "उपलब्धयः प्रोफाइलश्च", "journey_title": "संस्कृतयात्रा", "journey": "कार्तिकेयस्य संस्कृताभिरुचिः बाल्येऽतिलघुवयसि गृहे एव प्रज्वलिता। विद्यालयं गच्छन् पूर्वमेव संस्कृतश्लोकानां शब्दैः लयैश्च परिपूर्णः अभवत् — कुटुम्बसदस्याः स्तोत्राणि प्रार्थनाश्च पठन्तः तेन श्रुताः। एषा प्रारम्भिका निमज्जना असाधारणस्य आध्यात्मिक-विद्यायात्रायाः पुनाद् भवत्।\n\nसंस्कृतभारती-कार्यक्रमेण तस्य औपचारिकाः संस्कृतपरीक्षाः श्रेष्ठताया अद्भुतम् आर्यं दर्शयन्ति:\n\n• आयनम् (२०२२) — १००%\n• सारिणी (२०२३) — ९८%\n• सरला (२०२४) — ९४%\n• सुगमा (२०२५) — ९८%\n• सरसा (२०२६) — ९६%\n\nक्रमेण पञ्चसु वर्षेषु ९७.२% सरासरीं प्राप्तवान् — वेदानां भाषायाम् अस्य सत्यप्रीतेः प्रमाणम्। व्योम-लिंग्विस्टिक्स्-लाब्स्-संस्थायाः 'मन्दिराणां वेनुक कथाः' इति वीडियो-श्रेणीम् अपि दृष्ट्वा भारतस्य पवित्रभूगोलेन सम्बद्धं सांस्कृतिक-पौराणिक-वारसत्यं गाढरूपेण अवागच्छत्।", "achievements": [{"icon": "🥇", "title": "स्वर्णपदकम् — भगवद्गीता", "desc": "श्रीमद्भगवद्गीतायाः सप्तशतश्लोकान् कण्ठस्थीकृत्य अप्रमेयरूपेण पठित्वा मैसूरु-दत्तपीठात् प्रतिष्ठितं स्वर्णपदकं प्राप्तवान् — स्मृति-भक्ति-शिक्षणयोः महासाधनम्।", "year": "मैसूरु-दत्तपीठम्", "tag": "gold"}, {"icon": "📖", "title": "भगवद्गीता — हेलेन्स्बर्ग्-मन्दिरम्", "desc": "पण्डित-ऋषिकेश-भट्टर-महोदयस्य षष्टिपूर्ति-महोत्सव-अवसरे हेलेन्स्बर्ग्-मन्दिरे सम्पूर्णां श्रीमद्भगवद्गीतां (१८ अध्यायाः, ७०० श्लोकाः) पठितवान्।", "year": "हेलेन्स्बर्ग्-मन्दिरम् · षष्टिपूर्ति-महोत्सवः", "tag": "gold"}, {"icon": "🏆", "title": "संस्कृत-ओलिम्पियाड् — ऑस्ट्रेलिया-प्रथमः", "desc": "केन्द्र-संस्कृत-विश्वविद्यालयस्य राष्ट्रीय-संस्कृत-ओलिम्पियाड्-स्पर्धायाम् ऑस्ट्रेलियादेशे क्रमेण द्विवर्षं प्रथमस्थानं प्राप्तवान्। पूर्वे वर्षे भारतसहस्र-विद्यार्थिभिः सह स्पर्धित्वा अखिलभारतीयस्थानं २६६।", "year": "केन्द्र-संस्कृत-विश्वविद्यालयः · क्रमेण २ वर्षाणि", "tag": "olympiad"}, {"icon": "📊", "title": "संस्कृत-परीक्षाः — ५ वर्षाणि श्रेष्ठता", "desc": "आयनम् २०२२ (१००%) · सारिणी २०२३ (९८%) · सरला २०२४ (९४%) · सुगमा २०२५ (९८%) · सरसा २०२६ (९६%)। क्रमेण पञ्चसु वर्षेषु ९७.२% सरासरी — प्रत्येकस्तरः अधिकोन्नतः।", "year": "संस्कृत-भारती-कार्यक्रमः · २०२२–२०२६", "tag": "olympiad"}, {"icon": "🕉", "title": "सौन्दर्यलहरी-पारायणम्", "desc": "आदिशङ्कराचार्यविरचितायाः सौन्दर्यलहर्याः शतश्लोकान् कण्ठस्थीकृत्य नवरात्रि-पर्वणि सिडनी-अय्यप्प-मन्दिरे सम्पूर्णपारायणं कृतवान्।", "year": "सिडनी-अय्यप्प-मन्दिरम् · नवरात्रिः", "tag": "parayana"}, {"icon": "📜", "title": "विष्णुसहस्रनाम-ललितासहस्रनामपारायणम्", "desc": "सिडनी-मुरुगन्-मन्दिरे विष्णुसहस्रनाम-ललितासहस्रनाम-पारायणं नित्यं करोति।", "year": "सिडनी-मुरुगन्-मन्दिरम् · नित्यम्", "tag": "parayana"}, {"icon": "🎤", "title": "शिवपदानि — समवेदं-शङ्खमुखशर्मणः समक्षम्", "desc": "प्रसिद्धस्य पण्डितस्य समवेदं-शङ्खमुखशर्मणः सिडनी-सन्दर्शने तत्समक्षं दश शिवपदानि पठितवान्। महाविद्वान् तुष्टः विशेषं स्मारकचिह्नं प्रदत्तवान्।", "year": "सिडनी · अप्रैल् · समवेदं-शङ्खमुखशर्मणः सन्दर्शनम्", "tag": "scholar"}, {"icon": "✍", "title": "सङ्कटनाशन-गणेशस्तोत्रम् — पण्डितेभ्यः अर्पणम्", "desc": "सङ्कटनाशन-गणेशस्तोत्रं स्वहस्तेन लिखित्वा त्रिभ्यः विद्वद्भ्यः — वद्दिपर्ति-पद्मकर-समवेदं-शङ्खमुखशर्म-मडुगुल-नागफणिशर्मभ्यः — व्यक्तिगतरूपेण अर्पितवान्।", "year": "त्रिभ्यः महापण्डितेभ्यः व्यक्तिगत-अर्पणम्", "tag": "scholar"}, {"icon": "🎭", "title": "अवधानम् — अप्रस्तुतप्रसङ्गपृच्छकः", "desc": "तटवर्ति-कल्याण-महोदयस्य प्रतिष्ठित-अवधाने अप्रस्तुतप्रसङ्गपृच्छकरूपेण भागं गृहीत्वा प्रशंसां प्राप्तवान् — तात्कालिक-बुद्धि-सृजनात्मकता-आवश्यकं पात्रम्।", "year": "तटवर्ति-कल्याण-अवधानम् · सिडनी", "tag": "scholar"}, {"icon": "🏅", "title": "मानवकथा-गजेन्द्रमोक्षम् — विजेता", "desc": "वद्दिपर्ति-पद्मकर-महोदयस्य मार्गदर्शने प्रणवपीठेन आयोजितयोः मानवकथा-गजेन्द्रमोक्षम्-प्रतियोगितयोः पुरस्काराः प्राप्ताः।", "year": "प्रणवपीठम् · वद्दिपर्ति-पद्मकरः", "tag": "competition"}, {"icon": "🎊", "title": "सांस्कृतिक-प्रतियोगितासु अनेके पुरस्काराः", "desc": "सिडनी-जनरञ्जनी-संस्थया आयोजितासु रामायण-दशावतार-प्रतियोगितासु तथा प्रणवपीठस्य काव्यप्रतियोगितासु अनेके पुरस्काराः प्राप्ताः।", "year": "सिडनी-जनरञ्जनी · प्रणवपीठम्", "tag": "competition"}, {"icon": "🗣", "title": "'परभाषालेकुण्डा तेलुगुलो' — विजेता", "desc": "त्रि-चतुर्वर्षीयः सन् परभाषाविरहित-शुद्ध-तेलुगु-प्रतियोगितायां विजयं प्राप्तवान् — अस्य असाधारण-भाषाप्रतिभायाः प्रथमं प्रमाणम्।", "year": "वयः ~३–४ वर्षाणि", "tag": "competition"}, {"icon": "📺", "title": "भारतं-लघुप्रसङ्गाः", "desc": "महाभारतविषये यूट्यूब्-माध्यमेन लघुप्रसङ्गानां श्रेणी प्रकाशिता। चागन्ति-महोदयस्य सम्पूर्णभारत-रामायण-प्रवचनानि श्रुतवान्।", "year": "यूट्यूब्-श्रेणी · samskruti.info.1", "tag": "discourse"}], "exam_table_title": "संस्कृत-परीक्षा-अभिलेखः", "exam_table": [{"year": "२०२२", "exam": "आयनम्", "score": "१००%", "grade": "🌟"}, {"year": "२०२३", "exam": "सारिणी", "score": "९८%", "grade": "🌟"}, {"year": "२०२४", "exam": "सरला", "score": "९४%", "grade": "⭐"}, {"year": "२०२५", "exam": "सुगमा", "score": "९८%", "grade": "🌟"}, {"year": "२०२६", "exam": "सरसा", "score": "९६%", "grade": "🌟"}], "photo_placeholder": "प्रमाणपत्राणि उपलब्धि-चित्राणि च", "photo_placeholder_sub": "प्रमाणपत्राणि कार्यक्रम-चित्राणि च अत्र दर्शयिष्यन्ते"}, "credits": {"section_title": "कृतज्ञता", "intro": "कार्तिकेयस्य असाधारणे यात्रायां महापण्डितानाम् अनुग्रहः, आचार्याणां मार्गदर्शनं, प्रेमपूर्णस्य समाजस्य सहयोगश्च अभवत्। सर्वेभ्यः हार्दिकधन्यवादाः:", "list": [{"name": "मैसूरु-दत्तपीठम्", "role": "स्वर्णपदकम् — भगवद्गीता-पारायणम्"}, {"name": "केन्द्र-संस्कृत-विश्वविद्यालयः", "role": "संस्कृत-ओलिम्पियाड् — आयोजकाः गुर्तिम्पुश्च"}, {"name": "समवेदं शङ्खमुखशर्मा", "role": "शिवपद-रचयिता · प्रेरणा · स्मारकचिह्नम्"}, {"name": "वद्दिपर्ति पद्मकरः", "role": "प्रणवपीठम् · काव्यगुरुः · प्रतियोगिताः"}, {"name": "मडुगुल नागफणिशर्मा", "role": "पण्डितः · आशीर्वादः · प्रोत्साहनम्"}, {"name": "पण्डित ऋषिकेश भट्टर", "role": "षष्टिपूर्ति-महोत्सवः · हेलेन्स्बर्ग्-मन्दिरम्"}, {"name": "तटवर्ति कल्याणः", "role": "अवधानम् — अप्रस्तुतप्रसङ्ग-गौरवम्"}, {"name": "चागन्ति कोटेश्वररावः", "role": "रामायण-महाभारत-प्रवचनानि"}, {"name": "व्योम-लिंग्विस्टिक्स्-लाब्स्", "role": "मन्दिरकथाः · संस्कृताभ्यासः"}, {"name": "सिडनी-जनरञ्जनी", "role": "सांस्कृतिकप्रतियोगिताः-पुरस्काराः"}, {"name": "सिडनी-मुरुगन्-मन्दिरम्", "role": "पारायण-स्थानम् · आध्यात्मिकसमाजः"}, {"name": "सिडनी-अय्यप्प-मन्दिरम्", "role": "सौन्दर्यलहरी-पारायणम् · नवरात्रिः"}, {"name": "हेलेन्स्बर्ग्-मन्दिरम्", "role": "भगवद्गीता-पारायण-स्थानम्"}, {"name": "प्रणवपीठम्", "role": "मानवकथा · गजेन्द्रमोक्षम् · काव्यप्रतियोगिताः"}]}, "events": {"section_title": "कार्यक्रमाः मैलस्तम्भाश्च", "events_placeholder": "कार्यक्रम-चित्राणि अत्र दर्शयिष्यन्ते", "list": [{"date": "सिडनी · अप्रैल्", "title": "शिवपदानि — समवेदं-शङ्खमुखशर्मणः समक्षम्", "desc": "महापण्डितस्य सन्दर्शने तत्समक्षं दश शिवपदानि पठितवान्। विशेषं स्मारकचिह्नं प्राप्तवान्।", "has_photo": true}, {"date": "सिडनी · नवरात्रिः", "title": "सौन्दर्यलहरी-पारायणम् — अय्यप्प-मन्दिरम्", "desc": "नवरात्रि-पर्वणि सिडनी-अय्यप्प-मन्दिरे सौन्दर्यलहर्याः शतश्लोकानां सम्पूर्णपारायणं कृतवान्।", "has_photo": true}, {"date": "हेलेन्स्बर्ग्-मन्दिरम्", "title": "भगवद्गीता — षष्टिपूर्ति-महोत्सवः", "desc": "पण्डित-ऋषिकेश-भट्टर-महोदयस्य षष्टिपूर्ति-महोत्सव-अवसरे सम्पूर्णां भगवद्गीतां पठितवान्।", "has_photo": true}, {"date": "केन्द्र-संस्कृत-विश्वविद्यालयः", "title": "संस्कृत-ओलिम्पियाड् — ऑस्ट्रेलिया-प्रथमः", "desc": "राष्ट्रीय-संस्कृत-ओलिम्पियाड्-स्पर्धायाम् ऑस्ट्रेलियादेशे प्रथमस्थानं प्राप्तवान्। पूर्वे वर्षे अखिलभारतीयस्थानं २६६।", "has_photo": true}, {"date": "मैसूरु-दत्तपीठम्", "title": "स्वर्णपदकम् — भगवद्गीता सप्तशतश्लोकाः", "desc": "श्रीमद्भगवद्गीतायाः सप्तशतश्लोकान् कण्ठस्थीकृत्य पठित्वा स्वर्णपदकं प्राप्तवान्।", "has_photo": true}, {"date": "सिडनी · अवधानम्", "title": "तटवर्ति-कल्याण-अवधानम्", "desc": "प्रतिष्ठित-अवधाने अप्रस्तुतप्रसङ्गपृच्छकरूपेण भागं गृहीतवान्।", "has_photo": true}, {"date": "प्रणवपीठम्", "title": "मानवकथा-गजेन्द्रमोक्षम् — विजेता", "desc": "वद्दिपर्ति-पद्मकर-महोदयेन आयोजितयोः प्रतियोगितयोः पुरस्काराः प्राप्ताः।", "has_photo": false}, {"date": "वयः ~३–४ वर्षाणि", "title": "'परभाषालेकुण्डा तेलुगुलो' — विजेता", "desc": "त्रि-चतुर्वर्षीयः सन् शुद्ध-तेलुगु-प्रतियोगितायां विजयं प्राप्तवान्।", "has_photo": false}]}, "parayana": {"section_title": "पारायणम्", "intro": "कार्तिकेयः एतानि पवित्राणि पारायणानि नित्यं करोति। प्रत्येकः संस्कृतश्लोकः तिसृषु लिपिषु दर्शितः — इष्टलिपिं चिनुत।", "tab_te": "తెలుగు", "tab_dev": "देवनागरी", "tab_iast": "IAST", "stotras": [{"id": "bg", "title": "भगवद्गीता · सप्तशतश्लोकाः", "te": "యదా యదా హి ధర్మస్య గ్లానిర్భవతి భారత ।\nఅభ్యుత్థానమధర్మస్య తదాత్మానం సృజామ్యహమ్ ॥", "dev": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥", "iast": "yadā yadā hi dharmasya glānir bhavati bhārata |\nabhyutthānam adharmasya tadātmānaṁ sṛjāmy aham ||", "attribution": "भगवद्गीता ४.७ — 'यदा धर्मस्य ह्रासः भवति, तदा अहम् अवतरामि।' सप्तशतश्लोकाः कण्ठस्थाः; मैसूरु-दत्तपीठात् स्वर्णपदकम्।"}, {"id": "vs", "title": "विष्णुसहस्रनाम", "te": "విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః ।\nభూతకృద్భూతభృద్భావో భూతాత్మా భూతభావనః ॥", "dev": "विश्वं विष्णुर्वषट्कारो भूतभव्यभवत्प्रभुः ।\nभूतकृद्भूतभृद्भावो भूतात्मा भूतभावनः ॥", "iast": "viśvaṁ viṣṇur vaṣaṭkāro bhūtabhavyabhavatprabhuḥ |\nbhūtakṛd bhūtabhṛd bhāvo bhūtātmā bhūtabhāvanaḥ ||", "attribution": "प्रथमश्लोकः — सिडनी-मुरुगन्-मन्दिरे नित्यपारायणम्।"}, {"id": "ls", "title": "ललितासहस्रनाम", "te": "శ్రీమాతా శ్రీమహారాజ్ఞీ శ్రీమత్సింహాసనేశ్వరీ ।\nచిదగ్నికుండసంభూతా దేవకార్యసముద్యతా ॥", "dev": "श्रीमाता श्रीमहाराज्ञी श्रीमत्सिंहासनेश्वरी ।\nचिदग्निकुण्डसम्भूता देवकार्यसमुद्यता ॥", "iast": "śrīmātā śrīmahārājñī śrīmatsinhāsaneśvarī |\ncidagnikuṇḍasambhūtā devakāryasamudyatā ||", "attribution": "प्रथमनामानि — सिडनी-मुरुगन्-मन्दिरे नित्यपारायणम्।"}, {"id": "sl", "title": "सौन्दर्यलहरी · शतश्लोकाः", "te": "శివః శక్త్యా యుక్తో యది భవతి శక్తః ప్రభవితుం\nన చేదేవం దేవో న ఖలు కుశలః స్పందితుమపి ।", "dev": "शिवः शक्त्या युक्तो यदि भवति शक्तः प्रभवितुं\nन चेदेवं देवो न खलु कुशलः स्पन्दितुमपि ।", "iast": "śivaḥ śaktyā yukto yadi bhavati śaktaḥ prabhavituṁ\nna cedevaṁ devo na khalu kuśalaḥ spanditum api |", "attribution": "आदिशङ्कराचार्यविरचितः प्रथमश्लोकः — नवरात्रि, सिडनी-अय्यप्प-मन्दिरे।"}, {"id": "sg", "title": "सङ्कटनाशन-गणेशस्तोत्रम्", "te": "ప్రణమ్య శిరసా దేవం గౌరీపుత్రం వినాయకమ్ ।\nభక్తావాసం స్మరేన్నిత్యమాయుఃకామార్థసిద్ధయే ॥", "dev": "प्रणम्य शिरसा देवं गौरीपुत्रं विनायकम् ।\nभक्तावासं स्मरेन्नित्यमायुःकामार्थसिद्धये ॥", "iast": "praṇamya śirasā devaṁ gaurīputraṁ vināyakam |\nbhaktāvāsaṁ smaren nityam āyuḥkāmārthasiddhaye ||", "attribution": "वद्दिपर्ति-पद्मकर-समवेदं-शङ्खमुखशर्म-मडुगुल-नागफणिशर्मभ्यः स्वहस्तेन लिखित्वा अर्पितम्।"}]}, "support": {"section_title": "सहायता स्पान्सर्शिप्च", "intro": "कार्तिकेयस्य आध्यात्मिक-विद्यायात्रां प्रोत्साहयितुं धर्मकार्यम् एतत्। भवतां सहायता प्रतियोगितासु भागग्रहणे, कार्यक्रमेषु उपस्थाने, अधिक-भक्ति-विद्यासामग्री-निर्माणे च उपकारकम्।", "cards": [{"icon": "🙏", "title": "आशीर्वादः प्रोत्साहनञ्च", "desc": "आशीर्वादान् प्रोत्साहनवचनानि वा प्रेषयन्तु, तस्य उपलब्धीः स्वसमाजे प्रसारयन्तु च। प्रत्येकं सन्देशः तस्मै स्फूर्तिं ददाति।"}, {"icon": "📚", "title": "विद्याया सहायता", "desc": "संस्कृत-परीक्षा-नामाङ्कनम्, अध्ययनसामग्री, पुस्तकानि, ऑस्ट्रेलिया-भारत-प्रतियोगितासु भागग्रहणं च समर्थयन्तु।"}, {"icon": "🎬", "title": "सदस्यता प्रसारश्च", "desc": "@samskruti.info.1 यूट्यूब्-वाहिन्यां सदस्यतां गृह्णन्तु, तस्य वीडियोः प्रसारयन्तु च — संस्कृत-सनातनधर्म-सौन्दर्यं विश्वे प्रसारयन्तु।"}, {"icon": "🤝", "title": "कार्यक्रमेषु आमन्त्रयन्तु", "desc": "स्वमन्दिरे संस्थायां वा पारायणाय, प्रसङ्गाय, प्रतियोगितायै वा कार्तिकेयम् आमन्त्रयन्तु।"}]}, "testimonials": {"section_title": "अभिप्रायाः", "list": [{"text": "कार्तिकेयस्य शिवपद-पठनं वास्तवेन अद्भुतम् आसीत्। इतने अल्पवयसि उच्चारणस्पष्टता, भावगाम्भीर्यं, भक्तिश्च दुर्लभं दैवानुग्रहम् अस्ति। एषः सम्प्रदायं प्रकाशयन् अग्रे गच्छतु।", "by": "समवेदं शङ्खमुखशर्मा", "role": "प्रख्यात-तेलुगु-पण्डितः कविश्च · सिडनी-सन्दर्शनम्"}, {"text": "अग्रिमपीढी इत्थं निष्ठया आनन्देन च संस्कृतम् आदत्ते इति हर्षदायकम्। ओलिम्पियाड्-स्पर्धायाम् तस्य प्रदर्शनम् असाधारण-सहज-प्रतिभां शिक्षितम् अभ्यासञ्च प्रतिबिम्बयति।", "by": "केन्द्र-संस्कृत-विश्वविद्यालयः", "role": "संस्कृत-ओलिम्पियाड् — ऑस्ट्रेलिया-प्रथमः"}, {"text": "नवरात्रौ कार्तिकेयस्य सौन्दर्यलहरी-पारायणेन अस्माकं मन्दिरं वास्तवेन पवित्रवातावरणेन परिपूर्णम् अभवत्। दशवर्षीये बालके एतादृशी भक्तिः कण्ठस्थश्च वास्तवेन दैवकृपा एव।", "by": "सिडनी-अय्यप्प-मन्दिरम्", "role": "नवरात्रि-सौन्दर्यलहरी-पारायणम्"}]}, "youtube": {"section_title": "यूट्यूब्-वाहिनी", "channel_name": "संस्कृतिः · @samskruti.info.1", "channel_sub": "संस्कृतम् · तेलुगु · भक्तिः · पारायणम् · प्रसङ्गाः", "channel_url": "https://www.youtube.com/@samskruti.info.1", "bharatam_title": "भारतं-लघुप्रसङ्गाः", "bharatam_desc": "महाभारतविषये लघुप्रसङ्गानां यूट्यूब्-श्रेणी — सम्पूर्णा प्लेलिस्ट् पश्यतु", "bharatam_url": "https://www.youtube.com/watch?v=xB1CT8539J0&list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ", "videos": [{"title": "भगवद्गीता-पारायणम्", "meta": "सप्तशतश्लोकाः · कार्तिकेयः पीडपर्ति"}, {"title": "संस्कृत-स्तोत्राणि", "meta": "स्तोत्राणि · सहस्रनामानि · भक्तिगीतानि"}, {"title": "भारतं-लघुप्रसङ्गाः", "meta": "महाभारत-प्रसङ्गाः · सम्पूर्णश्रेणी"}]}, "contact": {"section_title": "सम्पर्कः", "intro": "कार्तिकेयम् कार्यक्रमेषु, पारायणाय, प्रतियोगितासु, प्रसङ्गाय वा आमन्त्रयितुम् — आशीर्वादान् विचारांश्च प्रेषयितुम् — अस्मान् लिखन्तु।", "location_city": "सिडनी, न्यू-साउथ-वेल्स्", "location_country": "ऑस्ट्रेलिया", "youtube_label": "यूट्यूब्-वाहिनी", "form_name": "भवतः नाम", "form_email": "भवतः ईमेल्", "form_subject": "विषयः", "form_message": "भवतः सन्देशः, आशीर्वादः विचारो वा…", "form_submit": "सन्देशं प्रेषयतु ✉", "form_thanks": "🙏 धन्यवादाः! वयं शीघ्रं प्रतिवदिष्यामः।", "quote_sa": "सर्वे भवन्तु सुखिनः ।", "quote_en": "सर्वे सुखिनः भवन्तु।"}, "footer": {"sa": "ॐ तत्सत् । श्रीकृष्णार्पणमस्तु ।", "iast": "Oṃ tat sat · Śrī Kṛṣṇārpaṇam astu", "copy": "© २०२५ कार्तिकेयः पीडपर्ति · सिडनी, ऑस्ट्रेलिया"}, "settings": {"title": "व्यवस्थापनम्", "theme": "दृश्यम्", "theme_light": "☀ प्रकाशः", "theme_dark": "☽ तमः", "font_size": "अक्षरमापम्", "accent": "वर्णः", "language": "भाषा"}}};
 
 const LANGS = ['en','te','sa'];
-const LLBL  = {en:'EN',te:'తె',sa:'सं'};
-let CL = 'en';   // current lang
-let T  = {};     // current translation object
+const LLBL  = {en:'EN', te:'తె', sa:'सं'};
+const LFULL = {en:'🇦🇺 EN · English', te:'🇮🇳 తె · Telugu', sa:'🕉 सं · Sanskrit'};
+let CL = 'en';
+let T  = {};
 
-// ── SWITCH LANGUAGE ──────────────────────────────────────────
+// ─── SWITCH LANGUAGE ────────────────────────────────────────
 function switchLang(lang, btn) {
   CL = lang;
   T  = ALL[lang] || ALL['en'];
-  // update settings panel buttons
-  document.querySelectorAll('.lb').forEach(b => b.classList.remove('on'));
-  if (btn) btn.classList.add('on');
-  // update nav quick-toggle label
-  document.getElementById('langToggle').textContent = LLBL[lang];
-  // set html lang attr
-  document.documentElement.lang = {en:'en', te:'te', sa:'sa'}[lang] || 'en';
+  // nav pill
+  document.querySelectorAll('.lang-opt').forEach(b => {
+    b.classList.toggle('on', b.getAttribute('data-lang') === lang);
+  });
+  // settings sidebar buttons
+  document.querySelectorAll('.slb').forEach((b,i) => {
+    b.classList.toggle('on', LANGS[i] === lang);
+  });
+  document.documentElement.lang = {en:'en',te:'te',sa:'sa'}[lang]||'en';
   renderAll();
   localStorage.setItem('kp-lang', lang);
 }
 
-function cycleLang() {
-  const idx = (LANGS.indexOf(CL) + 1) % LANGS.length;
-  const btns = document.querySelectorAll('.lb');
-  switchLang(LANGS[idx], btns[idx]);
-}
-
-// ── RENDER ALL ───────────────────────────────────────────────
-function renderAll() {
+// ─── RENDER ALL ─────────────────────────────────────────────
+function renderAll(){
   rNav(); rHero(); rAbout(); rProfile(); rCredits();
   rEvents(); rParayana(); rSupport(); rTestimonials();
   rYouTube(); rContact(); rFooter(); rSettings();
   reObsFU();
 }
 
-const s  = (id,v)  => { const e=document.getElementById(id); if(e&&v!=null) e.innerHTML=v; };
-const ph = (id,v)  => { const e=document.getElementById(id); if(e) e.placeholder=v||''; };
+const s  = (id,v) => { const e=document.getElementById(id); if(e&&v!=null) e.innerHTML=v; };
+const ph = (id,v) => { const e=document.getElementById(id); if(e) e.placeholder=v||''; };
+const g  = (sec,key) => (T[sec]&&T[sec][key])||'';
 
-// ── NAV ──────────────────────────────────────────────────────
-function rNav() {
-  const n = T.nav||{};
-  s('logo-nm', T.logo?.name||'Samskruti');
-  s('logo-tg', T.logo?.tagline||'సంస్కృతి • संस्कृति');
-  document.querySelectorAll('[data-n]').forEach(el => {
-    const k = el.getAttribute('data-n');
-    if(n[k]) el.textContent = n[k];
+// ─── NAV ────────────────────────────────────────────────────
+function rNav(){
+  const n=T.nav||{};
+  s('logo-nm', n.logo_name||'Samskruti');
+  s('logo-tg', n.logo_tag||'సంస్కృతి • संस्कृति');
+  document.querySelectorAll('[data-n]').forEach(el=>{
+    const k=el.getAttribute('data-n');
+    if(n[k]) el.textContent=n[k];
   });
 }
 
-// ── HERO ─────────────────────────────────────────────────────
-function rHero() {
-  const h = T.hero||{};
-  s('h-gr', h.greeting);
-  s('h-nm', h.name);
-  s('h-ag', h.age_location);
-  s('h-ds', h.description);
-  s('h-b1', h.btn_achievements);
-  s('h-b2', h.btn_youtube);
-  const bg = document.getElementById('h-bg');
-  bg.innerHTML = '';
-  ['badge_gold','badge_olympiad','badge_gita','badge_saundarya','badge_sivapadam']
-    .forEach(k => { if(h[k]) { const sp=document.createElement('span'); sp.className='badge'; sp.textContent=h[k]; bg.appendChild(sp); }});
+// ─── HERO ───────────────────────────────────────────────────
+function rHero(){
+  const h=T.hero||{};
+  s('h-gr',h.greeting); s('h-nm',h.name); s('h-ag',h.age_location); s('h-ds',h.description);
+  s('h-b1',h.btn_achievements); s('h-b2',h.btn_youtube);
+  const bg=document.getElementById('h-bg'); if(!bg) return;
+  bg.innerHTML='';
+  (h.badges||[]).forEach(txt=>{ const sp=document.createElement('span'); sp.className='badge'; sp.textContent=txt; bg.appendChild(sp); });
 }
 
-// ── ABOUT ────────────────────────────────────────────────────
-function rAbout() {
-  const a = T.about||{};
-  s('a-ti', a.section_title);  s('a-p1', a.para1);       s('a-p2', a.para2);
-  s('a-qs', a.quote_sa);       s('a-qi', a.quote_iast);
-  s('a-qt', a.quote_te);       s('a-qe', a.quote_en);
-  s('a-c1t', a.card_lang_title);       s('a-c1b', a.card_lang_body);
-  s('a-c2t', a.card_scripture_title);  s('a-c2b', a.card_scripture_body);
-  s('a-c3t', a.card_community_title);  s('a-c3b', a.card_community_body);
+// ─── ABOUT ──────────────────────────────────────────────────
+function rAbout(){
+  const a=T.about||{};
+  s('a-ti',a.section_title); s('a-p1',a.para1); s('a-p2',a.para2);
+  s('a-qs',a.quote_sa); s('a-qi',a.quote_iast); s('a-qt',a.quote_te); s('a-qe',a.quote_en);
+  (a.cards||[]).forEach((c,i)=>{ s(`a-c${i+1}t`,c.title); s(`a-c${i+1}b`,c.body); });
 }
 
-// ── PROFILE ──────────────────────────────────────────────────
-function rProfile() {
-  const p = T.profile||{};
-  s('p-ti', p.section_title);
-  document.getElementById('achGr').innerHTML =
-    (p.achievements||[]).map(a => `<div class="acard fu">
+// ─── PROFILE ────────────────────────────────────────────────
+function rProfile(){
+  const p=T.profile||{};
+  s('p-ti',p.section_title); s('p-jt',p.journey_title); s('p-jb',p.journey);
+
+  // exam table
+  const ew=document.getElementById('examWrap');
+  if(ew && p.exam_table){
+    ew.innerHTML=`<h4>${p.exam_table_title||'Sanskrit Examination Record'}</h4>
+    <table class="exam-table">
+      <thead><tr>
+        <th>${CL==='sa'?'वर्षम्':CL==='te'?'సంవత్సరం':'Year'}</th>
+        <th>${CL==='sa'?'परीक्षा':CL==='te'?'పరీక్ష':'Exam'}</th>
+        <th>${CL==='sa'?'अङ्काः':CL==='te'?'మార్కులు':'Score'}</th>
+        <th></th>
+      </tr></thead>
+      <tbody>${p.exam_table.map(r=>`<tr>
+        <td>${r.year}</td><td>${r.exam}</td>
+        <td class="exam-score">${r.score}</td><td>${r.grade}</td>
+      </tr>`).join('')}</tbody>
+    </table>`;
+  }
+
+  // achievement cards
+  const gr=document.getElementById('achGr');
+  if(gr) gr.innerHTML=(p.achievements||[]).map(a=>`
+    <div class="acard fu tag-${a.tag||''}">
       <div class="ai">${a.icon}</div>
       <div class="at">${a.title}</div>
       <div class="ad">${a.desc}</div>
       <div class="ay">${a.year}</div>
     </div>`).join('');
+
+  // cert placeholders
+  const cg=document.getElementById('certGrid');
+  if(cg){
+    const lbl=p.photo_placeholder||'Certificate Photos';
+    const sub=p.photo_placeholder_sub||'Photos will appear here';
+    cg.innerHTML=Array(8).fill(0).map((_,i)=>`
+      <div class="photo-ph">
+        <div class="photo-ph-icon">${i<4?'🏆':'📜'}</div>
+        <div class="photo-ph-label">${lbl}</div>
+      </div>`).join('');
+  }
 }
 
-// ── CREDITS ──────────────────────────────────────────────────
-function rCredits() {
-  const c = T.credits||{};
-  s('cr-ti', c.section_title); s('cr-in', c.intro);
-  document.getElementById('crGr').innerHTML =
-    (c.list||[]).map(item => `<div class="ci fu">
+// ─── CREDITS ────────────────────────────────────────────────
+function rCredits(){
+  const c=T.credits||{};
+  s('cr-ti',c.section_title); s('cr-in',c.intro);
+  const gr=document.getElementById('crGr');
+  if(gr) gr.innerHTML=(c.list||[]).map(item=>`
+    <div class="ci fu">
       <div class="cn">${item.name}</div>
-      <div class="cr">${item.role}</div>
+      <div class="cr2">${item.role}</div>
     </div>`).join('');
 }
 
-// ── EVENTS ───────────────────────────────────────────────────
-function rEvents() {
-  const ev = T.events||{};
-  s('ev-ti', ev.section_title);
-  document.getElementById('tlGr').innerHTML =
-    (ev.list||[]).map(item => `<div class="tli fu">
+// ─── EVENTS ─────────────────────────────────────────────────
+function rEvents(){
+  const ev=T.events||{};
+  s('ev-ti',ev.section_title);
+  const ph_lbl=ev.events_placeholder||'Event photo will appear here';
+  const gr=document.getElementById('tlGr');
+  if(gr) gr.innerHTML=(ev.list||[]).map(item=>`
+    <div class="tli fu">
       <div class="tld"></div>
       <div class="tldate">${item.date}</div>
       <div class="tltit">${item.title}</div>
       <div class="tldesc">${item.desc}</div>
+      ${item.has_photo?`<div class="tl-photo">📷 ${ph_lbl}</div>`:''}
     </div>`).join('');
 }
 
-// ── PARAYANA ─────────────────────────────────────────────────
-function rParayana() {
-  const pr = T.parayana||{};
-  s('pr-ti', pr.section_title); s('pr-in', pr.intro);
-  const tt = pr.tab_te||'Telugu', td = pr.tab_dev||'Devanāgarī', ti = pr.tab_iast||'IAST';
-  document.getElementById('prGr').innerHTML =
-    (pr.stotras||[]).map(st => `<div class="pc fu">
+// ─── PARAYANA ───────────────────────────────────────────────
+function rParayana(){
+  const pr=T.parayana||{};
+  s('pr-ti',pr.section_title); s('pr-in',pr.intro);
+  const tt=pr.tab_te||'Telugu', td=pr.tab_dev||'Devanāgarī', ti=pr.tab_iast||'IAST';
+  const gr=document.getElementById('prGr');
+  if(gr) gr.innerHTML=(pr.stotras||[]).map(st=>`
+    <div class="pc fu">
       <h3>${st.title}</h3>
       <div class="stabs">
         <button class="stab on" onclick="showSc(this,'${st.id}',0)">${tt}</button>
         <button class="stab"    onclick="showSc(this,'${st.id}',1)">${td}</button>
         <button class="stab"    onclick="showSc(this,'${st.id}',2)">${ti}</button>
       </div>
-      <div class="sv te"   id="v${st.id}0">${st.te.replace(/
+      <div class="sv te-sc"  id="v${st.id}0">${st.te.replace(/
 /g,'<br>')}</div>
-      <div class="sv dev"  id="v${st.id}1" style="display:none">${st.dev.replace(/
+      <div class="sv dev-sc" id="v${st.id}1" style="display:none">${st.dev.replace(/
 /g,'<br>')}</div>
-      <div class="sv iast" id="v${st.id}2" style="display:none">${st.iast.replace(/
+      <div class="sv iast-sc"id="v${st.id}2" style="display:none">${st.iast.replace(/
 /g,'<br>')}</div>
       <p class="sattr">${st.attribution}</p>
     </div>`).join('');
 }
-
-function showSc(btn, id, idx) {
-  btn.parentElement.querySelectorAll('.stab').forEach((t,i) => {
-    t.classList.toggle('on', i===idx);
-    const v = document.getElementById('v'+id+i);
-    if(v) v.style.display = i===idx ? '' : 'none';
+function showSc(btn,id,idx){
+  btn.parentElement.querySelectorAll('.stab').forEach((t,i)=>{
+    t.classList.toggle('on',i===idx);
+    const v=document.getElementById('v'+id+i);
+    if(v) v.style.display=i===idx?'':'none';
   });
 }
 
-// ── SUPPORT ──────────────────────────────────────────────────
-function rSupport() {
-  const sp = T.support||{};
-  s('sp-ti', sp.section_title); s('sp-in', sp.intro);
-  document.getElementById('spGr').innerHTML =
-    (sp.cards||[]).map(c => `<div class="spc fu">
+// ─── SUPPORT ────────────────────────────────────────────────
+function rSupport(){
+  const sp=T.support||{};
+  s('sp-ti',sp.section_title); s('sp-in',sp.intro);
+  const gr=document.getElementById('spGr');
+  if(gr) gr.innerHTML=(sp.cards||[]).map(c=>`
+    <div class="spc fu">
       <div class="spi">${c.icon}</div>
       <h3>${c.title}</h3>
       <p>${c.desc}</p>
     </div>`).join('');
 }
 
-// ── TESTIMONIALS ─────────────────────────────────────────────
-function rTestimonials() {
-  const te = T.testimonials||{};
-  s('te-ti', te.section_title);
-  document.getElementById('teGr').innerHTML =
-    (te.list||[]).map(item => `<div class="tec fu">
-      <div class="qm">"</div>
+// ─── TESTIMONIALS ───────────────────────────────────────────
+function rTestimonials(){
+  const te=T.testimonials||{};
+  s('te-ti',te.section_title);
+  const gr=document.getElementById('teGr');
+  if(gr) gr.innerHTML=(te.list||[]).map(item=>`
+    <div class="tec fu">
       <p class="tetx">${item.text}</p>
       <div class="teby">${item.by}</div>
       <div class="tero">${item.role}</div>
     </div>`).join('');
 }
 
-// ── YOUTUBE ──────────────────────────────────────────────────
-function rYouTube() {
-  const yt = T.youtube||{};
-  s('yt-ti', yt.section_title);
-  const vids = (yt.videos||[]).map(v =>
-    `<div class="yt-c" onclick="window.open('${yt.channel_url}','_blank')">
+// ─── YOUTUBE ────────────────────────────────────────────────
+function rYouTube(){
+  const yt=T.youtube||{};
+  s('yt-ti',yt.section_title);
+  const ct=document.getElementById('ytCt');
+  if(!ct) return;
+  const vids=(yt.videos||[]).map(v=>`
+    <div class="yt-c" onclick="window.open('${yt.channel_url}','_blank')">
       <div class="yt-th">▶</div>
       <div class="yt-inf">
         <div class="yt-vt">${v.title}</div>
         <div class="yt-vm">${v.meta}</div>
       </div>
     </div>`).join('');
-  document.getElementById('ytCt').innerHTML =
-    `<a class="yt-ch" href="${yt.channel_url}" target="_blank" rel="noopener">
-      <span style="font-size:26px">▶</span>
+  ct.innerHTML=`
+    <a class="yt-ch" href="${yt.channel_url}" target="_blank" rel="noopener">
+      <span style="font-size:28px;flex-shrink:0">▶</span>
       <div><div class="yt-chn">${yt.channel_name||''}</div>
            <div class="yt-chs">${yt.channel_sub||''}</div></div>
-      <span style="margin-left:auto;color:var(--gold)">↗</span>
+      <span style="margin-left:auto;color:var(--gold);font-size:20px">↗</span>
     </a>
     <a class="yt-bh" href="${yt.bharatam_url||'#'}" target="_blank" rel="noopener">
       <span class="yt-bhi">📜</span>
       <div><div class="yt-bht">${yt.bharatam_title||'Bhāratam Laghu Prasaṅgālu'}</div>
            <div class="yt-bhd">${yt.bharatam_desc||''}</div></div>
-      <span style="margin-left:auto;color:var(--gold)">↗</span>
+      <span style="margin-left:auto;color:var(--gold);font-size:20px">↗</span>
     </a>
     <div class="yt-gr">${vids}</div>`;
 }
 
-// ── CONTACT ──────────────────────────────────────────────────
-function rContact() {
-  const co = T.contact||{};
-  s('co-ti', co.section_title); s('co-in', co.intro);
-  s('co-cy', co.location_city); s('co-cn', co.location_country);
-  s('co-yl', co.youtube_label); s('co-qs', co.quote_sa); s('co-qe', co.quote_en);
-  ph('fn', co.form_name); ph('fe', co.form_email);
-  ph('fs', co.form_subject); ph('fm', co.form_message);
-  s('fbt', co.form_submit); s('ftk', co.form_thanks);
+// ─── CONTACT ────────────────────────────────────────────────
+function rContact(){
+  const co=T.contact||{};
+  s('co-ti',co.section_title); s('co-in',co.intro);
+  s('co-cy',co.location_city); s('co-cn',co.location_country);
+  s('co-yl',co.youtube_label); s('co-qs',co.quote_sa); s('co-qe',co.quote_en);
+  ph('fn',co.form_name); ph('fe',co.form_email);
+  ph('fs2',co.form_subject); ph('fm',co.form_message);
+  s('fbt',co.form_submit); s('ftk',co.form_thanks);
 }
 
-// ── FOOTER ───────────────────────────────────────────────────
-function rFooter() {
-  const ft = T.footer||{};
-  s('ft-sa', ft.sa); s('ft-ia', ft.iast);
-  const cp = document.getElementById('ft-cp');
-  if(cp) cp.innerHTML = `${ft.copy||''} · <a href="https://www.youtube.com/@samskruti.info.1"
-    target="_blank" rel="noopener" style="color:var(--gold)">YouTube</a>`;
+// ─── FOOTER ─────────────────────────────────────────────────
+function rFooter(){
+  const ft=T.footer||{};
+  s('ft-sa',ft.sa); s('ft-ia',ft.iast);
+  const cp=document.getElementById('ft-cp');
+  if(cp) cp.innerHTML=`${ft.copy||''} · <a href="https://www.youtube.com/@samskruti.info.1" target="_blank" rel="noopener" style="color:var(--gold)">YouTube</a>`;
 }
 
-// ── SETTINGS LABELS ──────────────────────────────────────────
-function rSettings() {
-  const st = T.settings||{};
-  s('s-title', '⚙ ' + (st.title||'Settings'));
-  const tL = document.getElementById('tL'), tD = document.getElementById('tD');
-  if(tL) tL.textContent = st.theme_light||'☀ Light';
-  if(tD) tD.textContent = st.theme_dark||'☽ Dark';
-  s('s-thlbl',  st.theme||'Theme');
-  s('s-aclbl',  st.accent||'Accent Colour');
-  s('s-lglbl',  st.language||'Language');
+// ─── SETTINGS LABELS ────────────────────────────────────────
+function rSettings(){
+  const st=T.settings||{};
+  s('s-title','⚙ '+(st.title||'Settings'));
+  const tL=document.getElementById('tL'),tD=document.getElementById('tD');
+  if(tL) tL.textContent=st.theme_light||'☀ Light';
+  if(tD) tD.textContent=st.theme_dark||'☽ Dark';
+  s('s-thlbl',st.theme||'Theme');
+  s('s-aclbl',st.accent||'Accent Colour');
+  s('s-lglbl',st.language||'Language');
 }
 
-// ── SETTINGS PANEL ───────────────────────────────────────────
-function toggleS() {
-  document.getElementById('sp').classList.toggle('on');
-  document.getElementById('so').classList.toggle('on');
-}
-function closeS() {
-  document.getElementById('sp').classList.remove('on');
-  document.getElementById('so').classList.remove('on');
+// ─── SETTINGS PANEL ─────────────────────────────────────────
+function toggleS(){ document.getElementById('sp').classList.toggle('on'); document.getElementById('so').classList.toggle('on'); }
+function closeS() { document.getElementById('sp').classList.remove('on'); document.getElementById('so').classList.remove('on'); }
+
+// ─── THEME ──────────────────────────────────────────────────
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'');
+  document.getElementById('tL').classList.toggle('on',t==='light');
+  document.getElementById('tD').classList.toggle('on',t==='dark');
+  localStorage.setItem('kp-theme',t);
 }
 
-// ── THEME ────────────────────────────────────────────────────
-function setTheme(t) {
-  document.documentElement.setAttribute('data-theme', t==='dark'?'dark':'');
-  document.getElementById('tL').classList.toggle('on', t==='light');
-  document.getElementById('tD').classList.toggle('on', t==='dark');
-  localStorage.setItem('kp-theme', t);
+// ─── FONT SIZE ──────────────────────────────────────────────
+function setFS(v){
+  document.documentElement.style.setProperty('--fs',v+'px');
+  // Telugu/Sanskrit base is always fs+1
+  document.documentElement.style.setProperty('--fste',(+v+1)+'px');
+  document.getElementById('fsv').textContent=v;
+  localStorage.setItem('kp-fs',v);
 }
 
-// ── FONT SIZE ────────────────────────────────────────────────
-function setFS(v) {
-  document.documentElement.style.setProperty('--fs', v+'px');
-  document.getElementById('fsv').textContent = v;
-  localStorage.setItem('kp-fs', v);
-}
-
-// ── ACCENT COLOUR ────────────────────────────────────────────
-function setAcc(g, gd, gl, el) {
-  const r = document.documentElement;
-  r.style.setProperty('--gold', g);
-  r.style.setProperty('--gold-d', gd);
-  r.style.setProperty('--gold-l', gl);
-  document.querySelectorAll('.sw').forEach(s => s.classList.remove('on'));
+// ─── ACCENT ─────────────────────────────────────────────────
+function setAcc(g,gd,gl,gxl,el){
+  const r=document.documentElement;
+  r.style.setProperty('--gold',g);
+  r.style.setProperty('--gold-d',gd);
+  r.style.setProperty('--gold-l',gl);
+  r.style.setProperty('--gold-xl',gxl);
+  document.querySelectorAll('.sw').forEach(s=>s.classList.remove('on'));
   if(el) el.classList.add('on');
 }
 
-// ── NAVIGATION ───────────────────────────────────────────────
-function goSec(id) { document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
-function mNav(id)  { document.getElementById('mob').classList.remove('on'); setTimeout(()=>goSec(id),80); }
+// ─── NAVIGATION ─────────────────────────────────────────────
+function goSec(id){ document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
+function mNav(id) { document.getElementById('mob').classList.remove('on'); setTimeout(()=>goSec(id),80); }
 function toggleMob(){ document.getElementById('mob').classList.toggle('on'); }
 
-// ── ACTIVE NAV HIGHLIGHT ─────────────────────────────────────
-const secIds = ['home','about','profile','credits','events','parayana','support','testimonials','youtube','contact'];
-new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting)
-      document.querySelectorAll('[data-n]').forEach(a =>
-        a.classList.toggle('act', a.getAttribute('data-n')===e.target.id));
+// active nav highlight
+['home','about','profile','credits','events','parayana','support','testimonials','youtube','contact']
+  .forEach(id=>{
+    const el=document.getElementById(id); if(!el) return;
+    new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting)
+        document.querySelectorAll('[data-n]').forEach(a=>a.classList.toggle('act',a.getAttribute('data-n')===id));
+    },{threshold:.3}).observe(el);
   });
-}, {threshold:0.35}).observe || secIds.forEach(id => {
-  const el = document.getElementById(id); if(el)
-  new IntersectionObserver(entries => {
-    if(entries[0].isIntersecting)
-      document.querySelectorAll('[data-n]').forEach(a =>
-        a.classList.toggle('act', a.getAttribute('data-n')===id));
-  }, {threshold:0.35}).observe(el);
-});
-// correct approach:
-secIds.forEach(id => {
-  const el = document.getElementById(id); if(!el) return;
-  new IntersectionObserver(entries => {
-    if(entries[0].isIntersecting)
-      document.querySelectorAll('[data-n]').forEach(a =>
-        a.classList.toggle('act', a.getAttribute('data-n')===id));
-  }, {threshold:0.35}).observe(el);
-});
 
-// ── CONTACT FORM ─────────────────────────────────────────────
-function subForm(e) {
+// ─── CONTACT FORM ───────────────────────────────────────────
+function subForm(e){
   e.preventDefault();
-  const tk = document.getElementById('ftk');
+  const tk=document.getElementById('ftk');
   if(tk) tk.style.display='block';
   e.target.reset();
 }
 
-// ── FADE-UP OBSERVER ─────────────────────────────────────────
-function reObsFU() {
-  const obs = new IntersectionObserver(entries =>
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); }),
-    {threshold:0.07});
-  document.querySelectorAll('.fu').forEach(el => { el.classList.remove('vis'); obs.observe(el); });
+// ─── FADE UP OBSERVER ───────────────────────────────────────
+function reObsFU(){
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('vis'); }),{threshold:.07});
+  document.querySelectorAll('.fu').forEach(el=>{ el.classList.remove('vis'); obs.observe(el); });
 }
 
-// ── INIT ─────────────────────────────────────────────────────
-window.addEventListener('DOMContentLoaded', () => {
-  // Restore theme
-  const th = localStorage.getItem('kp-theme');
+// ─── INIT ───────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded',()=>{
+  const th=localStorage.getItem('kp-theme');
   if(th) setTheme(th);
-  // Restore font size
-  const fs = localStorage.getItem('kp-fs');
-  if(fs) { setFS(fs); document.getElementById('fsr').value=fs; }
-  // Restore language — default en
-  const lg = localStorage.getItem('kp-lang') || 'en';
-  const lbBtns = document.querySelectorAll('.lb');
-  const li = LANGS.indexOf(lg);
-  switchLang(lg, li>=0 ? lbBtns[li] : lbBtns[0]);
+  const fs=localStorage.getItem('kp-fs');
+  if(fs){ setFS(fs); const sl=document.getElementById('fsr'); if(sl) sl.value=fs; }
+  const lg=localStorage.getItem('kp-lang')||'en';
+  switchLang(lg, null);
 });
 </script>
 </body>
