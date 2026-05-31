@@ -16,10 +16,10 @@
   --bg:#faf5eb;--surf:#fff9ef;--surf2:#fffbf3;
   --bd:#b8730a22;--bds:#b8730a55;
   --sh:0 2px 14px rgba(122,77,6,.08);--shl:0 8px 32px rgba(122,77,6,.14);}
-html{scroll-behavior:smooth;font-size:16px}
+html{scroll-behavior:smooth;font-size:18px}
 body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--bg);color:var(--tx);line-height:1.75}
-body.te{font-family:'Noto Sans Telugu',sans-serif;font-size:17px}
-body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px}
+body.te{font-family:'Noto Sans Telugu',sans-serif;font-size:19px}
+body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px}
 
 /* NAV */
 #nav{position:sticky;top:0;z-index:100;height:64px;background:rgba(250,245,235,.97);
@@ -78,8 +78,8 @@ body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:17px}
   display:flex;align-items:center;gap:8px}
 .slb:hover{border-color:var(--bds);color:var(--gold);background:var(--gold-xl)}
 .slb.active{border-color:var(--gold);background:var(--gold);color:#fff;font-weight:700}
-.color-swatches{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
-.sw{width:22px;height:22px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .2s}
+.color-swatches{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;max-width:220px}
+.sw{width:24px;height:24px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .2s}
 .sw:hover,.sw.active{transform:scale(1.28);border-color:var(--tx)}
 
 /* LAYOUT */
@@ -295,19 +295,26 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
     <div class="slang-row" id="slangRow"></div>
   </div>
   <div class="sg">
-    <label>Font Size — <span id="fsv">16</span>px</label>
-    <input type="range" min="14" max="22" value="16" oninput="setFS(this.value)"/>
+    <label>Font Size — <span id="fsv">18</span>px</label>
+    <input type="range" min="16" max="26" value="18" id="fontSizeRange" oninput="setFS(this.value)"/>
   </div>
   <div class="sg">
     <label id="sp-accent-lbl">Accent Colour</label>
     <div class="color-swatches">
-      <div class="sw active" style="background:#b8730a" title="Gold"    onclick="setAcc('#b8730a','#e8a830','#faedc8',this)"></div>
-      <div class="sw"        style="background:#8b5e06" title="Amber"   onclick="setAcc('#8b5e06','#c8860a','#f5dfa8',this)"></div>
-      <div class="sw"        style="background:#6b1528" title="Maroon"  onclick="setAcc('#6b1528','#c4405a','#f5d0dc',this)"></div>
-      <div class="sw"        style="background:#1d5c38" title="Forest"  onclick="setAcc('#1d5c38','#3aaa6a','#d0f0e0',this)"></div>
-      <div class="sw"        style="background:#1e3a6e" title="Navy"    onclick="setAcc('#1e3a6e','#4a7ec8','#d0def8',this)"></div>
-      <div class="sw"        style="background:#5a2d7a" title="Violet"  onclick="setAcc('#5a2d7a','#a06acc','#ead0f8',this)"></div>
+      <div class="sw active" style="background:#b8730a" title="Gold"        onclick="setAcc('#b8730a','#e8a830','#faedc8',this)"></div>
+      <div class="sw"        style="background:#c8860a" title="Saffron"     onclick="setAcc('#c8860a','#f0a820','#fef0cc',this)"></div>
+      <div class="sw"        style="background:#8b5e06" title="Amber"       onclick="setAcc('#8b5e06','#c8860a','#f5dfa8',this)"></div>
+      <div class="sw"        style="background:#a05010" title="Terracotta"  onclick="setAcc('#a05010','#d07030','#fae0cc',this)"></div>
+      <div class="sw"        style="background:#6b1528" title="Maroon"      onclick="setAcc('#6b1528','#c4405a','#f5d0dc',this)"></div>
+      <div class="sw"        style="background:#8b1a4a" title="Rose"        onclick="setAcc('#8b1a4a','#d04080','#fdd0e8',this)"></div>
+      <div class="sw"        style="background:#1d5c38" title="Forest"      onclick="setAcc('#1d5c38','#3aaa6a','#d0f0e0',this)"></div>
+      <div class="sw"        style="background:#2d7a5a" title="Jade"        onclick="setAcc('#2d7a5a','#50c090','#c8f0e0',this)"></div>
+      <div class="sw"        style="background:#1e3a6e" title="Navy"        onclick="setAcc('#1e3a6e','#4a7ec8','#d0def8',this)"></div>
+      <div class="sw"        style="background:#1a5080" title="Cerulean"    onclick="setAcc('#1a5080','#3a90c8','#c8e4f8',this)"></div>
+      <div class="sw"        style="background:#5a2d7a" title="Violet"      onclick="setAcc('#5a2d7a','#a06acc','#ead0f8',this)"></div>
+      <div class="sw"        style="background:#3a2060" title="Indigo"      onclick="setAcc('#3a2060','#6a50b0','#ddd0f8',this)"></div>
     </div>
+    <p style="font-size:10px;color:var(--txs);margin-top:6px;font-style:italic" id="accentLabel">Gold</p>
   </div>
 </div>
 
@@ -756,9 +763,19 @@ function closeSett(){
 
 // ── FONT SIZE ────────────────────────────────────────────────────────────────
 function setFS(v){
+  v=parseInt(v,10);
   document.documentElement.style.fontSize=v+"px";
+  // Telugu & Devanagari need slightly larger base for readability
+  const teStyle=document.getElementById("teSaStyle")||createTeSaStyle();
+  teStyle.textContent=`body.te{font-size:${v+2}px!important}body.sa{font-size:${v+2}px!important}`;
   document.getElementById("fsv").textContent=v;
   try{localStorage.setItem("kp-fs",v);}catch(e){}
+}
+function createTeSaStyle(){
+  const s=document.createElement("style");
+  s.id="teSaStyle";
+  document.head.appendChild(s);
+  return s;
 }
 
 // ── ACCENT COLOUR ─────────────────────────────────────────────────────────────
@@ -768,7 +785,12 @@ function setAcc(gold,goldL,goldXL,el){
   r.style.setProperty("--gold-l",goldL);
   r.style.setProperty("--gold-xl",goldXL);
   document.querySelectorAll(".sw").forEach(s=>s.classList.remove("active"));
-  if(el) el.classList.add("active");
+  if(el){
+    el.classList.add("active");
+    const lbl=document.getElementById("accentLabel");
+    if(lbl) lbl.textContent=el.getAttribute("title")||"";
+  }
+  try{localStorage.setItem("kp-gold",gold);localStorage.setItem("kp-goldL",goldL);localStorage.setItem("kp-goldXL",goldXL);}catch(e){}
 }
 
 // ── PHOTO UPLOAD (for future use) ─────────────────────────────────────────────
@@ -797,9 +819,23 @@ function submitForm(e){
 window.addEventListener("DOMContentLoaded",()=>{
   try{
     const fs=localStorage.getItem("kp-fs");
-    if(fs){setFS(fs);const sl=document.querySelector("input[type=range]");if(sl)sl.value=fs;}
+    if(fs){setFS(fs);const sl=document.getElementById("fontSizeRange");if(sl)sl.value=fs;}
     const lg=localStorage.getItem("kp-lang")||"en";
     setLang(lg);
+    // Restore accent colour
+    const kg=localStorage.getItem("kp-gold");
+    const kgl=localStorage.getItem("kp-goldL");
+    const kgxl=localStorage.getItem("kp-goldXL");
+    if(kg && kgl && kgxl){
+      const r=document.documentElement;
+      r.style.setProperty("--gold",kg);
+      r.style.setProperty("--gold-l",kgl);
+      r.style.setProperty("--gold-xl",kgxl);
+      // Highlight matching swatch
+      document.querySelectorAll(".sw").forEach(s=>{
+        if(s.style.background===kg||s.style.backgroundColor===kg) s.classList.add("active");
+      });
+    }
   } catch(e){
     setLang("en");
   }
