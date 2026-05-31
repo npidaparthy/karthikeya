@@ -80,3 +80,10 @@ def build():
 
 if __name__ == "__main__":
     build()
+
+# ── Gallery note ──────────────────────────────────────────────────────────────
+# To add a new photo to the hero gallery, use add_photo.py:
+#   python3 add_photo.py path/to/photo.jpg \
+#       --title-en "Your Title" --title-te "మీ శీర్షిక" --title-sa "शीर्षकम्" \
+#       --desc-en  "Description" --desc-te "వివరణ" --desc-sa "वर्णनम्"
+# Then commit and push. GitHub Actions will rebuild and deploy automatically.

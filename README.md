@@ -185,6 +185,66 @@ GitHub Actions automatically: validates JSON → rebuilds index.html → deploys
 
 ---
 
+## 📸 Hero Gallery — Auto-Scrolling Photo Slideshow
+
+The hero section shows a circular photo gallery that:
+- **Auto-scrolls** every 4.5 seconds
+- **Pauses on hover**
+- Shows a **caption with title + description** on hover
+- Supports **← → keyboard navigation** and **touch swipe** on mobile
+- Captions update automatically when you **switch language**
+
+### Adding a new photo
+
+**Method 1 — Helper script (recommended):**
+```bash
+python3 add_photo.py photos/gold-medal.jpg \
+    --title-en "Gold Medal — Mysore Datta Peetham" \
+    --title-te "స్వర్ణపతకం — మైసూర్ దత్త పీఠం" \
+    --title-sa "स्वर्णपदकम् — मैसूरु-दत्तपीठम्" \
+    --desc-en  "Receiving the Gold Medal for memorising all 700 Bhagavad Gītā verses." \
+    --desc-te  "భగవద్గీత 700 శ్లోకాలకు స్వర్ణపతకం అందుకుంటున్న సందర్భం." \
+    --desc-sa  "सप्तशतश्लोकान् कण्ठस्थीकृत्य स्वर्णपदकं प्राप्नोति।"
+
+git add -A && git commit -m "Add: Gold Medal photo" && git push
+```
+
+**Method 2 — Manual edit:**
+
+1. Copy your photo to `assets/cover-page-image/`
+2. Open `index.html`, find `const GALLERY_SLIDES = [`
+3. Add a new entry before `// More slides will be added here...`:
+
+```javascript
+{
+  src: "assets/cover-page-image/your-photo.jpg",
+  title_en: "Your Title in English",
+  title_te: "మీ శీర్షిక తెలుగులో",
+  title_sa: "संस्कृतभाषायां शीर्षकम्",
+  desc_en: "Description in English.",
+  desc_te: "తెలుగులో వివరణ.",
+  desc_sa: "संस्कृते वर्णनम्।"
+},
+```
+
+4. `git add -A && git commit -m "Add photo" && git push`
+
+### Photo tips
+- **Size:** 600×600px or larger, square crops work best (the gallery is circular)
+- **Format:** JPG or PNG
+- **Location:** `assets/cover-page-image/`
+- **Filenames:** Use hyphens, no spaces (e.g. `gold-medal-2024.jpg`)
+
+### Current photos in gallery
+| File | Title |
+|------|-------|
+| `karthikeya-default.jpg` | Default avatar (embedded, always shown) |
+
+*(Add more rows as you add photos)*
+
+
+---
+
 ## 🎨 Customising Colours
 
 Open `index.html` in a text editor, find `:root {` and change:
