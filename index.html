@@ -16,10 +16,10 @@
   --bg:#faf5eb;--surf:#fff9ef;--surf2:#fffbf3;
   --bd:#b8730a22;--bds:#b8730a55;
   --sh:0 2px 14px rgba(122,77,6,.08);--shl:0 8px 32px rgba(122,77,6,.14);}
-html{scroll-behavior:smooth;font-size:18px}
+html{scroll-behavior:smooth;font-size:1.0rem}
 body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--bg);color:var(--tx);line-height:1.75}
-body.te{font-family:'Noto Sans Telugu',sans-serif;font-size:19px}
-body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px}
+body.te{font-family:'Noto Sans Telugu',sans-serif;font-size:1.0556rem}
+body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:1.0556rem}
 
 /* NAV */
 #nav{position:sticky;top:0;z-index:100;height:64px;background:rgba(250,245,235,.97);
@@ -28,8 +28,8 @@ body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px}
 .logo-btn{display:flex;align-items:center;gap:8px;border:none;background:none;cursor:pointer;flex-shrink:0}
 .logo-om{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold-xl),#f5d090);
   border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;
-  font-family:'Noto Sans Devanagari',sans-serif;font-size:19px;color:var(--gold);flex-shrink:0}
-.logo-nm{font-family:'Cinzel Decorative',serif;font-size:13px;font-weight:700;color:var(--gold);
+  font-family:'Noto Sans Devanagari',sans-serif;font-size:1.0556rem;color:var(--gold);flex-shrink:0}
+.logo-nm{font-family:'Cinzel Decorative',serif;font-size:0.7222rem;font-weight:700;color:var(--gold);
   letter-spacing:.04em;line-height:1.2;display:block}
 .logo-tg{font-size:9.5px;color:var(--txs);letter-spacing:.04em;display:block}
 .nav-links{display:flex;margin-left:auto;align-items:center;overflow:hidden;gap:0}
@@ -47,7 +47,7 @@ body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px}
 .lbtn.active{background:var(--gold);color:#fff;font-weight:700}
 .lbtn:not(.active):hover{background:var(--gold-xl);color:var(--gold)}
 .ib{width:32px;height:32px;border-radius:8px;border:1px solid var(--bd);
-  background:none;cursor:pointer;font-size:14px;color:var(--txs);
+  background:none;cursor:pointer;font-size:0.7778rem;color:var(--txs);
   display:flex;align-items:center;justify-content:center;transition:all .2s}
 .ib:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-xl)}
 .hamburger{display:none}
@@ -56,7 +56,7 @@ body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px}
 .mob-nav{display:none;position:fixed;inset:0;top:64px;z-index:90;
   background:var(--surf);flex-direction:column;padding:1.5rem;gap:.3rem;overflow-y:auto}
 .mob-nav.open{display:flex}
-.mob-nav .nl{font-size:17px;padding:.6rem 0;border-bottom:1px solid var(--bd);letter-spacing:.06em}
+.mob-nav .nl{font-size:0.9444rem;padding:.6rem 0;border-bottom:1px solid var(--bd);letter-spacing:.06em}
 
 /* SETTINGS PANEL */
 .s-overlay{display:none;position:fixed;inset:0;z-index:200}
@@ -66,14 +66,14 @@ body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:19px}
   box-shadow:-4px 0 20px rgba(0,0,0,.1);height:calc(100vh - 64px);
   overflow-y:auto;z-index:201;transform:translateX(100%);transition:transform .25s}
 .s-panel.open{transform:translateX(0)}
-.s-panel h3{font-family:'Cinzel',serif;font-size:13.5px;color:var(--gold);
+.s-panel h3{font-family:'Cinzel',serif;font-size:0.75rem;color:var(--gold);
   margin-bottom:16px;letter-spacing:.05em}
 .sg{margin-bottom:16px}
 .sg label{display:block;font-size:11px;color:var(--txs);margin-bottom:6px;font-style:italic}
 .sg input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer}
 .slang-row{display:flex;flex-direction:column;gap:5px}
 .slb{padding:7px 11px;border:1px solid var(--bd);border-radius:8px;cursor:pointer;
-  text-align:left;font-size:12.5px;font-family:'Cinzel',serif;
+  text-align:left;font-size:0.6944rem;font-family:'Cinzel',serif;
   background:transparent;color:var(--txs);transition:all .2s;
   display:flex;align-items:center;gap:8px}
 .slb:hover{border-color:var(--bds);color:var(--gold);background:var(--gold-xl)}
@@ -106,8 +106,8 @@ main{padding-top:0}
   text-transform:uppercase;margin-bottom:10px}
 .hname{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,46px);
   font-weight:700;color:#7a4d06;line-height:1.1;margin-bottom:8px}
-.hloc{font-family:'Cinzel',serif;font-size:13px;color:var(--mar);font-style:italic;margin-bottom:16px}
-.hdesc{max-width:510px;color:var(--txm);font-size:14.5px;margin-bottom:20px;line-height:1.85}
+.hloc{font-family:'Cinzel',serif;font-size:0.7222rem;color:var(--mar);font-style:italic;margin-bottom:16px}
+.hdesc{max-width:510px;color:var(--txm);font-size:0.8056rem;margin-bottom:20px;line-height:1.85}
 .hbadges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px}
 .badge{padding:3px 11px;border-radius:100px;border:1px solid var(--bds);font-size:10.5px;
   color:#7a4d06;background:var(--gold-xl);font-family:'Cinzel',serif;letter-spacing:.03em}
@@ -130,17 +130,17 @@ main{padding-top:0}
 .acard{border:1px solid var(--bd);border-radius:12px;padding:15px 18px;margin-bottom:10px;
   background:var(--surf2);transition:all .2s}
 .acard:hover{transform:translateX(4px);box-shadow:var(--sh)}
-.acard h4{font-family:'Cinzel',serif;color:#7a4d06;font-size:12.5px;margin-bottom:6px;letter-spacing:.05em}
-.acard p{font-size:12.5px;color:var(--txm);line-height:1.8}
+.acard h4{font-family:'Cinzel',serif;color:#7a4d06;font-size:0.6944rem;margin-bottom:6px;letter-spacing:.05em}
+.acard p{font-size:0.6944rem;color:var(--txm);line-height:1.8}
 
 /* PROFILE */
 .journey-box{background:var(--surf2);border:1px solid var(--bd);border-radius:14px;
   padding:26px 30px;margin-bottom:28px;border-left:4px solid var(--gold)}
-.journey-box h3{font-family:'Cinzel',serif;color:#7a4d06;font-size:16px;margin-bottom:12px}
-.journey-text{font-size:13.5px;color:var(--txm);line-height:1.92;white-space:pre-line}
+.journey-box h3{font-family:'Cinzel',serif;color:#7a4d06;font-size:0.8889rem;margin-bottom:12px}
+.journey-text{font-size:0.75rem;color:var(--txm);line-height:1.92;white-space:pre-line}
 .exam-section{margin-bottom:28px}
-.exam-section h4{font-family:'Cinzel',serif;font-size:14px;color:#7a4d06;margin-bottom:10px}
-.exam-table{width:100%;border-collapse:collapse;font-size:13px;
+.exam-section h4{font-family:'Cinzel',serif;font-size:0.7778rem;color:#7a4d06;margin-bottom:10px}
+.exam-table{width:100%;border-collapse:collapse;font-size:0.7222rem;
   border-radius:10px;overflow:hidden;border:1px solid var(--bd)}
 .exam-table th{background:var(--gold);color:#fff;font-family:'Cinzel',serif;font-size:10px;
   padding:9px 12px;text-align:left;letter-spacing:.06em}
@@ -152,13 +152,13 @@ main{padding-top:0}
 .ach-card{background:var(--surf2);border:1px solid var(--bd);border-radius:12px;
   padding:17px 19px;position:relative;overflow:hidden;transition:all .2s}
 .ach-card:hover{transform:translateY(-4px);box-shadow:var(--shl);border-color:var(--bds)}
-.ach-icon{font-size:24px;margin-bottom:6px}
-.ach-title{font-family:'Cinzel',serif;font-size:13px;color:#7a4d06;margin-bottom:5px;line-height:1.4}
-.ach-desc{font-size:12px;color:var(--txm);line-height:1.75}
+.ach-icon{font-size:1.3333rem;margin-bottom:6px}
+.ach-title{font-family:'Cinzel',serif;font-size:0.7222rem;color:#7a4d06;margin-bottom:5px;line-height:1.4}
+.ach-desc{font-size:0.6667rem;color:var(--txm);line-height:1.75}
 .ach-year{margin-top:8px;font-size:10.5px;color:var(--txf);font-style:italic;
   padding-top:7px;border-top:1px solid var(--bd)}
 .cert-section{margin-top:32px}
-.cert-section h3{font-family:'Cinzel',serif;font-size:14px;color:#7a4d06;margin-bottom:14px}
+.cert-section h3{font-family:'Cinzel',serif;font-size:0.7778rem;color:#7a4d06;margin-bottom:14px}
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
 .cert-ph{aspect-ratio:4/3;border:2px dashed var(--bds);border-radius:10px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -172,7 +172,7 @@ main{padding-top:0}
 .ci{background:var(--surf2);border:1px solid var(--bd);border-radius:10px;
   padding:10px 12px;transition:all .2s}
 .ci:hover{border-color:var(--bds);transform:translateY(-2px)}
-.ci-name{font-family:'Cinzel',serif;font-size:12.5px;color:#7a4d06;margin-bottom:2px}
+.ci-name{font-family:'Cinzel',serif;font-size:0.6944rem;color:#7a4d06;margin-bottom:2px}
 .ci-role{font-size:11.5px;color:var(--txs);font-style:italic;line-height:1.5}
 
 /* EVENTS TIMELINE */
@@ -183,8 +183,8 @@ main{padding-top:0}
 .tl-dot{position:absolute;left:-22px;top:5px;width:12px;height:12px;border-radius:50%;
   background:var(--gold);border:2px solid var(--bg);box-shadow:0 0 0 3px rgba(184,115,10,.25)}
 .tl-date{font-size:11px;color:var(--txf);font-style:italic;margin-bottom:2px;letter-spacing:.04em}
-.tl-title{font-family:'Cinzel',serif;font-size:13.5px;color:#7a4d06;margin-bottom:4px}
-.tl-desc{font-size:12.5px;color:var(--txm);line-height:1.75}
+.tl-title{font-family:'Cinzel',serif;font-size:0.75rem;color:#7a4d06;margin-bottom:4px}
+.tl-desc{font-size:0.6944rem;color:var(--txm);line-height:1.75}
 .tl-ph{margin-top:8px;height:40px;border:2px dashed var(--bds);border-radius:8px;
   display:flex;align-items:center;justify-content:center;font-size:11.5px;
   font-family:'Cinzel',serif;color:rgba(184,115,10,.6);background:var(--gold-xl)}
@@ -192,16 +192,16 @@ main{padding-top:0}
 /* PARAYANA */
 .pgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
 .pc{background:var(--surf2);border:1px solid var(--bd);border-radius:12px;padding:18px 17px}
-.pc h3{font-family:'Cinzel',serif;color:#7a4d06;font-size:14px;margin-bottom:8px}
+.pc h3{font-family:'Cinzel',serif;color:#7a4d06;font-size:0.7778rem;margin-bottom:8px}
 .stabs{display:flex;gap:4px;margin-bottom:8px}
 .stab{padding:3px 9px;border-radius:20px;font-size:10.5px;font-family:'Cinzel',serif;
   cursor:pointer;border:1px solid var(--bds);background:transparent;color:var(--txs);transition:all .2s}
 .stab.active{background:var(--gold);color:#fff;border-color:var(--gold);font-weight:700}
 .stab:not(.active):hover{border-color:var(--gold);color:var(--gold);background:var(--gold-xl)}
-.sv{color:var(--mar);line-height:2.1;white-space:pre-line;font-size:14px}
+.sv{color:var(--mar);line-height:2.1;white-space:pre-line;font-size:0.7778rem}
 .sv.sv-te{font-family:'Noto Sans Telugu',sans-serif}
 .sv.sv-dev{font-family:'Noto Sans Devanagari',sans-serif}
-.sv.sv-iast{font-style:italic;font-size:12.5px;color:var(--txm);line-height:1.9}
+.sv.sv-iast{font-style:italic;font-size:0.6944rem;color:var(--txm);line-height:1.9}
 .sattr{font-size:11.5px;color:var(--txs);font-style:italic;margin-top:8px;
   padding-top:7px;border-top:1px solid var(--bd);line-height:1.55}
 
@@ -210,18 +210,18 @@ main{padding-top:0}
 .spc{background:var(--surf2);border:1px solid var(--bd);border-radius:12px;
   padding:22px;text-align:center;transition:all .2s}
 .spc:hover{box-shadow:var(--sh);transform:translateY(-3px);border-color:var(--bds)}
-.spc .spi{font-size:30px;margin-bottom:10px}
-.spc h3{font-family:'Cinzel',serif;color:#7a4d06;font-size:14px;margin-bottom:8px}
-.spc p{font-size:12.5px;color:var(--txm);line-height:1.8}
+.spc .spi{font-size:1.6667rem;margin-bottom:10px}
+.spc h3{font-family:'Cinzel',serif;color:#7a4d06;font-size:0.7778rem;margin-bottom:8px}
+.spc p{font-size:0.6944rem;color:var(--txm);line-height:1.8}
 
 /* TESTIMONIALS */
 .tegr{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
 .tec{background:var(--surf2);border:1px solid var(--bd);border-radius:12px;padding:22px;transition:box-shadow .2s}
 .tec:hover{box-shadow:var(--sh)}
-.tec-qm{font-family:'Cinzel Decorative',serif;font-size:54px;color:var(--gold);
+.tec-qm{font-family:'Cinzel Decorative',serif;font-size:3.0rem;color:var(--gold);
   opacity:.15;line-height:.75;margin-bottom:6px}
-.tec-text{font-style:italic;color:var(--txm);font-size:13.5px;line-height:1.85;margin-bottom:10px}
-.tec-by{font-family:'Cinzel',serif;font-size:12px;color:#7a4d06;margin-bottom:2px}
+.tec-text{font-style:italic;color:var(--txm);font-size:0.75rem;line-height:1.85;margin-bottom:10px}
+.tec-by{font-family:'Cinzel',serif;font-size:0.6667rem;color:#7a4d06;margin-bottom:2px}
 .tec-role{font-size:11.5px;color:var(--txs);font-style:italic}
 
 /* YOUTUBE */
@@ -229,23 +229,23 @@ main{padding-top:0}
   border:1.5px solid var(--bds);border-radius:12px;padding:14px 18px;
   text-decoration:none;color:inherit;margin-bottom:14px;transition:all .2s}
 .yt-ch:hover{border-color:var(--gold);transform:translateY(-2px)}
-.yt-chn{font-family:'Cinzel',serif;font-size:13.5px;color:#7a4d06;margin-bottom:2px}
+.yt-chn{font-family:'Cinzel',serif;font-size:0.75rem;color:#7a4d06;margin-bottom:2px}
 .yt-chs{font-size:11.5px;color:var(--txs)}
 .yt-bh{display:flex;align-items:center;gap:12px;
   background:linear-gradient(135deg,var(--gold-xl),var(--surf2));
   border:2px solid var(--bds);border-radius:12px;padding:16px 20px;
   text-decoration:none;color:inherit;margin-bottom:22px;transition:all .2s}
 .yt-bh:hover{border-color:var(--gold);transform:translateY(-3px)}
-.yt-bht{font-family:'Cinzel',serif;font-size:15.5px;color:#7a4d06;margin-bottom:2px}
-.yt-bhd{font-size:13px;color:var(--txm)}
+.yt-bht{font-family:'Cinzel',serif;font-size:0.8611rem;color:#7a4d06;margin-bottom:2px}
+.yt-bhd{font-size:0.7222rem;color:var(--txm)}
 .ytgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:12px}
 .yt-card{background:var(--surf2);border:1px solid var(--bd);border-radius:12px;
   overflow:hidden;text-decoration:none;color:inherit;display:block;transition:all .2s}
 .yt-card:hover{transform:translateY(-4px);box-shadow:var(--shl)}
 .yt-th{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,var(--mar),var(--gold));
-  display:flex;align-items:center;justify-content:center;font-size:36px;color:rgba(255,255,255,.85)}
+  display:flex;align-items:center;justify-content:center;font-size:2.0rem;color:rgba(255,255,255,.85)}
 .yt-inf{padding:10px 12px}
-.yt-vt{font-family:'Cinzel',serif;font-size:12.5px;color:var(--tx);margin-bottom:3px}
+.yt-vt{font-family:'Cinzel',serif;font-size:0.6944rem;color:var(--tx);margin-bottom:3px}
 .yt-vm{font-size:11.5px;color:var(--txs)}
 
 /* CONTACT */
@@ -253,15 +253,15 @@ main{padding-top:0}
 .cof{display:flex;flex-direction:column;gap:10px}
 .cof input,.cof textarea{width:100%;padding:9px 13px;background:var(--surf2);
   border:1.5px solid var(--bd);border-radius:10px;
-  font-size:14px;font-family:inherit;color:var(--tx);outline:none;transition:border-color .2s}
+  font-size:0.7778rem;font-family:inherit;color:var(--tx);outline:none;transition:border-color .2s}
 .cof input:focus,.cof textarea:focus{border-color:var(--gold)}
 .cof textarea{min-height:110px;resize:vertical}
 
 /* FOOTER */
 footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;padding:26px 12px}
-.ft-sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:16px;color:#7a4d06;margin-bottom:4px;font-weight:500}
-.ft-ia{font-size:12.5px;font-style:italic;color:var(--txs);margin-bottom:6px;letter-spacing:.04em}
-.ft-cp{font-size:12px;color:var(--txf)}
+.ft-sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:0.8889rem;color:#7a4d06;margin-bottom:4px;font-weight:500}
+.ft-ia{font-size:0.6944rem;font-style:italic;color:var(--txs);margin-bottom:6px;letter-spacing:.04em}
+.ft-cp{font-size:0.6667rem;color:var(--txf)}
 
 /* PHOTO UPLOAD AREA */
 .photo-upload{display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -283,7 +283,7 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
   .agrid,.cogr{grid-template-columns:1fr}
 }
 @media(max-width:580px){
-  :root{font-size:15px}
+  :root{font-size:0.8333rem}
   .ct{padding:0 1rem}
   .sec{padding:38px 0}
 }
@@ -380,11 +380,11 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
   border-bottom:7px solid rgba(20,8,2,.92);
 }
 .caption-title{
-  font-family:'Cinzel',serif;font-size:13px;font-weight:700;
+  font-family:'Cinzel',serif;font-size:0.7222rem;font-weight:700;
   color:#faedc8;letter-spacing:.06em;margin-bottom:5px;line-height:1.3;
 }
 .caption-desc{
-  font-size:12px;color:rgba(250,237,200,.84);line-height:1.65;
+  font-size:0.6667rem;color:rgba(250,237,200,.84);line-height:1.65;
 }
 
 /* ── Dot indicators ── */
@@ -407,7 +407,7 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
   width:30px;height:30px;border-radius:50%;
   background:rgba(250,237,200,.92);
   border:1.5px solid var(--bds);
-  cursor:pointer;font-size:14px;color:#7a4d06;
+  cursor:pointer;font-size:0.7778rem;color:#7a4d06;
   display:flex;align-items:center;justify-content:center;
   transition:all .2s;z-index:10;
   opacity:0;
@@ -530,13 +530,13 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
     <h2 class="st" id="a-ti"></h2><div class="dv"></div>
     <div class="agrid">
       <div>
-        <p id="a-p1" style="font-size:14.5px;color:#6b4820;margin-bottom:14px;line-height:1.85"></p>
-        <p id="a-p2" style="font-size:13.5px;color:#6b4820;margin-bottom:16px;line-height:1.85"></p>
+        <p id="a-p1" style="font-size:0.8056rem;color:#6b4820;margin-bottom:14px;line-height:1.85"></p>
+        <p id="a-p2" style="font-size:0.75rem;color:#6b4820;margin-bottom:16px;line-height:1.85"></p>
         <div class="qb">
-          <p style="font-family:'Noto Sans Devanagari',sans-serif;font-size:15.5px;color:#7a4d06;margin-bottom:3px" id="a-qs"></p>
+          <p style="font-family:'Noto Sans Devanagari',sans-serif;font-size:0.8611rem;color:#7a4d06;margin-bottom:3px" id="a-qs"></p>
           <p style="font-size:11.5px;color:#a07850;font-style:italic;margin-bottom:3px" id="a-qi"></p>
-          <p style="font-family:'Noto Sans Telugu',sans-serif;font-size:14px;color:#6b4820;margin-bottom:2px" id="a-qt"></p>
-          <p style="font-size:13px;color:#8a6040;font-style:italic" id="a-qe"></p>
+          <p style="font-family:'Noto Sans Telugu',sans-serif;font-size:0.7778rem;color:#6b4820;margin-bottom:2px" id="a-qt"></p>
+          <p style="font-size:0.7222rem;color:#8a6040;font-style:italic" id="a-qe"></p>
         </div>
       </div>
       <div id="a-cards"></div>
@@ -565,7 +565,7 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
 <section class="sec alt" id="credits">
   <div class="ct">
     <h2 class="st" id="cr-ti"></h2><div class="dv"></div>
-    <p id="cr-in" style="font-size:13.5px;color:#6b4820;margin-bottom:22px;font-style:italic"></p>
+    <p id="cr-in" style="font-size:0.75rem;color:#6b4820;margin-bottom:22px;font-style:italic"></p>
     <div class="cgr" id="crGr"></div>
   </div>
 </section>
@@ -582,7 +582,7 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
 <section class="sec alt" id="parayana">
   <div class="ct">
     <h2 class="st" id="pr-ti"></h2><div class="dv"></div>
-    <p id="pr-in" style="font-size:13.5px;color:#6b4820;margin-bottom:22px;font-style:italic"></p>
+    <p id="pr-in" style="font-size:0.75rem;color:#6b4820;margin-bottom:22px;font-style:italic"></p>
     <div class="pgr" id="prGr"></div>
   </div>
 </section>
@@ -591,7 +591,7 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
 <section class="sec" id="support">
   <div class="ct">
     <h2 class="st" id="sp-ti"></h2><div class="dv"></div>
-    <p id="sp-in" style="font-size:13.5px;color:#6b4820;margin-bottom:22px"></p>
+    <p id="sp-in" style="font-size:0.75rem;color:#6b4820;margin-bottom:22px"></p>
     <div class="spgr" id="spGr"></div>
   </div>
 </section>
@@ -618,25 +618,25 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
     <h2 class="st" id="co-ti"></h2><div class="dv"></div>
     <div class="cogr">
       <div>
-        <p id="co-in" style="font-size:13.5px;color:#6b4820;margin-bottom:18px"></p>
+        <p id="co-in" style="font-size:0.75rem;color:#6b4820;margin-bottom:18px"></p>
         <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:12px">
-          <span style="color:var(--gold);font-size:16px;margin-top:2px;flex-shrink:0">📍</span>
+          <span style="color:var(--gold);font-size:0.8889rem;margin-top:2px;flex-shrink:0">📍</span>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:12.5px;color:var(--tx);margin-bottom:2px" id="co-cy"></div>
-            <div style="font-size:12px;color:var(--txs)" id="co-cn"></div>
+            <div style="font-family:'Cinzel',serif;font-size:0.6944rem;color:var(--tx);margin-bottom:2px" id="co-cy"></div>
+            <div style="font-size:0.6667rem;color:var(--txs)" id="co-cn"></div>
           </div>
         </div>
         <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:12px">
-          <span style="color:var(--gold);font-size:16px;margin-top:2px;flex-shrink:0">▶</span>
+          <span style="color:var(--gold);font-size:0.8889rem;margin-top:2px;flex-shrink:0">▶</span>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:12.5px;color:var(--tx);margin-bottom:2px" id="co-yl"></div>
+            <div style="font-family:'Cinzel',serif;font-size:0.6944rem;color:var(--tx);margin-bottom:2px" id="co-yl"></div>
             <a href="https://www.youtube.com/@samskruti.info.1" target="_blank" rel="noopener"
-               style="font-size:12px;color:var(--gold);text-decoration:none">@samskruti.info.1</a>
+               style="font-size:0.6667rem;color:var(--gold);text-decoration:none">@samskruti.info.1</a>
           </div>
         </div>
         <div class="qb" style="margin-top:16px">
-          <p style="font-family:'Noto Sans Devanagari',sans-serif;font-size:15px;color:#7a4d06;margin-bottom:3px" id="co-qs"></p>
-          <p style="font-size:12.5px;color:#8a6040;font-style:italic" id="co-qe"></p>
+          <p style="font-family:'Noto Sans Devanagari',sans-serif;font-size:0.8333rem;color:#7a4d06;margin-bottom:3px" id="co-qs"></p>
+          <p style="font-size:0.6944rem;color:#8a6040;font-style:italic" id="co-qe"></p>
         </div>
       </div>
       <div>
@@ -646,7 +646,7 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
           <input type="text"  id="fs2"/>
           <textarea id="fm" rows="4"></textarea>
           <button type="submit" class="btn-pri" id="fbt" style="align-self:flex-start"></button>
-          <p id="ftk" style="font-size:13px;color:var(--gold);display:none;font-style:italic;margin-top:4px"></p>
+          <p id="ftk" style="font-size:0.7222rem;color:var(--gold);display:none;font-style:italic;margin-top:4px"></p>
         </form>
       </div>
     </div>
@@ -721,7 +721,7 @@ function renderAll(){
   const sr=document.getElementById("slangRow");
   if(sr) sr.innerHTML=LANGS.map((l,i)=>
     `<button class="slb${CL===l?" active":""}" onclick="setLang('${l}')">
-      <span style="font-size:15px">${["🇦🇺","🇮🇳","🕉"][i]}</span>
+      <span style="font-size:0.8333rem">${["🇦🇺","🇮🇳","🕉"][i]}</span>
       ${LMETA[l].label} · ${LMETA[l].full}
     </button>`).join("");
 
@@ -765,7 +765,7 @@ function renderAll(){
   const cg=document.getElementById("certGrid");
   if(cg) cg.innerHTML=Array(8).fill(0).map((_,i)=>
     `<div class="cert-ph">
-      <span style="font-size:26px">${i<4?"🏆":"📜"}</span>
+      <span style="font-size:1.4444rem">${i<4?"🏆":"📜"}</span>
       <span class="cert-ph-lbl">${profile.photo_placeholder_sub||"Photo will appear here"}</span>
     </div>`).join("");
 
@@ -826,16 +826,16 @@ function renderAll(){
   const ytc=document.getElementById("ytCt");
   if(ytc) ytc.innerHTML=`
     <a href="${youtube.channel_url||"#"}" target="_blank" rel="noopener" class="yt-ch">
-      <span style="font-size:25px;flex-shrink:0">▶</span>
+      <span style="font-size:1.3889rem;flex-shrink:0">▶</span>
       <div><div class="yt-chn">${youtube.channel_name||""}</div>
            <div class="yt-chs">${youtube.channel_sub||""}</div></div>
-      <span style="margin-left:auto;color:var(--gold);font-size:17px">↗</span>
+      <span style="margin-left:auto;color:var(--gold);font-size:0.9444rem">↗</span>
     </a>
     <a href="${youtube.bharatam_url||"#"}" target="_blank" rel="noopener" class="yt-bh">
-      <span style="font-size:32px;flex-shrink:0">📜</span>
+      <span style="font-size:1.7778rem;flex-shrink:0">📜</span>
       <div><div class="yt-bht">${youtube.bharatam_title||""}</div>
            <div class="yt-bhd">${youtube.bharatam_desc||""}</div></div>
-      <span style="margin-left:auto;color:var(--gold);font-size:17px">↗</span>
+      <span style="margin-left:auto;color:var(--gold);font-size:0.9444rem">↗</span>
     </a>
     <div class="ytgr">${(youtube.videos||[]).map(v=>
       `<a href="${youtube.channel_url||"#"}" target="_blank" rel="noopener" class="yt-card">
@@ -903,7 +903,7 @@ function setFS(v){
   document.documentElement.style.fontSize=v+"px";
   // Telugu & Devanagari need slightly larger base for readability
   const teStyle=document.getElementById("teSaStyle")||createTeSaStyle();
-  teStyle.textContent=`body.te{font-size:${v+2}px!important}body.sa{font-size:${v+2}px!important}`;
+  teStyle.textContent=`body.te{font-size:${((v+2)/v).toFixed(4)}em!important}body.sa{font-size:${((v+2)/v).toFixed(4)}em!important}`;
   document.getElementById("fsv").textContent=v;
   try{localStorage.setItem("kp-fs",v);}catch(e){}
 }
