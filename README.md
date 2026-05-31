@@ -256,3 +256,99 @@ Or use the **Settings ⚙** panel on the live site — 6 preset colour themes.
 ---
 
 *Built with love for Karthikeya Pidaparthy — may his journey in dharma, vidyā and bhakti inspire many.*
+
+---
+
+## ✏️ Fixing Typos & Editing Content
+
+All text lives in `content/[lang]/[section].json`. There are 3 ways to fix typos:
+
+### Method 1 — Direct JSON edit (simplest)
+
+Open the file in any text editor, fix the typo, save:
+```
+content/te/profile.json     ← Telugu profile text
+content/sa/hero.json        ← Sanskrit hero text
+content/en/events.json      ← English events
+```
+Then rebuild and deploy:
+```bash
+python3 build_site.py
+git add content/ index.html
+git commit -m "Fix typos in Telugu profile"
+git push
+```
+
+### Method 2 — edit_content.py helper
+
+```bash
+# See all sections and their status
+python3 edit_content.py
+
+# View Telugu content for a section (to spot typos)
+python3 edit_content.py profile te
+python3 edit_content.py events te
+python3 edit_content.py about sa
+
+# Open all 3 language files for a section in your text editor
+python3 edit_content.py profile --edit
+python3 edit_content.py nav --edit
+
+# Check which keys differ between languages
+python3 edit_content.py --diff profile
+
+# Validate all JSON + rebuild HTML in one step
+python3 edit_content.py --fix
+```
+
+Set your preferred editor before using `--edit`:
+```bash
+export EDITOR=nano       # terminal editor
+export EDITOR=vim
+export EDITOR="code --wait"  # VS Code (waits for you to close)
+```
+
+### Method 3 — Quick fix from Python
+
+```python
+from edit_content import cd, load, save
+cd()
+
+# Fix a single value
+data = load("te", "profile")
+data["achievements"][0]["title"] = "స్వర్ణపతకం — భగవద్గీత"  # corrected
+save("te", "profile", data)
+
+# Then rebuild
+import subprocess, sys
+subprocess.run([sys.executable, "build_site.py"])
+```
+
+### Checking all languages at once
+
+```bash
+# Show the full nav section in all 3 languages to compare
+python3 edit_content.py nav
+
+# Show hero in Telugu only
+python3 edit_content.py hero te
+
+# Validate every file and rebuild
+python3 edit_content.py --fix
+```
+
+### Files to check for Telugu (తెలుగు) typos
+
+| File | What it controls |
+|------|-----------------|
+| `content/te/nav.json` | Nav bar labels |
+| `content/te/hero.json` | Hero section title, description, badges |
+| `content/te/about.json` | About section paragraphs, cards |
+| `content/te/profile.json` | Journey text, achievement titles & descriptions |
+| `content/te/events.json` | Event titles and descriptions |
+| `content/te/parayana.json` | Stotra titles and attributions |
+| `content/te/credits.json` | Credit names and roles |
+| `content/te/testimonials.json` | Testimonial text |
+| `content/te/contact.json` | Contact form labels |
+| `content/te/footer.json` | Footer text |
+
