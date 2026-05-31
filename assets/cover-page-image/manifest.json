@@ -1,0 +1,12 @@
+{
+  "images": [
+    {
+      "file": "karthikeya-default.jpg",
+      "title": "Karthikeya Pidaparthy",
+      "description": "Karthikeya Pidaparthy — young Sanskrit scholar, Bhagavad Gītā memoriser and Gold Medalist, Sydney Australia.",
+      "description_te": "కార్తికేయ పీడపర్తి — యువ సంస్కృత విద్వాంసుడు, భగవద్గీత కంఠస్థకర్త మరియు స్వర్ణపతక విజేత.",
+      "description_sa": "कार्तिकेयः पीडपर्ति — युवसंस्कृतविद्वान्, भगवद्गीतास्य कण्ठस्थकर्ता, स्वर्णपदकविजेता।"
+    }
+  ],
+  "note": "Add more images to this folder and add entries to this manifest. Each image will appear in the auto-scrolling hero gallery."
+}
