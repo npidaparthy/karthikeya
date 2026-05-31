@@ -1,132 +1,198 @@
-# Karthikeya Pidaparthy — Samskruti Website
+# 🕉 Karthikeya Pidaparthy — Samskruti
 
-Personal website for Karthikeya Pidaparthy, young Sanskrit scholar from Sydney, Australia.
+Personal website for **Karthikeya Pidaparthy**, 10-year-old Sanskrit scholar from Sydney, Australia.
 
-## 🌐 Live Site
-Once deployed: `https://<your-github-username>.github.io/<repo-name>/`
+🌐 **Live site:** `https://<your-username>.github.io/<repo-name>/`
 
 ---
 
-## 📁 Structure
+## ✨ Features
+
+| Feature | Details |
+|---|---|
+| **3 Languages** | English, Telugu (తెలుగు), Sanskrit (संस्कृतम्) — instant switching |
+| **Language pill** | Always-visible 3-button EN / తె / सं in the nav bar |
+| **Correct fonts** | Cormorant Garamond (EN) · Noto Sans Telugu (TE) · Noto Sans Devanagari (SA) |
+| **Font size slider** | 14–22px, preserved across sessions |
+| **6 accent colours** | Gold · Amber · Maroon · Forest · Navy · Violet |
+| **Sanskrit 3 scripts** | Every verse shown in Telugu, Devanāgarī, IAST — tabbed |
+| **Photo placeholders** | 8 slots in Profile + per-event placeholders (ready for your images) |
+| **Exam record table** | Āyanam → Sāriṇī → Saralā → Sugamā → Sarasā with scores |
+| **Timeline** | All events with photo placeholders |
+| **GitHub Pages** | Auto-deploys on every push to `main` |
+| **Modular content** | Each section is a separate JSON file — easy to edit |
+
+---
+
+## 📁 File Structure
 
 ```
-├── index.html                  ← Main website (all sections, loads content from JSON)
+karthikeya-site/
+├── index.html              ← Full website (all 3 languages embedded, no server needed)
+├── assets/
+│   └── logo.svg            ← Om logo (top-left nav)
 ├── content/
-│   ├── en/strings.json         ← English content
-│   ├── te/strings.json         ← Telugu content (తెలుగు)
-│   └── sa/strings.json         ← Sanskrit content (संस्कृतम्)
-└── .github/
-    └── workflows/
-        └── deploy.yml          ← Auto-deploy to GitHub Pages on every push
+│   ├── en/                 ← English content (source of truth)
+│   │   ├── nav.json
+│   │   ├── hero.json
+│   │   ├── about.json
+│   │   ├── profile.json    ← Achievements, exam table, journey narrative
+│   │   ├── credits.json
+│   │   ├── events.json
+│   │   ├── parayana.json   ← Sanskrit stotras in 3 scripts
+│   │   ├── support.json
+│   │   ├── testimonials.json
+│   │   ├── youtube.json
+│   │   ├── contact.json
+│   │   ├── footer.json
+│   │   └── settings.json
+│   ├── te/                 ← Telugu translations (same files)
+│   └── sa/                 ← Sanskrit translations (same files)
+├── build_site.py           ← Rebuilds index.html from JSON files
+├── auto_translate.py       ← Auto-translates EN → TE + SA via Claude API
+└── .github/workflows/
+    └── deploy.yml          ← GitHub Actions: validate + build + deploy
 ```
 
 ---
 
 ## ✏️ How to Update Content
 
-All website text lives in the JSON files under `content/`. You **never** need to touch `index.html` for content changes.
+**Always edit the JSON files, never edit index.html directly for content.**
 
-### To add a new achievement:
-Open `content/en/strings.json`, find `"profile" → "achievements"`, and add a new object:
+### 1. Add a new achievement
+Open `content/en/profile.json`, find `"achievements"`, add:
 ```json
 {
   "icon": "🏆",
   "title": "Your Achievement Title",
   "desc": "Description of the achievement.",
-  "year": "Organiser / Year"
+  "year": "Organisation · Year",
+  "tag": "gold"
 }
 ```
-Then do the same in `content/te/strings.json` (Telugu) and `content/sa/strings.json` (Sanskrit).
+Tags: `gold` | `olympiad` | `parayana` | `scholar` | `competition` | `discourse`
 
-### To add a new event:
-Open `content/en/strings.json`, find `"events" → "list"`, and add:
+Do the same in `content/te/profile.json` and `content/sa/profile.json`,
+**or** run the auto-translator (see below).
+
+### 2. Add a new event
+In `content/en/events.json`, find `"list"`, add:
 ```json
 {
   "date": "Month / Venue",
   "title": "Event Title",
-  "desc": "Description of what happened."
+  "desc": "What happened.",
+  "has_photo": true
 }
 ```
+Set `"has_photo": true` to show a photo placeholder slot.
 
-### To add a testimonial:
-Open `content/en/strings.json`, find `"testimonials" → "list"`, and add:
+### 3. Add a testimonial
+In `content/en/testimonials.json`:
 ```json
 {
   "text": "What they said.",
-  "by": "Name of the person",
+  "by": "Person Name",
   "role": "Their title / occasion"
 }
 ```
 
-### To add a pārāyaṇa stotra:
-Find `"parayana" → "stotras"` and add:
-```json
-{
-  "id": "unique_id",
-  "title": "Stotra Name",
-  "te": "Telugu script verse",
-  "dev": "Devanāgarī verse",
-  "iast": "IAST transliteration",
-  "attribution": "Source / context"
-}
+### 4. Add a photo
+Replace any `cert-ph` placeholder div in index.html with:
+```html
+<img src="assets/photos/your-photo.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:8px"/>
+```
+Put photos in `assets/photos/`.
+
+---
+
+## 🔄 Rebuild index.html After Editing JSON
+
+After editing any content file, run:
+```bash
+python3 build_site.py
+```
+This embeds all 3 languages into `index.html` so it works without a server.
+
+---
+
+## 🤖 Auto-Translate (Claude API)
+
+Set your API key, then run:
+```bash
+export ANTHROPIC_API_KEY="sk-ant-..."
+
+# Translate all sections
+python3 auto_translate.py
+
+# Translate only one section
+python3 auto_translate.py profile
+
+# Translate one section to one language
+python3 auto_translate.py profile te
+
+# Force overwrite existing translations
+python3 auto_translate.py --force
+```
+
+After auto-translating, always run:
+```bash
+python3 build_site.py
 ```
 
 ---
 
 ## 🚀 Deploy to GitHub Pages
 
-### First-time setup:
-1. Create a new GitHub repository (e.g. `samskruti` or `karthikeya`)
-2. Push this folder to the `main` branch:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit — Karthikeya Pidaparthy website"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-   git push -u origin main
-   ```
-3. Go to your repo on GitHub → **Settings** → **Pages**
-4. Under **Source**, select **GitHub Actions**
-5. The workflow will automatically deploy on every push!
-
-### After updating content:
+### First time:
 ```bash
-git add content/
-git commit -m "Update: added new achievement / event / etc."
+git init
+git add .
+git commit -m "Initial commit — Karthikeya Pidaparthy Samskruti website"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git push -u origin main
+```
+
+Then on GitHub: **Settings → Pages → Source → GitHub Actions**
+
+### After any update:
+```bash
+# Edit JSON files, then:
+python3 build_site.py
+git add -A
+git commit -m "Update: describe what changed"
 git push
 ```
-GitHub Actions will automatically rebuild and redeploy the site within ~60 seconds.
+
+GitHub Actions automatically: validates JSON → rebuilds index.html → deploys. ~60 seconds.
 
 ---
 
-## ⚙️ Site Features
+## 📸 Adding Karthikeya's Photos
 
-| Feature | Description |
-|---------|-------------|
-| **i18n** | Full English, Telugu, Sanskrit — switch via nav button or settings panel |
-| **Dark / Light mode** | Toggle in settings, preference saved in browser |
-| **Font size** | Adjustable 13–22px slider in settings |
-| **Accent colour** | 6 colour schemes: Gold, Amber, Maroon, Forest, Navy, Violet |
-| **Sanskrit scripts** | Each verse shown in Telugu, Devanāgarī, and Roman IAST |
-| **Responsive** | Works on mobile, tablet, desktop |
-| **Preferences saved** | Theme, font, language remembered across visits |
-
----
-
-## 📋 Sections (in order)
-
-1. **Home** — Hero with name, badges, CTA
-2. **About** — Bio, languages, scriptural knowledge
-3. **Profile** — Achievement cards
-4. **Credits** — Gratitude to scholars and organisations
-5. **Events** — Timeline of milestones
-6. **Pārāyaṇa** — Stotra verses in 3 scripts
-7. **Support / Sponsor** — How to help
-8. **Testimonials** — Words from scholars and temples
-9. **Contact** — Message form + location
-10. **YouTube** — Channel link + Bhāratam Laghu Prasaṅgālu playlist
+1. Put photos in `assets/photos/` folder
+2. For the hero avatar, replace the SVG in `index.html`:
+   ```html
+   <div class="avatar-ring">
+     <img src="assets/photos/karthikeya-main.jpg" alt="Karthikeya Pidaparthy"/>
+   </div>
+   ```
+3. For certificate placeholders, replace `.cert-ph` divs with `<img>` tags
+4. For event photos, replace `.tl-ph` divs with `<img>` tags
+5. Run `git add assets/photos/ && git commit -m "Add photos" && git push`
 
 ---
 
-*Built with love for Karthikeya Pidaparthy — may his journey in dharma, vidyā, and bhakti continue to inspire many.*
+## 🎨 Customising Colours
+
+Open `index.html` in a text editor, find `:root {` and change:
+- `--gold`: main accent colour
+- `--mar`: maroon accent (hero text, timeline)
+
+Or use the **Settings ⚙** panel on the live site — 6 preset colour themes.
+
+---
+
+*Built with love for Karthikeya Pidaparthy — may his journey in dharma, vidyā and bhakti inspire many.*

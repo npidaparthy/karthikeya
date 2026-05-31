@@ -2,24 +2,28 @@
 """
 build_site.py
 ─────────────
-Reads all content/[lang]/[section].json files and embeds them
-into index.html as a single JS object, so the site works
-without a web server (file://, GitHub Pages, Claude preview, etc.)
+Reads all content/[lang]/[section].json files, merges them,
+and embeds the data into index.html as the ALL constant.
 
-Usage:
+Run this after editing any content JSON file:
   python3 build_site.py
 
-Output: index.html (updated in-place)
+The script replaces the line:
+  const ALL = {...};
+in index.html with fresh data from all JSON files.
 """
 
-import json, os, re
+import json, os, re, sys
 
-LANGS     = ["en", "te", "sa"]
-SECTIONS  = ["nav","hero","about","profile","credits","events",
-             "parayana","support","testimonials","youtube","contact","footer","settings"]
+LANGS = ["en", "te", "sa"]
+SECTIONS = [
+    "nav", "hero", "about", "profile", "credits", "events",
+    "parayana", "support", "testimonials", "youtube", "contact", "footer", "settings"
+]
 
 def load_all():
     all_data = {}
+    missing = []
     for lang in LANGS:
         all_data[lang] = {}
         for sec in SECTIONS:
@@ -28,33 +32,51 @@ def load_all():
                 with open(path, encoding="utf-8") as f:
                     all_data[lang][sec] = json.load(f)
             else:
-                print(f"  ⚠  Missing: {path}")
+                missing.append(path)
+    if missing:
+        print(f"  ⚠  Missing files ({len(missing)}):")
+        for m in missing:
+            print(f"     {m}")
     return all_data
 
 def build():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(script_dir)
+
     print("📦 Loading content files...")
     data = load_all()
-    js_blob = json.dumps(data, ensure_ascii=False)
 
-    template = "index_template.html"
-    if not os.path.exists(template):
-        template = "index.html"
+    for lang in LANGS:
+        sections_found = list(data[lang].keys())
+        print(f"  {lang}: {len(sections_found)} sections — {sections_found}")
 
-    with open(template, encoding="utf-8") as f:
+    js_blob = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
+
+    html_path = "index.html"
+    if not os.path.exists(html_path):
+        print(f"❌ {html_path} not found. Cannot build.")
+        sys.exit(1)
+
+    with open(html_path, encoding="utf-8") as f:
         html = f.read()
 
-    # Replace the ALL = {...} block
-    new_assignment = f"const ALL = {js_blob};"
-    html = re.sub(r"const ALL\s*=\s*\{.*?\};", new_assignment, html, flags=re.DOTALL)
+    # Replace const ALL = {...}; with fresh data
+    pattern = r'const ALL\s*=\s*\{.*?\};'
+    new_val = f'const ALL = {js_blob};'
+    new_html, n = re.subn(pattern, new_val, html, flags=re.DOTALL)
 
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(html)
+    if n == 0:
+        print("❌ Could not find 'const ALL = {...};' in index.html")
+        print("   Make sure index.html contains this JS line.")
+        sys.exit(1)
 
-    kb = len(html.encode()) // 1024
-    print(f"✅ Built index.html ({kb} KB)")
-    print(f"   Languages: {LANGS}")
-    print(f"   Sections : {SECTIONS}")
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write(new_html)
+
+    kb = len(new_html.encode()) // 1024
+    print(f"\n✅ Built index.html ({kb} KB, replaced {n} occurrence(s))")
+    print(f"\nTo auto-translate new EN content into TE and SA, run:")
+    print(f"  python3 auto_translate.py [section]")
 
 if __name__ == "__main__":
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     build()
