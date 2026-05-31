@@ -272,8 +272,13 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
 @media(max-width:900px){
   .nav-links{display:none}
   .hamburger{display:flex}
-  .hero-inner{flex-direction:column;text-align:center;gap:1.75rem;padding:1.5rem 0}
-  .avatar-ring{width:200px;height:200px}
+  .hero-inner{flex-direction:column;text-align:center;gap:1.75rem;padding:1.5rem 0;align-items:center}
+  .hero-gallery{width:220px;padding-bottom:130px}
+  .gallery-track-wrap{width:220px;height:220px}
+  .gallery-strip{height:220px}
+  .gallery-slide{min-width:220px;width:220px;height:220px}
+  .gallery-arrow{top:110px}
+  .gallery-caption-card{width:240px;top:238px;font-size:11px}
   .hbadges,.hcta{justify-content:center}
   .agrid,.cogr{grid-template-columns:1fr}
 }
@@ -284,91 +289,141 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
 }
 
 /* ═══════════════════════════ HERO GALLERY ═══════════════════════════════ */
+/* ══════════════════════ HERO GALLERY ════════════════════════════════════ */
+
+/* Outer wrapper — extra bottom padding reserves room for caption card */
 .hero-gallery{
   flex-shrink:0;
   width:280px;
+  padding-bottom:130px;
   position:relative;
 }
-/* Track — clips the sliding strip */
+
+/* ── Circular clip ring ── */
 .gallery-track-wrap{
-  width:280px;height:280px;border-radius:50%;overflow:hidden;position:relative;
+  width:280px;height:280px;
+  border-radius:50%;
+  overflow:hidden;
+  position:relative;
+  /* One ring, perfectly centred */
   border:4px solid var(--gold);
   box-shadow:0 0 0 8px var(--gold-xl),0 16px 48px rgba(122,77,6,.22);
   background:var(--gold-xl);
   cursor:pointer;
 }
-/* The sliding strip that holds all slides side by side */
+
+/* ── Sliding strip (holds all slides side by side) ── */
 .gallery-strip{
   display:flex;
-  height:100%;
+  width:100%;height:100%;
   transition:transform .7s cubic-bezier(.45,0,.35,1);
   will-change:transform;
 }
-/* Each slide */
+
+/* ── Individual slide ── */
 .gallery-slide{
-  min-width:280px;height:280px;
+  min-width:280px;width:280px;height:280px;
   position:relative;flex-shrink:0;
   overflow:hidden;
 }
 .gallery-slide img{
-  width:100%;height:100%;object-fit:cover;
-  display:block;border-radius:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
   transition:transform .5s ease;
 }
-.gallery-slide:hover img{transform:scale(1.06);}
+/* Subtle zoom on hover */
+.hero-gallery:hover .gallery-slide img{transform:scale(1.04);}
 
-/* Hover caption overlay */
-.slide-caption{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:20px 16px 16px;
-  background:linear-gradient(to top, rgba(26,10,4,.85) 0%, rgba(26,10,4,.4) 55%, transparent 100%);
-  opacity:0;transform:translateY(8px);
-  transition:opacity .35s ease,transform .35s ease;
+/* ── Caption card — sits BELOW the circle, never clipped ── */
+.gallery-caption-card{
+  position:absolute;
+  /* top = circle(280) + border(4) + outer-shadow(8) + gap(10) */
+  top:302px;
+  left:50%;
+  transform:translateX(-50%) translateY(8px);
+  width:310px;
+  background:rgba(20,8,2,.92);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(232,168,48,.45);
+  border-radius:14px;
+  padding:13px 18px 15px;
+  opacity:0;
+  transition:opacity .3s ease,transform .3s ease;
   pointer-events:none;
-  border-radius:0;
+  z-index:30;
+  box-shadow:0 10px 28px rgba(0,0,0,.35);
+  text-align:center;
 }
-.gallery-slide:hover .slide-caption{opacity:1;transform:translateY(0);}
+/* Show on gallery hover */
+.hero-gallery:hover .gallery-caption-card{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+/* Upward pointing triangle (border) */
+.gallery-caption-card::before{
+  content:'';
+  position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+  width:0;height:0;
+  border-left:9px solid transparent;
+  border-right:9px solid transparent;
+  border-bottom:9px solid rgba(232,168,48,.45);
+}
+/* Upward pointing triangle (fill) */
+.gallery-caption-card::after{
+  content:'';
+  position:absolute;top:-7px;left:50%;transform:translateX(-50%);
+  width:0;height:0;
+  border-left:7px solid transparent;
+  border-right:7px solid transparent;
+  border-bottom:7px solid rgba(20,8,2,.92);
+}
 .caption-title{
-  font-family:'Cinzel',serif;font-size:12px;font-weight:700;
-  color:#faedc8;letter-spacing:.06em;margin-bottom:4px;line-height:1.3;
+  font-family:'Cinzel',serif;font-size:13px;font-weight:700;
+  color:#faedc8;letter-spacing:.06em;margin-bottom:5px;line-height:1.3;
 }
 .caption-desc{
-  font-size:11.5px;color:rgba(250,237,200,.85);line-height:1.55;
+  font-size:12px;color:rgba(250,237,200,.84);line-height:1.65;
 }
 
-/* Dot indicators */
+/* ── Dot indicators ── */
 .gallery-dots{
-  display:flex;justify-content:center;gap:6px;
+  display:flex;justify-content:center;gap:7px;
   margin-top:14px;
+  position:relative;z-index:5;
 }
 .gdot{
   width:7px;height:7px;border-radius:50%;
   background:var(--gold-xl);border:1.5px solid var(--bds);
   cursor:pointer;transition:all .25s;flex-shrink:0;
 }
-.gdot.active{background:var(--gold);border-color:var(--gold);transform:scale(1.25);}
+.gdot.active{background:var(--gold);border-color:var(--gold);transform:scale(1.28);}
 
-/* Prev/Next arrow buttons */
+/* ── Prev / Next arrows ── */
 .gallery-arrow{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:28px;height:28px;border-radius:50%;
-  background:rgba(250,237,200,.88);border:1.5px solid var(--bds);
-  cursor:pointer;font-size:12px;color:#7a4d06;
+  position:absolute;
+  top:140px;transform:translateY(-50%);     /* centred on 280px circle */
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(250,237,200,.92);
+  border:1.5px solid var(--bds);
+  cursor:pointer;font-size:14px;color:#7a4d06;
   display:flex;align-items:center;justify-content:center;
-  transition:all .2s;z-index:5;opacity:0;
-  box-shadow:0 2px 8px rgba(0,0,0,.15);
+  transition:all .2s;z-index:10;
+  opacity:0;
+  box-shadow:0 2px 8px rgba(0,0,0,.2);
 }
 .hero-gallery:hover .gallery-arrow{opacity:1;}
 .gallery-arrow:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
-.gallery-arrow.prev{left:-14px;}
-.gallery-arrow.next{right:-14px;}
+.gallery-arrow.prev{left:-15px;}
+.gallery-arrow.next{right:-15px;}
 
-/* "Add photos" hint when only 1 slide */
+/* ── "Add photos" hint (shown when only 1 slide) ── */
 .gallery-add-hint{
   display:none;
   font-size:10.5px;color:var(--txf);text-align:center;
   font-style:italic;margin-top:10px;letter-spacing:.03em;
+  position:relative;z-index:5;
 }
 .gallery-add-hint.show{display:block;}
 
@@ -435,13 +490,21 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
   <div class="hero-bg"></div>
   <div class="ct"><div class="hero-inner">
     <div class="hero-gallery" id="heroGallery">
+      <!-- Arrows — perfectly centred on the circle -->
       <button class="gallery-arrow prev" id="galleryPrev" onclick="galleryNav(-1)" aria-label="Previous">‹</button>
       <button class="gallery-arrow next" id="galleryNext" onclick="galleryNav(1)" aria-label="Next">›</button>
+      <!-- Circular image area — overflow:hidden clips here -->
       <div class="gallery-track-wrap" id="galleryWrap">
         <div class="gallery-strip" id="galleryStrip">
           <!-- Slides injected by JS from GALLERY_SLIDES -->
         </div>
       </div>
+      <!-- Caption card sits BELOW the circle — never clipped -->
+      <div class="gallery-caption-card" id="galCapCard">
+        <div class="caption-title" id="galCapTitle"></div>
+        <div class="caption-desc"  id="galCapDesc"></div>
+      </div>
+      <!-- Dot indicators -->
       <div class="gallery-dots" id="galleryDots"></div>
       <div class="gallery-add-hint" id="galleryHint">
         📷 Add photos to assets/cover-page-image/
@@ -949,9 +1012,9 @@ let galTimer = null;
 const GAL_INTERVAL = 4500; // ms between auto-advances
 
 function buildGallery() {
-  const strip   = document.getElementById("galleryStrip");
-  const dotsEl  = document.getElementById("galleryDots");
-  const hint    = document.getElementById("galleryHint");
+  const strip  = document.getElementById("galleryStrip");
+  const dotsEl = document.getElementById("galleryDots");
+  const hint   = document.getElementById("galleryHint");
   if (!strip || !dotsEl) return;
 
   galTotal = GALLERY_SLIDES.length;
@@ -959,7 +1022,7 @@ function buildGallery() {
   dotsEl.innerHTML = "";
 
   GALLERY_SLIDES.forEach((slide, i) => {
-    // Slide
+    // Slide — image only (no inner caption; caption is in the card below)
     const div = document.createElement("div");
     div.className = "gallery-slide";
     div.setAttribute("data-idx", i);
@@ -969,21 +1032,13 @@ function buildGallery() {
     img.alt = slide.title_en || "";
     img.loading = "lazy";
     div.appendChild(img);
-
-    // Caption overlay
-    const cap = document.createElement("div");
-    cap.className = "slide-caption";
-    cap.id = "cap-" + i;
-    cap.innerHTML = `<div class="caption-title" id="cap-t-${i}">${slide.title_en||""}</div>
-                     <div class="caption-desc"  id="cap-d-${i}">${slide.desc_en||""}</div>`;
-    div.appendChild(cap);
     strip.appendChild(div);
 
     // Dot
     const dot = document.createElement("div");
     dot.className = "gdot" + (i===0?" active":"");
     dot.setAttribute("data-idx", i);
-    dot.onclick = () => galGoTo(i);
+    dot.onclick = () => { resetGalTimer(); galGoTo(i); };
     dotsEl.appendChild(dot);
   });
 
@@ -1009,6 +1064,8 @@ function galGoTo(idx, animate=true) {
   }
   document.querySelectorAll(".gdot").forEach((d,i) =>
     d.classList.toggle("active", i === galIdx));
+  // Update caption card for new slide
+  updateGalCaptions();
 }
 
 function galleryNav(dir) {
@@ -1040,15 +1097,15 @@ function initGalHover() {
   }, {passive:true});
 }
 
-// Update captions when language changes
+// Update the caption card for the current slide and language
 function updateGalCaptions() {
-  GALLERY_SLIDES.forEach((slide, i) => {
-    const langKey = CL === "te" ? "te" : CL === "sa" ? "sa" : "en";
-    const tEl = document.getElementById("cap-t-" + i);
-    const dEl = document.getElementById("cap-d-" + i);
-    if (tEl) tEl.textContent = slide["title_" + langKey] || slide.title_en || "";
-    if (dEl) dEl.textContent = slide["desc_"  + langKey] || slide.desc_en  || "";
-  });
+  const langKey = CL === "te" ? "te" : CL === "sa" ? "sa" : "en";
+  const slide   = GALLERY_SLIDES[galIdx] || GALLERY_SLIDES[0];
+  if (!slide) return;
+  const tEl = document.getElementById("galCapTitle");
+  const dEl = document.getElementById("galCapDesc");
+  if (tEl) tEl.textContent = slide["title_" + langKey] || slide.title_en || "";
+  if (dEl) dEl.textContent = slide["desc_"  + langKey] || slide.desc_en  || "";
 }
 
 // Keyboard navigation when gallery is in view
