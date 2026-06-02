@@ -906,6 +906,7 @@ footer{background:var(--surf);border-top:1px solid var(--bd);text-align:center;p
           <textarea id="fm" rows="4"></textarea>
           <button type="submit" class="btn-pri" id="fbt" style="align-self:flex-start"></button>
           <p id="ftk" style="font-size:0.7222rem;color:var(--gold);display:none;font-style:italic;margin-top:4px"></p>
+          <p id="fterr" style="font-size:0.7222rem;color:#c44040;display:none;font-style:italic;margin-top:4px">⚠ Something went wrong. Please try again or email us directly.</p>
         </form>
       </div>
     </div>
@@ -1266,11 +1267,60 @@ function handlePhoto(input, idx){
 }
 
 // ── CONTACT FORM ──────────────────────────────────────────────────────────────
-function submitForm(e){
+// ── CONTACT FORM — Google Apps Script submission ─────────────────────────────
+// Replace YOUR_SCRIPT_URL with your deployed Apps Script Web App URL
+// (see SETUP.md for instructions)
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxa0hLe7kRV3jhmTdvHNf9P8rVntm8wEAa7Xrz0f51mT8LJwrxRtD2Q0yU-m-UsTUrY3A/exec";
+
+function submitForm(e) {
   e.preventDefault();
-  const tk=document.getElementById("ftk");
-  if(tk) tk.style.display="block";
-  e.target.reset();
+  const form    = e.target;
+  const btn     = document.getElementById("fbt");
+  const thanks  = document.getElementById("ftk");
+  const errMsg  = document.getElementById("fterr");
+
+  // Read values
+  const name    = document.getElementById("fn").value.trim();
+  const email   = document.getElementById("fe").value.trim();
+  const subject = document.getElementById("fs2").value.trim();
+  const message = document.getElementById("fm").value.trim();
+
+  // Basic validation
+  if (!name || !email || !message) return;
+
+  // Show loading state
+  if (btn) { btn.disabled = true; btn.textContent = "⏳ Sending…"; }
+  if (thanks) thanks.style.display = "none";
+  if (errMsg) errMsg.style.display = "none";
+
+  // If no URL configured yet, simulate success gracefully
+  if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === "YOUR_SCRIPT_URL") {
+    setTimeout(() => {
+      if (btn) { btn.disabled = false; btn.textContent = T.contact && T.contact.form_submit || "Send Message ✉"; }
+      if (thanks) thanks.style.display = "block";
+      form.reset();
+    }, 800);
+    return;
+  }
+
+  // Send to Google Apps Script
+  fetch(APPS_SCRIPT_URL, {
+    method:  "POST",
+    mode:    "no-cors",   // Apps Script requires no-cors
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, email, subject, message, lang: CL })
+  })
+  .then(() => {
+    // no-cors means we can't read the response — assume success
+    if (btn) { btn.disabled = false; btn.textContent = T.contact && T.contact.form_submit || "Send Message ✉"; }
+    if (thanks) thanks.style.display = "block";
+    form.reset();
+  })
+  .catch(err => {
+    console.error("Form submission error:", err);
+    if (btn) { btn.disabled = false; btn.textContent = T.contact && T.contact.form_submit || "Send Message ✉"; }
+    if (errMsg) errMsg.style.display = "block";
+  });
 }
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
