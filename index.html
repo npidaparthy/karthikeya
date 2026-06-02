@@ -31,16 +31,16 @@ body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:1.0556rem}
   font-family:'Noto Sans Devanagari',sans-serif;font-size:1.0556rem;color:var(--gold);flex-shrink:0}
 .logo-nm{font-family:'Cinzel Decorative',serif;font-size:0.7222rem;font-weight:700;color:var(--gold);
   letter-spacing:.04em;line-height:1.2;display:block}
-.logo-tg{font-size:9.5px;color:var(--txs);letter-spacing:.04em;display:block}
+.logo-tg{font-size:0.556rem;color:var(--txs);letter-spacing:.04em;display:block}
 .nav-links{display:flex;margin-left:auto;align-items:center;overflow:hidden;gap:0}
-.nl{padding:3px 6px;font-family:'Cinzel',serif;font-size:9.5px;color:var(--txs);letter-spacing:.05em;
+.nl{padding:3px 7px;font-family:'Cinzel',serif;font-size:0.639rem;color:var(--txs);letter-spacing:.05em;
   white-space:nowrap;cursor:pointer;border:none;background:none;
   border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 .nl:hover,.nl.active{color:var(--gold);border-bottom-color:var(--gold)}
 .nav-r{display:flex;align-items:center;gap:6px;margin-left:8px;flex-shrink:0}
 /* Language pill — 3 visible buttons */
 .lang-pill{display:flex;border:1px solid var(--bds);border-radius:20px;overflow:hidden;flex-shrink:0}
-.lbtn{padding:4px 10px;font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.06em;
+.lbtn{padding:4px 10px;font-family:'Cinzel',serif;font-size:0.667rem;letter-spacing:.06em;
   cursor:pointer;border:none;border-right:1px solid var(--bd);
   background:transparent;color:var(--txs);transition:all .2s;font-weight:400}
 .lbtn:last-child{border-right:none}
@@ -69,7 +69,7 @@ body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:1.0556rem}
 .s-panel h3{font-family:'Cinzel',serif;font-size:0.75rem;color:var(--gold);
   margin-bottom:16px;letter-spacing:.05em}
 .sg{margin-bottom:16px}
-.sg label{display:block;font-size:11px;color:var(--txs);margin-bottom:6px;font-style:italic}
+.sg label{display:block;font-size:0.667rem;color:var(--txs);margin-bottom:6px;font-style:italic}
 .sg input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer}
 .slang-row{display:flex;flex-direction:column;gap:5px}
 .slb{padding:7px 11px;border:1px solid var(--bd);border-radius:8px;cursor:pointer;
@@ -102,22 +102,22 @@ main{padding-top:0}
   border:4px solid var(--gold);box-shadow:0 0 0 8px var(--gold-xl),0 16px 48px rgba(122,77,6,.18);
   overflow:hidden;background:linear-gradient(135deg,var(--gold-xl),#f0b040)}
 .avatar-ring svg,.avatar-ring img{width:100%;height:100%;object-fit:cover;display:block}
-.hgreet{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.18em;color:var(--mar);
+.hgreet{font-family:'Cinzel',serif;font-size:0.667rem;letter-spacing:.18em;color:var(--mar);
   text-transform:uppercase;margin-bottom:10px}
 .hname{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,4vw,46px);
   font-weight:700;color:#7a4d06;line-height:1.1;margin-bottom:8px}
 .hloc{font-family:'Cinzel',serif;font-size:0.7222rem;color:var(--mar);font-style:italic;margin-bottom:16px}
 .hdesc{max-width:510px;color:var(--txm);font-size:0.8056rem;margin-bottom:20px;line-height:1.85}
 .hbadges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px}
-.badge{padding:3px 11px;border-radius:100px;border:1px solid var(--bds);font-size:10.5px;
+.badge{padding:3px 11px;border-radius:100px;border:1px solid var(--bds);font-size:0.667rem;
   color:#7a4d06;background:var(--gold-xl);font-family:'Cinzel',serif;letter-spacing:.03em}
 .hcta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .btn-pri{padding:9px 22px;border-radius:10px;background:var(--gold);color:#fff;border:none;
-  font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.07em;cursor:pointer;
+  font-family:'Cinzel',serif;font-size:0.694rem;letter-spacing:.07em;cursor:pointer;
   box-shadow:0 2px 10px rgba(184,115,10,.4);transition:all .2s}
 .btn-pri:hover{background:#7a4d06;transform:translateY(-2px)}
 .btn-out{padding:9px 22px;border-radius:10px;border:1.5px solid var(--bds);color:var(--gold);
-  font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.07em;
+  font-family:'Cinzel',serif;font-size:0.694rem;letter-spacing:.07em;
   background:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
 .btn-out:hover{background:var(--gold-xl);transform:translateY(-2px)}
 
@@ -1028,14 +1028,15 @@ function renderAll(){
   s("logo-nm",nav.logo_name||"Samskruti");
   s("logo-tg",nav.logo_tag||"సంస్కృతి • संस्కृतి");
   const nl=document.getElementById("navLinks");
+  const W=T.wisdom||{};
   if(nl) nl.innerHTML=NAVKEYS.map(k=>
-    `<button class="nl" data-nav="${k}" onclick="goTo('${k}')">${nav[k]||k}</button>`).join("");
+    `<button class="nl" data-nav="${k}" onclick="goTo('${k}')">${nav[k]||(k==='wisdom'?W.nav_label||'Wisdom':k)}</button>`).join("");
   const lp=document.getElementById("langPill");
   if(lp) lp.innerHTML=LANGS.map(l=>
     `<button class="lbtn${CL===l?" active":""}" data-lang="${l}" onclick="setLang('${l}')">${LMETA[l].label}</button>`).join("");
   const mn=document.getElementById("mobNav");
   if(mn) mn.innerHTML=NAVKEYS.map(k=>
-    `<button class="nl" onclick="mNav('${k}')">${nav[k]||k}</button>`).join("");
+    `<button class="nl" onclick="mNav('${k}')">${nav[k]||(k==='wisdom'?W.nav_label||'Wisdom':k)}</button>`).join("");
   // Settings
   s("sp-title","⚙ "+(settings.title||"Settings"));
   s("sp-lang-lbl",settings.language||"Language");
@@ -1315,7 +1316,25 @@ const GALLERY_SLIDES = [
     desc_te: "ప్రార్థనలో కార్తికేయ — స్వర్ణపతక విజేత, భగవద్గీత, మైసూర్ దత్త పీఠం.",
     desc_sa: "प्रार्थनायां कार्तिकेयः — स्वर्णपदकविजेता, भगवद्गीता, मैसूरु-दत्तपीठम्।"
   }
-  // More slides will be added here as you provide photos.
+  {
+    src: "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjUwIDI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iYmcyIiBjeD0iNTAlIiBjeT0iNDAlIiByPSI2MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmRmMGQwIiBzdG9wLW9wYWNpdHk9IjAuOTUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNGExYTBhIiBzdG9wLW9wYWNpdHk9IjAuODUiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9Imdsb3cyIiBjeD0iNTAlIiBjeT0iMzUlIiByPSI0MCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjVjMDYwIiBzdG9wLW9wYWNpdHk9IjAuNCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNWMwNjAiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyNTAiIGZpbGw9InVybCgjYmcyKSIvPgogIDxjaXJjbGUgY3g9IjEyNSIgY3k9IjEwMCIgcj0iODAiIGZpbGw9InVybCgjZ2xvdzIpIi8+CiAgPCEtLSBTdGFycyAvIG5ha+G5o2F0cmFzIHNjYXR0ZXJlZCAtLT4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIyIiByPSIxLjgiIGZpbGw9IiNlOGE4MzAiIG9wYWNpdHk9IjAuNyIvPgogIDxjaXJjbGUgY3g9IjU1IiBjeT0iMTQiIHI9IjEuMiIgZmlsbD0iI2U4YTgzMCIgb3BhY2l0eT0iMC41NSIvPgogIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjE4IiByPSIxLjgiIGZpbGw9IiNlOGE4MzAiIG9wYWNpdHk9IjAuNyIvPgogIDxjaXJjbGUgY3g9IjIzMCIgY3k9IjM1IiByPSIxLjIiIGZpbGw9IiNlOGE4MzAiIG9wYWNpdHk9IjAuNSIvPgogIDxjaXJjbGUgY3g9IjE0IiBjeT0iODAiIHI9IjEuNCIgZmlsbD0iI2U4YTgzMCIgb3BhY2l0eT0iMC41Ii8+CiAgPGNpcmNsZSBjeD0iMjM2IiBjeT0iOTAiIHI9IjEuNCIgZmlsbD0iI2U4YTgzMCIgb3BhY2l0eT0iMC41Ii8+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIxNzAiIHI9IjEuMiIgZmlsbD0iI2U4YTgzMCIgb3BhY2l0eT0iMC40Ii8+CiAgPGNpcmNsZSBjeD0iMjE4IiBjeT0iMTc1IiByPSIxLjIiIGZpbGw9IiNlOGE4MzAiIG9wYWNpdHk9IjAuNCIvPgogIDxjaXJjbGUgY3g9IjEyNSIgY3k9IjEwIiByPSIyLjIiIGZpbGw9IiNlOGE4MzAiIG9wYWNpdHk9IjAuNzUiLz4KICA8IS0tIFNlYXRlZCBmaWd1cmUgY3Jvc3MtbGVnZ2VkIChwYWRtxIFzYW5hKSAtLT4KICA8IS0tIExlZ3MgLyBiYXNlIC0tPgogIDxlbGxpcHNlIGN4PSIxMjUiIGN5PSIxOTAiIHJ4PSI1MiIgcnk9IjE2IiBmaWxsPSJyZ2JhKDE4NCwxMTUsMTAsMC44NSkiLz4KICA8IS0tIExvd2VyIGRob3RpIGRyYXBlIC0tPgogIDxwYXRoIGQ9Ik03NSAxODUgUTkwIDIwMCAxMjUgMjAyIFExNjAgMjAwIDE3NSAxODUgUTE3MCAxOTUgMTI1IDE5OCBRODAgMTk1IDc1IDE4NVoiIGZpbGw9InJnYmEoMjMyLDE2OCw0OCwwLjMpIi8+CiAgPCEtLSBUb3JzbyAtLT4KICA8cmVjdCB4PSIxMDMiIHk9IjEzOCIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjUyIiByeD0iMTAiIGZpbGw9InJnYmEoMTg0LDExNSwxMCwwLjkpIi8+CiAgPCEtLSBTYWNyZWQgdGhyZWFkICh5YWrDsW9wYXbEq3RhKSAtLT4KICA8cGF0aCBkPSJNMTA4IDE0NSBRMTI1IDE1NSAxNDAgMTQ1IiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI0MCwxODAsMC43KSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz4KICA8IS0tIEhlYWQgLS0+CiAgPGVsbGlwc2UgY3g9IjEyNSIgY3k9IjEyMiIgcng9IjI0IiByeT0iMjYiIGZpbGw9InJnYmEoMTg0LDExNSwxMCwwLjkpIi8+CiAgPCEtLSBUaWxhayAtLT4KICA8ZWxsaXBzZSBjeD0iMTI1IiBjeT0iMTEyIiByeD0iMi41IiByeT0iNSIgZmlsbD0iI2M4MzkwYSIgb3BhY2l0eT0iMC45NSIvPgogIDwhLS0gVHVmdCAoxZtpa2jEgSkgLS0+CiAgPHBhdGggZD0iTTEyMCA5NyBRMTI1IDg4IDEzMCA5NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDYwLDMwLDAsMC43KSIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gRXllcyDigJQgZG93bmNhc3QsIHJlYWRpbmcgLS0+CiAgPGVsbGlwc2UgY3g9IjExOCIgY3k9IjEyMiIgcng9IjMuNSIgcnk9IjIiIGZpbGw9InJnYmEoNDAsMjAsMCwwLjcpIi8+CiAgPGVsbGlwc2UgY3g9IjEzMiIgY3k9IjEyMiIgcng9IjMuNSIgcnk9IjIiIGZpbGw9InJnYmEoNDAsMjAsMCwwLjcpIi8+CiAgPCEtLSBQYWxtLWxlYWYgbWFudXNjcmlwdCBoZWxkIG9wZW4gaW4gYm90aCBoYW5kcyAtLT4KICA8cmVjdCB4PSI4OCIgeT0iMTYyIiB3aWR0aD0iNzQiIGhlaWdodD0iMTAiIHJ4PSIzIiBmaWxsPSJyZ2JhKDI0MCwyMTAsMTMwLDAuOTIpIiB0cmFuc2Zvcm09InJvdGF0ZSgtNCAxMjUgMTY3KSIvPgogIDxyZWN0IHg9IjkwIiB5PSIxNzIiIHdpZHRoPSI3MCIgaGVpZ2h0PSIxMCIgcng9IjMiIGZpbGw9InJnYmEoMjQwLDIxMCwxMzAsMC44NSkiIHRyYW5zZm9ybT0icm90YXRlKC00IDEyNSAxNzcpIi8+CiAgPCEtLSBTY3JpcHQgbGluZXMgb24gbWFudXNjcmlwdCAtLT4KICA8bGluZSB4MT0iOTUiIHkxPSIxNjUiIHgyPSIxNTUiIHkyPSIxNjMiIHN0cm9rZT0icmdiYSgxMDAsNTAsMCwwLjQpIiBzdHJva2Utd2lkdGg9IjAuOCIvPgogIDxsaW5lIHgxPSI5NSIgeTE9IjE2OCIgeDI9IjE1MCIgeTI9IjE2NiIgc3Ryb2tlPSJyZ2JhKDEwMCw1MCwwLDAuMykiIHN0cm9rZS13aWR0aD0iMC44Ii8+CiAgPGxpbmUgeDE9Ijk1IiB5MT0iMTc1IiB4Mj0iMTU1IiB5Mj0iMTczIiBzdHJva2U9InJnYmEoMTAwLDUwLDAsMC40KSIgc3Ryb2tlLXdpZHRoPSIwLjgiLz4KICA8bGluZSB4MT0iOTUiIHkxPSIxNzgiIHgyPSIxNTAiIHkyPSIxNzYiIHN0cm9rZT0icmdiYSgxMDAsNTAsMCwwLjMpIiBzdHJva2Utd2lkdGg9IjAuOCIvPgogIDwhLS0gSGFuZHMgaG9sZGluZyBtYW51c2NyaXB0IC0tPgogIDxlbGxpcHNlIGN4PSI5NSIgY3k9IjE3MCIgcng9IjEwIiByeT0iNiIgZmlsbD0icmdiYSgyMTAsMTYwLDYwLDAuODUpIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTAgOTUgMTcwKSIvPgogIDxlbGxpcHNlIGN4PSIxNTUiIGN5PSIxNzAiIHJ4PSIxMCIgcnk9IjYiIGZpbGw9InJnYmEoMjEwLDE2MCw2MCwwLjg1KSIgdHJhbnNmb3JtPSJyb3RhdGUoMTAgMTU1IDE3MCkiLz4KICA8IS0tIEhhbG8gLS0+CiAgPGNpcmNsZSBjeD0iMTI1IiBjeT0iMTIyIiByPSIzNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIzMiwxNjgsNDgsMC4yKSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjMgNCIvPgogIDxjaXJjbGUgY3g9IjEyNSIgY3k9IjEyMiIgcj0iNDIiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyMzIsMTY4LDQ4LDAuMSkiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iMiA2Ii8+CiAgPCEtLSBPTSBhdCBib3R0b20gLS0+CiAgPHRleHQgeD0iMTI1IiB5PSIyMzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTciIGZpbGw9InJnYmEoMTg0LDExNSwxMCwwLjQpIiBmb250LWZhbWlseT0ic2VyaWYiPuClkDwvdGV4dD4KICA8IS0tIERlY29yYXRpdmUgY29ybmVycyAtLT4KICA8cGF0aCBkPSJNMTAgMTAgTDI4IDEwIEwxMCAyOFoiIGZpbGw9InJnYmEoMTg0LDExNSwxMCwwLjA2KSIvPgogIDxwYXRoIGQ9Ik0yNDAgMTAgTDIyMiAxMCBMMjQwIDI4WiIgZmlsbD0icmdiYSgxODQsMTE1LDEwLDAuMDYpIi8+CiAgPHBhdGggZD0iTTEwIDI0MCBMMjggMjQwIEwxMCAyMjJaIiBmaWxsPSJyZ2JhKDE4NCwxMTUsMTAsMC4wNikiLz4KICA8cGF0aCBkPSJNMjQwIDI0MCBMMjIyIDI0MCBMMjQwIDIyMloiIGZpbGw9InJnYmEoMTg0LDExNSwxMCwwLjA2KSIvPgo8L3N2Zz4=",
+    title_en: "Karthikeya — The Scholar",
+    title_te: "కార్తికేయ — విద్వాంసుడు",
+    title_sa: "कार्तिकेयः — विद्वान्",
+    desc_en: "In the ancient tradition of the gurukula — studying Sanskrit scripture with the same devotion that defined the rishis.",
+    desc_te: "గురుకుల పురాతన సంప్రదాయంలో — ఋషులను నిర్వచించిన అదే భక్తితో సంస్కృత శాస్త్రాన్ని అధ్యయనం చేస్తున్నాడు.",
+    desc_sa: "गुरुकुलस्य पुरातनसम्प्रदाये — ऋषीणां भक्तिवत् संस्कृतशास्त्रम् अधीते।"
+  },
+  {
+    src: "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjUwIDI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iYmczIiBjeD0iNDUlIiBjeT0iNDAlIiByPSI2NSUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmVmNWUwIiBzdG9wLW9wYWNpdHk9IjAuOSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzYTBhMTgiIHN0b3Atb3BhY2l0eT0iMC45Ii8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJtaWNybzMiIGN4PSI1MCUiIGN5PSIzMCUiIHI9IjQ1JSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNjODQwMjAiIHN0b3Atb3BhY2l0eT0iMC4xNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjODQwMjAiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyNTAiIGZpbGw9InVybCgjYmczKSIvPgogIDxjaXJjbGUgY3g9IjEyNSIgY3k9IjkwIiByPSI3NSIgZmlsbD0idXJsKCNtaWNybzMpIi8+CiAgPCEtLSBTb3VuZCByaXBwbGVzIGVtYW5hdGluZyBmcm9tIHRoZSBmaWd1cmUgLS0+CiAgPGNpcmNsZSBjeD0iMTI1IiBjeT0iMTE1IiByPSI1NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDE4NCwxMTUsMTAsMC4wOCkiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPGNpcmNsZSBjeD0iMTI1IiBjeT0iMTE1IiByPSI3MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDE4NCwxMTUsMTAsMC4wNikiIHN0cm9rZS13aWR0aD0iMS4yIi8+CiAgPGNpcmNsZSBjeD0iMTI1IiBjeT0iMTE1IiByPSI5MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDE4NCwxMTUsMTAsMC4wNCkiIHN0cm9rZS13aWR0aD0iMSIvPgogIDwhLS0gU3RhbmRpbmcgZmlndXJlLCBzbGlnaHQgZm9yd2FyZCBsZWFuIG9mIHJlY2l0YXRpb24gLS0+CiAgPCEtLSBMZWdzIC0tPgogIDxwYXRoIGQ9Ik0xMDggMjAwIEwxMDggMjQwIEwxMTggMjQwIEwxMTggMjAwWiIgcng9IjUiIGZpbGw9InJnYmEoMTg0LDExNSwxMCwwLjgpIi8+CiAgPHBhdGggZD0iTTEzMiAyMDAgTDEzMiAyNDAgTDE0MiAyNDAgTDE0MiAyMDBaIiByeD0iNSIgZmlsbD0icmdiYSgxODQsMTE1LDEwLDAuOCkiLz4KICA8IS0tIERob3RpIC0tPgogIDxwYXRoIGQ9Ik0xMDAgMTkwIFExMjUgMjA1IDE1MCAxOTAgTDE0OCAyNDAgUTEyNSAyNDggMTAyIDI0MFoiIGZpbGw9InJnYmEoMTg0LDExNSwxMCwwLjgyKSIvPgogIDxwYXRoIGQ9Ik0xMDIgMjAwIFExMjUgMjEyIDE0OCAyMDAgUTEzOCAyMTUgMTI1IDIxOCBRMTEyIDIxNSAxMDIgMjAwWiIgZmlsbD0icmdiYSgyMzIsMTY4LDQ4LDAuMjUpIi8+CiAgPCEtLSBUb3JzbyDigJQgc2xpZ2h0bHkgYW5nbGVkIGZvciByZWNpdGF0aW9uIGVuZXJneSAtLT4KICA8cGF0aCBkPSJNMTA1IDE0MCBRMTA3IDE4OCAxMDggMjAwIEwxNDIgMjAwIFExNDMgMTg4IDE0NSAxNDAgUTEzNSAxMzAgMTI1IDEyOCBRMTE1IDEzMCAxMDUgMTQwWiIgZmlsbD0icmdiYSgxODQsMTE1LDEwLDAuODgpIi8+CiAgPCEtLSBVdHRhcsSreWEgLyBzaGF3bCBzdWdnZXN0aW9uIC0tPgogIDxwYXRoIGQ9Ik0xMDUgMTQ1IFE5NSAxNjAgOTggMTc1IFExMDUgMTY1IDEwNSAxNTVaIiBmaWxsPSJyZ2JhKDIzMiwxNjgsNDgsMC4zKSIvPgogIDwhLS0gUmlnaHQgYXJtIOKAlCByYWlzZWQgaW4gYWJoYXlhIC8gcmVjaXRhdGlvbiBnZXN0dXJlIC0tPgogIDxwYXRoIGQ9Ik0xNDAgMTU1IFExNjIgMTM4IDE2OCAxMjAgUTE3MiAxMTAgMTY1IDEwNyBRMTU4IDEwNSAxNTUgMTE1IFExNTAgMTI4IDE0MCAxNDhaIiBmaWxsPSJyZ2JhKDIxMCwxNjAsNjAsMC44OCkiLz4KICA8IS0tIFJpZ2h0IGhhbmQgb3BlbiwgYWJoYXlhIG11ZHJhIHN1Z2dlc3Rpb24gLS0+CiAgPGVsbGlwc2UgY3g9IjE2NiIgY3k9IjEwOCIgcng9IjkiIHJ5PSIxMSIgZmlsbD0icmdiYSgyMTAsMTYwLDYwLDAuODgpIiB0cmFuc2Zvcm09InJvdGF0ZSgtMjUgMTY2IDEwOCkiLz4KICA8bGluZSB4MT0iMTYyIiB5MT0iOTgiIHgyPSIxNjAiIHkyPSI5MCIgc3Ryb2tlPSJyZ2JhKDIxMCwxNjAsNjAsMC43KSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSIxNjYiIHkxPSI5NyIgeDI9IjE2NSIgeTI9Ijg5IiBzdHJva2U9InJnYmEoMjEwLDE2MCw2MCwwLjcpIiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjE3MCIgeTE9Ijk4IiB4Mj0iMTcwIiB5Mj0iOTAiIHN0cm9rZT0icmdiYSgyMTAsMTYwLDYwLDAuNykiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iMTczIiB5MT0iMTAwIiB4Mj0iMTc1IiB5Mj0iOTMiIHN0cm9rZT0icmdiYSgyMTAsMTYwLDYwLDAuNykiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIExlZnQgYXJtIOKAlCBzbGlnaHRseSBvdXQsIHJlbGF4ZWQgLS0+CiAgPHBhdGggZD0iTTExMCAxNTUgUTkyIDE2MiA4OCAxNzUgUTg4IDE4MiA5NCAxODMgUTEwMCAxODMgMTA1IDE3MCBRMTA4IDE2MiAxMTAgMTU1WiIgZmlsbD0icmdiYSgyMTAsMTYwLDYwLDAuODgpIi8+CiAgPCEtLSBTYWNyZWQgdGhyZWFkIC0tPgogIDxwYXRoIGQ9Ik0xMTAgMTQzIFExMjUgMTUyIDE0MCAxNDMiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjQ1LDE5MCwwLjY1KSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz4KICA8IS0tIEhlYWQg4oCUIHNsaWdodCB1cHdhcmQgdGlsdCBvZiByZWNpdGF0aW9uIC0tPgogIDxlbGxpcHNlIGN4PSIxMjUiIGN5PSIxMTgiIHJ4PSIyMyIgcnk9IjI1IiBmaWxsPSJyZ2JhKDE4NCwxMTUsMTAsMC45KSIgdHJhbnNmb3JtPSJyb3RhdGUoLTMgMTI1IDExOCkiLz4KICA8IS0tIFRpbGFrIC0tPgogIDxlbGxpcHNlIGN4PSIxMjQiIGN5PSIxMDgiIHJ4PSIyLjIiIHJ5PSI1IiBmaWxsPSIjYzgzOTBhIiBvcGFjaXR5PSIwLjk1Ii8+CiAgPCEtLSBFeWVzIOKAlCBvcGVuIHdpZGUsIGxvb2tpbmcgdXAvZm9yd2FyZCAtLT4KICA8ZWxsaXBzZSBjeD0iMTE3IiBjeT0iMTE4IiByeD0iNCIgcnk9IjMuNSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOSIvPgogIDxlbGxpcHNlIGN4PSIxMzMiIGN5PSIxMTgiIHJ4PSI0IiByeT0iMy41IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45Ii8+CiAgPGNpcmNsZSBjeD0iMTE3IiBjeT0iMTE4IiByPSIyLjIiIGZpbGw9InJnYmEoNDAsMjAsMCwwLjg1KSIvPgogIDxjaXJjbGUgY3g9IjEzMyIgY3k9IjExOCIgcj0iMi4yIiBmaWxsPSJyZ2JhKDQwLDIwLDAsMC44NSkiLz4KICA8IS0tIE1vdXRoIHNsaWdodGx5IG9wZW4g4oCUIG1pZCByZWNpdGF0aW9uIC0tPgogIDxwYXRoIGQ9Ik0xMTkgMTI4IFExMjUgMTMyIDEzMSAxMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSg4MCwzMCwwLDAuNikiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8IS0tIFR1ZnQgLS0+CiAgPHBhdGggZD0iTTExOSA5NCBRMTI1IDg0IDEzMSA5NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDUwLDI1LDAsMC42KSIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gSGFsbyB3aXRoIGVuZXJneSByYXlzIC0tPgogIDxjaXJjbGUgY3g9IjEyNSIgY3k9IjExOCIgcj0iMzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyMzIsMTY4LDQ4LDAuMjIpIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWRhc2hhcnJheT0iMyAzIi8+CiAgPCEtLSBTbWFsbCByYWRpYW5jZSBkb3RzIGFyb3VuZCBoYWxvIC0tPgogIDxjaXJjbGUgY3g9IjEyNSIgY3k9Ijg1IiByPSIyIiBmaWxsPSJyZ2JhKDIzMiwxNjgsNDgsMC41KSIvPgogIDxjaXJjbGUgY3g9IjE1OCIgY3k9Ijk1IiByPSIxLjUiIGZpbGw9InJnYmEoMjMyLDE2OCw0OCwwLjQ1KSIvPgogIDxjaXJjbGUgY3g9IjkyIiBjeT0iOTUiIHI9IjEuNSIgZmlsbD0icmdiYSgyMzIsMTY4LDQ4LDAuNDUpIi8+CiAgPGNpcmNsZSBjeD0iMTU3IiBjeT0iMTQwIiByPSIxLjMiIGZpbGw9InJnYmEoMjMyLDE2OCw0OCwwLjM1KSIvPgogIDxjaXJjbGUgY3g9IjkzIiBjeT0iMTQwIiByPSIxLjMiIGZpbGw9InJnYmEoMjMyLDE2OCw0OCwwLjM1KSIvPgogIDwhLS0gT00gLS0+CiAgPHRleHQgeD0iMTI1IiB5PSIyMzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTciIGZpbGw9InJnYmEoMTg0LDExNSwxMCwwLjQpIiBmb250LWZhbWlseT0ic2VyaWYiPuClkDwvdGV4dD4KICA8IS0tIFN0YXIgYWNjZW50cyAtLT4KICA8Y2lyY2xlIGN4PSIxOCIgY3k9IjE4IiByPSIyIiBmaWxsPSIjZThhODMwIiBvcGFjaXR5PSIwLjciLz4KICA8Y2lyY2xlIGN4PSIyMzIiIGN5PSIxOCIgcj0iMiIgZmlsbD0iI2U4YTgzMCIgb3BhY2l0eT0iMC43Ii8+CiAgPGNpcmNsZSBjeD0iMTgiIGN5PSIyMzIiIHI9IjEuNSIgZmlsbD0iI2U4YTgzMCIgb3BhY2l0eT0iMC41Ii8+CiAgPGNpcmNsZSBjeD0iMjMyIiBjeT0iMjMyIiByPSIxLjUiIGZpbGw9IiNlOGE4MzAiIG9wYWNpdHk9IjAuNSIvPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iMTIiIHI9IjEuMiIgZmlsbD0iI2U4YTgzMCIgb3BhY2l0eT0iMC41Ii8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTIiIHI9IjEuMiIgZmlsbD0iI2U4YTgzMCIgb3BhY2l0eT0iMC41Ii8+Cjwvc3ZnPg==",
+    title_en: "Karthikeya — The Reciter",
+    title_te: "కార్తికేయ — పఠనకర్త",
+    title_sa: "कार्तिकेयः — पाठकः",
+    desc_en: "Mid-recitation — his voice carrying the sacred syllables of the Bhagavad Gītā across 700 verses memorised with unwavering devotion.",
+    desc_te: "పఠన మధ్యలో — భగవద్గీత 700 శ్లోకాల పవిత్ర అక్షరాలు అతని కంఠం ద్వారా వినిపిస్తున్నాయి.",
+    desc_sa: "पारायणमध्ये — भगवद्गीतायाः सप्तशतश्लोकानां पवित्राक्षराणि तस्य कण्ठेन प्रवहन्ति।"
+  },
+    // More slides will be added here as you provide photos.
   // Example:
   // {
   //   src: "assets/cover-page-image/gold-medal.jpg",
@@ -1342,6 +1361,9 @@ function buildGallery() {
   galTotal = GALLERY_SLIDES.length;
   strip.innerHTML  = "";
   dotsEl.innerHTML = "";
+
+  // Set strip width = total slides × 280px so translateX works perfectly
+  strip.style.width = (GALLERY_SLIDES.length * 280) + "px";
 
   GALLERY_SLIDES.forEach((slide, i) => {
     // Slide — image only (no inner caption; caption is in the card below)
