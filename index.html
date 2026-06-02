@@ -864,6 +864,14 @@ body.footer-fixed{padding-bottom:68px}
   transition:transform .25s ease;display:block;
 }
 .toggle-btn[aria-checked="true"] .toggle-knob{transform:translateX(20px)}
+
+/* ── Contact form field groups ── */
+.cf-group{display:flex;flex-direction:column;gap:3px}
+.cf-label{
+  font-size:0.611rem;font-family:var(--font-head);
+  color:var(--txs);letter-spacing:.05em;
+  text-transform:uppercase;
+}
 </style>
 </head>
 <body id="body">
@@ -875,16 +883,16 @@ body.footer-fixed{padding-bottom:68px}
 <div class="s-panel" id="sPanel">
   <h3 id="sp-title">⚙ Settings</h3>
   <div class="sg">
-    <label id="sp-lang-lbl">Language</label>
-    <div class="slang-row" id="slangRow"></div>
+    <label id="sp-lang-lbl" for="slangRow">Language</label>
+    <div class="slang-row" id="slangRow" role="group" aria-labelledby="sp-lang-lbl"></div>
   </div>
   <div class="sg">
-    <label>Font Size — <span id="fsv">18</span>px</label>
+    <label for="fontSizeRange">Font Size — <span id="fsv">18</span>px</label>
     <input type="range" min="16" max="26" value="18" id="fontSizeRange" oninput="setFS(this.value)"/>
   </div>
   <div class="sg">
     <label id="sp-accent-lbl">Accent Colour</label>
-    <div class="color-swatches">
+    <div class="color-swatches" role="group" aria-labelledby="sp-accent-lbl">
       <div class="sw active" style="background:#b8730a" title="Gold"        onclick="setAcc('#b8730a','#e8a830','#faedc8',this)"></div>
       <div class="sw"        style="background:#c8860a" title="Saffron"     onclick="setAcc('#c8860a','#f0a820','#fef0cc',this)"></div>
       <div class="sw"        style="background:#8b5e06" title="Amber"       onclick="setAcc('#8b5e06','#c8860a','#f5dfa8',this)"></div>
@@ -904,7 +912,7 @@ body.footer-fixed{padding-bottom:68px}
   <!-- THEME -->
   <div class="sg">
     <label id="sp-theme-lbl">Theme</label>
-    <div class="theme-grid" id="themeGrid">
+    <div class="theme-grid" id="themeGrid" role="group" aria-labelledby="sp-theme-lbl">
       <button class="thbtn active" data-theme="parchment"  onclick="setTheme('parchment',this)">
         <span class="th-swatch" style="background:#faf5eb;border:2px solid #b8730a"></span>Parchment
       </button>
@@ -925,7 +933,7 @@ body.footer-fixed{padding-bottom:68px}
 
   <!-- FIXED FOOTER TOGGLE -->
   <div class="sg">
-    <label id="sp-footer-lbl">Sanskrit Footer</label>
+    <label id="sp-footer-lbl" for="footerToggle">Sanskrit Footer</label>
     <div class="toggle-row">
       <span id="sp-footer-sublbl" style="font-size:0.611rem;color:var(--txs);font-style:italic">Always visible</span>
       <button class="toggle-btn" id="footerToggle" onclick="toggleFixedFooter()" role="switch" aria-checked="false">
@@ -1115,10 +1123,22 @@ body.footer-fixed{padding-bottom:68px}
       </div>
       <div>
         <form class="cof" id="contactForm" novalidate onsubmit="submitForm(event)">
-          <input type="text"  id="fn" required/>
-          <input type="email" id="fe" required/>
-          <input type="text"  id="fs2"/>
-          <textarea id="fm" rows="4"></textarea>
+          <div class="cf-group">
+            <label class="cf-label" for="fn" id="fn-lbl"></label>
+            <input type="text" id="fn" aria-labelledby="fn-lbl" required/>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label" for="fe" id="fe-lbl"></label>
+            <input type="email" id="fe" aria-labelledby="fe-lbl" required/>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label" for="fs2" id="fs2-lbl"></label>
+            <input type="text" id="fs2" aria-labelledby="fs2-lbl"/>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label" for="fm" id="fm-lbl"></label>
+            <textarea id="fm" rows="4" aria-labelledby="fm-lbl"></textarea>
+          </div>
           <button type="submit" class="btn-pri" id="fbt" style="align-self:flex-start"></button>
           <p id="ftk" style="font-size:0.7222rem;color:var(--gold);display:none;font-style:italic;margin-top:4px"></p>
           <p id="fterr" style="font-size:0.7222rem;color:#c44040;display:none;font-style:italic;margin-top:4px">⚠ Something went wrong. Please try again or email us directly.</p>
@@ -1402,11 +1422,16 @@ function renderAll(){
   // Contact
   s("co-ti",contact.section_title); s("co-in",contact.intro);
   s("co-cy",contact.location_city); s("co-cn",contact.location_country);
-  s("co-yl",contact.youtube_label); s("co-qs",contact.quote_sa); s("co-qe",contact.quote_en);
+  s("co-yl",contact.youtube_label);
   ph("fn",contact.form_name); ph("fe",contact.form_email);
   ph("fs2",contact.form_subject); ph("fm",contact.form_message);
   s("fbt",contact.form_submit);
   s("ftk",contact.form_thanks);
+  // Label text for contact form fields (accessibility + visual)
+  s("fn-lbl",  contact.form_name    || "Name");
+  s("fe-lbl",  contact.form_email   || "Email");
+  s("fs2-lbl", contact.form_subject || "Subject");
+  s("fm-lbl",  contact.form_message_label || contact.form_message || "Message");
 
   // Footer
   s("ft-sa",footer.sa); s("ft-ia",footer.iast);
@@ -2102,12 +2127,20 @@ function initEntranceAnimations() {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add("revealed");
-        observer.unobserve(e.target); // fire once
+        observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.02, rootMargin: "0px 0px -40px 0px" });
 
   document.querySelectorAll(".sec-animate").forEach(el => observer.observe(el));
+
+  // Fallback: reveal any section still hidden after 2.5s
+  // (handles edge cases where IntersectionObserver doesn't fire)
+  setTimeout(() => {
+    document.querySelectorAll(".sec-animate:not(.revealed)").forEach(el => {
+      el.classList.add("revealed");
+    });
+  }, 2500);
 }
 
 // ═══════════════════════════════════════════════════════════════════
