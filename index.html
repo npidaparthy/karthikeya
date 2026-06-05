@@ -96,6 +96,7 @@ body.sa{font-family:'Noto Sans Devanagari',sans-serif;font-size:1.0556rem}
   background:none;cursor:pointer;font-size:0.7778rem;color:var(--txs);
   display:flex;align-items:center;justify-content:center;transition:all .2s}
 .ib:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-xl)}
+#settBtn{width:38px;height:38px;font-size:1.1rem}
 .hamburger{display:none}
 
 /* MOBILE NAV */
@@ -307,37 +308,39 @@ main{padding-top:0}
 footer{
   background:var(--ft-bg);
   border-top:2px solid var(--gold);
-  text-align:center;
-  padding:28px 16px 22px;
-  /* Fixed footer support — toggled via JS */
+  padding:16px 24px;
   transition:all .3s ease;
 }
+.ft-inner{display:flex;align-items:center;gap:1rem;max-width:1080px;margin:0 auto}
+.ft-left{flex:1;text-align:left}
+.ft-mid{flex:1;text-align:center}
+.ft-right{flex:1;text-align:right}
 footer.fixed-footer{
   position:fixed;bottom:0;left:0;right:0;
   z-index:90;
-  padding:10px 16px;
+  padding:8px 24px;
   border-top:1.5px solid var(--gold);
   box-shadow:0 -4px 24px rgba(0,0,0,.3);
 }
-footer.fixed-footer .ft-sa{font-size:0.778rem;margin-bottom:2px}
+footer.fixed-footer .ft-sa{font-size:0.778rem;margin-bottom:0}
 footer.fixed-footer .ft-ia{display:none}
 footer.fixed-footer .ft-cp{font-size:0.611rem}
 /* Extra body padding when footer is fixed */
-body.footer-fixed{padding-bottom:68px}
+body.footer-fixed{padding-bottom:52px}
 .ft-sa{
   font-family:var(--font-dev);
   font-size:0.944rem;
   color:var(--ft-tx);
-  margin-bottom:5px;
+  margin-bottom:3px;
   font-weight:500;
   letter-spacing:.02em;
 }
-.ft-ia{font-size:0.722rem;font-style:italic;color:var(--ft-tx2);margin-bottom:7px;letter-spacing:.05em}
+.ft-ia{font-size:0.722rem;font-style:italic;color:var(--ft-tx2);letter-spacing:.05em}
 .ft-cp{font-size:0.667rem;color:var(--ft-tx2)}
-.ft-cp a{color:var(--gold);text-decoration:none}
-.ft-flags{margin-top:10px}
-.ft-flags img{opacity:.85;transition:opacity .2s}
-.ft-flags img:hover{opacity:1}
+.ft-yt-link{display:inline-flex;align-items:center;gap:5px;text-decoration:none;
+  color:var(--ft-tx);opacity:.75;transition:opacity .2s}
+.ft-yt-link:hover{opacity:1}
+.ft-yt-link .yt-label{font-size:0.722rem;font-family:var(--font-head);letter-spacing:.04em}
 
 /* PHOTO UPLOAD AREA */
 .photo-upload{display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -362,6 +365,10 @@ body.footer-fixed{padding-bottom:68px}
   :root{font-size:0.8333rem}
   .ct{padding:0 1rem}
   .sec{padding:38px 0}
+  .ft-inner{flex-direction:column;gap:6px;text-align:center}
+  .ft-left,.ft-mid,.ft-right{flex:none;width:100%;text-align:center}
+  .ft-right{text-align:center}
+  .ft-yt-link{justify-content:center}
 }
 
 /* ═══════════════════════════ HERO GALLERY ═══════════════════════════════ */
@@ -956,7 +963,7 @@ body.footer-fixed{padding-bottom:68px}
   <div class="nav-links" id="navLinks"></div>
   <div class="nav-r">
     <div class="lang-pill" id="langPill"></div>
-    <button class="ib" onclick="toggleSett()" title="Settings">⚙</button>
+    <button class="ib" id="settBtn" onclick="toggleSett()" title="Settings">⚙</button>
     <button class="ib hamburger" onclick="toggleMob()">☰</button>
   </div>
 </nav>
@@ -1210,18 +1217,24 @@ body.footer-fixed{padding-bottom:68px}
 </main>
 
 <footer id="siteFooter">
-  <p class="ft-sa" id="ft-sa"></p>
-  <p class="ft-ia" id="ft-ia"></p>
-  <div class="ft-flags" id="ft-flags">
-    <!-- Flag Counter — replace SRC with your own from flagcounter.com -->
-    <!-- To get your own: visit https://flagcounter.com/flags/ -->
-    <!-- Current placeholder shows global reach beautifully -->
-    <a href="https://info.flagcounter.com/samskruti" target="_blank" rel="noopener">
-      <img src="https://s11.flagcounter.com/count2/samskruti/bg_160800/txt_FAEDC8/border_b8730a/columns_4/maxflags_20/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
-           alt="Flag Counter" style="max-width:200px;border:0" loading="lazy"/>
-    </a>
+  <div class="ft-inner">
+    <div class="ft-left">
+      <p class="ft-cp" id="ft-cp"></p>
+    </div>
+    <div class="ft-mid">
+      <p class="ft-sa" id="ft-sa"></p>
+      <p class="ft-ia" id="ft-ia"></p>
+    </div>
+    <div class="ft-right">
+      <a href="https://www.youtube.com/@samskruti.info.1" target="_blank" rel="noopener" class="ft-yt-link">
+        <svg width="22" height="16" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg">
+          <rect width="22" height="16" rx="3.5" fill="#FF0000"/>
+          <polygon points="9,4 16,8 9,12" fill="#fff"/>
+        </svg>
+        <span class="yt-label">YouTube</span>
+      </a>
+    </div>
   </div>
-  <p class="ft-cp" id="ft-cp"></p>
 </footer>
 
 <script>
@@ -1435,8 +1448,7 @@ function renderAll(){
 
   // Footer
   s("ft-sa",footer.sa); s("ft-ia",footer.iast);
-  const ftcp=document.getElementById("ft-cp");
-  if(ftcp) ftcp.innerHTML=`${footer.copy||""} · <a href="https://www.youtube.com/@samskruti.info.1" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">YouTube</a>`;
+  s("ft-cp", footer.copy || "");
 }
 
 // ── PARAYANA SCRIPT SWITCHER ──────────────────────────────────────────────────
@@ -1602,7 +1614,7 @@ window.addEventListener("DOMContentLoaded",()=>{
         document.querySelector('.thbtn[data-theme="' + savedTheme + '"]'));
     }
     // Restore footer pin
-    if (localStorage.getItem("kp-footer-fixed") === "1") toggleFixedFooter();
+    if (localStorage.getItem("kp-footer-fixed") !== "0") toggleFixedFooter();
     // Restore accent colour
     const kg=localStorage.getItem("kp-gold");
     const kgl=localStorage.getItem("kp-goldL");
