@@ -18,7 +18,7 @@ import json, os, re, sys
 LANGS = ["en", "te", "sa"]
 SECTIONS = [
     "nav", "hero", "about", "profile", "credits", "events",
-    "parayana", "support", "testimonials", "youtube", "contact", "footer", "settings"
+    "parayana", "support", "testimonials", "youtube", "contact", "footer", "settings", "wisdom"
 ]
 
 def load_all():
@@ -63,7 +63,7 @@ def build():
     # Replace const ALL = {...}; with fresh data
     pattern = r'const ALL\s*=\s*\{.*?\};'
     new_val = f'const ALL = {js_blob};'
-    new_html, n = re.subn(pattern, new_val, html, flags=re.DOTALL)
+    new_html, n = re.subn(pattern, lambda m: new_val, html, flags=re.DOTALL)
 
     if n == 0:
         print("❌ Could not find 'const ALL = {...};' in index.html")

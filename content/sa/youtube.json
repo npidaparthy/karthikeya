@@ -5,10 +5,10 @@
   "channel_url": "https://www.youtube.com/@samskruti.info.1",
   "bharatam_title": "भारतं-लघुप्रसङ्गाः",
   "bharatam_desc": "महाभारतविषये लघुप्रसङ्गानां यूट्यूब्-श्रेणी — सम्पूर्णा प्लेलिस्ट् पश्यतु",
-  "bharatam_url": "https://www.youtube.com/watch?v=xB1CT8539J0&list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ",
+  "bharatam_url": "https://www.youtube.com/playlist?list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ",
   "videos": [
-    { "title": "भगवद्गीता-पारायणम्", "meta": "सप्तशतश्लोकाः · कार्तिकेयः पीडपर्ति" },
-    { "title": "संस्कृत-स्तोत्राणि",  "meta": "स्तोत्राणि · सहस्रनामानि · भक्तिगीतानि" },
-    { "title": "भारतं-लघुप्रसङ्गाः", "meta": "महाभारत-प्रसङ्गाः · सम्पूर्णश्रेणी" }
+    { "title": "भगवद्गीता-पारायणम्",  "meta": "सप्तशतश्लोकाः · कार्तिकेयः पीडपर्ति",  "url": "https://youtu.be/naVikkxGtw0" },
+    { "title": "संस्कृत-स्तोत्राणि",  "meta": "स्तोत्राणि · सहस्रनामानि · भक्तिगीतानि", "url": "https://www.youtube.com/playlist?list=PL-V59KU-Q6hdWl7wLk2336J2QeSe9B-1p" },
+    { "title": "भारतं-लघुप्रसङ्गाः", "meta": "महाभारत-प्रसङ्गाः · सम्पूर्णश्रेणी",       "url": "https://www.youtube.com/playlist?list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ" }
   ]
 }

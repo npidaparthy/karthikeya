@@ -5,10 +5,10 @@
   "channel_url": "https://www.youtube.com/@samskruti.info.1",
   "bharatam_title": "Bhāratam Laghu Prasaṅgālu",
   "bharatam_desc": "A YouTube series of short discourses on the Mahābhārata — watch the full playlist",
-  "bharatam_url": "https://www.youtube.com/watch?v=xB1CT8539J0&list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ",
+  "bharatam_url": "https://www.youtube.com/playlist?list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ",
   "videos": [
-    { "title": "Bhagavad Gītā Pārāyaṇa", "meta": "700 Verses · Karthikeya Pidaparthy" },
-    { "title": "Sanskrit Recitations",   "meta": "Stotras · Sahasranāmas · Devotional Hymns" },
-    { "title": "Bhāratam Laghu Prasaṅgālu", "meta": "Mahābhārata Discourses · Full Series" }
+    { "title": "Bhagavad Gītā Pārāyaṇa",    "meta": "700 Verses · Karthikeya Pidaparthy",       "url": "https://youtu.be/naVikkxGtw0" },
+    { "title": "Sanskrit Recitations",        "meta": "Stotras · Sahasranāmas · Devotional Hymns", "url": "https://www.youtube.com/playlist?list=PL-V59KU-Q6hdWl7wLk2336J2QeSe9B-1p" },
+    { "title": "Bhāratam Laghu Prasaṅgālu",  "meta": "Mahābhārata Discourses · Full Series",      "url": "https://www.youtube.com/playlist?list=PL-V59KU-Q6hdZckKaiR-W8U7WNjyCiUiZ" }
   ]
 }
