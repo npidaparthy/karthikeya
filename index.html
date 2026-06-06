@@ -146,7 +146,7 @@ main{padding-top:0}
   background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z' fill='%23b8730a'/%3E%3C/svg%3E")}
 .hero-inner{display:flex;align-items:center;gap:52px;padding:2.5rem 0;position:relative}
 .avatar-ring{flex-shrink:0;width:250px;height:250px;border-radius:50%;
-  border:4px solid var(--gold);box-shadow:0 0 0 8px var(--gold-xl),0 16px 48px rgba(122,77,6,.18);
+  border:4px solid var(--gold);box-shadow:0 16px 48px rgba(122,77,6,.18);
   overflow:hidden;background:linear-gradient(135deg,var(--gold-xl),#f0b040)}
 .avatar-ring svg,.avatar-ring img{width:100%;height:100%;object-fit:cover;display:block}
 .hgreet{font-family:'Cinzel',serif;font-size:0.667rem;letter-spacing:.18em;color:var(--mar);
@@ -394,7 +394,7 @@ body.footer-fixed{padding-bottom:52px}
   position:relative;
   /* One ring, perfectly centred */
   border:4px solid var(--gold);
-  box-shadow:0 0 0 8px var(--gold-xl),0 16px 48px rgba(122,77,6,.22);
+  box-shadow:0 16px 48px rgba(122,77,6,.22);
   background:var(--gold-xl);
   cursor:pointer;
 }
@@ -1674,6 +1674,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 const GALLERY_SLIDES = [
   {
     src: "assets/cover-page-image/karthikeya-default.jpg",
+    pos: "center 15%",
     title_en: "Karthikeya Pidaparthy",
     title_te: "కార్తికేయ పీడపర్తి",
     title_sa: "कार्तिकेयः पीडपर्ति",
@@ -1683,12 +1684,23 @@ const GALLERY_SLIDES = [
   },
   {
     src: "assets/photos/karthikeya-profile.jpeg",
+    pos: "center 10%",
     title_en: "Karthikeya — The Scholar",
     title_te: "కార్తికేయ — విద్వాంసుడు",
     title_sa: "కార్తికేయః — విద్వాన్",
     desc_en: "In the ancient tradition of the gurukula — studying Sanskrit scripture with the same devotion that defined the rishis.",
     desc_te: "గురుకుల పురాతన సంప్రదాయంలో — ఋషులను నిర్వచించిన అదే భక్తితో సంస్కృత శాస్త్రాన్ని అధ్యయనం చేస్తున్నాడు.",
     desc_sa: "గురుకులస్య పురాతనసమ్ప్రదాయే — ఋషీణాం భక్తివత్ సంస్కృతశాస్త్రమ్ అధీతే।"
+  },
+  {
+    src: "assets/cover-page-image/karthikeya-helensburgh-sashtipurti.jpg",
+    pos: "center 15%",
+    title_en: "Bhagavad Gītā — Helensburgh Temple",
+    title_te: "భగవద్గీత — హెలెన్స్‌బర్గ్ దేవాలయం",
+    title_sa: "भगवद्गीता — हेलेन्स्बर्ग-मन्दिरम्",
+    desc_en: "Karthikeya chanting all 18 chapters of the Bhagavad Gītā at Helensburgh Temple on the auspicious occasion of Paṇḍit Rishikesh Bhattar's Ṣaṣṭipūrti Mahōtsavam.",
+    desc_te: "పండిత్ రిషికేష్ భట్టర్ గారి షష్టిపూర్తి మహోత్సవం సందర్భంగా హెలెన్స్‌బర్గ్ దేవాలయంలో భగవద్గీత 18 అధ్యాయాలు పఠించిన కార్తికేయ.",
+    desc_sa: "पण्डितऋषिकेशभट्टारस्य षष्टिपूर्तिमहोत्सवे हेलेन्स्बर्ग-मन्दिरे भगवद्गीतायाः अष्टादशाध्यायान् पठन् कार्तिकेयः।"
   },
   {
     src: "assets/cover-page-image/karthikeya-gold-medal-mysore-datta-peetham.jpg",
@@ -1767,6 +1779,7 @@ function buildGallery() {
     img.src = slide.src;
     img.alt = slide.title_en || "";
     img.loading = "lazy";
+    if(slide.pos) img.style.objectPosition = slide.pos;
     div.appendChild(img);
     strip.appendChild(div);
 
