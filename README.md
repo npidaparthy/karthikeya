@@ -1,354 +1,386 @@
-# 🕉 Karthikeya Pidaparthy — Samskruti
+# Karthikeya Pidaparthy — Samskruti
 
 Personal website for **Karthikeya Pidaparthy**, 10-year-old Sanskrit scholar from Sydney, Australia.
 
-🌐 **Live site:** `https://<your-username>.github.io/<repo-name>/`
+**Live site:** https://nagendra-pb.github.io/karthikeya/
 
 ---
 
-## ✨ Features
+## How it works
 
-| Feature | Details |
-|---|---|
-| **3 Languages** | English, Telugu (తెలుగు), Sanskrit (संस्कृतम्) — instant switching |
-| **Language pill** | Always-visible 3-button EN / తె / सं in the nav bar |
-| **Correct fonts** | Cormorant Garamond (EN) · Noto Sans Telugu (TE) · Noto Sans Devanagari (SA) |
-| **Font size slider** | 14–22px, preserved across sessions |
-| **6 accent colours** | Gold · Amber · Maroon · Forest · Navy · Violet |
-| **Sanskrit 3 scripts** | Every verse shown in Telugu, Devanāgarī, IAST — tabbed |
-| **Photo placeholders** | 8 slots in Profile + per-event placeholders (ready for your images) |
-| **Exam record table** | Āyanam → Sāriṇī → Saralā → Sugamā → Sarasā with scores |
-| **Timeline** | All events with photo placeholders |
-| **GitHub Pages** | Auto-deploys on every push to `main` |
-| **Modular content** | Each section is a separate JSON file — easy to edit |
+- `index.html` is the **single production file** — all CSS, JS, and trilingual content are embedded in it.
+- All text lives in `content/[lang]/[section].json` (14 sections × 3 languages).
+- After editing any JSON file, run `python3 build_site.py` to rebuild `index.html`.
+- Pushing to `main` triggers GitHub Actions, which rebuilds and deploys automatically (~60 s).
 
 ---
 
-## 📁 File Structure
+## File structure
 
 ```
-karthikeya-site/
-├── index.html              ← Full website (all 3 languages embedded, no server needed)
-├── assets/
-│   └── logo.svg            ← Om logo (top-left nav)
+karthikeya/
+├── index.html                    ← Production file — do not edit content here directly
+├── build_site.py                 ← Embeds all JSON into index.html (run after every JSON edit)
+├── auto_translate.py             ← Translates EN → TE + SA via Claude API
+├── add_photo.py                  ← Adds a new photo to the hero gallery
 ├── content/
-│   ├── en/                 ← English content (source of truth)
-│   │   ├── nav.json
-│   │   ├── hero.json
-│   │   ├── about.json
-│   │   ├── profile.json    ← Achievements, exam table, journey narrative
-│   │   ├── credits.json
-│   │   ├── events.json
-│   │   ├── parayana.json   ← Sanskrit stotras in 3 scripts
-│   │   ├── support.json
-│   │   ├── testimonials.json
-│   │   ├── youtube.json
-│   │   ├── contact.json
-│   │   ├── footer.json
-│   │   └── settings.json
-│   ├── te/                 ← Telugu translations (same files)
-│   └── sa/                 ← Sanskrit translations (same files)
-├── build_site.py           ← Rebuilds index.html from JSON files
-├── auto_translate.py       ← Auto-translates EN → TE + SA via Claude API
-└── .github/workflows/
-    └── deploy.yml          ← GitHub Actions: validate + build + deploy
+│   ├── en/                       ← English (source of truth — edit these)
+│   │   ├── nav.json              ← Nav labels
+│   │   ├── hero.json             ← Hero title, description, badges
+│   │   ├── about.json            ← About paragraphs, quote, cards
+│   │   ├── profile.json          ← Achievements, exam table, journey narrative
+│   │   ├── credits.json          ← Guru & family credits
+│   │   ├── events.json           ← Timeline of events
+│   │   ├── parayana.json         ← Stotra/recitation list (3 scripts per verse)
+│   │   ├── support.json          ← Sponsor/support section
+│   │   ├── testimonials.json     ← Quotes from scholars and elders
+│   │   ├── youtube.json          ← YouTube channel + video cards
+│   │   ├── contact.json          ← Contact form labels
+│   │   ├── footer.json           ← Footer copyright + Sanskrit quote
+│   │   ├── settings.json         ← Settings panel labels
+│   │   └── wisdom.json           ← Daily wisdom / rotating quotes
+│   ├── te/                       ← Telugu translations (same filenames)
+│   └── sa/                       ← Sanskrit translations (same filenames)
+├── assets/
+│   ├── logo.svg                  ← Om logo (nav top-left)
+│   └── cover-page-image/         ← Hero gallery photos
+│       ├── manifest.json         ← Documentation of gallery photos (not read at runtime)
+│       └── karthikeya-*.jpg
+├── _archive/                     ← Old files kept for reference, not used
+├── .github/workflows/
+│   └── deploy.yml                ← CI: validate JSON → build → deploy to GitHub Pages
+└── Contact_Form_Setup.md         ← How the Google Sheets contact form is wired
 ```
 
 ---
 
-## ✏️ How to Update Content
+## Standard workflow
 
-**Always edit the JSON files, never edit index.html directly for content.**
-
-### 1. Add a new achievement
-Open `content/en/profile.json`, find `"achievements"`, add:
-```json
-{
-  "icon": "🏆",
-  "title": "Your Achievement Title",
-  "desc": "Description of the achievement.",
-  "year": "Organisation · Year",
-  "tag": "gold"
-}
-```
-Tags: `gold` | `olympiad` | `parayana` | `scholar` | `competition` | `discourse`
-
-Do the same in `content/te/profile.json` and `content/sa/profile.json`,
-**or** run the auto-translator (see below).
-
-### 2. Add a new event
-In `content/en/events.json`, find `"list"`, add:
-```json
-{
-  "date": "Month / Venue",
-  "title": "Event Title",
-  "desc": "What happened.",
-  "has_photo": true
-}
-```
-Set `"has_photo": true` to show a photo placeholder slot.
-
-### 3. Add a testimonial
-In `content/en/testimonials.json`:
-```json
-{
-  "text": "What they said.",
-  "by": "Person Name",
-  "role": "Their title / occasion"
-}
-```
-
-### 4. Add a photo
-Replace any `cert-ph` placeholder div in index.html with:
-```html
-<img src="assets/photos/your-photo.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:8px"/>
-```
-Put photos in `assets/photos/`.
-
----
-
-## 🔄 Rebuild index.html After Editing JSON
-
-After editing any content file, run:
 ```bash
+# 1. Edit one or more content/en/*.json files
+# 2. Optionally auto-translate to Telugu and Sanskrit
+python3 auto_translate.py [section]   # e.g. python3 auto_translate.py profile
+
+# 3. Rebuild index.html
 python3 build_site.py
-```
-This embeds all 3 languages into `index.html` so it works without a server.
 
----
-
-## 🤖 Auto-Translate (Claude API)
-
-Set your API key, then run:
-```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
-
-# Translate all sections
-python3 auto_translate.py
-
-# Translate only one section
-python3 auto_translate.py profile
-
-# Translate one section to one language
-python3 auto_translate.py profile te
-
-# Force overwrite existing translations
-python3 auto_translate.py --force
-```
-
-After auto-translating, always run:
-```bash
-python3 build_site.py
-```
-
----
-
-## 🚀 Deploy to GitHub Pages
-
-### First time:
-```bash
-git init
-git add .
-git commit -m "Initial commit — Karthikeya Pidaparthy Samskruti website"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
-```
-
-Then on GitHub: **Settings → Pages → Source → GitHub Actions**
-
-### After any update:
-```bash
-# Edit JSON files, then:
-python3 build_site.py
-git add -A
+# 4. Commit and push
+git add content/ index.html
 git commit -m "Update: describe what changed"
 git push
 ```
 
-GitHub Actions automatically: validates JSON → rebuilds index.html → deploys. ~60 seconds.
+GitHub Actions does the rest — live in ~60 seconds.
 
 ---
 
-## 📸 Adding Karthikeya's Photos
+## HOWTO — each section
 
-1. Put photos in `assets/photos/` folder
-2. For the hero avatar, replace the SVG in `index.html`:
-   ```html
-   <div class="avatar-ring">
-     <img src="assets/photos/karthikeya-main.jpg" alt="Karthikeya Pidaparthy"/>
-   </div>
-   ```
-3. For certificate placeholders, replace `.cert-ph` divs with `<img>` tags
-4. For event photos, replace `.tl-ph` divs with `<img>` tags
-5. Run `git add assets/photos/ && git commit -m "Add photos" && git push`
+### Home (hero)
 
----
+The full-screen landing section with the rotating photo gallery, name, description, and badges.
 
-## 📸 Hero Gallery — Auto-Scrolling Photo Slideshow
+**Files:** `content/en/hero.json`, `content/te/hero.json`, `content/sa/hero.json`
 
-The hero section shows a circular photo gallery that:
-- **Auto-scrolls** every 4.5 seconds
-- **Pauses on hover**
-- Shows a **caption with title + description** on hover
-- Supports **← → keyboard navigation** and **touch swipe** on mobile
-- Captions update automatically when you **switch language**
-
-### Adding a new photo
-
-**Method 1 — Helper script (recommended):**
-```bash
-python3 add_photo.py photos/gold-medal.jpg \
-    --title-en "Gold Medal — Mysore Datta Peetham" \
-    --title-te "స్వర్ణపతకం — మైసూర్ దత్త పీఠం" \
-    --title-sa "स्वर्णपदकम् — मैसूरु-दत्तपीठम्" \
-    --desc-en  "Receiving the Gold Medal for memorising all 700 Bhagavad Gītā verses." \
-    --desc-te  "భగవద్గీత 700 శ్లోకాలకు స్వర్ణపతకం అందుకుంటున్న సందర్భం." \
-    --desc-sa  "सप्तशतश्लोकान् कण्ठस्थीकृत्य स्वर्णपदकं प्राप्नोति।"
-
-git add -A && git commit -m "Add: Gold Medal photo" && git push
+**Edit the description or badges:**
+```json
+{
+  "description": "Updated description text here.",
+  "badges": ["🏅 Badge one", "🥇 Badge two", "📖 Badge three"]
+}
 ```
 
-**Method 2 — Manual edit:**
+**Add a photo to the gallery:**
+```bash
+# Copy photo to assets/cover-page-image/ first, then:
+python3 add_photo.py assets/cover-page-image/your-photo.jpg \
+    --title-en "Title in English" \
+    --title-te "శీర్షిక తెలుగులో" \
+    --title-sa "संस्कृतभाషायां शीर्षकम्" \
+    --desc-en  "Description in English." \
+    --desc-te  "తెలుగులో వివరణ." \
+    --desc-sa  "संस्कृते वर्णनम्।"
+```
+Photo tips: JPG/PNG, 600×600 px minimum, square crops work best, hyphens not spaces in filename.
 
-1. Copy your photo to `assets/cover-page-image/`
-2. Open `index.html`, find `const GALLERY_SLIDES = [`
-3. Add a new entry before `// More slides will be added here...`:
-
+**Or add manually:** open `index.html`, find `const GALLERY_SLIDES = [` and insert:
 ```javascript
 {
   src: "assets/cover-page-image/your-photo.jpg",
-  title_en: "Your Title in English",
-  title_te: "మీ శీర్షిక తెలుగులో",
-  title_sa: "संस्कृतभाषायां शीर्षकम्",
-  desc_en: "Description in English.",
-  desc_te: "తెలుగులో వివరణ.",
-  desc_sa: "संस्कृते वर्णनम्।"
+  title_en: "Title", title_te: "శీర్షిక", title_sa: "शीर्षकम्",
+  desc_en: "Description.", desc_te: "వివరణ.", desc_sa: "वर्णनम्।"
 },
 ```
-
-4. `git add -A && git commit -m "Add photo" && git push`
-
-### Photo tips
-- **Size:** 600×600px or larger, square crops work best (the gallery is circular)
-- **Format:** JPG or PNG
-- **Location:** `assets/cover-page-image/`
-- **Filenames:** Use hyphens, no spaces (e.g. `gold-medal-2024.jpg`)
-
-### Current photos in gallery
-| File | Title |
-|------|-------|
-| `karthikeya-default.jpg` | Default avatar (embedded, always shown) |
-
-*(Add more rows as you add photos)*
-
+No rebuild needed for gallery changes — `GALLERY_SLIDES` lives outside the `const ALL` blob.
 
 ---
 
-## 🎨 Customising Colours
+### About
 
-Open `index.html` in a text editor, find `:root {` and change:
-- `--gold`: main accent colour
-- `--mar`: maroon accent (hero text, timeline)
+Overview of Karthikeya with two paragraphs, a Sanskrit quote, and three cards (Languages, Pārāyaṇa, Achievements).
 
-Or use the **Settings ⚙** panel on the live site — 6 preset colour themes.
+**Files:** `content/en/about.json`, `content/te/about.json`, `content/sa/about.json`
 
----
-
-*Built with love for Karthikeya Pidaparthy — may his journey in dharma, vidyā and bhakti inspire many.*
-
----
-
-## ✏️ Fixing Typos & Editing Content
-
-All text lives in `content/[lang]/[section].json`. There are 3 ways to fix typos:
-
-### Method 1 — Direct JSON edit (simplest)
-
-Open the file in any text editor, fix the typo, save:
+**Edit paragraphs or quote:**
+```json
+{
+  "para1": "First paragraph text.",
+  "para2": "Second paragraph text.",
+  "quote_sa": "विद्या ददाति विनयम् ।",
+  "quote_iast": "vidyā dadāti vinayam",
+  "quote_te": "విద్య వినయమిస్తుంది.",
+  "quote_en": "Knowledge bestows humility."
+}
 ```
-content/te/profile.json     ← Telugu profile text
-content/sa/hero.json        ← Sanskrit hero text
-content/en/events.json      ← English events
+
+**Edit the three cards:** find `"cards"` in the JSON — each card has `title` and `body`.
+
+---
+
+### Profile
+
+Detailed achievements list, exam score table, and narrative biography.
+
+**Files:** `content/en/profile.json`, `content/te/profile.json`, `content/sa/profile.json`
+
+**Add an achievement:**
+```json
+{
+  "icon": "🏆",
+  "title": "Achievement Title",
+  "desc": "What was achieved.",
+  "year": "Organisation · Year",
+  "tag": "gold"
+}
 ```
-Then rebuild and deploy:
+Available tags: `gold` · `olympiad` · `parayana` · `scholar` · `competition` · `discourse`
+
+**Add a row to the exam table:** find `"exam_rows"` and add:
+```json
+{ "level": "Level Name", "work": "Work recited", "score": "Score/Result", "year": "Year" }
+```
+
+**Edit the journey narrative:** find `"journey"` — it's a long string with `\n` for line breaks.
+
+**Add a profile photo:** photos go in `assets/photos/`. Reference them in the `"photos"` array in `profile.json`.
+
+---
+
+### Credits
+
+Acknowledges Karthikeya's guru, parents, and other supporters.
+
+**Files:** `content/en/credits.json`, `content/te/credits.json`, `content/sa/credits.json`
+
+**Add a credit entry:** find `"list"` and add:
+```json
+{
+  "icon": "🙏",
+  "name": "Person or Organisation Name",
+  "role": "Their role or relationship",
+  "desc": "A sentence about their contribution."
+}
+```
+
+---
+
+### Events
+
+A timeline of performances, competitions, and milestones.
+
+**Files:** `content/en/events.json`, `content/te/events.json`, `content/sa/events.json`
+
+**Add an event:**
+```json
+{
+  "date": "Month Year · Venue",
+  "title": "Event Title",
+  "desc": "What happened at this event.",
+  "has_photo": false
+}
+```
+Set `"has_photo": true` to show a photo placeholder. Replace the placeholder with a real image by editing `index.html` after building:
+```html
+<img src="assets/photos/event-name.jpg" alt="Event description" style="width:100%;height:100%;object-fit:cover;border-radius:8px"/>
+```
+
+---
+
+### Pārāyaṇa
+
+Lists all stotras and works that Karthikeya has memorised or regularly recites, with verses shown in three scripts (Telugu, Devanāgarī, IAST).
+
+**Files:** `content/en/parayana.json`, `content/te/parayana.json`, `content/sa/parayana.json`
+
+**Add a stotra:**
+```json
+{
+  "title": "Stotra Name",
+  "desc": "Brief description — what it is, how many verses.",
+  "verses_te": "verse line in Telugu script",
+  "verses_dev": "verse line in Devanāgarī",
+  "verses_iast": "verse line in IAST"
+}
+```
+
+---
+
+### Sponsor (Support)
+
+Invites well-wishers to support Karthikeya's journey.
+
+**Files:** `content/en/support.json`, `content/te/support.json`, `content/sa/support.json`
+
+**Edit the message or UPI/bank details:** open `support.json` and update the relevant fields.
+The section intentionally has no payment gateway — details are shown as text for manual bank transfer or UPI.
+
+---
+
+### Testimonials
+
+Rotating quotes from scholars, elders, and community members.
+
+**Files:** `content/en/testimonials.json`, `content/te/testimonials.json`, `content/sa/testimonials.json`
+
+**Add a testimonial:**
+```json
+{
+  "text": "What they said about Karthikeya.",
+  "by": "Person's Name",
+  "role": "Their title, organisation, or occasion"
+}
+```
+
+---
+
+### YouTube
+
+Showcases the Samskruti YouTube channel with three video/playlist cards.
+
+**Files:** `content/en/youtube.json`, `content/te/youtube.json`, `content/sa/youtube.json`
+
+**Update the channel URL or name:** edit `channel_url` and `channel_name`.
+
+**Update a video card:**
+```json
+{
+  "title": "Card Title",
+  "meta": "Subtitle · Additional info",
+  "url": "https://youtu.be/VIDEO_ID"
+}
+```
+Cards with a direct video URL (`youtu.be/VIDEO_ID` or `?v=VIDEO_ID`) automatically show the YouTube thumbnail.
+Cards linking to playlists show a gradient placeholder — add a `"thumb"` field with a thumbnail URL to override:
+```json
+{
+  "title": "Playlist Name",
+  "meta": "Description",
+  "url": "https://www.youtube.com/playlist?list=...",
+  "thumb": "https://img.youtube.com/vi/SOME_VIDEO_ID/hqdefault.jpg"
+}
+```
+
+After editing any `youtube.json`, rebuild:
+```bash
+python3 build_site.py
+```
+
+---
+
+### Contact
+
+Contact form that saves submissions to a Google Sheet via Google Apps Script.
+
+**Files:** `content/en/contact.json`, `content/te/contact.json`, `content/sa/contact.json`
+
+**Edit labels or the intro text:** update `intro`, `location_city`, `location_country` in the JSON.
+
+**The form endpoint** is hardcoded in `index.html` (search for `APPS_SCRIPT_URL`). See `Contact_Form_Setup.md` for full setup instructions.
+
+---
+
+## Settings panel (gear icon ⚙)
+
+Users can adjust these preferences — all saved to `localStorage`, restored on next visit:
+
+| Setting | Options |
+|---|---|
+| Language | EN / తె / सं |
+| Font size | 14–22 px slider |
+| Accent colour | Gold · Amber · Maroon · Forest · Navy · Violet |
+| Footer pin | Fixed to bottom (default) or scrolls with page |
+
+**To change the default accent colour or font size:** edit the fallback values in the JS block of `index.html` (search for `kp-theme`, `kp-font`, `kp-accent`).
+
+---
+
+## Footer
+
+Three-column layout: name (left) · Sanskrit quote (centre) · YouTube link (right). Stacks on mobile.
+
+**Files:** `content/en/footer.json`, `content/te/footer.json`, `content/sa/footer.json`
+
+**Edit the Sanskrit quote or copyright name:** update `quote_sa`, `quote_iast`, `name` in the JSON.
+
+---
+
+## Wisdom (rotating daily quote)
+
+A subtle rotating quote block (if enabled in the site). Draws from a pool of Sanskrit/Telugu wisdom sayings.
+
+**Files:** `content/en/wisdom.json`, `content/te/wisdom.json`, `content/sa/wisdom.json`
+
+**Add a wisdom quote:** find `"quotes"` and add:
+```json
+{
+  "sa": "संस्कृतश्लोकः",
+  "iast": "saṃskṛta-śloka",
+  "te": "తెలుగు అనువాదం",
+  "en": "English translation.",
+  "source": "Source text or author"
+}
+```
+
+---
+
+## Auto-translate (Claude API)
+
+After editing English content, auto-generate Telugu and Sanskrit translations:
+
+```bash
+export ANTHROPIC_API_KEY="sk-ant-..."
+
+python3 auto_translate.py              # Translate all sections
+python3 auto_translate.py profile      # Translate one section
+python3 auto_translate.py profile te   # Translate one section, one language
+python3 auto_translate.py --force      # Overwrite existing translations
+```
+
+Always run `python3 build_site.py` after translating.
+
+---
+
+## Deploy to GitHub Pages
+
+**First-time setup:**
+```bash
+git init
+git add .
+git commit -m "Initial commit — Samskruti website"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git push -u origin main
+```
+On GitHub: **Settings → Pages → Source → GitHub Actions**
+
+**Ongoing updates:**
 ```bash
 python3 build_site.py
 git add content/ index.html
-git commit -m "Fix typos in Telugu profile"
+git commit -m "Update: what changed"
 git push
 ```
 
-### Method 2 — edit_content.py helper
+---
 
-```bash
-# See all sections and their status
-python3 edit_content.py
-
-# View Telugu content for a section (to spot typos)
-python3 edit_content.py profile te
-python3 edit_content.py events te
-python3 edit_content.py about sa
-
-# Open all 3 language files for a section in your text editor
-python3 edit_content.py profile --edit
-python3 edit_content.py nav --edit
-
-# Check which keys differ between languages
-python3 edit_content.py --diff profile
-
-# Validate all JSON + rebuild HTML in one step
-python3 edit_content.py --fix
-```
-
-Set your preferred editor before using `--edit`:
-```bash
-export EDITOR=nano       # terminal editor
-export EDITOR=vim
-export EDITOR="code --wait"  # VS Code (waits for you to close)
-```
-
-### Method 3 — Quick fix from Python
-
-```python
-from edit_content import cd, load, save
-cd()
-
-# Fix a single value
-data = load("te", "profile")
-data["achievements"][0]["title"] = "స్వర్ణపతకం — భగవద్గీత"  # corrected
-save("te", "profile", data)
-
-# Then rebuild
-import subprocess, sys
-subprocess.run([sys.executable, "build_site.py"])
-```
-
-### Checking all languages at once
-
-```bash
-# Show the full nav section in all 3 languages to compare
-python3 edit_content.py nav
-
-# Show hero in Telugu only
-python3 edit_content.py hero te
-
-# Validate every file and rebuild
-python3 edit_content.py --fix
-```
-
-### Files to check for Telugu (తెలుగు) typos
-
-| File | What it controls |
-|------|-----------------|
-| `content/te/nav.json` | Nav bar labels |
-| `content/te/hero.json` | Hero section title, description, badges |
-| `content/te/about.json` | About section paragraphs, cards |
-| `content/te/profile.json` | Journey text, achievement titles & descriptions |
-| `content/te/events.json` | Event titles and descriptions |
-| `content/te/parayana.json` | Stotra titles and attributions |
-| `content/te/credits.json` | Credit names and roles |
-| `content/te/testimonials.json` | Testimonial text |
-| `content/te/contact.json` | Contact form labels |
-| `content/te/footer.json` | Footer text |
-
+*Built for Karthikeya Pidaparthy — may his journey in dharma, vidyā and bhakti inspire many.*

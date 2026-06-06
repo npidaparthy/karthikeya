@@ -8,7 +8,8 @@
       "title": "Gold Medal — Bhagavad Gītā",
       "desc": "Awarded the prestigious Gold Medal by Mysore Datta Peetham for memorising and flawlessly reciting all 700 verses of the Śrīmad Bhagavad Gītā — a monumental feat of memory, devotion and discipline.",
       "year": "Mysore Datta Peetham",
-      "tag": "gold"
+      "tag": "gold",
+      "cert_url": "assets/docs/gold-medal-certificate-bhagavad-gita.pdf"
     },
     {
       "icon": "📖",
@@ -19,10 +20,12 @@
     },
     {
       "icon": "🏆",
-      "title": "Sanskrit Olympiad — 1st in Australia",
-      "desc": "Secured 1st place in Australia in the Central Sanskrit University's National Sanskrit Olympiad for two consecutive years. In the previous year he achieved All India Rank 266 — competing against thousands of students across India.",
-      "year": "Central Sanskrit University · 2 consecutive years",
-      "tag": "olympiad"
+      "title": "Sanskrit Olympiad — AIR 266 (2024) · 1st in Australia (2025)",
+      "desc": "2024 — All India Rank 266 in the Central Sanskrit University National Sanskrit Olympiad, competing in the 13–17 age category while he was just 8 years old. 2025 — 1st place in Australia in the General Category (Indian Knowledge Systems · IKS), competing as an open-category participant at the age of 9. Two years of extraordinary national-level achievement — age never a barrier.",
+      "year": "Central Sanskrit University · 2024 & 2025",
+      "tag": "olympiad",
+      "cert_url": "assets/docs/sanskrit-olympiad-certificate-2024.pdf",
+      "cert_url2": "assets/docs/sanskrit-olympiad-certificate-2025.pdf"
     },
     {
       "icon": "📊",
@@ -97,11 +100,41 @@
   ],
   "exam_table_title": "Sanskrit Examination Record",
   "exam_table": [
-    { "year": "2022", "exam": "Āyanam",  "score": "100%", "grade": "🌟" },
-    { "year": "2023", "exam": "Sāriṇī",  "score": "98%",  "grade": "🌟" },
-    { "year": "2024", "exam": "Saralā",   "score": "94%",  "grade": "⭐" },
-    { "year": "2025", "exam": "Sugamā",   "score": "98%",  "grade": "🌟" },
-    { "year": "2026", "exam": "Sarasā",   "score": "96%",  "grade": "🌟" }
+    {
+      "year": "2022",
+      "exam": "Āyanam",
+      "score": "100%",
+      "grade": "🌟",
+      "doc_url": "assets/docs/exam-ayanam-2022.pdf"
+    },
+    {
+      "year": "2023",
+      "exam": "Sāriṇī",
+      "score": "98%",
+      "grade": "🌟",
+      "doc_url": "assets/docs/exam-sarani-2023.pdf"
+    },
+    {
+      "year": "2024",
+      "exam": "Saralā",
+      "score": "94%",
+      "grade": "⭐",
+      "doc_url": "assets/docs/exam-sarala-2024.pdf"
+    },
+    {
+      "year": "2025",
+      "exam": "Sugamā",
+      "score": "98%",
+      "grade": "🌟",
+      "doc_url": "assets/docs/exam-sugama-2025.pdf"
+    },
+    {
+      "year": "2026",
+      "exam": "Sarasā",
+      "score": "96%",
+      "grade": "🌟",
+      "doc_url": "assets/docs/exam-sarasa-2026.pdf"
+    }
   ],
   "photo_placeholder": "Certificate & Achievement Photos",
   "photo_placeholder_sub": "Certificates and event photographs will be displayed here"
