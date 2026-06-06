@@ -113,6 +113,27 @@ Photo tips: JPG/PNG, 600×600 px minimum, square crops work best, hyphens not sp
 ```
 No rebuild needed for gallery changes — `GALLERY_SLIDES` lives outside the `const ALL` blob.
 
+**Control the crop position** (optional `pos` field — useful for portrait photos):
+```javascript
+{
+  src: "assets/cover-page-image/your-photo.jpg",
+  pos: "center 15%",   // shifts image up so face shows; omit for default center
+  title_en: "Title", title_te: "శీర్షిక", title_sa: "शीर्षकम्",
+  desc_en: "Description.", desc_te: "వివరణ.", desc_sa: "वर्णनम्।"
+},
+```
+`pos` values: `"center top"` (face at top), `"center 10%"` (slightly down), `"center center"` (default, good for landscape/group shots).
+
+**Remove a slide entirely:** open `index.html`, find `const GALLERY_SLIDES = [` and delete the entire `{ … },` block for that slide. Example — to remove the logo/default slide, delete:
+```javascript
+  {
+    src: "assets/logo.svg",
+    title_en: "Karthikeya Pidaparthy",
+    ...
+  },
+```
+Save the file — the gallery updates immediately with no rebuild needed.
+
 ---
 
 ### About
