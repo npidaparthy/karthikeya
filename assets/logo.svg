@@ -51,9 +51,8 @@
     <textPath href="#topArc" startOffset="50%" text-anchor="middle">SAMSKRUTI</textPath>
   </text>
 
-  <!-- Name arc bottom: Telugu -->
-  <path id="botArc" d="M 28,108 A 72,72 0 0,0 172,108" fill="none"/>
-  <text font-family="'Noto Sans Telugu', sans-serif" font-size="11" fill="#8b5e06" letter-spacing="2" opacity="0.85">
-    <textPath href="#botArc" startOffset="50%" text-anchor="middle">సంస్కృతి</textPath>
-  </text>
+  <!-- Name bottom: Telugu (straight, no arc to avoid ligature distortion) -->
+  <text x="100" y="162" text-anchor="middle"
+        font-family="'Noto Sans Telugu', sans-serif"
+        font-size="13" fill="#8b5e06" opacity="0.85">సంస్కృతి</text>
 </svg>
