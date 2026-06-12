@@ -1,0 +1,17 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- KP intertwined monogram — Federer style, gold on parchment -->
+  <rect x="0" y="0" width="32" height="32" rx="6" fill="#fdf3d0"/>
+  <!-- Thin border -->
+  <rect x="0.8" y="0.8" width="30.4" height="30.4" rx="5.4" fill="none" stroke="#c07808" stroke-width="1"/>
+  <!-- Hairline rule top & bottom for elegance -->
+  <line x1="5" y1="5.5"  x2="27" y2="5.5"  stroke="#c07808" stroke-width="0.5" opacity="0.4"/>
+  <line x1="5" y1="26.5" x2="27" y2="26.5" stroke="#c07808" stroke-width="0.5" opacity="0.4"/>
+  <!-- K — bold serif, slightly left -->
+  <text x="10" y="22" text-anchor="middle"
+        font-family="'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
+        font-size="18" fill="#c07808" font-weight="bold" font-style="italic">K</text>
+  <!-- P — overlaps K's spine, slightly right -->
+  <text x="20" y="22" text-anchor="middle"
+        font-family="'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
+        font-size="18" fill="#8a4800" font-weight="bold" font-style="italic">P</text>
+</svg>

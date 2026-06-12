@@ -1,0 +1,13 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gmet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ffe080"/>
+      <stop offset="40%"  stop-color="#c07808"/>
+      <stop offset="60%"  stop-color="#f0b030"/>
+      <stop offset="100%" stop-color="#8a5000"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="32" height="32" rx="7" fill="#111"/>
+  <text x="10" y="22" text-anchor="middle" font-family="'Arial Black',sans-serif" font-size="15" fill="url(#gmet)" font-weight="900">K</text>
+  <text x="22" y="22" text-anchor="middle" font-family="'Arial Black',sans-serif" font-size="15" fill="url(#gmet)" font-weight="900">P</text>
+</svg>

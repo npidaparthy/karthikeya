@@ -1,0 +1,15 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- KP monogram — gold on deep night, premium feel -->
+  <rect x="0" y="0" width="32" height="32" rx="6" fill="#0c0618"/>
+  <rect x="0.8" y="0.8" width="30.4" height="30.4" rx="5.4" fill="none" stroke="#f8c020" stroke-width="0.8" opacity="0.6"/>
+  <line x1="5" y1="5.5"  x2="27" y2="5.5"  stroke="#f8c020" stroke-width="0.5" opacity="0.3"/>
+  <line x1="5" y1="26.5" x2="27" y2="26.5" stroke="#f8c020" stroke-width="0.5" opacity="0.3"/>
+  <!-- K lighter gold -->
+  <text x="10" y="22" text-anchor="middle"
+        font-family="'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
+        font-size="18" fill="#ffe060" font-weight="bold" font-style="italic">K</text>
+  <!-- P deeper gold -->
+  <text x="20" y="22" text-anchor="middle"
+        font-family="'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
+        font-size="18" fill="#f8c020" font-weight="bold" font-style="italic">P</text>
+</svg>

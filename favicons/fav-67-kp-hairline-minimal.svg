@@ -1,0 +1,6 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="32" height="32" rx="7" fill="#f8f8f8"/>
+  <text x="10" y="22" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#222" font-weight="normal" font-style="italic">K</text>
+  <line x1="15.5" y1="7" x2="15.5" y2="25" stroke="#999" stroke-width="0.6"/>
+  <text x="22" y="22" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#555" font-weight="normal" font-style="italic">P</text>
+</svg>

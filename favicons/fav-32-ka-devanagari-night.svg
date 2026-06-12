@@ -1,0 +1,5 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="16" cy="16" r="16" fill="#08041c"/>
+  <circle cx="16" cy="16" r="15" fill="none" stroke="#f8c020" stroke-width="1.2"/>
+  <text x="16" y="22" text-anchor="middle" font-family="'Noto Sans Devanagari',serif" font-size="17" fill="#f8c020" font-weight="bold">का</text>
+</svg>

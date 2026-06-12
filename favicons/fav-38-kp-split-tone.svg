@@ -1,0 +1,10 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Split tone — K and P in different colours, no background box — like ref #5 Emerald+Cyan -->
+  <rect x="0" y="0" width="32" height="32" rx="7" fill="#0d2038"/>
+  <text x="10" y="21" text-anchor="middle"
+        font-family="'Arial Black','Impact',sans-serif"
+        font-size="16" fill="#2ecc8a" font-weight="900">K</text>
+  <text x="22" y="21" text-anchor="middle"
+        font-family="'Arial Black','Impact',sans-serif"
+        font-size="16" fill="#22d4f0" font-weight="900">P</text>
+</svg>

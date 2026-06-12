@@ -1,0 +1,10 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hexagon — like ref #7 Rose -->
+  <polygon points="16,1 29,8.5 29,23.5 16,31 3,23.5 3,8.5" fill="#c0185a"/>
+  <text x="11" y="21" text-anchor="middle"
+        font-family="'Arial Black','Impact',sans-serif"
+        font-size="13" fill="#fff" font-weight="900">K</text>
+  <text x="21" y="21" text-anchor="middle"
+        font-family="'Arial Black','Impact',sans-serif"
+        font-size="13" fill="#fff" font-weight="900">P</text>
+</svg>

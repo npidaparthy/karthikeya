@@ -1,0 +1,17 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="gn" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a0840"/>
+      <stop offset="100%" stop-color="#04010e"/>
+    </radialGradient>
+    <linearGradient id="gf" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#c07808"/>
+      <stop offset="100%" stop-color="#ffe060"/>
+    </linearGradient>
+  </defs>
+  <circle cx="16" cy="16" r="16" fill="url(#gn)"/>
+  <!-- Subtle halo -->
+  <circle cx="16" cy="16" r="12" fill="none" stroke="#f8c020" stroke-width="0.5" opacity="0.3"/>
+  <text x="16" y="19" text-anchor="middle" font-family="serif" font-size="14" fill="url(#gf)" font-weight="bold">ॐ</text>
+  <text x="16" y="27" text-anchor="middle" font-family="'Georgia',serif" font-size="8" fill="#f8c020" opacity="0.75" letter-spacing="1">KARTHIKEYA</text>
+</svg>

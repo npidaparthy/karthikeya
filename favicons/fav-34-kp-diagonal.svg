@@ -1,0 +1,12 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Diagonal split — like ref #11 Orange+Blue -->
+  <rect x="0" y="0" width="32" height="32" rx="7" fill="#2255cc"/>
+  <clipPath id="cl"><rect x="0" y="0" width="32" height="32" rx="7"/></clipPath>
+  <polygon points="0,32 22,0 32,0 32,32" fill="#f07020" clip-path="url(#cl)"/>
+  <text x="11" y="21" text-anchor="middle"
+        font-family="'Arial Black','Impact',sans-serif"
+        font-size="14" fill="#fff" font-weight="900">K</text>
+  <text x="22" y="21" text-anchor="middle"
+        font-family="'Arial Black','Impact',sans-serif"
+        font-size="14" fill="#fff" font-weight="900">P</text>
+</svg>

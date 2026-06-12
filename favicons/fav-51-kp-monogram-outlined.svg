@@ -1,0 +1,13 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- KP — K filled, P outlined (Federer's two-tone trick) on navy -->
+  <rect x="0" y="0" width="32" height="32" rx="6" fill="#162068"/>
+  <!-- K — solid white -->
+  <text x="10" y="22" text-anchor="middle"
+        font-family="'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
+        font-size="18" fill="#ffffff" font-weight="bold" font-style="italic">K</text>
+  <!-- P — outlined only (stroke, no fill) — the Federer trick -->
+  <text x="20" y="22" text-anchor="middle"
+        font-family="'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
+        font-size="18" fill="none" stroke="#ffffff" stroke-width="0.8"
+        font-weight="bold" font-style="italic">P</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- 'का' — first syllable of कार्तिकेय in Devanagari -->
+  <circle cx="16" cy="16" r="16" fill="#fdf3d0"/>
+  <circle cx="16" cy="16" r="15" fill="none" stroke="#c07808" stroke-width="1.2"/>
+  <text x="16" y="22" text-anchor="middle" font-family="'Noto Sans Devanagari',serif" font-size="17" fill="#c07808" font-weight="bold">का</text>
+</svg>

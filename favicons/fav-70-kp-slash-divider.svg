@@ -1,0 +1,6 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="32" height="32" rx="7" fill="#1a1a2e"/>
+  <text x="9" y="22" text-anchor="middle" font-family="'Arial Black',sans-serif" font-size="14" fill="#fff" font-weight="900">K</text>
+  <line x1="17" y1="7" x2="14" y2="25" stroke="#5b6fd8" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="24" y="22" text-anchor="middle" font-family="'Arial Black',sans-serif" font-size="14" fill="#fff" font-weight="900">P</text>
+</svg>

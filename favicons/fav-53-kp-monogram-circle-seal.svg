@@ -1,0 +1,16 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- KP as a wax-seal style circle -->
+  <circle cx="16" cy="16" r="15.5" fill="#c07808"/>
+  <!-- Outer ring detail -->
+  <circle cx="16" cy="16" r="14.5" fill="none" stroke="#fdf3d0" stroke-width="0.6" opacity="0.5" stroke-dasharray="2 1.5"/>
+  <!-- Inner filled circle -->
+  <circle cx="16" cy="16" r="12" fill="#a06006"/>
+  <!-- K filled white, P outlined white — intertwined -->
+  <text x="10.5" y="21" text-anchor="middle"
+        font-family="'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
+        font-size="16" fill="#fff8e8" font-weight="bold" font-style="italic">K</text>
+  <text x="20.5" y="21" text-anchor="middle"
+        font-family="'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
+        font-size="16" fill="none" stroke="#fff8e8" stroke-width="0.7"
+        font-weight="bold" font-style="italic">P</text>
+</svg>

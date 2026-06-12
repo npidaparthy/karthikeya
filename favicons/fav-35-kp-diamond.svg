@@ -1,0 +1,10 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Diamond shape — like ref #13 Crimson -->
+  <rect x="4.5" y="4.5" width="23" height="23" rx="5" fill="#c01830" transform="rotate(45 16 16)"/>
+  <text x="11" y="20" text-anchor="middle"
+        font-family="'Arial Black','Impact',sans-serif"
+        font-size="12" fill="#fff" font-weight="900">K</text>
+  <text x="21" y="20" text-anchor="middle"
+        font-family="'Arial Black','Impact',sans-serif"
+        font-size="12" fill="#fff" font-weight="900">P</text>
+</svg>

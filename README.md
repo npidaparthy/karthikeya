@@ -320,6 +320,36 @@ Contact form that saves submissions to a Google Sheet via Google Apps Script.
 
 ---
 
+## Favicon
+
+The site picks one of **70 SVG favicons randomly** on every page load (no flicker — runs before paint).
+
+All favicons live in `favicons/`. Full reference: [`favicons/favicon.md`](favicons/favicon.md)
+
+> ⚠️ **Critical rule:** every name listed in the `favs` array inside `index.html` must have a matching `.svg` file in the `favicons/` folder. If the file is missing the browser gets a 404 and shows a blank tab icon.
+
+**Add a favicon:**
+1. Drop your file in `favicons/` — e.g. `favicons/fav-71-my-new.svg` (use `viewBox="0 0 32 32"`)
+2. Open `index.html`, search for `fav-01-om-gold` — add `"fav-71-my-new"` to the `favs` array
+3. Add a row to `favicons/favicon.md` for reference
+
+**Remove a favicon — always two steps together:**
+1. Delete the `.svg` file from `favicons/`
+2. Remove the matching name from the `favs` array in `index.html` (search for the filename)
+
+Skipping step 2 = blank tab icon on the visits that randomly land on that entry.
+
+**Hide a favicon without deleting the file:**
+Remove it from the `favs` array only — file stays in `favicons/` as backup, just never gets picked.
+
+**Pin one favicon permanently (stop random):**
+Replace the `<link rel="icon"> … </script>` block in `index.html` with just:
+```html
+<link rel="icon" href="favicons/fav-07-om-squircle-gold.svg" type="image/svg+xml"/>
+```
+
+---
+
 ## Settings panel (gear icon ⚙)
 
 Users can adjust these preferences — all saved to `localStorage`, restored on next visit:
